@@ -8,8 +8,8 @@
     "11"
   ],
   "fingerprint_regex": "^OnePlus/OnePlus6T/OnePlus6T:11/RKQ1\\.201217\\.002/2111252327",
-  "auto_apply": false,
-  "verification": "documented",
+  "auto_apply": true,
+  "verification": "device",
   "sources": [
     {
       "title": "OxygenOS 11.1.2.2 for the OnePlus 6 and OnePlus 6T",
@@ -18,8 +18,56 @@
       "note": "Official OxygenOS 11.1.2.2 announcement. Package inventory collected read-only from the owner's OnePlus 6T: build ONEPLUS A6013_41_211125, fingerprint OnePlus/OnePlus6T/OnePlus6T:11/RKQ1.201217.002/2111252327:user/release-keys."
     }
   ],
-  "tested": [],
-  "disable": [],
+  "tested": [
+    {
+      "android": "11",
+      "build": "ONEPLUS A6013_41_211125",
+      "date": "2026-10-29",
+      "by": "owner device test"
+    }
+  ],
+  "disable": [
+    {
+      "package": "com.google.android.feedback",
+      "why": "Google feedback",
+      "breaks": "Nothing user-facing"
+    },
+    {
+      "package": "com.qualcomm.qti.qms.service.telemetry",
+      "why": "Qualcomm telemetry service",
+      "breaks": "Qualcomm telemetry"
+    },
+    {
+      "package": "com.qualcomm.qti.devicestatisticsservice",
+      "why": "Qualcomm device statistics",
+      "breaks": "Qualcomm telemetry"
+    },
+    {
+      "package": "net.oneplus.commonlogtool",
+      "why": "OnePlus common log tool",
+      "breaks": "Log capture"
+    },
+    {
+      "package": "com.oneplus.diagnosemanager",
+      "why": "OnePlus diagnostics",
+      "breaks": "Diagnostic logs"
+    },
+    {
+      "package": "com.oneplus.opbugreportlite",
+      "why": "OnePlus bug report",
+      "breaks": "Bug reporting"
+    },
+    {
+      "package": "com.google.android.partnersetup",
+      "why": "Google partner setup",
+      "breaks": "Some carrier/OEM provisioning"
+    },
+    {
+      "package": "com.google.android.onetimeinitializer",
+      "why": "Google one-time initializer",
+      "breaks": "One-time setup"
+    }
+  ],
   "ask": [
     {
       "package": "com.oneplus.gamespace",
@@ -92,11 +140,6 @@
       "breaks": "OnePlus push notifications"
     },
     {
-      "package": "net.oneplus.commonlogtool",
-      "why": "OnePlus common log tool",
-      "breaks": "Log capture"
-    },
-    {
       "package": "com.oneplus.filemanager",
       "why": "OnePlus File Manager",
       "breaks": "File manager"
@@ -122,16 +165,6 @@
       "breaks": "Backup and restore"
     },
     {
-      "package": "com.oneplus.opbugreportlite",
-      "why": "OnePlus bug report",
-      "breaks": "Bug reporting"
-    },
-    {
-      "package": "com.oneplus.diagnosemanager",
-      "why": "OnePlus diagnostics",
-      "breaks": "Diagnostic logs"
-    },
-    {
       "package": "com.oneplus.aod",
       "why": "OnePlus Always On Display",
       "breaks": "Always On Display"
@@ -145,16 +178,6 @@
       "package": "com.oneplus.calculator",
       "why": "OnePlus Calculator",
       "breaks": "Calculator app"
-    },
-    {
-      "package": "com.qualcomm.qti.qms.service.telemetry",
-      "why": "Qualcomm telemetry service",
-      "breaks": "Qualcomm telemetry"
-    },
-    {
-      "package": "com.qualcomm.qti.devicestatisticsservice",
-      "why": "Qualcomm device statistics",
-      "breaks": "Qualcomm telemetry"
     },
     {
       "package": "com.qualcomm.qti.qcolor",
@@ -237,11 +260,6 @@
       "breaks": "Screen-time reports and app timers"
     },
     {
-      "package": "com.google.android.feedback",
-      "why": "Google feedback",
-      "breaks": "Nothing user-facing"
-    },
-    {
       "package": "com.google.android.apps.turbo",
       "why": "Adaptive Battery / Device Health",
       "breaks": "Adaptive Battery and diagnostics"
@@ -270,16 +288,6 @@
       "package": "com.google.android.setupwizard",
       "why": "Google Setup Wizard",
       "breaks": "Setup/restore flows"
-    },
-    {
-      "package": "com.google.android.partnersetup",
-      "why": "Google partner setup",
-      "breaks": "Some carrier/OEM provisioning"
-    },
-    {
-      "package": "com.google.android.onetimeinitializer",
-      "why": "Google one-time initializer",
-      "breaks": "One-time setup"
     },
     {
       "package": "com.android.chrome",
@@ -557,5 +565,5 @@
       "why": "IFAA biometric service"
     }
   ],
-  "notes": "Documented from the owner's OnePlus 6T (ONEPLUS A6013) running OxygenOS 11.1.2.2 (Android 11, build ONEPLUS A6013_41_211125, security patch 2021-11-01). Not tested by disabling packages on the device, so no auto-apply. Only system packages are listed; the owner's user apps are intentionally excluded. Ask before every package."
+  "notes": "Tested on the owner's OnePlus 6T (ONEPLUS A6013) running OxygenOS 11.1.2.2, Android 11, build ONEPLUS A6013_41_211125. The owner disabled 23 packages in five batches, rebooted and passed all dialer/SMS/Home/keyboard/Play checks. Only the 8 low-risk telemetry/logging packages are promoted to 'disable'; the user-facing apps remain in 'ask' so another owner can decide. Auto-apply is limited to the tested build."
 }
