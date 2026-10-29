@@ -4,6 +4,18 @@ These scripts are for people adding or reviewing profiles. They are **not** used
 runtime and they are not imported by `tools/phone.py`. They may make network requests to read public
 firmware metadata.
 
+## `collect_device.ps1` (Windows, local PC)
+
+Use this on the PC that is physically connected to the phone, not on a remote shell.
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\collect_device.ps1
+```
+
+It downloads Platform-Tools to `%TEMP%` if needed, reads the model/build/fingerprint, package lists,
+roles, IME and user list, and writes a ZIP with no serial, IMEI or MAC. It never changes the phone.
+Run it locally when the phone is connected by USB and USB debugging is authorized.
+
 ## `dump_inventory.py`
 
 Builds a documented-profile draft from an Android Dumps repository.
