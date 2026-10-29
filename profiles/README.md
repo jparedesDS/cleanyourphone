@@ -16,6 +16,7 @@ profiles/
 ├── samsung/sm-s918b.json
 ├── samsung/sm-s938b.json
 ├── samsung/sm-a546e.json
+├── oneplus/README.md
 ├── oneplus/oneplus-cph2487.json
 ├── oneplus/oneplus-cph2719.json
 ├── xiaomi/hyperos.json
