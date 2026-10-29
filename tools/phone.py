@@ -274,11 +274,15 @@ def cmd_doctor(args: argparse.Namespace) -> int:
         profile_error = str(exc)
         loaded = profiles.load_profiles()
     exact = [p for p in loaded if not p.get("generic") and profiles.profile_matches(p, probe)]
-    matches = [p["id"] for p in exact]
-    auto = [p["id"] for p in exact if profiles.build_matches(p, probe)]
+    device_profiles = [p for p in exact if profiles.verification_level(p) == "device"]
+    documented = [p["id"] for p in exact if profiles.verification_level(p) == "documented"]
+    matches = [p["id"] for p in device_profiles]
+    auto = [p["id"] for p in device_profiles if profiles.build_matches(p, probe)]
     references = [p["id"] for p in loaded if p.get("generic") and profiles.profile_matches(p, probe)]
-    references += [p["id"] for p in exact if not profiles.build_matches(p, probe)]
+    references += [p["id"] for p in device_profiles if not profiles.build_matches(p, probe)]
     print(f"Profiles .... {', '.join(matches) if matches else 'none exact (classify manually)'}")
+    if documented:
+        print(f"Documented .. {', '.join(documented)} (ask per package; no auto-apply)")
     print(f"Auto-apply .. {', '.join(auto) if auto else 'none (use plan + disable)'}")
     if references:
         print(f"Reference ... {', '.join(sorted(set(references)))} (not auto-applicable)")
@@ -309,9 +313,11 @@ def cmd_doctor(args: argparse.Namespace) -> int:
     level = battery.get("level")
     if isinstance(level, int) and level < 30:
         warnings.append("Battery below 30%. Charge before the reboot.")
-    if not matches:
+    if not matches and not documented:
         warnings.append("No exact profile. Classify every package manually and ask before each one.")
-    elif not auto:
+    elif documented and not matches:
+        warnings.append("Only documented profiles match. Use `plan` and ask before every package; no auto-apply.")
+    elif matches and not auto:
         warnings.append("An exact profile exists but not for this build. Use `plan` and disable one by one.")
     if warnings:
         print("")
@@ -330,11 +336,13 @@ def cmd_probe(args: argparse.Namespace) -> int:
         profile_error = str(exc)
         loaded = profiles.load_profiles()
     exact = [p for p in loaded if not p.get("generic") and profiles.profile_matches(p, probe)]
+    device_profiles = [p for p in exact if profiles.verification_level(p) == "device"]
     probe["profile_error"] = profile_error
-    probe["profiles"] = [p["id"] for p in exact]
-    probe["auto_apply_profiles"] = [p["id"] for p in exact if profiles.build_matches(p, probe)]
+    probe["profiles"] = [p["id"] for p in device_profiles]
+    probe["documented_profiles"] = [p["id"] for p in exact if profiles.verification_level(p) == "documented"]
+    probe["auto_apply_profiles"] = [p["id"] for p in device_profiles if profiles.build_matches(p, probe)]
     reference = [p["id"] for p in loaded if p.get("generic") and profiles.profile_matches(p, probe)]
-    reference += [p["id"] for p in exact if not profiles.build_matches(p, probe)]
+    reference += [p["id"] for p in device_profiles if not profiles.build_matches(p, probe)]
     probe["reference_profiles"] = sorted(set(reference))
     if args.json:
         ui.print_json(probe)
@@ -353,6 +361,8 @@ def cmd_probe(args: argparse.Namespace) -> int:
     print(f"Telephony ... {'yes' if probe['telephony'] else 'no'}")
     print(f"Battery ..... {probe['battery'].get('level', '?')}%")
     print(f"Profiles .... {', '.join(probe['profiles']) if probe['profiles'] else 'none exact'}")
+    if probe["documented_profiles"]:
+        print(f"Documented .. {', '.join(probe['documented_profiles'])} (ask per package; no auto-apply)")
     print(
         "Auto-apply .. "
         + (", ".join(probe["auto_apply_profiles"]) if probe["auto_apply_profiles"] else "none (use plan + disable)")
@@ -532,12 +542,14 @@ def cmd_plan(args: argparse.Namespace) -> int:
     holders, ime = guard_roles(serial, probe)
     rows = profiles.classify(profile, enabled, disabled, holders, ime)
     auto = profiles.build_matches(profile, probe)
+    verification = profiles.verification_level(profile)
 
     if args.json:
         ui.print_json(
             {
                 "profile": {k: v for k, v in profile.items() if k != "_path"},
                 "match": matches,
+                "verification": verification,
                 "auto_apply": auto,
                 "rows": rows,
             }
@@ -548,11 +560,14 @@ def cmd_plan(args: argparse.Namespace) -> int:
     print(f"Phone:   {probe['brand']} {probe['model']} ({probe['device']}), Android {probe['android']}")
     if auto:
         auto_reason = "yes"
+    elif verification != "device":
+        auto_reason = "no - documented/reference profile (ask per package)"
     elif profile.get("auto_apply") is False:
-        auto_reason = "no - family/reference profile"
+        auto_reason = "no - family profile"
     else:
         auto_reason = "no - build not tested (use disable one by one after review)"
     print(f"Match:   {'yes' if matches else 'NO - this profile is for another model/firmware'}")
+    print(f"Verification: {verification}")
     print(f"Auto-apply: {auto_reason}")
     print("")
     for row in rows:
@@ -579,10 +594,15 @@ def cmd_apply(args: argparse.Namespace) -> int:
         ui.die("invalid profile:\n  " + "\n  ".join(errors))
     if profile.get("generic"):
         ui.die("a generic profile cannot be applied automatically. Use `plan` and `disable` after asking.")
+    if profiles.verification_level(profile) != "device":
+        ui.die(
+            "this is a documented/reference profile: it has no tested disable list and cannot be "
+            "applied automatically. Run `plan`, review every row, then use `disable` one package at a time."
+        )
     if profile.get("auto_apply") is False:
         ui.die(
-            "this is a family/reference profile and is not auto-applicable. Run `plan`, review every "
-            "row, then use `disable` one package at a time."
+            "this is a family profile and is not auto-applicable. Run `plan`, review every row, "
+            "then use `disable` one package at a time."
         )
     if args.batch_size < 1:
         ui.die("--batch-size must be at least 1")

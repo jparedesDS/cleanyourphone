@@ -160,19 +160,21 @@ Read [docs/SAFETY.md](docs/SAFETY.md) before your first run. The short version:
 
 ## Profiles
 
-A profile is a tested package list for one model and firmware. The skill uses it as a starting
-point, never as permission to apply it silently. `apply` only runs when the phone build is one the
-profile was tested on; after an OTA, use `plan` and disable one package at a time.
+A profile is either a package list tested on a real phone (`device`) or a list built from a primary
+firmware dump (`documented`). Documented profiles never auto-apply and have no `disable` list; use
+them to ask per package. `apply` only runs for a `device` profile on a build listed in `tested`.
 
-| Profile | Model | Android | Auto-apply |
+| Profile | Model | Android | Verification |
 |---|---|---|---|
-| [`google-pixel-8`](profiles/google/pixel-8.json) | Pixel 8 (shiba) | 14–16 | Tested Android 16 build |
-| [`samsung-sm-s918b`](profiles/samsung/sm-s918b.json) | Galaxy S23 Ultra (SM-S918B) | 13–16 | Tested Android 14 build |
-| [`xiaomi-hyperos`](profiles/xiaomi/hyperos.json) | Xiaomi/Redmi/POCO, HyperOS | 14–16 | No (family profile) |
-| [`generic-android`](profiles/generic/android.json) | Any Android 8+ | 8+ | No (reference) |
+| [`google-pixel-8`](profiles/google/pixel-8.json) | Pixel 8 (shiba) | 14–16 | device, tested Android 16 build |
+| [`samsung-sm-s918b`](profiles/samsung/sm-s918b.json) | Galaxy S23 Ultra (SM-S918B) | 13–16 | device, tested Android 14 build |
+| [`samsung-sm-s938b`](profiles/samsung/sm-s938b.json) | Galaxy S25 Ultra (SM-S938B) | 16 | documented, ask only |
+| [`samsung-sm-a546e`](profiles/samsung/sm-a546e.json) | Galaxy A54 5G (SM-A546E) | 13 | documented, ask only |
+| [`xiaomi-hyperos`](profiles/xiaomi/hyperos.json) | Xiaomi/Redmi/POCO, HyperOS | 14–16 | device, family profile, no auto-apply |
+| [`generic-android`](profiles/generic/android.json) | Any Android 8+ | 8+ | reference, no auto-apply |
 
-Want to add yours? Read [profiles/README.md](profiles/README.md). A profile needs a real test, the
-build fingerprint, the packages you disabled, and what broke.
+Want to add yours? Read [profiles/README.md](profiles/README.md). A `device` profile needs a real
+test; a `documented` profile needs a primary firmware dump and at least one source URL.
 
 ## The open-source OS question
 
@@ -222,8 +224,10 @@ stdlib-only and has no dependencies.
 
 ## Contributing
 
-- A tested profile for a new model: open a PR with `profiles/<brand>/<model>.json` and the test
-  details.
+- A tested (`device`) profile for a new model: open a PR with `profiles/<brand>/<model>.json` and
+  the test details.
+- A `documented` profile: use `scripts/dump_inventory.py`, cite the primary dump in `sources`, and
+  keep `disable` empty.
 - A guard, parser or CLI fix: add a test in `tests/`.
 - A safety rule change: open an issue first. Those rules are the product.
 - Read [AGENTS.md](AGENTS.md) before changing the repo.

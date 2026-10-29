@@ -239,11 +239,13 @@ def cmd_profiles(args: argparse.Namespace) -> int:
             profile.get("brand", ""),
             profile.get("marketing_name") or profile.get("model", ""),
             ", ".join(profile.get("android", [])),
+            profiles.verification_level(profile),
             len(profile.get("tested", [])),
+            len(profile.get("sources", [])),
         ]
         for profile in loaded
     ]
-    ui.print_table(["ID", "BRAND", "MODEL", "ANDROID", "TESTS"], rows)
+    ui.print_table(["ID", "BRAND", "MODEL", "ANDROID", "VERIFIED", "TESTS", "SOURCES"], rows)
     return 0
 
 

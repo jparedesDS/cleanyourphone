@@ -7,6 +7,7 @@
   "android": ["14", "15", "16"],
   "fingerprint_regex": "^google/shiba/",
   "auto_apply": true,
+  "verification": "device",
   "tested": [
     {
       "android": "16",

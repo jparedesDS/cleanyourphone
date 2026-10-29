@@ -138,15 +138,22 @@ python tools/phone.py roles
 python tools/phone.py plan --profile <profile-id>
 ```
 
-If a profile matches the model, use it as a starting point, **not** as permission to apply it
-silently. The profile separates:
+If a profile matches the model, check its `verification` level first:
 
-- `disable`: tested on that model/firmware, low risk.
+- `device`: tested on that model and build. It may have a `disable` list and may be auto-applied only
+  when the current build is in `tested`.
+- `documented`: built from a firmware dump, not tested on a phone. It has **no** `disable` list and
+  must never be auto-applied. Every row is `ask` or `keep`; explain the source and ask per package.
+- `reference`: generic guidance only. It has no `disable` list and cannot be auto-applied.
+
+The profile separates:
+
+- `disable`: tested on that model/firmware, low risk. Only `device` profiles.
 - `ask`: user-facing or dependency-heavy; ask first.
 - `never`: protected for that model.
 
-If there is no exact profile, classify manually. For every package, find out what it is before you
-touch it:
+If there is no exact profile, or the only match is `documented`, classify manually. For every package,
+find out what it is before you touch it:
 
 ```bash
 adb shell dumpsys package <package> | grep -E "versionName|installerPackageName|firstInstallTime|lastUpdateTime|enabled="
@@ -165,8 +172,9 @@ Present a table like this and wait for approval:
 | `com.google.android.apps.wellbeing` | Digital Wellbeing | Screen-time telemetry | Screen-time reports | ask |
 | `com.google.android.gms` | Play Services | Push, banking, backups | Almost everything | never |
 
-Only the `disable` rows can be applied after the person approves the plan. `ask` rows need an
-explicit yes per row (or a checklist). `never` rows are not negotiable.
+Only the `disable` rows of a `device` profile can be applied after the person approves the plan.
+`ask` rows need an explicit yes per row (or a checklist). `never` rows are not negotiable. A
+`documented` profile has no `disable` rows: use it to ask, never to batch-apply.
 
 ### Triage guide
 

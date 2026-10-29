@@ -99,6 +99,16 @@ A stock launcher can be more than the HOME app: Pixel Launcher and Samsung One U
 the Recents screen when a third-party launcher is set. The role check allows disabling a launcher
 that is not the current HOME, but do not do it without warning the person that Recents may break.
 
+## Documented profiles
+
+A `documented` profile is built from a firmware dump, not from a test on a physical phone. It has no
+`disable` list, no `tested` entries and `auto_apply: false`. The CLI can only use it for `plan` and
+manual `disable` after the person approves each package. Do not treat a documented profile as
+permission to batch-disable; the package names are evidence, not a safety test.
+
+A `device` profile is the only one that can contain a `disable` list or be auto-applied, and only on
+a build listed in its `tested` block.
+
 ## Backup
 
 `python tools/phone.py backup` writes a timestamped folder under `backup/` with:

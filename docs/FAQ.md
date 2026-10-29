@@ -114,10 +114,18 @@ The license is MIT, so you can. But you are responsible for the backup, the plan
 consent. Do not run it on a phone you do not own without explicit permission, and do not run it on a
 managed device.
 
+### What is a documented profile?
+
+A profile built from a primary firmware dump, not from a physical test. It has no `disable` list and
+never auto-applies; the agent uses it to ask about each package with evidence. It is marked
+`verification: "documented"` and lists its sources. A `device` profile is the only one that can
+auto-apply.
+
 ### Can I contribute a profile?
 
-Yes. Read `profiles/README.md`. A profile needs a real test, the build fingerprint, the packages you
-disabled, and what broke. Run `python tools/phone.py validate` before opening a PR.
+Yes. Read `profiles/README.md`. A `device` profile needs a real test, the build fingerprint, the
+packages you disabled, and what broke. A `documented` profile needs a primary dump and sources. Run
+`python tools/phone.py validate` before opening a PR.
 
 ### Does it work on iPhone?
 

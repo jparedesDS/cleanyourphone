@@ -6,6 +6,7 @@
   "android": ["14", "15", "16"],
   "fingerprint_regex": "(?i)^(xiaomi|redmi|poco)/",
   "auto_apply": false,
+  "verification": "device",
   "tested": [
     {
       "android": "15",

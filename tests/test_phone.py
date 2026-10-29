@@ -1,5 +1,6 @@
 import contextlib
 import io
+import json
 import subprocess
 import sys
 import tempfile
@@ -228,6 +229,24 @@ class ProfileTests(unittest.TestCase):
             )
         )
 
+    def test_build_matches_rejects_documented(self):
+        profile = {
+            "verification": "documented",
+            "auto_apply": False,
+            "tested": [{"android": "16", "build": "BP2A.250705.008", "date": "x", "by": "x"}],
+        }
+        self.assertFalse(
+            profiles.build_matches(
+                profile,
+                {"build": "BP2A.250705.008", "fingerprint": "google/shiba:16/BP2A.250705.008/x"},
+            )
+        )
+
+    def test_verification_inference(self):
+        self.assertEqual(profiles.verification_level({"generic": True}), "reference")
+        self.assertEqual(profiles.verification_level({"tested": [{"build": "x"}]}), "device")
+        self.assertEqual(profiles.verification_level({}), "documented")
+
     def test_build_matches_needs_fingerprint(self):
         profile = {"tested": [{"android": "16", "build": "BP2A.250705.008", "date": "x", "by": "x"}]}
         self.assertFalse(profiles.build_matches(profile, {"build": "BP2A.250705.008", "fingerprint": ""}))
@@ -341,6 +360,7 @@ class ValidationTests(unittest.TestCase):
             "model": "TEST-1",
             "android": ["15"],
             "fingerprint_regex": "^test/test/",
+            "verification": "device",
             "tested": [{"android": "15", "build": "BUILD", "date": "2026-10-29", "by": "test"}],
             "disable": [{"package": "com.example.bloat", "why": "test", "breaks": "nothing"}],
             "ask": [{"package": "com.example.ask", "why": "test", "breaks": "something"}],
@@ -348,8 +368,82 @@ class ValidationTests(unittest.TestCase):
             "notes": "test profile",
         }
 
+    def documented_profile(self):
+        profile = self.base_profile()
+        profile["verification"] = "documented"
+        profile["auto_apply"] = False
+        profile["tested"] = []
+        profile["disable"] = []
+        profile["sources"] = [
+            {
+                "title": "Firmware dump",
+                "url": "https://gitlab.com/Android-Dumps/samsung/pa3q",
+                "retrieved": "2026-10-29",
+                "note": "test",
+            }
+        ]
+        return profile
+
     def test_valid_profile(self):
         self.assertEqual(profiles.validate_profile(self.base_profile()), [])
+
+    def test_documented_profile_is_valid(self):
+        self.assertEqual(profiles.validate_profile(self.documented_profile()), [])
+
+    def test_documented_requires_sources(self):
+        profile = self.documented_profile()
+        profile["sources"] = []
+        errors = profiles.validate_profile(profile)
+        self.assertTrue(any("primary source" in error for error in errors))
+
+    def test_documented_forbids_disable(self):
+        profile = self.documented_profile()
+        profile["disable"] = [{"package": "com.example.bloat", "why": "test", "breaks": "nothing"}]
+        errors = profiles.validate_profile(profile)
+        self.assertTrue(any("must not have a 'disable' list" in error for error in errors))
+
+    def test_documented_forbids_tested(self):
+        profile = self.documented_profile()
+        profile["tested"] = [{"android": "16", "build": "B", "date": "2026-10-29", "by": "x"}]
+        errors = profiles.validate_profile(profile)
+        self.assertTrue(any("must not claim tested entries" in error for error in errors))
+
+    def test_documented_forbids_auto_apply(self):
+        profile = self.documented_profile()
+        profile["auto_apply"] = True
+        errors = profiles.validate_profile(profile)
+        self.assertTrue(any("must set auto_apply: false" in error for error in errors))
+
+    def test_documented_forbids_generic(self):
+        profile = self.documented_profile()
+        profile["generic"] = True
+        errors = profiles.validate_profile(profile)
+        self.assertTrue(any("generic profile must use verification 'reference'" in error for error in errors))
+
+    def test_reference_requires_generic(self):
+        profile = self.base_profile()
+        profile["verification"] = "reference"
+        errors = profiles.validate_profile(profile)
+        self.assertTrue(any("requires generic: true" in error for error in errors))
+
+    def test_device_requires_tested(self):
+        profile = self.base_profile()
+        profile["verification"] = "device"
+        profile["tested"] = []
+        errors = profiles.validate_profile(profile)
+        self.assertTrue(any("needs at least one real test" in error for error in errors))
+
+    def test_source_url_must_be_http(self):
+        profile = self.documented_profile()
+        profile["sources"][0]["url"] = "file:///tmp/dump"
+        errors = profiles.validate_profile(profile)
+        self.assertTrue(any("url must start with http" in error for error in errors))
+
+    def test_bad_verification_value(self):
+        profile = self.base_profile()
+        profile["verification"] = "maybe"
+        errors = profiles.validate_profile(profile)
+        self.assertTrue(any("verification must be one of" in error for error in errors))
 
     def test_missing_field(self):
         profile = self.base_profile()
@@ -372,12 +466,18 @@ class ValidationTests(unittest.TestCase):
     def test_generic_cannot_disable(self):
         profile = self.base_profile()
         profile["generic"] = True
+        profile["verification"] = "reference"
+        profile["tested"] = []
+        profile["auto_apply"] = False
         errors = profiles.validate_profile(profile)
         self.assertTrue(any("generic profile" in error for error in errors))
 
     def test_generic_needs_star_model(self):
         profile = self.base_profile()
         profile["generic"] = True
+        profile["verification"] = "reference"
+        profile["tested"] = []
+        profile["auto_apply"] = False
         profile["disable"] = []
         errors = profiles.validate_profile(profile)
         self.assertTrue(any("model '*'" in error for error in errors))
@@ -628,6 +728,74 @@ class ChangeTests(unittest.TestCase):
             with contextlib.redirect_stderr(io.StringIO()):
                 with self.assertRaises(SystemExit):
                     phone.guard_writable("SERIAL")
+
+    def test_plan_marks_documented_rows_as_ask(self):
+        profile = {
+            "id": "test-documented",
+            "brand": "Test",
+            "model": "TEST-1",
+            "android": ["16"],
+            "fingerprint_regex": "^test/",
+            "auto_apply": False,
+            "verification": "documented",
+            "sources": [
+                {"title": "dump", "url": "https://example.com/dump", "retrieved": "2026-10-29"}
+            ],
+            "tested": [],
+            "disable": [],
+            "ask": [{"package": "com.example.ask", "why": "test", "breaks": "something"}],
+            "never": [],
+            "notes": "test",
+        }
+        probe = {
+            "brand": "Test",
+            "model": "TEST-1",
+            "device": "test",
+            "android": "16",
+            "fingerprint": "test/test/test:16/BUILD/x",
+        }
+        args = SimpleNamespace(profile="test-documented", json=True, dry_run=False, serial=None)
+        output = io.StringIO()
+        with mock.patch.object(phone.profiles, "load_profile", return_value=profile):
+            with mock.patch.object(phone.adb, "pick_serial", return_value="SERIAL"):
+                with mock.patch.object(phone.adb, "probe_device", return_value=probe):
+                    with mock.patch.object(
+                        phone.adb, "package_set", side_effect=[{"com.example.ask"}, set()]
+                    ):
+                        with mock.patch.object(
+                            phone, "guard_roles", return_value=({"HOME": ["com.example.home"]}, "com.example.ime")
+                        ):
+                            with contextlib.redirect_stdout(output):
+                                code = phone.cmd_plan(args)
+        data = json.loads(output.getvalue())
+        self.assertEqual(code, 0)
+        self.assertEqual(data["verification"], "documented")
+        self.assertFalse(data["auto_apply"])
+        self.assertEqual(data["rows"][0]["action"], "ASK")
+
+    def test_apply_refuses_documented_profile(self):
+        profile = {
+            "id": "test-documented",
+            "brand": "Test",
+            "model": "TEST-1",
+            "android": ["16"],
+            "fingerprint_regex": "^test/",
+            "auto_apply": False,
+            "verification": "documented",
+            "sources": [
+                {"title": "dump", "url": "https://example.com/dump", "retrieved": "2026-10-29"}
+            ],
+            "tested": [],
+            "disable": [],
+            "ask": [{"package": "com.example.ask", "why": "test", "breaks": "something"}],
+            "never": [],
+            "notes": "test",
+        }
+        args = SimpleNamespace(profile="test-documented", batch_size=5, yes=False, serial=None)
+        with mock.patch.object(phone.profiles, "load_profile", return_value=profile):
+            with contextlib.redirect_stderr(io.StringIO()):
+                with self.assertRaises(SystemExit):
+                    phone.cmd_apply(args)
 
     def test_restore_keeps_record_when_final_check_fails(self):
         adb.save_applied("SERIAL", {"packages": {"com.example.bloat": {"why": "test"}}})

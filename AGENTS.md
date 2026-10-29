@@ -23,9 +23,10 @@ longer without making it safer or clearer is probably a bad change.
 | `README.md`, `README.es.md` | Front page and Spanish translation. |
 | `tools/phone.py` | Cross-platform ADB CLI: `doctor`, `probe`, `backup`, `list`, `roles`, `plan`, `apply`, `disable`, `enable`, `restore`, `verify`, `battery`, `dns`, `report`, `profiles`, `protected`, `validate`. Stdlib only. |
 | `tools/protected.py` | The packages that must never be disabled, with a reason for each. Imported by the CLI and the tests. |
-| `profiles/` | One JSON file per tested model/firmware. `disable`, `ask`, `never`. |
+| `profiles/` | One JSON file per model/firmware. `verification`, `sources`, `disable`, `ask`, `never`. |
+| `scripts/` | Maintainer tools only. `dump_inventory.py` builds documented-profile drafts from Android Dumps. Not used at runtime. |
 | `docs/` | `SAFETY.md`, `RESTORE.md`, `BATTERY.md`, `ROMS.md`, `FAQ.md`, `TROUBLESHOOTING.md`. |
-| `tests/` | Python `unittest` suite for the pure logic: protected list, role conflicts, profile matching, command building. |
+| `tests/` | Python `unittest` suite for the pure logic: protected list, role conflicts, profile matching, verification rules, command building. |
 | `backup/` | Created at runtime. Never commit it. It contains the person's package list and settings. |
 
 ## Hard rules
@@ -54,19 +55,26 @@ Never do these in a PR or in a profile:
 
 ## Profiles
 
-A profile is a claim that a package list was tested on a real model and firmware. Do not invent one.
+A `device` profile is a claim that a package list was tested on a real model and firmware. Do not
+invent one. A `documented` profile is a package list built from a primary firmware dump; it is not a
+test claim.
 
 Required fields: `id`, `brand`, `model`, `android`, `fingerprint_regex`, `tested`, `disable`, `ask`,
-`never`, `notes`. See `profiles/README.md` and `profiles/schema.json`.
+`never`, `notes`, plus `verification`. See `profiles/README.md` and `profiles/schema.json`.
 
-- `disable` entries must say **why** and **what breaks**.
+- `verification` is `device`, `documented` or `reference`.
+- `disable` entries must say **why** and **what breaks**; only `device` profiles may have them.
 - `ask` entries are the default for anything user-facing or dependency-heavy.
 - `never` entries are per-model additions to the global protected list, not replacements.
 - A profile that disables a role holder is invalid.
 - If a package is region- or carrier-specific, say so in `notes`; do not put it in `disable`.
 - A profile is versioned by fingerprint, not by marketing name. An OTA can change package names.
-- Auto-apply requires the phone build to appear in `tested`. On any other build, use `plan` and
-  `disable` one package at a time. `auto_apply: false` marks a family/reference profile.
+- Auto-apply requires `verification: device` and the phone build to appear in `tested`. On any other
+  build, use `plan` and `disable` one package at a time. `auto_apply: false` marks a family profile.
+- A `documented` profile must have `tested: []`, `disable: []`, `auto_apply: false`, a non-empty
+  `ask` list and at least one primary `source`. Every `ask` package must appear in the dump.
+- `reference` is reserved for the generic profile: `generic: true`, no `disable`, no `tested`.
+- Use `scripts/dump_inventory.py` to build a draft; curate every `why`/`breaks` by hand.
 
 ## Tests
 
@@ -84,6 +92,7 @@ python tools/phone.py --help
 python tools/phone.py protected
 python tools/phone.py profiles
 python tools/phone.py validate
+python scripts/dump_inventory.py --help
 ```
 
 `plan`, `doctor`, `probe` and everything that changes the phone need a connected device. They must

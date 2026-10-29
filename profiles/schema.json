@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "CleanYourPhone profile",
   "type": "object",
-  "required": ["id", "brand", "model", "android", "fingerprint_regex", "tested", "disable", "ask", "never", "notes"],
+  "required": ["id", "brand", "model", "android", "fingerprint_regex", "verification", "tested", "disable", "ask", "never", "notes"],
   "additionalProperties": true,
   "properties": {
     "id": {
@@ -21,9 +21,27 @@
     "fingerprint_regex": {"type": "string"},
     "generic": {"type": "boolean"},
     "auto_apply": {"type": "boolean", "default": true},
+    "verification": {
+      "type": "string",
+      "enum": ["device", "documented", "reference"],
+      "default": "device"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["title", "url", "retrieved"],
+        "properties": {
+          "title": {"type": "string", "minLength": 1},
+          "url": {"type": "string", "pattern": "^https?://"},
+          "retrieved": {"type": "string", "minLength": 1},
+          "note": {"type": "string"}
+        }
+      }
+    },
     "tested": {
       "type": "array",
-      "minItems": 1,
+      "minItems": 0,
       "items": {
         "type": "object",
         "required": ["android", "build", "date", "by"],

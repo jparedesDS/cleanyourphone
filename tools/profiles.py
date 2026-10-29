@@ -16,8 +16,21 @@ except ImportError:  # run from tools/
 ROOT = Path(__file__).resolve().parent.parent
 PROFILES_DIR = ROOT / "profiles"
 
-REQUIRED = ["id", "brand", "model", "android", "fingerprint_regex", "tested", "disable", "ask", "never", "notes"]
+REQUIRED = [
+    "id",
+    "brand",
+    "model",
+    "android",
+    "fingerprint_regex",
+    "verification",
+    "tested",
+    "disable",
+    "ask",
+    "never",
+    "notes",
+]
 ROLE_NAMES = ("DIALER", "SMS", "HOME", "EMERGENCY")
+VERIFICATION_LEVELS = ("device", "documented", "reference")
 
 
 def load_profiles(strict: bool = False) -> List[Dict[str, Any]]:
@@ -64,6 +77,18 @@ def load_profile(ref: str) -> Dict[str, Any]:
             return profile
     available = ", ".join(sorted(p.get("id", "?") for p in load_profiles())) or "(none)"
     raise KeyError(f"profile not found: {ref}. Available: {available}")
+
+
+def verification_level(profile: Dict[str, Any]) -> str:
+    """Return the declared level, or the backward-compatible inferred level."""
+    declared = str(profile.get("verification", "")).strip().lower()
+    if declared in VERIFICATION_LEVELS:
+        return declared
+    if profile.get("generic") is True:
+        return "reference"
+    if profile.get("tested"):
+        return "device"
+    return "documented"
 
 
 def profile_matches(profile: Dict[str, Any], probe: Dict[str, Any]) -> bool:
@@ -126,6 +151,8 @@ def build_matches(profile: Dict[str, Any], probe: Dict[str, Any]) -> bool:
     build even when the model and Android version still look right; the person can use `plan`
     and disable packages one at a time after reviewing the diff.
     """
+    if verification_level(profile) != "device":
+        return False
     if profile.get("auto_apply") is False:
         return False
     builds = {
@@ -258,13 +285,52 @@ def validate_profile(profile: Dict[str, Any], path: Optional[Path] = None) -> Li
     elif profile.get("generic") is not True:
         errors.append(f"{label}: fingerprint_regex is empty; pin the firmware family")
 
+    declared_verification = str(profile.get("verification", "")).strip().lower()
+    if declared_verification and declared_verification not in VERIFICATION_LEVELS:
+        errors.append(
+            f"{label}: verification must be one of {', '.join(VERIFICATION_LEVELS)}, got '{declared_verification}'"
+        )
+    verification = verification_level(profile)
+
     if "auto_apply" in profile and not isinstance(profile.get("auto_apply"), bool):
         errors.append(f"{label}: auto_apply must be true or false")
+    if verification in ("documented", "reference") and profile.get("auto_apply") is not False:
+        errors.append(f"{label}: {verification} profiles must set auto_apply: false")
+    if verification == "reference" and profile.get("generic") is not True:
+        errors.append(f"{label}: verification 'reference' requires generic: true")
+    if verification == "documented" and profile.get("generic") is True:
+        errors.append(f"{label}: a generic profile must use verification 'reference'")
+    if verification == "device" and profile.get("generic") is True:
+        errors.append(f"{label}: a generic profile cannot be verification 'device'")
+
+    sources = profile.get("sources", [])
+    if not isinstance(sources, list):
+        errors.append(f"{label}: sources must be a list")
+        sources = []
+    for index, source in enumerate(sources):
+        where = f"{label}: sources[{index}]"
+        if not isinstance(source, dict):
+            errors.append(f"{where}: must be an object with title, url and retrieved")
+            continue
+        for key in ("title", "url", "retrieved"):
+            if not str(source.get(key, "")).strip():
+                errors.append(f"{where}: {key} is empty")
+        url = str(source.get("url", "")).strip()
+        if url and not re.match(r"^https?://", url):
+            errors.append(f"{where}: url must start with http:// or https://")
+        retrieved = str(source.get("retrieved", "")).strip()
+        if retrieved and not re.match(r"^\d{4}-\d{2}-\d{2}$", retrieved):
+            errors.append(f"{where}: retrieved must be YYYY-MM-DD")
+    if verification == "documented" and not sources:
+        errors.append(f"{label}: a documented profile needs at least one primary source")
 
     tested = profile.get("tested")
-    if not isinstance(tested, list) or not tested:
-        errors.append(f"{label}: tested must be a non-empty list (a real device test)")
-    else:
+    if not isinstance(tested, list):
+        errors.append(f"{label}: tested must be a list")
+        tested = []
+    if verification == "device":
+        if not tested:
+            errors.append(f"{label}: a device profile needs at least one real test")
         for index, entry in enumerate(tested):
             where = f"{label}: tested[{index}]"
             if not isinstance(entry, dict):
@@ -273,12 +339,16 @@ def validate_profile(profile: Dict[str, Any], path: Optional[Path] = None) -> Li
             for key in ("android", "build", "date", "by"):
                 if not str(entry.get(key, "")).strip():
                     errors.append(f"{where}: {key} is empty")
+    elif tested:
+        errors.append(f"{label}: {verification} profiles must not claim tested entries")
 
     if not str(profile.get("notes", "")).strip():
         errors.append(f"{label}: notes is empty; say what is specific to this model")
 
-    if profile.get("generic") is True and profile.get("disable"):
-        errors.append(f"{label}: a generic profile must not have a 'disable' list")
+    if verification in ("documented", "reference") and profile.get("disable"):
+        errors.append(f"{label}: a generic/reference or documented profile must not have a 'disable' list")
+    if verification == "documented" and not profile.get("ask"):
+        errors.append(f"{label}: a documented profile needs a non-empty 'ask' list")
 
     seen = set()
     for section in ("disable", "ask", "never"):
@@ -316,6 +386,8 @@ def summary(profile: Dict[str, Any]) -> Dict[str, str]:
         "model": str(profile.get("model", "")),
         "marketing_name": str(profile.get("marketing_name", "")),
         "android": ", ".join(profile.get("android", [])),
+        "verification": verification_level(profile),
+        "sources": str(len(profile.get("sources", []))),
         "tested": str(len(profile.get("tested", []))),
         "disable": str(len(profile.get("disable", []))),
         "ask": str(len(profile.get("ask", []))),

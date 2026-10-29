@@ -7,14 +7,8 @@
   "fingerprint_regex": "",
   "generic": true,
   "auto_apply": false,
-  "tested": [
-    {
-      "android": "8-16",
-      "build": "reference only",
-      "date": "2026-10-29",
-      "by": "maintainers"
-    }
-  ],
+  "verification": "reference",
+  "tested": [],
   "disable": [],
   "ask": [
     {

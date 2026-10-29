@@ -160,19 +160,22 @@ Lee [docs/SAFETY.md](docs/SAFETY.md) antes de la primera ejecución. Resumen:
 
 ## Perfiles
 
-Un perfil es una lista de paquetes probada en un modelo y firmware concretos. La skill lo usa como
-punto de partida, nunca como permiso para aplicarlo en silencio. `apply` solo se ejecuta cuando el
-build del móvil está en la lista de builds probados; tras una OTA, usa `plan` y desactiva de uno en uno.
+Un perfil es una lista probada en un móvil real (`device`) o una lista construida desde un dump de
+firmware primario (`documented`). Los perfiles documentados nunca se auto-aplican y no tienen lista
+`disable`: sirven para preguntar paquete a paquete. `apply` solo se ejecuta para un perfil `device`
+en un build incluido en `tested`.
 
-| Perfil | Modelo | Android | Auto-apply |
+| Perfil | Modelo | Android | Verificación |
 |---|---|---|---|
-| [`google-pixel-8`](profiles/google/pixel-8.json) | Pixel 8 (shiba) | 14–16 | Build Android 16 probado |
-| [`samsung-sm-s918b`](profiles/samsung/sm-s918b.json) | Galaxy S23 Ultra (SM-S918B) | 13–16 | Build Android 14 probado |
-| [`xiaomi-hyperos`](profiles/xiaomi/hyperos.json) | Xiaomi/Redmi/POCO, HyperOS | 14–16 | No (perfil de familia) |
-| [`generic-android`](profiles/generic/android.json) | Cualquier Android 8+ | 8+ | No (referencia) |
+| [`google-pixel-8`](profiles/google/pixel-8.json) | Pixel 8 (shiba) | 14–16 | device, build Android 16 probado |
+| [`samsung-sm-s918b`](profiles/samsung/sm-s918b.json) | Galaxy S23 Ultra (SM-S918B) | 13–16 | device, build Android 14 probado |
+| [`samsung-sm-s938b`](profiles/samsung/sm-s938b.json) | Galaxy S25 Ultra (SM-S938B) | 16 | documented, solo preguntar |
+| [`samsung-sm-a546e`](profiles/samsung/sm-a546e.json) | Galaxy A54 5G (SM-A546E) | 13 | documented, solo preguntar |
+| [`xiaomi-hyperos`](profiles/xiaomi/hyperos.json) | Xiaomi/Redmi/POCO, HyperOS | 14–16 | device, perfil de familia, sin auto-apply |
+| [`generic-android`](profiles/generic/android.json) | Cualquier Android 8+ | 8+ | reference, sin auto-apply |
 
-¿Quieres añadir el tuyo? Lee [profiles/README.md](profiles/README.md). Un perfil necesita una prueba
-real, el fingerprint del build, los paquetes desactivados y qué se rompió.
+¿Quieres añadir el tuyo? Lee [profiles/README.md](profiles/README.md). Un perfil `device` necesita
+una prueba real; uno `documented` necesita un dump de firmware primario y al menos una fuente.
 
 ## La pregunta del OS open source
 
@@ -222,8 +225,10 @@ la librería estándar y no tiene dependencias.
 
 ## Contribuir
 
-- Un perfil probado de un modelo nuevo: PR con `profiles/<marca>/<modelo>.json` y los detalles de la
-  prueba.
+- Un perfil probado (`device`) de un modelo nuevo: PR con `profiles/<marca>/<modelo>.json` y los
+  detalles de la prueba.
+- Un perfil `documented`: usa `scripts/dump_inventory.py`, cita el dump primario en `sources` y deja
+  `disable` vacío.
 - Un guard, parser o arreglo del CLI: añade un test en `tests/`.
 - Un cambio de regla de seguridad: abre un issue primero. Esas reglas son el producto.
 - Lee [AGENTS.md](AGENTS.md) antes de cambiar el repo.
