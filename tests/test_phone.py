@@ -670,6 +670,30 @@ class DeviceTests(unittest.TestCase):
         self.assertTrue(supported)
         self.assertEqual(holders["DIALER"], [])
 
+    def test_resolve_activity_package(self):
+        out = (
+            "priority=0 preferredOrder=0 match=0x108000 specificIndex=-1 isDefault=true\n"
+            "com.oneplus.dialer/com.android.dialer.oneplus.activity.OPDialtactsActivity\n"
+        )
+        with mock.patch.object(adb, "_shell_or_empty", return_value=out):
+            self.assertEqual(adb.resolve_activity_package("SERIAL", "android.intent.action.DIAL"), "com.oneplus.dialer")
+
+    def test_role_fallback_uses_resolve_activity(self):
+        unknown = subprocess.CompletedProcess(args=[], returncode=0, stdout="Unknown command: get-role-holders", stderr="")
+        with mock.patch.object(adb, "adb_run", return_value=unknown):
+            with mock.patch.object(adb, "_shell_or_empty", return_value="null"):
+                with mock.patch.object(
+                    adb,
+                    "resolve_activity_package",
+                    side_effect=["com.oneplus.dialer", "com.oneplus.mms"],
+                ):
+                    with mock.patch.object(adb, "default_home_package", return_value="net.oneplus.launcher"):
+                        holders, supported = adb.role_holders("SERIAL")
+        self.assertFalse(supported)
+        self.assertEqual(holders["DIALER"], ["com.oneplus.dialer"])
+        self.assertEqual(holders["SMS"], ["com.oneplus.mms"])
+        self.assertEqual(holders["HOME"], ["net.oneplus.launcher"])
+
     def test_missing_cmd_role_falls_back(self):
         result = subprocess.CompletedProcess(
             args=[], returncode=0, stdout="/system/bin/sh: cmd: not found", stderr=""

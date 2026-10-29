@@ -336,6 +336,27 @@ def _cmd_role_missing(text: str) -> bool:
     )
 
 
+def resolve_activity_package(
+    serial: str,
+    action: str,
+    category: str = "android.intent.category.DEFAULT",
+    data: str = "",
+) -> Optional[str]:
+    """Resolve the default package for an intent, using `cmd package resolve-activity`."""
+    command = f"cmd package resolve-activity --brief -a {action} -c {category}"
+    if data:
+        command += f" -d {data}"
+    out = _shell_or_empty(command, serial)
+    for line in reversed(out.splitlines()):
+        line = line.strip()
+        if "/" not in line or line.startswith("priority="):
+            continue
+        package = line.split("/")[0].strip()
+        if valid_package(package):
+            return package
+    return None
+
+
 def role_holders(serial: str) -> Tuple[Dict[str, List[str]], bool]:
     """Return role -> package list and whether `cmd role` worked (Android 10+).
 
@@ -374,9 +395,13 @@ def role_holders(serial: str) -> Tuple[Dict[str, List[str]], bool]:
     if not supported:
         holders = {}
         dialer = _shell_or_empty("settings get secure dialer_default_application", serial).strip()
+        if not dialer or dialer == "null":
+            dialer = resolve_activity_package(serial, "android.intent.action.DIAL") or ""
         if dialer and dialer != "null":
             holders["DIALER"] = [dialer]
         sms = _shell_or_empty("settings get secure sms_default_application", serial).strip()
+        if not sms or sms == "null":
+            sms = resolve_activity_package(serial, "android.intent.action.SENDTO", data="sms:") or ""
         if sms and sms != "null":
             holders["SMS"] = [sms]
         home = default_home_package(serial)
