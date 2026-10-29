@@ -1,0 +1,148 @@
+{
+  "id": "samsung-sm-s918b",
+  "brand": "Samsung",
+  "model": "SM-S918B",
+  "marketing_name": "Galaxy S23 Ultra",
+  "codename": "dm3q",
+  "android": ["13", "14", "15", "16"],
+  "fingerprint_regex": "^samsung/dm3q",
+  "auto_apply": true,
+  "tested": [
+    {
+      "android": "14",
+      "build": "UP1A.231005.007",
+      "date": "2026-10-21",
+      "by": "community"
+    }
+  ],
+  "disable": [
+    {
+      "package": "com.samsung.android.app.spage",
+      "why": "Samsung Free: the main ad and recommendation surface on One UI",
+      "breaks": "Samsung Free (news, games, promotions)"
+    },
+    {
+      "package": "com.samsung.android.app.tips",
+      "why": "Samsung Tips preload",
+      "breaks": "Tips app"
+    }
+  ],
+  "ask": [
+    {
+      "package": "com.samsung.android.bixby.agent",
+      "why": "Bixby voice assistant",
+      "breaks": "Bixby voice and its side key action"
+    },
+    {
+      "package": "com.samsung.android.bixby.wakeup",
+      "why": "Bixby wake-up service",
+      "breaks": "Always-on Bixby wake word"
+    },
+    {
+      "package": "com.samsung.android.game.gamehome",
+      "why": "Game Launcher",
+      "breaks": "Game Launcher and game tools"
+    },
+    {
+      "package": "com.samsung.android.mdx",
+      "why": "Link to Windows",
+      "breaks": "Phone Link / Link to Windows"
+    },
+    {
+      "package": "com.samsung.android.scloud",
+      "why": "Samsung Cloud backup and sync",
+      "breaks": "Samsung Cloud backup/restore"
+    },
+    {
+      "package": "com.samsung.android.app.notes",
+      "why": "Samsung Notes",
+      "breaks": "Samsung Notes and its sync"
+    },
+    {
+      "package": "com.samsung.android.aremoji",
+      "why": "AR Emoji",
+      "breaks": "AR Emoji and avatar features"
+    },
+    {
+      "package": "com.samsung.android.arzone",
+      "why": "AR Zone",
+      "breaks": "AR Zone apps"
+    },
+    {
+      "package": "com.samsung.android.app.sharelive",
+      "why": "Quick Share live sharing",
+      "breaks": "Quick Share live sharing"
+    },
+    {
+      "package": "com.sec.android.app.sbrowser",
+      "why": "Samsung Internet",
+      "breaks": "Samsung Internet browser"
+    },
+    {
+      "package": "com.samsung.android.email.provider",
+      "why": "Samsung Email",
+      "breaks": "Samsung Email app"
+    },
+    {
+      "package": "com.samsung.android.calendar",
+      "why": "Samsung Calendar",
+      "breaks": "Samsung Calendar app"
+    },
+    {
+      "package": "com.samsung.android.app.reminder",
+      "why": "Samsung Reminder",
+      "breaks": "Reminder app and its notifications"
+    },
+    {
+      "package": "com.samsung.android.forest",
+      "why": "Samsung Digital Wellbeing",
+      "breaks": "Screen-time reports and app timers"
+    },
+    {
+      "package": "com.samsung.android.oneconnect",
+      "why": "SmartThings",
+      "breaks": "SmartThings and smart-home control"
+    },
+    {
+      "package": "com.samsung.android.app.watchmanager",
+      "why": "Galaxy Wearable",
+      "breaks": "Galaxy Watch pairing"
+    }
+  ],
+  "never": [
+    {"package": "android", "why": "Android framework"},
+    {"package": "com.android.systemui", "why": "Status bar, notifications, lock screen"},
+    {"package": "com.android.settings", "why": "Android Settings"},
+    {"package": "com.android.shell", "why": "ADB shell"},
+    {"package": "com.android.phone", "why": "Telephony: calls, mobile data, SIM"},
+    {"package": "com.android.providers.telephony", "why": "SMS/APN provider"},
+    {"package": "com.android.permissioncontroller", "why": "Permission controller"},
+    {"package": "com.android.packageinstaller", "why": "Package installer"},
+    {"package": "com.google.android.gms", "why": "Play Services: push, banking, backups"},
+    {"package": "com.google.android.gsf", "why": "Google Services Framework"},
+    {"package": "com.android.vending", "why": "Play Store"},
+    {"package": "com.google.android.webview", "why": "WebView for in-app browsers"},
+    {"package": "com.android.cellbroadcastreceiver", "why": "Emergency alerts"},
+    {"package": "com.google.android.cellbroadcastreceiver", "why": "Emergency alerts"},
+    {"package": "com.android.ims", "why": "VoLTE and Wi-Fi calling"},
+    {"package": "com.google.android.ims", "why": "VoLTE, Wi-Fi calling and RCS"},
+    {"package": "com.android.se", "why": "eSIM and NFC secure element"},
+    {"package": "com.android.nfc", "why": "NFC payments and tags"},
+    {"package": "com.android.bluetooth", "why": "Bluetooth: earbuds, car, wearables"},
+    {"package": "com.android.keychain", "why": "Certificates for banking/VPN/Wi-Fi"},
+    {"package": "com.android.documentsui", "why": "System file picker"},
+    {"package": "com.android.vpndialogs", "why": "VPN consent"},
+    {"package": "com.android.emergency", "why": "Emergency information and dialer"},
+    {"package": "com.samsung.android.incallui", "why": "Samsung in-call UI"},
+    {"package": "com.samsung.android.app.telephonyui", "why": "Samsung telephony UI"},
+    {"package": "com.samsung.android.dialer", "why": "Samsung dialer"},
+    {"package": "com.samsung.android.messaging", "why": "Samsung Messages"},
+    {"package": "com.samsung.android.app.settings", "why": "Samsung Settings"},
+    {"package": "com.samsung.android.thermal", "why": "Thermal management"},
+    {"package": "com.samsung.android.spay", "why": "Samsung Wallet/Pay"},
+    {"package": "com.samsung.android.samsungpass", "why": "Samsung Pass autofill/passwords"},
+    {"package": "com.samsung.android.authfw", "why": "Samsung authentication framework"},
+    {"package": "com.samsung.android.knox", "why": "Samsung Knox"}
+  ],
+  "notes": "Samsung Free is the biggest ad surface. Do not disable Samsung Pass if the person uses autofill, and do not unlock the bootloader: Knox is permanent. One UI can re-enable some packages after a major update; re-check with `phone.py list --state disabled` instead of fighting it."
+}

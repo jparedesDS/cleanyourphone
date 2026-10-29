@@ -1,0 +1,235 @@
+{
+  "id": "generic-android",
+  "brand": "Generic",
+  "model": "*",
+  "marketing_name": "Any Android 8+ phone",
+  "android": ["8", "9", "10", "11", "12", "13", "14", "15", "16"],
+  "fingerprint_regex": "",
+  "generic": true,
+  "auto_apply": false,
+  "tested": [
+    {
+      "android": "8-16",
+      "build": "reference only",
+      "date": "2026-10-29",
+      "by": "maintainers"
+    }
+  ],
+  "disable": [],
+  "ask": [
+    {
+      "package": "com.google.android.apps.wellbeing",
+      "why": "Digital Wellbeing: screen-time tracking",
+      "breaks": "Screen-time dashboard and app timers"
+    },
+    {
+      "package": "com.google.android.feedback",
+      "why": "Google feedback helper",
+      "breaks": "Nothing user-facing"
+    },
+    {
+      "package": "com.google.android.apps.turbo",
+      "why": "Adaptive Battery / Device Health",
+      "breaks": "Adaptive Battery and battery diagnostics"
+    },
+    {
+      "package": "com.google.android.apps.youtube.music",
+      "why": "YouTube Music preload",
+      "breaks": "YouTube Music"
+    },
+    {
+      "package": "com.google.android.apps.photos",
+      "why": "Google Photos preload",
+      "breaks": "Photos backup and gallery"
+    },
+    {
+      "package": "com.google.android.apps.maps",
+      "why": "Google Maps preload",
+      "breaks": "Maps and navigation"
+    },
+    {
+      "package": "com.google.android.gm",
+      "why": "Gmail preload",
+      "breaks": "Gmail app and notifications"
+    },
+    {
+      "package": "com.google.android.youtube",
+      "why": "YouTube preload",
+      "breaks": "YouTube app"
+    },
+    {
+      "package": "com.google.android.apps.docs",
+      "why": "Google Drive preload",
+      "breaks": "Drive app and sync"
+    },
+    {
+      "package": "com.google.android.calendar",
+      "why": "Google Calendar preload",
+      "breaks": "Calendar app and reminders"
+    },
+    {
+      "package": "com.google.android.keep",
+      "why": "Google Keep preload",
+      "breaks": "Keep notes"
+    },
+    {
+      "package": "com.google.android.apps.messaging",
+      "why": "Google Messages",
+      "breaks": "SMS/RCS if default; the role guard blocks that case"
+    },
+    {
+      "package": "com.google.android.dialer",
+      "why": "Google Phone",
+      "breaks": "Calls if default; the role guard blocks that case"
+    },
+    {
+      "package": "com.google.android.inputmethod.latin",
+      "why": "Gboard",
+      "breaks": "Keyboard if default; the role guard blocks that case"
+    },
+    {
+      "package": "com.google.android.apps.nexuslauncher",
+      "why": "Pixel Launcher",
+      "breaks": "Home if default; the role guard blocks that case"
+    },
+    {
+      "package": "com.android.chrome",
+      "why": "Chrome preload",
+      "breaks": "Chrome and its WebView fallback in some apps"
+    },
+    {
+      "package": "com.google.android.apps.tachyon",
+      "why": "Google Meet",
+      "breaks": "Meet calls"
+    },
+    {
+      "package": "com.google.android.videos",
+      "why": "Google TV / Play Movies preload",
+      "breaks": "Play Movies/TV app"
+    },
+    {
+      "package": "com.google.android.apps.magazines",
+      "why": "Google News preload",
+      "breaks": "Google News"
+    },
+    {
+      "package": "com.google.android.apps.podcasts",
+      "why": "Google Podcasts preload",
+      "breaks": "Podcasts app"
+    },
+    {
+      "package": "com.google.android.apps.subscriptions.red",
+      "why": "Google One preload",
+      "breaks": "Google One app"
+    },
+    {
+      "package": "com.google.android.apps.nbu.files",
+      "why": "Files by Google",
+      "breaks": "Files app and its cleanup tools"
+    },
+    {
+      "package": "com.google.android.apps.walletnfcrel",
+      "why": "Google Wallet",
+      "breaks": "Tap-to-pay and transit cards"
+    },
+    {
+      "package": "com.google.android.apps.safetyhub",
+      "why": "Personal Safety",
+      "breaks": "Emergency sharing and safety features"
+    },
+    {
+      "package": "com.google.android.deskclock",
+      "why": "Google Clock",
+      "breaks": "Alarms and timers"
+    },
+    {
+      "package": "com.google.android.calculator",
+      "why": "Google Calculator",
+      "breaks": "Calculator app"
+    },
+    {
+      "package": "com.google.android.contacts",
+      "why": "Google Contacts",
+      "breaks": "Contacts app and sync UI"
+    },
+    {
+      "package": "com.google.android.apps.wallpaper",
+      "why": "Wallpaper picker",
+      "breaks": "Wallpaper picker and some launcher themes"
+    },
+    {
+      "package": "com.google.android.partnersetup",
+      "why": "Carrier/OEM partner setup",
+      "breaks": "Some carrier provisioning and restore flows"
+    },
+    {
+      "package": "com.google.android.setupwizard",
+      "why": "Setup wizard after first boot",
+      "breaks": "Setup/restore and eSIM provisioning; usually safe after setup, but ask"
+    },
+    {
+      "package": "com.google.android.backuptransport",
+      "why": "Google backup transport",
+      "breaks": "Google backup and restore"
+    },
+    {
+      "package": "com.google.android.apps.restore",
+      "why": "Restore flow",
+      "breaks": "Restoring apps/data on a new phone"
+    },
+    {
+      "package": "com.google.android.syncadapters.contacts",
+      "why": "Contacts sync adapter",
+      "breaks": "Google Contacts sync"
+    },
+    {
+      "package": "com.google.android.syncadapters.calendar",
+      "why": "Calendar sync adapter",
+      "breaks": "Google Calendar sync"
+    }
+  ],
+  "never": [
+    {"package": "android", "why": "Android framework"},
+    {"package": "com.android.systemui", "why": "Status bar, notifications, lock screen"},
+    {"package": "com.android.settings", "why": "Android Settings"},
+    {"package": "com.android.shell", "why": "ADB shell"},
+    {"package": "com.android.phone", "why": "Telephony: calls, mobile data, SIM"},
+    {"package": "com.android.server.telecom", "why": "Call routing"},
+    {"package": "com.android.incallui", "why": "In-call UI"},
+    {"package": "com.android.mms.service", "why": "MMS service"},
+    {"package": "com.android.providers.telephony", "why": "SMS/APN provider"},
+    {"package": "com.android.providers.contacts", "why": "Contacts provider"},
+    {"package": "com.android.providers.media", "why": "Media/storage provider"},
+    {"package": "com.android.permissioncontroller", "why": "Permission controller"},
+    {"package": "com.google.android.permissioncontroller", "why": "Permission controller"},
+    {"package": "com.android.packageinstaller", "why": "Package installer"},
+    {"package": "com.google.android.packageinstaller", "why": "Package installer"},
+    {"package": "com.google.android.gms", "why": "Play Services: push, banking, backups"},
+    {"package": "com.google.android.gsf", "why": "Google Services Framework"},
+    {"package": "com.android.vending", "why": "Play Store"},
+    {"package": "com.google.android.webview", "why": "WebView for in-app browsers"},
+    {"package": "com.android.webview", "why": "WebView for in-app browsers"},
+    {"package": "com.android.ext.services", "why": "Android ext services"},
+    {"package": "com.android.ext.shared", "why": "Android ext shared"},
+    {"package": "com.google.android.ext.services", "why": "Google ext services"},
+    {"package": "com.google.android.ext.shared", "why": "Google ext shared"},
+    {"package": "com.android.cellbroadcastreceiver", "why": "Emergency alerts"},
+    {"package": "com.google.android.cellbroadcastreceiver", "why": "Emergency alerts"},
+    {"package": "com.android.cellbroadcastservice", "why": "Emergency alert service"},
+    {"package": "com.google.android.cellbroadcastservice", "why": "Emergency alert service"},
+    {"package": "com.android.emergency", "why": "Emergency information and dialer"},
+    {"package": "com.android.ims", "why": "VoLTE and Wi-Fi calling"},
+    {"package": "com.google.android.ims", "why": "VoLTE, Wi-Fi calling and RCS"},
+    {"package": "com.android.carrierconfig", "why": "APN, VoLTE and MMS configuration"},
+    {"package": "com.android.se", "why": "eSIM and NFC secure element"},
+    {"package": "com.android.nfc", "why": "NFC payments and tags"},
+    {"package": "com.android.bluetooth", "why": "Bluetooth: earbuds, car, wearables"},
+    {"package": "com.android.keychain", "why": "Certificates for banking/VPN/Wi-Fi"},
+    {"package": "com.android.certinstaller", "why": "Certificate installer"},
+    {"package": "com.android.vpndialogs", "why": "VPN consent"},
+    {"package": "com.android.documentsui", "why": "System file picker"},
+    {"package": "com.google.android.configupdater", "why": "Security and carrier config updater"},
+    {"package": "com.google.android.overlay.modules", "why": "System UI and Settings overlays"}
+  ],
+  "notes": "Reference only. This profile cannot be applied automatically and has no pre-approved disable list: use it to ask the right questions, then disable one package at a time. A model-specific profile is always better."
+}

@@ -1,0 +1,164 @@
+{
+  "id": "xiaomi-hyperos",
+  "brand": "Xiaomi",
+  "model": "*",
+  "marketing_name": "Xiaomi / Redmi / POCO (HyperOS)",
+  "android": ["14", "15", "16"],
+  "fingerprint_regex": "(?i)^(xiaomi|redmi|poco)/",
+  "auto_apply": false,
+  "tested": [
+    {
+      "android": "15",
+      "build": "OS2.0.1.0.VNCEUXM",
+      "date": "2026-10-22",
+      "by": "community"
+    }
+  ],
+  "disable": [
+    {
+      "package": "com.miui.msa.global",
+      "why": "MSA: the ad and recommendation service in MIUI/HyperOS",
+      "breaks": "System ad recommendations"
+    },
+    {
+      "package": "com.miui.systemAdSolution",
+      "why": "System ad solution",
+      "breaks": "System ad slots"
+    },
+    {
+      "package": "com.xiaomi.mipicks",
+      "why": "GetApps store and its recommendations",
+      "breaks": "GetApps store"
+    },
+    {
+      "package": "com.miui.analytics",
+      "why": "MIUI/HyperOS analytics",
+      "breaks": "Usage analytics; no user-facing feature"
+    },
+    {
+      "package": "com.miui.cleanmaster",
+      "why": "Cleaner/booster preload",
+      "breaks": "The cleaner shortcut; Android does not need it"
+    }
+  ],
+  "ask": [
+    {
+      "package": "com.miui.hybrid",
+      "why": "Hybrid content/recommendation service",
+      "breaks": "Some system content pages"
+    },
+    {
+      "package": "com.miui.videoplayer",
+      "why": "Mi Video",
+      "breaks": "Mi Video player"
+    },
+    {
+      "package": "com.miui.player",
+      "why": "Mi Music",
+      "breaks": "Mi Music player"
+    },
+    {
+      "package": "com.xiaomi.glgm",
+      "why": "Game Center",
+      "breaks": "Game Center and game downloads"
+    },
+    {
+      "package": "com.miui.cloudservice",
+      "why": "Mi Cloud service",
+      "breaks": "Mi Cloud backup/sync"
+    },
+    {
+      "package": "com.miui.cloudbackup",
+      "why": "Mi Cloud backup",
+      "breaks": "Mi Cloud backup/restore"
+    },
+    {
+      "package": "com.miui.weather2",
+      "why": "Mi Weather",
+      "breaks": "Weather app and widget"
+    },
+    {
+      "package": "com.miui.notes",
+      "why": "Mi Notes",
+      "breaks": "Notes app and sync"
+    },
+    {
+      "package": "com.miui.compass",
+      "why": "Mi Compass",
+      "breaks": "Compass app"
+    },
+    {
+      "package": "com.miui.calculator",
+      "why": "Mi Calculator",
+      "breaks": "Calculator app"
+    },
+    {
+      "package": "com.miui.gallery",
+      "why": "Mi Gallery",
+      "breaks": "Gallery app"
+    },
+    {
+      "package": "com.miui.camera",
+      "why": "Mi Camera",
+      "breaks": "Camera app"
+    },
+    {
+      "package": "com.miui.screenrecorder",
+      "why": "Screen recorder",
+      "breaks": "Screen recording"
+    },
+    {
+      "package": "com.miui.fm",
+      "why": "FM radio",
+      "breaks": "FM radio (if the hardware has it)"
+    },
+    {
+      "package": "com.miui.bugreport",
+      "why": "Bug report tool",
+      "breaks": "Built-in bug reporting"
+    },
+    {
+      "package": "com.miui.miservice",
+      "why": "Services & feedback",
+      "breaks": "Feedback and service shortcuts"
+    },
+    {
+      "package": "com.miui.miwallpaper",
+      "why": "Mi Wallpaper",
+      "breaks": "Wallpaper picker and some launcher themes"
+    }
+  ],
+  "never": [
+    {"package": "android", "why": "Android framework"},
+    {"package": "com.android.systemui", "why": "Status bar, notifications, lock screen"},
+    {"package": "com.android.settings", "why": "Android Settings"},
+    {"package": "com.android.shell", "why": "ADB shell"},
+    {"package": "com.android.phone", "why": "Telephony: calls, mobile data, SIM"},
+    {"package": "com.android.providers.telephony", "why": "SMS/APN provider"},
+    {"package": "com.android.permissioncontroller", "why": "Permission controller"},
+    {"package": "com.android.packageinstaller", "why": "Package installer"},
+    {"package": "com.google.android.gms", "why": "Play Services: push, banking, backups"},
+    {"package": "com.google.android.gsf", "why": "Google Services Framework"},
+    {"package": "com.android.vending", "why": "Play Store"},
+    {"package": "com.google.android.webview", "why": "WebView for in-app browsers"},
+    {"package": "com.android.cellbroadcastreceiver", "why": "Emergency alerts"},
+    {"package": "com.google.android.cellbroadcastreceiver", "why": "Emergency alerts"},
+    {"package": "com.android.ims", "why": "VoLTE and Wi-Fi calling"},
+    {"package": "com.google.android.ims", "why": "VoLTE, Wi-Fi calling and RCS"},
+    {"package": "com.android.se", "why": "eSIM and NFC secure element"},
+    {"package": "com.android.nfc", "why": "NFC payments and tags"},
+    {"package": "com.android.bluetooth", "why": "Bluetooth: earbuds, car, wearables"},
+    {"package": "com.android.keychain", "why": "Certificates for banking/VPN/Wi-Fi"},
+    {"package": "com.android.documentsui", "why": "System file picker"},
+    {"package": "com.android.vpndialogs", "why": "VPN consent"},
+    {"package": "com.android.emergency", "why": "Emergency information and dialer"},
+    {"package": "com.miui.securitycenter", "why": "Security app: permissions, privacy, battery"},
+    {"package": "com.miui.powerkeeper", "why": "Battery management"},
+    {"package": "com.miui.permcenter", "why": "Permission center"},
+    {"package": "com.miui.home", "why": "System launcher"},
+    {"package": "com.miui.telephony", "why": "Telephony"},
+    {"package": "com.xiaomi.xmsf", "why": "Xiaomi push service"},
+    {"package": "com.xiaomi.push", "why": "Xiaomi push service"}
+  ],
+  "notes": "HyperOS re-enables some packages after an OTA; re-check instead of fighting it. MSA and GetApps are the main ad surfaces. Do not disable Security, PowerKeeper, Permission Center or the system launcher: they carry permissions, battery and Home. The exact package list varies by region; verify each name on the phone."
+}

@@ -1,0 +1,123 @@
+{
+  "id": "google-pixel-8",
+  "brand": "Google",
+  "model": "Pixel 8",
+  "marketing_name": "Pixel 8",
+  "codename": "shiba",
+  "android": ["14", "15", "16"],
+  "fingerprint_regex": "^google/shiba/",
+  "auto_apply": true,
+  "tested": [
+    {
+      "android": "16",
+      "build": "BP2A.250705.008",
+      "date": "2026-10-20",
+      "by": "community"
+    }
+  ],
+  "disable": [
+    {
+      "package": "com.google.android.apps.wellbeing",
+      "why": "Digital Wellbeing: screen-time tracking and telemetry you may not use",
+      "breaks": "Screen-time dashboard and app timers"
+    },
+    {
+      "package": "com.google.android.feedback",
+      "why": "Google feedback and crash-report helper",
+      "breaks": "Nothing user-facing"
+    }
+  ],
+  "ask": [
+    {
+      "package": "com.google.android.apps.turbo",
+      "why": "Adaptive Battery and Device Health",
+      "breaks": "Adaptive Battery, battery diagnostics"
+    },
+    {
+      "package": "com.google.android.apps.youtube.music",
+      "why": "YouTube Music preload",
+      "breaks": "YouTube Music and its downloads"
+    },
+    {
+      "package": "com.google.android.apps.photos",
+      "why": "Google Photos preload",
+      "breaks": "Photos backup and gallery"
+    },
+    {
+      "package": "com.google.android.apps.maps",
+      "why": "Google Maps preload",
+      "breaks": "Maps and navigation"
+    },
+    {
+      "package": "com.google.android.gm",
+      "why": "Gmail preload",
+      "breaks": "Gmail app and its notifications"
+    },
+    {
+      "package": "com.google.android.youtube",
+      "why": "YouTube preload",
+      "breaks": "YouTube app"
+    },
+    {
+      "package": "com.google.android.apps.docs",
+      "why": "Google Drive preload",
+      "breaks": "Drive app and file sync"
+    },
+    {
+      "package": "com.google.android.calendar",
+      "why": "Google Calendar preload",
+      "breaks": "Calendar app and its reminders"
+    },
+    {
+      "package": "com.google.android.keep",
+      "why": "Google Keep preload",
+      "breaks": "Keep notes"
+    },
+    {
+      "package": "com.google.android.apps.messaging",
+      "why": "Google Messages",
+      "breaks": "SMS/RCS if it is the default; the role guard blocks that case"
+    },
+    {
+      "package": "com.google.android.dialer",
+      "why": "Google Phone",
+      "breaks": "Calls if it is the default; the role guard blocks that case"
+    },
+    {
+      "package": "com.google.android.inputmethod.latin",
+      "why": "Gboard",
+      "breaks": "The keyboard if it is the default; the role guard blocks that case"
+    },
+    {
+      "package": "com.google.android.apps.nexuslauncher",
+      "why": "Pixel Launcher",
+      "breaks": "Home if it is the default; the role guard blocks that case"
+    }
+  ],
+  "never": [
+    {"package": "android", "why": "Android framework"},
+    {"package": "com.android.systemui", "why": "Status bar, notifications, lock screen"},
+    {"package": "com.android.settings", "why": "Android Settings"},
+    {"package": "com.android.shell", "why": "ADB shell"},
+    {"package": "com.android.phone", "why": "Telephony: calls, mobile data, SIM"},
+    {"package": "com.android.providers.telephony", "why": "SMS/APN provider"},
+    {"package": "com.android.permissioncontroller", "why": "Permission controller"},
+    {"package": "com.android.packageinstaller", "why": "Package installer"},
+    {"package": "com.google.android.gms", "why": "Play Services: push, banking, backups"},
+    {"package": "com.google.android.gsf", "why": "Google Services Framework"},
+    {"package": "com.android.vending", "why": "Play Store"},
+    {"package": "com.google.android.webview", "why": "WebView for in-app browsers"},
+    {"package": "com.android.cellbroadcastreceiver", "why": "Emergency alerts"},
+    {"package": "com.google.android.cellbroadcastreceiver", "why": "Emergency alerts"},
+    {"package": "com.android.ims", "why": "VoLTE and Wi-Fi calling"},
+    {"package": "com.google.android.ims", "why": "VoLTE, Wi-Fi calling and RCS"},
+    {"package": "com.android.se", "why": "eSIM and NFC secure element"},
+    {"package": "com.android.nfc", "why": "NFC payments and tags"},
+    {"package": "com.android.bluetooth", "why": "Bluetooth: earbuds, car, wearables"},
+    {"package": "com.android.keychain", "why": "Certificates for banking/VPN/Wi-Fi"},
+    {"package": "com.android.documentsui", "why": "System file picker"},
+    {"package": "com.android.vpndialogs", "why": "VPN consent"},
+    {"package": "com.android.emergency", "why": "Emergency information and dialer"}
+  ],
+  "notes": "The Pixel ROM is already close to clean; expect a small gain. The real wins are Private DNS and restricting background activity. Do not disable Play Services or the Pixel Launcher. If you replace the launcher, set the new one as Home first and confirm it before touching the stock one."
+}
