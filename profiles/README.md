@@ -13,6 +13,9 @@ ask the right questions with evidence, not to pretend the model was tested.
 profiles/
 ├── schema.json
 ├── google/pixel-8.json
+├── google/pixel-7a.json
+├── google/pixel-6.json
+├── google/pixel-6-pro.json
 ├── samsung/sm-s918b.json
 ├── samsung/sm-s938b.json
 ├── samsung/sm-a546e.json
@@ -169,6 +172,9 @@ list. It does not replace a real test.
 | ID | Model | Android | Verification | Notes |
 |---|---|---|---|---|
 | `google-pixel-8` | Pixel 8 (shiba) | 14–16 | device | Tested on Android 16 (`BP2A.250705.008`); auto-apply only on that build. |
+| `google-pixel-7a` | Pixel 7a (lynx) | 13 | documented | Android 13 dump; ask only, no auto-apply. |
+| `google-pixel-6` | Pixel 6 (oriole) | 12 | documented | Android 12 dump; ask only, no auto-apply. |
+| `google-pixel-6-pro` | Pixel 6 Pro (raven) | 12 | documented | Android 12 dump; ask only, no auto-apply. |
 | `samsung-sm-s918b` | Galaxy S23 Ultra (SM-S918B) | 13–16 | device | Tested on Android 14 (`UP1A.231005.007`); Samsung Free is the main ad surface; Knox is permanent. |
 | `samsung-sm-s938b` | Galaxy S25 Ultra (SM-S938B) | 16 | documented | From the `pa3q` firmware dump; ask only, no auto-apply. |
 | `samsung-sm-a546e` | Galaxy A54 5G (SM-A546E) | 13 | documented | From the `a54x` firmware dump; ask only, no auto-apply. |

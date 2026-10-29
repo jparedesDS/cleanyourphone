@@ -1,0 +1,516 @@
+{
+  "id": "google-pixel-6",
+  "brand": "Google",
+  "model": "Pixel 6",
+  "marketing_name": "Pixel 6",
+  "codename": "oriole",
+  "android": [
+    "12"
+  ],
+  "fingerprint_regex": "^google/oriole/oriole:(Tiramisu|12)/TPBB\\.220414\\.015",
+  "auto_apply": false,
+  "verification": "documented",
+  "sources": [
+    {
+      "title": "Android Dumps: google/oriole",
+      "url": "https://gitlab.com/Android-Dumps/google/oriole",
+      "retrieved": "2026-10-29",
+      "note": "Firmware dump for Pixel 6"
+    },
+    {
+      "title": "Dump README (build metadata)",
+      "url": "https://gitlab.com/Android-Dumps/google/oriole/-/raw/oriole-user-Tiramisu-TPBB.220414.015-8548023-release-keys/README.md",
+      "retrieved": "2026-10-29",
+      "note": "Codename, build id and fingerprint"
+    },
+    {
+      "title": "Dump all_files.txt (APK and permission inventory)",
+      "url": "https://gitlab.com/Android-Dumps/google/oriole/-/raw/oriole-user-Tiramisu-TPBB.220414.015-8548023-release-keys/all_files.txt",
+      "retrieved": "2026-10-29",
+      "note": "Evidence that each package path exists in the firmware"
+    }
+  ],
+  "tested": [],
+  "disable": [],
+  "ask": [
+    {
+      "package": "com.google.android.apps.betterbug",
+      "why": "Google bug report tool",
+      "breaks": "Bug reporting"
+    },
+    {
+      "package": "com.google.android.apps.betterbug.partners",
+      "why": "Google partner bug report",
+      "breaks": "Partner bug reporting"
+    },
+    {
+      "package": "com.google.android.apps.internal.betterbug",
+      "why": "Google internal bug report",
+      "breaks": "Internal bug reporting"
+    },
+    {
+      "package": "com.google.android.apps.diagnosticstool",
+      "why": "Google diagnostics tool",
+      "breaks": "Diagnostic logs"
+    },
+    {
+      "package": "com.google.android.apps.carrier.log",
+      "why": "Carrier log collector",
+      "breaks": "Carrier diagnostics"
+    },
+    {
+      "package": "com.google.android.apps.cbrsnetworkmonitor",
+      "why": "CBRS network monitor",
+      "breaks": "CBRS network diagnostics"
+    },
+    {
+      "package": "com.google.android.gnsspixelmonitor",
+      "why": "GNSS monitor",
+      "breaks": "GNSS diagnostics"
+    },
+    {
+      "package": "com.google.android.iphealthmonitor",
+      "why": "IP health monitor",
+      "breaks": "Network diagnostics"
+    },
+    {
+      "package": "com.google.android.hardwareinfo",
+      "why": "Hardware info",
+      "breaks": "Hardware information screen"
+    },
+    {
+      "package": "com.google.android.hiddenmenu",
+      "why": "Hidden menu",
+      "breaks": "Hidden diagnostic menu"
+    },
+    {
+      "package": "com.google.android.odad",
+      "why": "Google ODAD",
+      "breaks": "Some support/diagnostic features"
+    },
+    {
+      "package": "com.google.android.apps.helprtc",
+      "why": "Help RTC",
+      "breaks": "Support calls"
+    },
+    {
+      "package": "com.google.android.apps.scone",
+      "why": "Google Scone",
+      "breaks": "Some support features"
+    },
+    {
+      "package": "com.google.android.volta",
+      "why": "Google Volta",
+      "breaks": "Battery/telemetry"
+    },
+    {
+      "package": "com.google.android.turboadapter",
+      "why": "Turbo adapter",
+      "breaks": "Adaptive Battery integration"
+    },
+    {
+      "package": "com.google.android.uvexposurereporter",
+      "why": "UV exposure reporter",
+      "breaks": "UV exposure reporting"
+    },
+    {
+      "package": "com.google.android.factoryota",
+      "why": "Factory OTA",
+      "breaks": "Factory update flow"
+    },
+    {
+      "package": "com.google.android.devicedropmonitor",
+      "why": "Device drop monitor",
+      "breaks": "Drop detection diagnostics"
+    },
+    {
+      "package": "com.google.android.connectivitymonitor",
+      "why": "Connectivity monitor",
+      "breaks": "Connectivity diagnostics"
+    },
+    {
+      "package": "com.google.android.connectivitythermalpowermanager",
+      "why": "Connectivity thermal manager",
+      "breaks": "Thermal/connectivity tuning"
+    },
+    {
+      "package": "com.google.android.apps.dreamliner",
+      "why": "Dreamliner",
+      "breaks": "Pixel Stand/dock features"
+    },
+    {
+      "package": "com.google.android.apps.work.oobconfig",
+      "why": "Work setup",
+      "breaks": "Work profile setup"
+    },
+    {
+      "package": "com.google.android.apps.wallpaper",
+      "why": "Wallpaper picker",
+      "breaks": "Wallpaper picker"
+    },
+    {
+      "package": "com.google.android.wallpaper.effects",
+      "why": "Wallpaper effects",
+      "breaks": "Live wallpaper effects"
+    },
+    {
+      "package": "com.breel.wallpapers19",
+      "why": "Live wallpapers",
+      "breaks": "Live wallpapers"
+    },
+    {
+      "package": "com.google.android.apps.kids.home",
+      "why": "Kids Space",
+      "breaks": "Kids Space"
+    },
+    {
+      "package": "com.google.android.apps.wearables.maestro.companion",
+      "why": "Wear OS companion",
+      "breaks": "Wear OS pairing"
+    },
+    {
+      "package": "com.google.android.apps.safetyhub",
+      "why": "Personal Safety",
+      "breaks": "Emergency sharing"
+    },
+    {
+      "package": "com.google.android.apps.nbu.files",
+      "why": "Files by Google",
+      "breaks": "Files app"
+    },
+    {
+      "package": "com.google.android.apps.wellbeing",
+      "why": "Digital Wellbeing",
+      "breaks": "Screen-time reports and app timers"
+    },
+    {
+      "package": "com.google.android.apps.turbo",
+      "why": "Adaptive Battery / Device Health",
+      "breaks": "Adaptive Battery and diagnostics"
+    },
+    {
+      "package": "com.google.android.feedback",
+      "why": "Google feedback",
+      "breaks": "Nothing user-facing"
+    },
+    {
+      "package": "com.google.android.apps.restore",
+      "why": "Google restore",
+      "breaks": "Restore apps/data on a new phone"
+    },
+    {
+      "package": "com.google.android.setupwizard",
+      "why": "Google Setup Wizard",
+      "breaks": "Setup/restore flows"
+    },
+    {
+      "package": "com.google.android.pixel.setupwizard",
+      "why": "Pixel Setup Wizard",
+      "breaks": "Pixel setup/restore flows"
+    },
+    {
+      "package": "com.google.android.onetimeinitializer",
+      "why": "Google one-time initializer",
+      "breaks": "One-time setup"
+    },
+    {
+      "package": "com.google.android.partnersetup",
+      "why": "Google partner setup",
+      "breaks": "Some carrier/OEM provisioning"
+    },
+    {
+      "package": "com.google.android.storagemanager",
+      "why": "Storage Manager",
+      "breaks": "Storage cleanup UI"
+    },
+    {
+      "package": "com.google.android.GoogleCamera",
+      "why": "Pixel Camera",
+      "breaks": "Camera app"
+    },
+    {
+      "package": "com.google.android.dialer",
+      "why": "Google Phone",
+      "breaks": "Calls if default; role guard blocks"
+    },
+    {
+      "package": "com.google.android.apps.messaging",
+      "why": "Google Messages",
+      "breaks": "SMS/RCS if default; role guard blocks"
+    },
+    {
+      "package": "com.google.android.googlequicksearchbox",
+      "why": "Google app / Assistant",
+      "breaks": "Google app and Assistant"
+    },
+    {
+      "package": "com.google.android.apps.carrier.carrierwifi",
+      "why": "Carrier Wi-Fi",
+      "breaks": "Carrier Wi-Fi features"
+    },
+    {
+      "package": "com.google.android.tetheringentitlement",
+      "why": "Tethering entitlement",
+      "breaks": "Carrier tethering checks"
+    },
+    {
+      "package": "com.android.tv",
+      "why": "Google TV",
+      "breaks": "Google TV app"
+    },
+    {
+      "package": "com.android.refreshratecontrol",
+      "why": "Refresh rate control",
+      "breaks": "Display refresh control"
+    },
+    {
+      "package": "com.android.hbmsvmanager",
+      "why": "HBM manager",
+      "breaks": "High brightness mode"
+    },
+    {
+      "package": "com.android.sdm.plugins.diagmon",
+      "why": "Carrier diagnostic monitor",
+      "breaks": "Carrier diagnostic logs"
+    },
+    {
+      "package": "com.customermobile.preload.vzw",
+      "why": "Verizon preload",
+      "breaks": "Verizon preload services"
+    },
+    {
+      "package": "com.verizon.services",
+      "why": "Verizon services",
+      "breaks": "Verizon services"
+    },
+    {
+      "package": "com.verizon.llkagent",
+      "why": "Verizon LLK agent",
+      "breaks": "Verizon support features"
+    },
+    {
+      "package": "com.verizon.mips.services",
+      "why": "Verizon MIPS",
+      "breaks": "Verizon services"
+    }
+  ],
+  "never": [
+    {
+      "package": "android",
+      "why": "Android framework"
+    },
+    {
+      "package": "com.android.systemui",
+      "why": "Status bar, notifications, lock screen"
+    },
+    {
+      "package": "com.android.settings",
+      "why": "Android Settings"
+    },
+    {
+      "package": "com.android.shell",
+      "why": "ADB shell"
+    },
+    {
+      "package": "com.android.phone",
+      "why": "Telephony: calls, mobile data, SIM"
+    },
+    {
+      "package": "com.android.server.telecom",
+      "why": "Call routing"
+    },
+    {
+      "package": "com.android.mms.service",
+      "why": "MMS service"
+    },
+    {
+      "package": "com.android.providers.telephony",
+      "why": "SMS/APN provider"
+    },
+    {
+      "package": "com.android.providers.contacts",
+      "why": "Contacts provider"
+    },
+    {
+      "package": "com.android.permissioncontroller",
+      "why": "Permission controller"
+    },
+    {
+      "package": "com.android.packageinstaller",
+      "why": "Package installer"
+    },
+    {
+      "package": "com.google.android.packageinstaller",
+      "why": "Package installer"
+    },
+    {
+      "package": "com.google.android.gms",
+      "why": "Play Services: push, banking, backups"
+    },
+    {
+      "package": "com.google.android.gsf",
+      "why": "Google Services Framework"
+    },
+    {
+      "package": "com.android.vending",
+      "why": "Play Store"
+    },
+    {
+      "package": "com.google.android.webview",
+      "why": "WebView for in-app browsers"
+    },
+    {
+      "package": "com.google.android.networkstack",
+      "why": "Network stack"
+    },
+    {
+      "package": "com.android.cellbroadcastreceiver",
+      "why": "Emergency alerts"
+    },
+    {
+      "package": "com.google.android.ims",
+      "why": "VoLTE, Wi-Fi calling and RCS"
+    },
+    {
+      "package": "com.google.android.iwlan",
+      "why": "Wi-Fi calling"
+    },
+    {
+      "package": "com.google.android.wfcactivation",
+      "why": "Wi-Fi calling activation"
+    },
+    {
+      "package": "com.shannon.imsservice",
+      "why": "IMS service"
+    },
+    {
+      "package": "com.shannon.rcsservice",
+      "why": "RCS service"
+    },
+    {
+      "package": "com.shannon.qualifiednetworksservice",
+      "why": "Qualified networks"
+    },
+    {
+      "package": "com.samsung.slsi.telephony.oemril",
+      "why": "Modem RIL"
+    },
+    {
+      "package": "com.google.android.grilservice",
+      "why": "Google RIL service"
+    },
+    {
+      "package": "com.google.android.carrier",
+      "why": "Carrier service"
+    },
+    {
+      "package": "com.google.android.carriersetup",
+      "why": "Carrier setup"
+    },
+    {
+      "package": "com.android.omadm.service",
+      "why": "Carrier OMA-DM"
+    },
+    {
+      "package": "com.google.omadm.trigger",
+      "why": "Carrier OMA-DM"
+    },
+    {
+      "package": "com.android.sdm.plugins.connmo",
+      "why": "Carrier provisioning"
+    },
+    {
+      "package": "com.android.sdm.plugins.dcmo",
+      "why": "Carrier provisioning"
+    },
+    {
+      "package": "com.google.android.apps.gcs",
+      "why": "Google Connectivity Services"
+    },
+    {
+      "package": "com.google.android.as",
+      "why": "Android System Intelligence"
+    },
+    {
+      "package": "com.google.intelligence.sense",
+      "why": "Android System Intelligence"
+    },
+    {
+      "package": "com.google.android.apps.nexuslauncher",
+      "why": "System launcher and Recents"
+    },
+    {
+      "package": "com.android.launcher3",
+      "why": "System launcher"
+    },
+    {
+      "package": "com.android.intentresolver",
+      "why": "Share/open-with dialog"
+    },
+    {
+      "package": "com.google.android.settings.intelligence",
+      "why": "Settings search"
+    },
+    {
+      "package": "com.google.android.euicc",
+      "why": "eSIM"
+    },
+    {
+      "package": "com.google.euiccpixel",
+      "why": "eSIM"
+    },
+    {
+      "package": "com.android.emergency",
+      "why": "Emergency information and dialer"
+    },
+    {
+      "package": "com.android.angle",
+      "why": "ANGLE graphics"
+    },
+    {
+      "package": "com.android.apps.tag",
+      "why": "NFC tags"
+    },
+    {
+      "package": "com.android.backupconfirm",
+      "why": "Backup confirmation"
+    },
+    {
+      "package": "com.android.calllogbackup",
+      "why": "Call log backup"
+    },
+    {
+      "package": "com.android.dynsystem",
+      "why": "Dynamic system updates"
+    },
+    {
+      "package": "com.android.externalstorage",
+      "why": "External storage provider"
+    },
+    {
+      "package": "com.android.managedprovisioning",
+      "why": "Managed provisioning"
+    },
+    {
+      "package": "com.android.mtp",
+      "why": "MTP"
+    },
+    {
+      "package": "com.android.proxyhandler",
+      "why": "Proxy handler"
+    },
+    {
+      "package": "com.android.sharedstoragebackup",
+      "why": "Shared storage backup"
+    },
+    {
+      "package": "com.android.statementservice",
+      "why": "App link verification"
+    },
+    {
+      "package": "com.android.yadayada",
+      "why": "Test/placeholder package"
+    }
+  ],
+  "notes": "Documented from the oriole firmware dump, not tested on a physical phone. Pixel package lists change with the monthly build and carrier; no auto-apply. Ask before every package. The existing Pixel 8 profile is the device-tested one."
+}
