@@ -1,0 +1,480 @@
+{
+  "id": "redmi-note-15-pro",
+  "brand": "Redmi",
+  "model": "*",
+  "marketing_name": "Redmi Note 15 Pro",
+  "codename": "lapis",
+  "android": [
+    "16"
+  ],
+  "fingerprint_regex": "^(Redmi/miodm_lapis_global/lapis|Xiaomi/lapis/missi):",
+  "auto_apply": false,
+  "verification": "documented",
+  "sources": [
+    {
+      "title": "Android Dumps: redmi/lapis",
+      "url": "https://gitlab.com/Android-Dumps/redmi/lapis",
+      "retrieved": "2026-10-29",
+      "note": "Firmware dump for Redmi Note 15 Pro"
+    },
+    {
+      "title": "Dump README (build metadata)",
+      "url": "https://gitlab.com/Android-Dumps/redmi/lapis/-/raw/missi-user-16-BP2A.250605.031.A3-OS3.0.303.0.WPPINXM-release-keys/README.md",
+      "retrieved": "2026-10-29",
+      "note": "Codename, build id and fingerprint"
+    },
+    {
+      "title": "Dump all_files.txt (APK and permission inventory)",
+      "url": "https://gitlab.com/Android-Dumps/redmi/lapis/-/raw/missi-user-16-BP2A.250605.031.A3-OS3.0.303.0.WPPINXM-release-keys/all_files.txt",
+      "retrieved": "2026-10-29",
+      "note": "Evidence that each package path exists in the firmware"
+    }
+  ],
+  "tested": [],
+  "disable": [],
+  "ask": [
+    {
+      "package": "com.miui.cleaner",
+      "why": "Mi Cleaner preload",
+      "breaks": "Cleaner app and its shortcuts"
+    },
+    {
+      "package": "com.miui.cleanmaster",
+      "why": "Clean Master preload",
+      "breaks": "Cleaner/booster features"
+    },
+    {
+      "package": "com.miui.cloudbackup",
+      "why": "Mi Cloud backup",
+      "breaks": "Mi Cloud backup/restore"
+    },
+    {
+      "package": "com.miui.backup",
+      "why": "Mi Backup",
+      "breaks": "Local backup"
+    },
+    {
+      "package": "com.miui.huanji",
+      "why": "Mi Mover",
+      "breaks": "Phone-to-phone migration"
+    },
+    {
+      "package": "com.miui.notes",
+      "why": "Mi Notes",
+      "breaks": "Notes app and sync"
+    },
+    {
+      "package": "com.miui.player",
+      "why": "Mi Music",
+      "breaks": "Music player"
+    },
+    {
+      "package": "com.miui.gallery",
+      "why": "Mi Gallery",
+      "breaks": "Gallery app and editing"
+    },
+    {
+      "package": "com.miui.screenrecorder",
+      "why": "Screen recorder",
+      "breaks": "Screen recording"
+    },
+    {
+      "package": "com.miui.aod",
+      "why": "Always On Display",
+      "breaks": "Always On Display"
+    },
+    {
+      "package": "com.miui.extraphoto",
+      "why": "Extra photo features",
+      "breaks": "Some gallery/camera effects"
+    },
+    {
+      "package": "com.miui.thirdappassistant",
+      "why": "Third-party app assistant/recommendations",
+      "breaks": "App recommendations"
+    },
+    {
+      "package": "com.miui.powerinsight",
+      "why": "Power insight",
+      "breaks": "Battery usage insights"
+    },
+    {
+      "package": "com.miui.sysopt",
+      "why": "System optimization",
+      "breaks": "System optimization features"
+    },
+    {
+      "package": "com.miui.dmregservice",
+      "why": "Mi device management",
+      "breaks": "Device management/telemetry"
+    },
+    {
+      "package": "com.xiaomi.dmregservice",
+      "why": "Xiaomi device management",
+      "breaks": "Device management/telemetry"
+    },
+    {
+      "package": "com.xiaomi.registration",
+      "why": "Xiaomi account registration",
+      "breaks": "Xiaomi account registration"
+    },
+    {
+      "package": "com.xiaomi.misettings",
+      "why": "Mi Settings",
+      "breaks": "Some Mi settings screens"
+    },
+    {
+      "package": "com.xiaomi.mihomemanager",
+      "why": "Xiaomi Home manager",
+      "breaks": "Xiaomi smart-home features"
+    },
+    {
+      "package": "com.xiaomi.hypercomm",
+      "why": "HyperConnect",
+      "breaks": "Cross-device features"
+    },
+    {
+      "package": "com.xiaomi.aicr",
+      "why": "Xiaomi AI service",
+      "breaks": "Some AI features"
+    },
+    {
+      "package": "com.xiaomi.aiservice",
+      "why": "Xiaomi AI service",
+      "breaks": "Some AI features"
+    },
+    {
+      "package": "com.xiaomi.aiasst.service",
+      "why": "Xiaomi AI assistant",
+      "breaks": "AI assistant"
+    },
+    {
+      "package": "com.xiaomi.ugd",
+      "why": "Xiaomi user growth/ads",
+      "breaks": "Promotions and recommendations"
+    },
+    {
+      "package": "com.xiaomi.uatalive",
+      "why": "Xiaomi usage/telemetry",
+      "breaks": "Usage analytics"
+    },
+    {
+      "package": "com.xiaomi.finddevice",
+      "why": "Find Device",
+      "breaks": "Remote locate/lock"
+    },
+    {
+      "package": "com.xiaomi.hypercamera",
+      "why": "Xiaomi Camera",
+      "breaks": "Camera app"
+    },
+    {
+      "package": "com.xiaomi.entitlement.o2",
+      "why": "O2 entitlement service",
+      "breaks": "O2 carrier entitlement"
+    },
+    {
+      "package": "com.miui.accessibility",
+      "why": "Mi Accessibility",
+      "breaks": "Accessibility features"
+    },
+    {
+      "package": "com.miui.freeform",
+      "why": "Freeform windows",
+      "breaks": "Freeform window mode"
+    },
+    {
+      "package": "com.miui.mishare.connectivity",
+      "why": "Mi Share",
+      "breaks": "Mi Share file transfer"
+    },
+    {
+      "package": "com.miui.rom",
+      "why": "Mi system update",
+      "breaks": "System update UI"
+    },
+    {
+      "package": "com.android.updater",
+      "why": "AOSP updater",
+      "breaks": "System update UI"
+    },
+    {
+      "package": "com.mediatek.systemupdate",
+      "why": "MediaTek system update",
+      "breaks": "System update UI"
+    },
+    {
+      "package": "com.google.android.apps.wellbeing",
+      "why": "Digital Wellbeing",
+      "breaks": "Screen-time reports and app timers"
+    },
+    {
+      "package": "com.google.android.apps.turbo",
+      "why": "Adaptive Battery / Device Health",
+      "breaks": "Adaptive Battery and diagnostics"
+    },
+    {
+      "package": "com.google.android.apps.photos",
+      "why": "Google Photos preload",
+      "breaks": "Photos backup and gallery"
+    },
+    {
+      "package": "com.google.android.apps.tachyon",
+      "why": "Google Meet",
+      "breaks": "Meet calls"
+    },
+    {
+      "package": "com.google.android.apps.nbu.files",
+      "why": "Files by Google",
+      "breaks": "Files app"
+    },
+    {
+      "package": "com.google.android.apps.safetyhub",
+      "why": "Personal Safety",
+      "breaks": "Emergency sharing"
+    },
+    {
+      "package": "com.google.android.projection.gearhead",
+      "why": "Android Auto",
+      "breaks": "Android Auto"
+    },
+    {
+      "package": "com.google.android.googlequicksearchbox",
+      "why": "Google app / Assistant",
+      "breaks": "Google app and Assistant"
+    },
+    {
+      "package": "com.google.android.calendar",
+      "why": "Google Calendar",
+      "breaks": "Calendar and reminders"
+    },
+    {
+      "package": "com.google.android.contacts",
+      "why": "Google Contacts",
+      "breaks": "Contacts app"
+    },
+    {
+      "package": "com.google.android.deskclock",
+      "why": "Google Clock",
+      "breaks": "Alarms and timers"
+    },
+    {
+      "package": "com.google.android.dialer",
+      "why": "Google Phone",
+      "breaks": "Calls if default; role guard blocks"
+    },
+    {
+      "package": "com.google.android.apps.messaging",
+      "why": "Google Messages",
+      "breaks": "SMS/RCS if default; role guard blocks"
+    },
+    {
+      "package": "com.google.android.inputmethod.latin",
+      "why": "Gboard",
+      "breaks": "Keyboard if default; role guard blocks"
+    }
+  ],
+  "never": [
+    {
+      "package": "android",
+      "why": "Android framework"
+    },
+    {
+      "package": "com.android.systemui",
+      "why": "Status bar, notifications, lock screen"
+    },
+    {
+      "package": "com.android.settings",
+      "why": "Android Settings"
+    },
+    {
+      "package": "com.android.shell",
+      "why": "ADB shell"
+    },
+    {
+      "package": "com.android.phone",
+      "why": "Telephony: calls, mobile data, SIM"
+    },
+    {
+      "package": "com.android.phone.config",
+      "why": "Telephony configuration"
+    },
+    {
+      "package": "com.android.server.telecom",
+      "why": "Call routing"
+    },
+    {
+      "package": "com.android.mms.service",
+      "why": "MMS service"
+    },
+    {
+      "package": "com.android.providers.telephony",
+      "why": "SMS/APN provider"
+    },
+    {
+      "package": "com.android.providers.contacts",
+      "why": "Contacts provider"
+    },
+    {
+      "package": "com.android.permissioncontroller",
+      "why": "Permission controller"
+    },
+    {
+      "package": "com.android.packageinstaller",
+      "why": "Package installer"
+    },
+    {
+      "package": "com.google.android.packageinstaller",
+      "why": "Package installer"
+    },
+    {
+      "package": "com.google.android.gms",
+      "why": "Play Services: push, banking, backups"
+    },
+    {
+      "package": "com.google.android.gsf",
+      "why": "Google Services Framework"
+    },
+    {
+      "package": "com.android.vending",
+      "why": "Play Store"
+    },
+    {
+      "package": "com.google.android.webview",
+      "why": "WebView for in-app browsers"
+    },
+    {
+      "package": "com.google.android.networkstack",
+      "why": "Network stack"
+    },
+    {
+      "package": "com.android.cellbroadcastreceiver",
+      "why": "Emergency alerts"
+    },
+    {
+      "package": "com.android.carrierconfig",
+      "why": "Carrier configuration"
+    },
+    {
+      "package": "com.android.nfc",
+      "why": "NFC payments and tags"
+    },
+    {
+      "package": "com.android.bluetooth",
+      "why": "Bluetooth: earbuds, car, wearables"
+    },
+    {
+      "package": "com.android.documentsui",
+      "why": "System file picker"
+    },
+    {
+      "package": "com.google.android.documentsui",
+      "why": "System file picker"
+    },
+    {
+      "package": "com.android.vpndialogs",
+      "why": "VPN consent"
+    },
+    {
+      "package": "com.android.emergency",
+      "why": "Emergency information and dialer"
+    },
+    {
+      "package": "com.android.stk",
+      "why": "SIM Toolkit"
+    },
+    {
+      "package": "com.android.providers.partnerbookmarks",
+      "why": "Preloaded partner bookmarks"
+    },
+    {
+      "package": "com.mediatek.ims",
+      "why": "IMS: VoLTE and Wi-Fi calling"
+    },
+    {
+      "package": "com.mediatek.ims.config",
+      "why": "IMS configuration"
+    },
+    {
+      "package": "com.mediatek.ims.pco",
+      "why": "IMS PCO"
+    },
+    {
+      "package": "com.mediatek.ims.rcsua.service",
+      "why": "IMS/RCS service"
+    },
+    {
+      "package": "com.mediatek.telephony",
+      "why": "MediaTek telephony"
+    },
+    {
+      "package": "com.mediatek.cellbroadcastreceiver",
+      "why": "Emergency alerts"
+    },
+    {
+      "package": "com.mediatek.wfo.impl",
+      "why": "Wi-Fi calling"
+    },
+    {
+      "package": "com.mediatek.bluetooth",
+      "why": "Bluetooth stack"
+    },
+    {
+      "package": "com.mediatek.simprocessor",
+      "why": "SIM processing"
+    },
+    {
+      "package": "com.mediatek.omacp",
+      "why": "Carrier provisioning"
+    },
+    {
+      "package": "com.mediatek.op08.ims",
+      "why": "IMS"
+    },
+    {
+      "package": "com.google.android.euicc",
+      "why": "eSIM"
+    },
+    {
+      "package": "com.miui.euicc",
+      "why": "eSIM"
+    },
+    {
+      "package": "com.miui.securitycenter",
+      "why": "Security app: permissions, privacy, battery"
+    },
+    {
+      "package": "com.miui.home",
+      "why": "System launcher"
+    },
+    {
+      "package": "com.mi.android.globallauncher",
+      "why": "System launcher"
+    },
+    {
+      "package": "com.android.launcher3",
+      "why": "System launcher"
+    },
+    {
+      "package": "com.android.wm.shell",
+      "why": "Window management and Recents"
+    },
+    {
+      "package": "com.android.intentresolver",
+      "why": "Share/open-with dialog"
+    },
+    {
+      "package": "com.xiaomi.phone",
+      "why": "Xiaomi phone service"
+    },
+    {
+      "package": "com.xiaomi.bluetooth",
+      "why": "Xiaomi Bluetooth"
+    },
+    {
+      "package": "com.xiaomi.dialer",
+      "why": "Xiaomi dialer"
+    }
+  ],
+  "notes": "Documented from the lapis firmware dump (Android 16), not tested on a physical phone. HyperOS package lists and preloads vary by region and carrier. No auto-apply; ask before every package. Only system/OEM packages are listed; user apps are excluded."
+}
