@@ -19,13 +19,20 @@ profiles/
 ├── samsung/sm-s918b.json
 ├── samsung/sm-s938b.json
 ├── samsung/sm-a546e.json
+├── samsung/sm-a065f.json
+├── samsung/sm-a245f.json
 ├── oneplus/README.md
 ├── oneplus/oneplus-a6013.json
 ├── oneplus/oneplus-cph2487.json
 ├── oneplus/oneplus-cph2719.json
+├── oneplus/oneplus-hd1925.json
+├── oneplus/oneplus-ac2003.json
 ├── xiaomi/xiaomi-15t.json
+├── xiaomi/xiaomi-17-ultra.json
 ├── redmi/redmi-note-15-pro.json
+├── redmi/redmi-note-15.json
 ├── poco/poco-f6.json
+├── poco/poco-f9-ultra.json
 ├── xiaomi/hyperos.json
 └── generic/android.json
 ```
@@ -178,11 +185,18 @@ list. It does not replace a real test.
 | `samsung-sm-s918b` | Galaxy S23 Ultra (SM-S918B) | 13–16 | device | Tested on Android 14 (`UP1A.231005.007`); Samsung Free is the main ad surface; Knox is permanent. |
 | `samsung-sm-s938b` | Galaxy S25 Ultra (SM-S938B) | 16 | documented | From the `pa3q` firmware dump; ask only, no auto-apply. |
 | `samsung-sm-a546e` | Galaxy A54 5G (SM-A546E) | 13 | documented | From the `a54x` firmware dump; ask only, no auto-apply. |
+| `samsung-sm-a065f` | Galaxy A06 (SM-A065F) | 16 | documented | From the `a06` firmware dump; ask only, no auto-apply. |
+| `samsung-sm-a245f` | Galaxy A24 (SM-A245F) | 13 | documented | From the `a24` firmware dump; ask only, no auto-apply. |
 | `oneplus-a6013` | OnePlus 6T (ONEPLUS A6013) | 11 | device | Tested on OxygenOS 11.1.2.2 build `ONEPLUS A6013_41_211125`; 8 low-risk telemetry packages in `disable`, user-facing apps in `ask`. |
 | `oneplus-cph2487` | OnePlus 11R 5G (CPH2487) | 16 | documented | From the `OP5961L1` firmware dump; ask only, no auto-apply. |
 | `oneplus-cph2719` | OnePlus Nord CE5 (CPH2719) | 16 | documented | From the `OP613BL1` firmware dump; ask only, no auto-apply. |
+| `oneplus-hd1925` | OnePlus 7T Pro 5G McLaren (HD1925) | 11 | documented | From the `OnePlus7TProNR` firmware dump; ask only, no auto-apply. |
+| `oneplus-ac2003` | OnePlus Nord (AC2003) | 11 | documented | From the `Nord` firmware dump; ask only, no auto-apply. |
 | `xiaomi-15t` | Xiaomi 15T (25069PTEBG) | 16 | documented | From the `goya` firmware dump; ask only, no auto-apply. |
+| `xiaomi-17-ultra` | Xiaomi 17 Ultra (2512BPNDAG) | 16 | documented | From the `nezha` firmware dump; ask only, no auto-apply. |
 | `redmi-note-15-pro` | Redmi Note 15 Pro (`lapis`) | 16 | documented | Regional model numbers; fingerprint-pinned family profile; ask only. |
+| `redmi-note-15` | Redmi Note 15 (`spinel`) | 16 | documented | Regional model numbers; fingerprint-pinned family profile; ask only. |
 | `poco-f6` | POCO F6 (24069PC21G) | 16 | documented | From the `peridot` firmware dump; ask only, no auto-apply. |
+| `poco-f9-ultra` | POCO F9 Ultra (26077PC53G) | 16 | documented | From the `songyuan` firmware dump; ask only, no auto-apply. |
 | `xiaomi-hyperos` | Xiaomi/Redmi/POCO HyperOS | 14–16 | device | Family profile; `auto_apply: false`; MSA/GetApps; region-specific names; re-check after OTA. |
 | `generic-android` | Any Android 8+ | 8–16 | reference | Reference only; no auto-apply. |

@@ -174,12 +174,19 @@ en un build incluido en `tested`.
 | [`samsung-sm-s918b`](profiles/samsung/sm-s918b.json) | Galaxy S23 Ultra (SM-S918B) | 13–16 | device, build Android 14 probado |
 | [`samsung-sm-s938b`](profiles/samsung/sm-s938b.json) | Galaxy S25 Ultra (SM-S938B) | 16 | documented, solo preguntar |
 | [`samsung-sm-a546e`](profiles/samsung/sm-a546e.json) | Galaxy A54 5G (SM-A546E) | 13 | documented, solo preguntar |
+| [`samsung-sm-a065f`](profiles/samsung/sm-a065f.json) | Galaxy A06 (SM-A065F) | 16 | documented, solo preguntar |
+| [`samsung-sm-a245f`](profiles/samsung/sm-a245f.json) | Galaxy A24 (SM-A245F) | 13 | documented, solo preguntar |
 | [`oneplus-a6013`](profiles/oneplus/oneplus-a6013.json) | OnePlus 6T (ONEPLUS A6013) | 11 | device, build OxygenOS 11.1.2.2 probado |
 | [`oneplus-cph2487`](profiles/oneplus/oneplus-cph2487.json) | OnePlus 11R 5G (CPH2487) | 16 | documented, solo preguntar |
 | [`oneplus-cph2719`](profiles/oneplus/oneplus-cph2719.json) | OnePlus Nord CE5 (CPH2719) | 16 | documented, solo preguntar |
+| [`oneplus-hd1925`](profiles/oneplus/oneplus-hd1925.json) | OnePlus 7T Pro 5G McLaren (HD1925) | 11 | documented, solo preguntar |
+| [`oneplus-ac2003`](profiles/oneplus/oneplus-ac2003.json) | OnePlus Nord (AC2003) | 11 | documented, solo preguntar |
 | [`xiaomi-15t`](profiles/xiaomi/xiaomi-15t.json) | Xiaomi 15T (25069PTEBG) | 16 | documented, solo preguntar |
+| [`xiaomi-17-ultra`](profiles/xiaomi/xiaomi-17-ultra.json) | Xiaomi 17 Ultra (2512BPNDAG) | 16 | documented, solo preguntar |
 | [`redmi-note-15-pro`](profiles/redmi/redmi-note-15-pro.json) | Redmi Note 15 Pro (`lapis`) | 16 | documented, solo preguntar |
+| [`redmi-note-15`](profiles/redmi/redmi-note-15.json) | Redmi Note 15 (`spinel`) | 16 | documented, solo preguntar |
 | [`poco-f6`](profiles/poco/poco-f6.json) | POCO F6 (24069PC21G) | 16 | documented, solo preguntar |
+| [`poco-f9-ultra`](profiles/poco/poco-f9-ultra.json) | POCO F9 Ultra (26077PC53G) | 16 | documented, solo preguntar |
 | [`xiaomi-hyperos`](profiles/xiaomi/hyperos.json) | Xiaomi/Redmi/POCO, HyperOS | 14–16 | device, perfil de familia, sin auto-apply |
 | [`generic-android`](profiles/generic/android.json) | Cualquier Android 8+ | 8+ | reference, sin auto-apply |
 
