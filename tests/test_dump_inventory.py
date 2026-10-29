@@ -1,4 +1,5 @@
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -44,6 +45,19 @@ class InventoryTests(unittest.TestCase):
     def test_cache_name(self):
         self.assertEqual(di.cache_name("README.md"), "readme-md.txt")
         self.assertEqual(di.cache_name("vendor/build.prop"), "vendor-build-prop.txt")
+
+    def test_scan_xml_candidates(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            xml = root / "my_product/etc/permissions/example.xml"
+            xml.parent.mkdir(parents=True)
+            xml.write_text(
+                '<permissions><privapp-permissions package="com.example.one"/></permissions>',
+                encoding="utf-8",
+            )
+            all_files = "my_product/etc/permissions/example.xml\n"
+            found = di.scan_xml_candidates(root, all_files)
+        self.assertIn("com.example.one", found)
 
     def test_fingerprint_regex(self):
         regex = di.build_fingerprint_regex(

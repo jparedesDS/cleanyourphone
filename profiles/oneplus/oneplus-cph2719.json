@@ -1,0 +1,516 @@
+{
+  "id": "oneplus-cph2719",
+  "brand": "OnePlus",
+  "model": "CPH2719",
+  "marketing_name": "OnePlus Nord CE5",
+  "codename": "OP613BL1",
+  "android": [
+    "16"
+  ],
+  "fingerprint_regex": "^OnePlus/CPH2719EEA/OP613BL1",
+  "auto_apply": false,
+  "verification": "documented",
+  "sources": [
+    {
+      "title": "Android Dumps: oneplus/OP613BL1",
+      "url": "https://gitlab.com/Android-Dumps/oneplus/OP613BL1",
+      "retrieved": "2026-10-29",
+      "note": "Firmware dump for OnePlus Nord CE5 (CPH2719)"
+    },
+    {
+      "title": "Dump README (build metadata)",
+      "url": "https://gitlab.com/Android-Dumps/oneplus/OP613BL1/-/raw/sys_mssi_64_64only_cn_armv82-user-16-BP2A.250605.015-1769440806649-release-keys/README.md",
+      "retrieved": "2026-10-29",
+      "note": "Codename, build id and fingerprint"
+    },
+    {
+      "title": "Dump all_files.txt (APK and permission inventory)",
+      "url": "https://gitlab.com/Android-Dumps/oneplus/OP613BL1/-/raw/sys_mssi_64_64only_cn_armv82-user-16-BP2A.250605.015-1769440806649-release-keys/all_files.txt",
+      "retrieved": "2026-10-29",
+      "note": "Evidence that each package path exists in the firmware"
+    }
+  ],
+  "tested": [],
+  "disable": [],
+  "ask": [
+    {
+      "package": "com.heytap.browser",
+      "why": "HeyTap Browser preload",
+      "breaks": "HeyTap Browser"
+    },
+    {
+      "package": "com.heytap.market",
+      "why": "HeyTap App Market and its recommendations",
+      "breaks": "App Market and app updates"
+    },
+    {
+      "package": "com.heytap.themestore",
+      "why": "HeyTap Theme Store",
+      "breaks": "Theme purchases and downloads"
+    },
+    {
+      "package": "com.nearme.themestore",
+      "why": "Oppo/OnePlus Theme Store",
+      "breaks": "Theme purchases and downloads"
+    },
+    {
+      "package": "com.nearme.themespace",
+      "why": "Theme Space",
+      "breaks": "Theme and wallpaper customization"
+    },
+    {
+      "package": "com.heytap.cloud",
+      "why": "HeyTap Cloud backup and sync",
+      "breaks": "Cloud backup/restore and sync"
+    },
+    {
+      "package": "com.heytap.usercenter",
+      "why": "HeyTap user center",
+      "breaks": "HeyTap account features"
+    },
+    {
+      "package": "com.heytap.yoli",
+      "why": "Soloop video editor",
+      "breaks": "Soloop video editing"
+    },
+    {
+      "package": "com.heytap.quicksearchbox",
+      "why": "HeyTap Quick Search",
+      "breaks": "Quick Search and its suggestions"
+    },
+    {
+      "package": "com.oppo.quicksearchbox",
+      "why": "Oppo Quick Search",
+      "breaks": "Quick Search and its suggestions"
+    },
+    {
+      "package": "com.heytap.habit.analysis",
+      "why": "HeyTap usage analysis",
+      "breaks": "Usage analysis features"
+    },
+    {
+      "package": "com.heytap.colorfulengine",
+      "why": "HeyTap Colorful Engine",
+      "breaks": "Some theme/color features"
+    },
+    {
+      "package": "com.coloros.browser",
+      "why": "ColorOS Browser",
+      "breaks": "ColorOS Browser"
+    },
+    {
+      "package": "com.coloros.video",
+      "why": "ColorOS Video player",
+      "breaks": "Video player"
+    },
+    {
+      "package": "com.coloros.gallery3d",
+      "why": "ColorOS Gallery",
+      "breaks": "Gallery app and its editing features"
+    },
+    {
+      "package": "com.coloros.soundrecorder",
+      "why": "ColorOS Voice Recorder",
+      "breaks": "Voice Recorder app"
+    },
+    {
+      "package": "com.coloros.speechassist",
+      "why": "ColorOS voice assistant",
+      "breaks": "Voice assistant"
+    },
+    {
+      "package": "com.coloros.speechassist.engine",
+      "why": "ColorOS voice engine",
+      "breaks": "Voice assistant and speech features"
+    },
+    {
+      "package": "com.heytap.speechassist",
+      "why": "HeyTap voice assistant",
+      "breaks": "Voice assistant"
+    },
+    {
+      "package": "com.heytap.speechassist.engine",
+      "why": "HeyTap voice engine",
+      "breaks": "Voice assistant and speech features"
+    },
+    {
+      "package": "com.coloros.sceneservice",
+      "why": "ColorOS scene service",
+      "breaks": "Context-aware scene features"
+    },
+    {
+      "package": "com.coloros.smartdrive",
+      "why": "ColorOS Smart Drive",
+      "breaks": "Driving mode"
+    },
+    {
+      "package": "com.coloros.findmyphone",
+      "why": "ColorOS Find My Phone",
+      "breaks": "Remote locate/lock features"
+    },
+    {
+      "package": "com.coloros.blacklist",
+      "why": "ColorOS blacklist service",
+      "breaks": "Call/SMS blocking rules"
+    },
+    {
+      "package": "com.coloros.blacklistapp",
+      "why": "ColorOS blacklist UI",
+      "breaks": "Call/SMS blocking UI"
+    },
+    {
+      "package": "com.coloros.bootreg",
+      "why": "ColorOS boot registration",
+      "breaks": "Some first-boot/registration flows"
+    },
+    {
+      "package": "com.coloros.photoeffects",
+      "why": "ColorOS photo effects",
+      "breaks": "Gallery photo effects"
+    },
+    {
+      "package": "com.coloros.safesdkproxy",
+      "why": "ColorOS safe SDK proxy",
+      "breaks": "Some app security SDK features"
+    },
+    {
+      "package": "com.coloros.wifisecuredetect",
+      "why": "ColorOS Wi-Fi security detection",
+      "breaks": "Wi-Fi security warnings"
+    },
+    {
+      "package": "com.oplus.deepthinker",
+      "why": "Oplus DeepThinker AI/analytics",
+      "breaks": "Some AI and usage-analysis features"
+    },
+    {
+      "package": "com.oplus.stdid",
+      "why": "Oplus advertising/standard ID service",
+      "breaks": "Advertising ID and some ad targeting"
+    },
+    {
+      "package": "com.oplus.nhs",
+      "why": "Oplus network health service",
+      "breaks": "Network health diagnostics"
+    },
+    {
+      "package": "com.oplus.onet",
+      "why": "Oplus network service",
+      "breaks": "Some network optimizations"
+    },
+    {
+      "package": "com.oplus.trafficmonitor",
+      "why": "Oplus traffic monitor",
+      "breaks": "Data traffic monitor"
+    },
+    {
+      "package": "com.oplus.remotecontrol",
+      "why": "Oplus remote control",
+      "breaks": "Remote control features"
+    },
+    {
+      "package": "com.oplus.smartlock",
+      "why": "Oplus smart lock",
+      "breaks": "Smart Lock features"
+    },
+    {
+      "package": "com.oplus.appplatform",
+      "why": "Oplus app platform",
+      "breaks": "Some Oplus app integrations"
+    },
+    {
+      "package": "com.oplus.customize.coreapp",
+      "why": "Oplus customization service",
+      "breaks": "Some customization features"
+    },
+    {
+      "package": "com.oplus.nearcomm",
+      "why": "Oplus near communication",
+      "breaks": "Nearby communication features"
+    },
+    {
+      "package": "com.oplus.ovoicemanager.wakeup",
+      "why": "Oplus voice wakeup",
+      "breaks": "Voice wake word"
+    },
+    {
+      "package": "com.oplus.screenshot",
+      "why": "Oplus screenshot service",
+      "breaks": "Screenshot toolbar/features"
+    },
+    {
+      "package": "com.oplus.upgradeguide",
+      "why": "Oplus upgrade guide",
+      "breaks": "Upgrade guide prompts"
+    },
+    {
+      "package": "com.oneplus.membership",
+      "why": "OnePlus membership/community",
+      "breaks": "OnePlus membership and community"
+    },
+    {
+      "package": "com.oneplus.opshelf",
+      "why": "OnePlus Shelf",
+      "breaks": "Shelf and its cards"
+    },
+    {
+      "package": "com.oneplus.voicewakeup",
+      "why": "OnePlus voice wakeup",
+      "breaks": "Voice wake word"
+    },
+    {
+      "package": "net.oneplus.commonlogtool",
+      "why": "OnePlus common log tool",
+      "breaks": "OnePlus diagnostic log capture"
+    },
+    {
+      "package": "com.facebook.appmanager",
+      "why": "Facebook app manager preload",
+      "breaks": "Facebook app management"
+    },
+    {
+      "package": "com.facebook.services",
+      "why": "Facebook services preload",
+      "breaks": "Facebook background services"
+    },
+    {
+      "package": "com.facebook.system",
+      "why": "Facebook system preload",
+      "breaks": "Facebook system components"
+    },
+    {
+      "package": "com.microsoft.deviceintegrationservice",
+      "why": "Link to Windows / Phone Link",
+      "breaks": "Phone Link integration"
+    },
+    {
+      "package": "com.LogiaGroup.LogiaDeck",
+      "why": "Logitech/Logia preload",
+      "breaks": "Logia companion features"
+    },
+    {
+      "package": "com.aiunit.aon",
+      "why": "AI Unit always-on service",
+      "breaks": "Some AI/always-on features"
+    },
+    {
+      "package": "com.tmobile.rsuapp",
+      "why": "T-Mobile RSU app",
+      "breaks": "T-Mobile update/services"
+    },
+    {
+      "package": "com.tmobile.rsusrv",
+      "why": "T-Mobile RSU service",
+      "breaks": "T-Mobile update/services"
+    },
+    {
+      "package": "com.orange.update",
+      "why": "Orange carrier update",
+      "breaks": "Carrier update services"
+    },
+    {
+      "package": "com.ses.entitlement.o2",
+      "why": "O2 entitlement service",
+      "breaks": "O2 carrier entitlement"
+    },
+    {
+      "package": "com.payjoy.access",
+      "why": "PayJoy device financing agent",
+      "breaks": "Device financing/lock features"
+    },
+    {
+      "package": "com.oplus.cota",
+      "why": "Oplus OTA/update client",
+      "breaks": "System update notifications and downloads"
+    },
+    {
+      "package": "com.mediatek.systemupdate",
+      "why": "MediaTek system update",
+      "breaks": "System updates"
+    },
+    {
+      "package": "com.mediatek.callrecorder",
+      "why": "MediaTek call recorder",
+      "breaks": "Call recording"
+    }
+  ],
+  "never": [
+    {
+      "package": "android",
+      "why": "Android framework"
+    },
+    {
+      "package": "com.android.systemui",
+      "why": "Status bar, notifications, lock screen"
+    },
+    {
+      "package": "com.android.settings",
+      "why": "Android Settings"
+    },
+    {
+      "package": "com.android.shell",
+      "why": "ADB shell"
+    },
+    {
+      "package": "com.android.phone",
+      "why": "Telephony: calls, mobile data, SIM"
+    },
+    {
+      "package": "com.android.server.telecom",
+      "why": "Call routing"
+    },
+    {
+      "package": "com.android.incallui",
+      "why": "In-call UI"
+    },
+    {
+      "package": "com.android.providers.telephony",
+      "why": "SMS/APN provider"
+    },
+    {
+      "package": "com.android.permissioncontroller",
+      "why": "Permission controller"
+    },
+    {
+      "package": "com.android.packageinstaller",
+      "why": "Package installer"
+    },
+    {
+      "package": "com.google.android.gms",
+      "why": "Play Services: push, banking, backups"
+    },
+    {
+      "package": "com.google.android.gsf",
+      "why": "Google Services Framework"
+    },
+    {
+      "package": "com.android.vending",
+      "why": "Play Store"
+    },
+    {
+      "package": "com.google.android.webview",
+      "why": "WebView for in-app browsers"
+    },
+    {
+      "package": "com.google.android.networkstack",
+      "why": "Network stack"
+    },
+    {
+      "package": "com.android.cellbroadcastreceiver",
+      "why": "Emergency alerts"
+    },
+    {
+      "package": "com.google.android.ims",
+      "why": "VoLTE, Wi-Fi calling and RCS"
+    },
+    {
+      "package": "com.android.carrierconfig",
+      "why": "Carrier configuration"
+    },
+    {
+      "package": "com.android.nfc",
+      "why": "NFC payments and tags"
+    },
+    {
+      "package": "com.android.bluetooth",
+      "why": "Bluetooth: earbuds, car, wearables"
+    },
+    {
+      "package": "com.android.documentsui",
+      "why": "System file picker"
+    },
+    {
+      "package": "com.android.vpndialogs",
+      "why": "VPN consent"
+    },
+    {
+      "package": "com.android.emergency",
+      "why": "Emergency information and dialer"
+    },
+    {
+      "package": "net.oneplus.launcher",
+      "why": "System launcher and Recents"
+    },
+    {
+      "package": "com.android.launcher3",
+      "why": "System launcher"
+    },
+    {
+      "package": "com.android.launcher",
+      "why": "System launcher"
+    },
+    {
+      "package": "com.android.wm.shell",
+      "why": "Window management and Recents"
+    },
+    {
+      "package": "com.android.intentresolver",
+      "why": "Share/open-with dialog"
+    },
+    {
+      "package": "com.qualcomm.qcrilmsgtunnel",
+      "why": "Qualcomm telephony"
+    },
+    {
+      "package": "com.quicinc.cne.CNEService",
+      "why": "Connectivity engine"
+    },
+    {
+      "package": "com.mediatek.ims",
+      "why": "IMS: VoLTE and Wi-Fi calling"
+    },
+    {
+      "package": "com.mediatek.ims.config",
+      "why": "IMS configuration"
+    },
+    {
+      "package": "com.mediatek.ims.pco",
+      "why": "IMS PCO"
+    },
+    {
+      "package": "com.mediatek.ims.rcsua.service",
+      "why": "IMS/RCS service"
+    },
+    {
+      "package": "com.mediatek.telephony",
+      "why": "MediaTek telephony"
+    },
+    {
+      "package": "com.mediatek.cellbroadcastreceiver",
+      "why": "Emergency alerts"
+    },
+    {
+      "package": "com.mediatek.wfo.impl",
+      "why": "Wi-Fi calling"
+    },
+    {
+      "package": "com.mediatek.bluetooth",
+      "why": "Bluetooth stack"
+    },
+    {
+      "package": "com.mediatek.simprocessor",
+      "why": "SIM processing"
+    },
+    {
+      "package": "com.mediatek.omacp",
+      "why": "Carrier provisioning"
+    },
+    {
+      "package": "com.mediatek.op08.ims",
+      "why": "IMS"
+    },
+    {
+      "package": "com.redteamobile.roaming",
+      "why": "eSIM/roaming"
+    },
+    {
+      "package": "com.redteamobile.roaming.deamon",
+      "why": "eSIM/roaming"
+    },
+    {
+      "package": "com.redteamobile.virtual.softsim",
+      "why": "eSIM/roaming"
+    }
+  ],
+  "notes": "Documented from the OP613BL1 firmware dump (Android 16), not tested on a physical phone. Region and carrier variants may differ. No auto-apply; ask before every package. The dump contains many MediaTek/Qualcomm/Oplus packages; only the curated candidates are listed."
+}

@@ -25,6 +25,30 @@ It writes:
 Downloads are cached under `work/cache`. If GitLab returns HTTP 429, wait a minute, set
 `GITLAB_TOKEN` to a personal access token, or reuse the cache with `--cache-dir`.
 
+To avoid the API entirely, use a sparse local clone:
+
+```bash
+git clone --depth 1 --filter=blob:none --sparse \
+  https://gitlab.com/Android-Dumps/oneplus/OP5961L1.git work/dumps/op5961
+cd work/dumps/op5961
+git sparse-checkout set --no-cone README.md all_files.txt vendor/build.prop \
+  system/system/build.prop product/etc/build.prop system_ext/etc/build.prop odm/etc/build.prop
+```
+
+Then run the inventory against the local directory:
+
+```bash
+python scripts/dump_inventory.py \
+  --project Android-Dumps/oneplus/OP5961L1 \
+  --local-dir work/dumps/op5961 \
+  --model CPH2487 \
+  --marketing-name "OnePlus 11R 5G" \
+  --out work/op5961
+```
+
+`--model` is required when the dump's build.prop uses a generic product name (`ossi`, `qssi`) and
+the real model only appears in the dump's README fingerprint.
+
 The draft is intentionally incomplete. Curate `ask` by hand, copy the file to
 `profiles/<brand>/<id>.json`, remove the `_draft` block, and run:
 

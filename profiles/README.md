@@ -16,6 +16,8 @@ profiles/
 ├── samsung/sm-s918b.json
 ├── samsung/sm-s938b.json
 ├── samsung/sm-a546e.json
+├── oneplus/oneplus-cph2487.json
+├── oneplus/oneplus-cph2719.json
 ├── xiaomi/hyperos.json
 └── generic/android.json
 ```
@@ -165,5 +167,7 @@ list. It does not replace a real test.
 | `samsung-sm-s918b` | Galaxy S23 Ultra (SM-S918B) | 13–16 | device | Tested on Android 14 (`UP1A.231005.007`); Samsung Free is the main ad surface; Knox is permanent. |
 | `samsung-sm-s938b` | Galaxy S25 Ultra (SM-S938B) | 16 | documented | From the `pa3q` firmware dump; ask only, no auto-apply. |
 | `samsung-sm-a546e` | Galaxy A54 5G (SM-A546E) | 13 | documented | From the `a54x` firmware dump; ask only, no auto-apply. |
+| `oneplus-cph2487` | OnePlus 11R 5G (CPH2487) | 16 | documented | From the `OP5961L1` firmware dump; ask only, no auto-apply. |
+| `oneplus-cph2719` | OnePlus Nord CE5 (CPH2719) | 16 | documented | From the `OP613BL1` firmware dump; ask only, no auto-apply. |
 | `xiaomi-hyperos` | Xiaomi/Redmi/POCO HyperOS | 14–16 | device | Family profile; `auto_apply: false`; MSA/GetApps; region-specific names; re-check after OTA. |
 | `generic-android` | Any Android 8+ | 8–16 | reference | Reference only; no auto-apply. |
