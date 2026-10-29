@@ -10,30 +10,20 @@ Documented from the Android Dumps project `oneplus/OP613BL1` (Android 16). No de
 
 ## A6013 — OnePlus 6T
 
-The only Android Dumps project for this model (`oneplus/OnePlus6T`) is **LineageOS 19.1**, not stock
-OxygenOS. Its `README.md` says `lineage_fajita-userdebug`, Android 12, build `SQ3A.220605.009.A1`,
-while the fingerprint is a spoofed stock OnePlus 6T fingerprint. Do not turn that dump into a stock
-OxygenOS profile.
+The Android Dumps project `oneplus/OnePlus6T` is **LineageOS 19.1**, not stock OxygenOS. Its
+`README.md` says `lineage_fajita-userdebug`, Android 12, build `SQ3A.220605.009.A1`, while the
+fingerprint is a spoofed stock OnePlus 6T fingerprint. It was **not** used for the stock profile.
 
-To add a real OnePlus 6T profile, collect a package dump from the actual phone:
+`oneplus-a6013.json` is documented from a read-only package inventory collected from the owner's
+actual OnePlus 6T:
 
-```bash
-adb shell getprop ro.product.model
-adb shell getprop ro.build.version.release
-adb shell getprop ro.build.display.id
-adb shell getprop ro.build.fingerprint
-adb shell pm list packages -f
-adb shell pm list packages -d
-adb shell pm list packages -e
-```
+- Model: `ONEPLUS A6013`
+- OxygenOS 11.1.2.2, Android 11
+- Build: `ONEPLUS A6013_41_211125`
+- Fingerprint: `OnePlus/OnePlus6T/OnePlus6T:11/RKQ1.201217.002/2111252327:user/release-keys`
 
-Or, from the repository:
+It has no `disable` list and no auto-apply. Only system packages are listed; the owner's user apps
+are excluded. Promote it to `device` only after testing a batch and running the checklist.
 
-```bash
-python tools/phone.py probe
-python tools/phone.py backup
-```
-
-Use the backup's `meta.json` as the inventory. Mark the profile `documented` until the package list
-has been tested on the phone. If the phone runs LineageOS 19.1, say so explicitly: it needs its own
-profile and a matching rule for `ro.build.display.id`, not the stock fingerprint.
+If a phone runs LineageOS 19.1, it needs its own profile and a matching rule for
+`ro.build.display.id`, not the stock fingerprint.

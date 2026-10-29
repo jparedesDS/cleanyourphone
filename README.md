@@ -170,13 +170,15 @@ them to ask per package. `apply` only runs for a `device` profile on a build lis
 | [`samsung-sm-s918b`](profiles/samsung/sm-s918b.json) | Galaxy S23 Ultra (SM-S918B) | 13–16 | device, tested Android 14 build |
 | [`samsung-sm-s938b`](profiles/samsung/sm-s938b.json) | Galaxy S25 Ultra (SM-S938B) | 16 | documented, ask only |
 | [`samsung-sm-a546e`](profiles/samsung/sm-a546e.json) | Galaxy A54 5G (SM-A546E) | 13 | documented, ask only |
+| [`oneplus-a6013`](profiles/oneplus/oneplus-a6013.json) | OnePlus 6T (ONEPLUS A6013) | 11 | documented, ask only |
 | [`oneplus-cph2487`](profiles/oneplus/oneplus-cph2487.json) | OnePlus 11R 5G (CPH2487) | 16 | documented, ask only |
 | [`oneplus-cph2719`](profiles/oneplus/oneplus-cph2719.json) | OnePlus Nord CE5 (CPH2719) | 16 | documented, ask only |
 | [`xiaomi-hyperos`](profiles/xiaomi/hyperos.json) | Xiaomi/Redmi/POCO, HyperOS | 14–16 | device, family profile, no auto-apply |
 | [`generic-android`](profiles/generic/android.json) | Any Android 8+ | 8+ | reference, no auto-apply |
 
 Want to add yours? Read [profiles/README.md](profiles/README.md). A `device` profile needs a real
-test; a `documented` profile needs a primary firmware dump and at least one source URL.
+test; a `documented` profile needs a primary firmware dump or an owner-collected device inventory,
+plus at least one source URL.
 
 ## The open-source OS question
 

@@ -1,0 +1,561 @@
+{
+  "id": "oneplus-a6013",
+  "brand": "OnePlus",
+  "model": "ONEPLUS A6013",
+  "marketing_name": "OnePlus 6T",
+  "codename": "OnePlus6T",
+  "android": [
+    "11"
+  ],
+  "fingerprint_regex": "^OnePlus/OnePlus6T/OnePlus6T:11/RKQ1\\.201217\\.002/2111252327",
+  "auto_apply": false,
+  "verification": "documented",
+  "sources": [
+    {
+      "title": "OxygenOS 11.1.2.2 for the OnePlus 6 and OnePlus 6T",
+      "url": "https://community.oneplus.com/thread/1523813",
+      "retrieved": "2026-10-29",
+      "note": "Official OxygenOS 11.1.2.2 announcement. Package inventory collected read-only from the owner's OnePlus 6T: build ONEPLUS A6013_41_211125, fingerprint OnePlus/OnePlus6T/OnePlus6T:11/RKQ1.201217.002/2111252327:user/release-keys."
+    }
+  ],
+  "tested": [],
+  "disable": [],
+  "ask": [
+    {
+      "package": "com.oneplus.gamespace",
+      "why": "OnePlus Game Space and game recommendations",
+      "breaks": "Game Space and game tools"
+    },
+    {
+      "package": "com.oneplus.brickmode",
+      "why": "OnePlus Zen Mode",
+      "breaks": "Zen Mode"
+    },
+    {
+      "package": "com.oneplus.deskclock",
+      "why": "OnePlus Clock and alarms",
+      "breaks": "Alarm, timer and clock app"
+    },
+    {
+      "package": "com.oneplus.screenshot",
+      "why": "OnePlus screenshot service",
+      "breaks": "Screenshot toolbar/features"
+    },
+    {
+      "package": "com.oneplus.account",
+      "why": "OnePlus Account",
+      "breaks": "OnePlus account and cloud features"
+    },
+    {
+      "package": "cn.oneplus.photos",
+      "why": "OnePlus Photos",
+      "breaks": "OnePlus Photos app"
+    },
+    {
+      "package": "com.oneplus.wallpaper",
+      "why": "OnePlus Wallpaper",
+      "breaks": "Wallpaper picker and themes"
+    },
+    {
+      "package": "com.oneplus.setupwizard",
+      "why": "OnePlus Setup Wizard",
+      "breaks": "Setup and restore flows"
+    },
+    {
+      "package": "com.oneplus.gallery",
+      "why": "OnePlus Gallery",
+      "breaks": "Gallery app and editing"
+    },
+    {
+      "package": "com.oneplus.camera.service",
+      "why": "OnePlus Camera service",
+      "breaks": "Camera features"
+    },
+    {
+      "package": "com.oneplus.camera",
+      "why": "OnePlus Camera",
+      "breaks": "Camera app"
+    },
+    {
+      "package": "net.oneplus.odm",
+      "why": "OnePlus Device Manager",
+      "breaks": "Device management and telemetry"
+    },
+    {
+      "package": "net.oneplus.odm.provider",
+      "why": "OnePlus Device Manager provider",
+      "breaks": "Device management"
+    },
+    {
+      "package": "net.oneplus.push",
+      "why": "OnePlus Push",
+      "breaks": "OnePlus push notifications"
+    },
+    {
+      "package": "net.oneplus.commonlogtool",
+      "why": "OnePlus common log tool",
+      "breaks": "Log capture"
+    },
+    {
+      "package": "com.oneplus.filemanager",
+      "why": "OnePlus File Manager",
+      "breaks": "File manager"
+    },
+    {
+      "package": "com.oneplus.contacts",
+      "why": "OnePlus Contacts",
+      "breaks": "Contacts app"
+    },
+    {
+      "package": "com.oneplus.appupgrader",
+      "why": "OnePlus App Upgrader",
+      "breaks": "OnePlus app updates"
+    },
+    {
+      "package": "com.oneplus.opbackup",
+      "why": "OnePlus Backup",
+      "breaks": "Backup features"
+    },
+    {
+      "package": "com.oneplus.backuprestore.remoteservice",
+      "why": "OnePlus backup/restore service",
+      "breaks": "Backup and restore"
+    },
+    {
+      "package": "com.oneplus.opbugreportlite",
+      "why": "OnePlus bug report",
+      "breaks": "Bug reporting"
+    },
+    {
+      "package": "com.oneplus.diagnosemanager",
+      "why": "OnePlus diagnostics",
+      "breaks": "Diagnostic logs"
+    },
+    {
+      "package": "com.oneplus.aod",
+      "why": "OnePlus Always On Display",
+      "breaks": "Always On Display"
+    },
+    {
+      "package": "com.oneplus.screenrecord",
+      "why": "OnePlus screen recorder",
+      "breaks": "Screen recording"
+    },
+    {
+      "package": "com.oneplus.calculator",
+      "why": "OnePlus Calculator",
+      "breaks": "Calculator app"
+    },
+    {
+      "package": "com.qualcomm.qti.qms.service.telemetry",
+      "why": "Qualcomm telemetry service",
+      "breaks": "Qualcomm telemetry"
+    },
+    {
+      "package": "com.qualcomm.qti.devicestatisticsservice",
+      "why": "Qualcomm device statistics",
+      "breaks": "Qualcomm telemetry"
+    },
+    {
+      "package": "com.qualcomm.qti.qcolor",
+      "why": "Qualcomm QColor",
+      "breaks": "Display color features"
+    },
+    {
+      "package": "com.qti.service.colorservice",
+      "why": "Qualcomm color service",
+      "breaks": "Display color features"
+    },
+    {
+      "package": "com.qualcomm.location",
+      "why": "Qualcomm location",
+      "breaks": "Location services"
+    },
+    {
+      "package": "com.qualcomm.wfd.service",
+      "why": "Wi-Fi Display service",
+      "breaks": "Screen casting"
+    },
+    {
+      "package": "com.qualcomm.qtil.aptxals",
+      "why": "Qualcomm aptX",
+      "breaks": "aptX Bluetooth audio"
+    },
+    {
+      "package": "com.google.android.youtube",
+      "why": "YouTube preload",
+      "breaks": "YouTube app"
+    },
+    {
+      "package": "com.google.android.gm",
+      "why": "Gmail preload",
+      "breaks": "Gmail app and notifications"
+    },
+    {
+      "package": "com.google.android.apps.docs",
+      "why": "Google Drive preload",
+      "breaks": "Drive app and sync"
+    },
+    {
+      "package": "com.google.android.apps.maps",
+      "why": "Google Maps preload",
+      "breaks": "Maps and navigation"
+    },
+    {
+      "package": "com.google.android.apps.photos",
+      "why": "Google Photos preload",
+      "breaks": "Photos backup and gallery"
+    },
+    {
+      "package": "com.google.android.calendar",
+      "why": "Google Calendar preload",
+      "breaks": "Calendar and reminders"
+    },
+    {
+      "package": "com.google.android.apps.youtube.music",
+      "why": "YouTube Music preload",
+      "breaks": "YouTube Music"
+    },
+    {
+      "package": "com.google.android.videos",
+      "why": "Google TV / Play Movies",
+      "breaks": "Google TV app"
+    },
+    {
+      "package": "com.google.android.apps.tachyon",
+      "why": "Google Meet",
+      "breaks": "Meet calls"
+    },
+    {
+      "package": "com.google.android.projection.gearhead",
+      "why": "Android Auto",
+      "breaks": "Android Auto"
+    },
+    {
+      "package": "com.google.android.apps.wellbeing",
+      "why": "Digital Wellbeing",
+      "breaks": "Screen-time reports and app timers"
+    },
+    {
+      "package": "com.google.android.feedback",
+      "why": "Google feedback",
+      "breaks": "Nothing user-facing"
+    },
+    {
+      "package": "com.google.android.apps.turbo",
+      "why": "Adaptive Battery / Device Health",
+      "breaks": "Adaptive Battery and diagnostics"
+    },
+    {
+      "package": "com.google.android.googlequicksearchbox",
+      "why": "Google app / Assistant",
+      "breaks": "Google app and Assistant"
+    },
+    {
+      "package": "com.google.android.apps.googleassistant",
+      "why": "Google Assistant",
+      "breaks": "Assistant"
+    },
+    {
+      "package": "com.google.android.apps.walletnfcrel",
+      "why": "Google Wallet",
+      "breaks": "Tap-to-pay and transit cards"
+    },
+    {
+      "package": "com.google.android.apps.restore",
+      "why": "Google restore",
+      "breaks": "Restore apps/data on a new phone"
+    },
+    {
+      "package": "com.google.android.setupwizard",
+      "why": "Google Setup Wizard",
+      "breaks": "Setup/restore flows"
+    },
+    {
+      "package": "com.google.android.partnersetup",
+      "why": "Google partner setup",
+      "breaks": "Some carrier/OEM provisioning"
+    },
+    {
+      "package": "com.google.android.onetimeinitializer",
+      "why": "Google one-time initializer",
+      "breaks": "One-time setup"
+    },
+    {
+      "package": "com.android.chrome",
+      "why": "Chrome preload",
+      "breaks": "Chrome browser"
+    }
+  ],
+  "never": [
+    {
+      "package": "android",
+      "why": "Android framework"
+    },
+    {
+      "package": "com.android.systemui",
+      "why": "Status bar, notifications, lock screen"
+    },
+    {
+      "package": "com.android.settings",
+      "why": "Android Settings"
+    },
+    {
+      "package": "com.android.shell",
+      "why": "ADB shell"
+    },
+    {
+      "package": "com.android.phone",
+      "why": "Telephony: calls, mobile data, SIM"
+    },
+    {
+      "package": "com.android.server.telecom",
+      "why": "Call routing"
+    },
+    {
+      "package": "com.android.mms.service",
+      "why": "MMS service"
+    },
+    {
+      "package": "com.android.providers.telephony",
+      "why": "SMS/APN provider"
+    },
+    {
+      "package": "com.android.providers.contacts",
+      "why": "Contacts provider"
+    },
+    {
+      "package": "com.android.providers.media",
+      "why": "Media provider"
+    },
+    {
+      "package": "com.google.android.permissioncontroller",
+      "why": "Permission controller"
+    },
+    {
+      "package": "com.google.android.packageinstaller",
+      "why": "Package installer"
+    },
+    {
+      "package": "com.google.android.gms",
+      "why": "Play Services: push, banking, backups"
+    },
+    {
+      "package": "com.google.android.gsf",
+      "why": "Google Services Framework"
+    },
+    {
+      "package": "com.android.vending",
+      "why": "Play Store"
+    },
+    {
+      "package": "com.google.android.webview",
+      "why": "WebView for in-app browsers"
+    },
+    {
+      "package": "com.google.android.networkstack",
+      "why": "Network stack"
+    },
+    {
+      "package": "com.google.android.networkstack.tethering",
+      "why": "Network stack"
+    },
+    {
+      "package": "com.android.cellbroadcastreceiver",
+      "why": "Emergency alerts"
+    },
+    {
+      "package": "com.google.android.cellbroadcastreceiver",
+      "why": "Emergency alerts"
+    },
+    {
+      "package": "org.codeaurora.ims",
+      "why": "IMS: VoLTE and Wi-Fi calling"
+    },
+    {
+      "package": "com.qualcomm.qti.ims",
+      "why": "IMS: VoLTE and Wi-Fi calling"
+    },
+    {
+      "package": "com.android.carrierconfig",
+      "why": "Carrier configuration"
+    },
+    {
+      "package": "com.android.carrierdefaultapp",
+      "why": "Carrier default app"
+    },
+    {
+      "package": "com.android.nfc",
+      "why": "NFC payments and tags"
+    },
+    {
+      "package": "com.oem.nfc",
+      "why": "NFC"
+    },
+    {
+      "package": "com.android.bluetooth",
+      "why": "Bluetooth: earbuds, car, wearables"
+    },
+    {
+      "package": "com.android.se",
+      "why": "eSIM and NFC secure element"
+    },
+    {
+      "package": "com.android.keychain",
+      "why": "Certificates for banking/VPN/Wi-Fi"
+    },
+    {
+      "package": "com.android.certinstaller",
+      "why": "Certificate installer"
+    },
+    {
+      "package": "com.google.android.documentsui",
+      "why": "System file picker"
+    },
+    {
+      "package": "com.android.vpndialogs",
+      "why": "VPN consent"
+    },
+    {
+      "package": "com.android.emergency",
+      "why": "Emergency information and dialer"
+    },
+    {
+      "package": "com.android.stk",
+      "why": "SIM Toolkit"
+    },
+    {
+      "package": "com.android.ons",
+      "why": "Network selection"
+    },
+    {
+      "package": "com.android.phone.overlay.common",
+      "why": "Telephony overlay"
+    },
+    {
+      "package": "com.oneplus.dialer",
+      "why": "Stock OnePlus dialer"
+    },
+    {
+      "package": "com.oneplus.mms",
+      "why": "Stock OnePlus Messages"
+    },
+    {
+      "package": "com.oneplus.telephonyoptimization",
+      "why": "Telephony optimization"
+    },
+    {
+      "package": "com.oneplus.sms.smscplugger",
+      "why": "SMS plugin"
+    },
+    {
+      "package": "com.oneplus.providers.media",
+      "why": "OnePlus media provider"
+    },
+    {
+      "package": "com.oneplus.security",
+      "why": "OnePlus Security: permissions, privacy"
+    },
+    {
+      "package": "com.oneplus",
+      "why": "OnePlus system package"
+    },
+    {
+      "package": "com.oneplus.coreservice",
+      "why": "OnePlus core service"
+    },
+    {
+      "package": "com.oneplus.config",
+      "why": "OnePlus configuration"
+    },
+    {
+      "package": "com.oneplus.orm",
+      "why": "OnePlus ORM"
+    },
+    {
+      "package": "com.oneplus.ses",
+      "why": "OnePlus secure element"
+    },
+    {
+      "package": "com.oneplus.faceunlock",
+      "why": "Face unlock"
+    },
+    {
+      "package": "net.oneplus.launcher",
+      "why": "System launcher and Recents"
+    },
+    {
+      "package": "com.qualcomm.qti.biometrics.fingerprint.service",
+      "why": "Fingerprint service"
+    },
+    {
+      "package": "com.qualcomm.qti.lpa",
+      "why": "eSIM LPA"
+    },
+    {
+      "package": "com.qualcomm.qti.uim",
+      "why": "SIM/UIM"
+    },
+    {
+      "package": "com.qualcomm.qti.uimGbaApp",
+      "why": "SIM/UIM"
+    },
+    {
+      "package": "com.qualcomm.qti.remoteSimlockAuth",
+      "why": "SIM lock"
+    },
+    {
+      "package": "com.qualcomm.qti.dynamicddsservice",
+      "why": "Dual-SIM service"
+    },
+    {
+      "package": "com.qualcomm.qti.telephonyservice",
+      "why": "Telephony"
+    },
+    {
+      "package": "com.qualcomm.qti.uceShimService",
+      "why": "RCS"
+    },
+    {
+      "package": "com.qualcomm.qcrilmsgtunnel",
+      "why": "Telephony"
+    },
+    {
+      "package": "com.qualcomm.qti.simsettings",
+      "why": "SIM settings"
+    },
+    {
+      "package": "com.qualcomm.qti.networksetting",
+      "why": "Network settings"
+    },
+    {
+      "package": "com.qti.confuridialer",
+      "why": "Conference dialer"
+    },
+    {
+      "package": "com.qualcomm.timeservice",
+      "why": "Time service"
+    },
+    {
+      "package": "com.qualcomm.qti.poweroffalarm",
+      "why": "Power-off alarm"
+    },
+    {
+      "package": "vendor.qti.iwlan",
+      "why": "Wi-Fi calling"
+    },
+    {
+      "package": "vendor.qti.hardware.cacert.server",
+      "why": "CA certificates"
+    },
+    {
+      "package": "com.tencent.soter.soterserver",
+      "why": "Soter biometric/payment security"
+    },
+    {
+      "package": "org.ifaa.aidl.manager",
+      "why": "IFAA biometric service"
+    }
+  ],
+  "notes": "Documented from the owner's OnePlus 6T (ONEPLUS A6013) running OxygenOS 11.1.2.2 (Android 11, build ONEPLUS A6013_41_211125, security patch 2021-11-01). Not tested by disabling packages on the device, so no auto-apply. Only system packages are listed; the owner's user apps are intentionally excluded. Ask before every package."
+}
