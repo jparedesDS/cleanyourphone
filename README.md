@@ -197,6 +197,7 @@ them to ask per package. `apply` only runs for a `device` profile on a build lis
 | [`samsung-sm-n986b`](profiles/samsung/sm-n986b.json) | Galaxy Note20 Ultra (SM-N986B) | 12 | documented, ask only |
 | [`samsung-sm-g980f`](profiles/samsung/sm-g980f.json) | Galaxy S20 (SM-G980F) | 12 | documented, ask only |
 | [`samsung-sm-g981n`](profiles/samsung/sm-g981n.json) | Galaxy S20 (SM-G981N) | 12 | documented, ask only |
+| [`samsung-sm-g988b`](profiles/samsung/sm-g988b.json) | Galaxy S20 Ultra (SM-G988B) | 12 | documented, ask only |
 | [`samsung-sm-g986b`](profiles/samsung/sm-g986b.json) | Galaxy S20+ (SM-G986B) | 12 | documented, ask only |
 | [`samsung-sm-g991b`](profiles/samsung/sm-g991b.json) | Galaxy S21 (SM-G991B) | 12 | documented, ask only |
 | [`samsung-sm-g990b`](profiles/samsung/sm-g990b.json) | Galaxy S21 FE (SM-G990B) | 12 | documented, ask only |
@@ -213,14 +214,20 @@ them to ask per package. `apply` only runs for a `device` profile on a build lis
 | [`oneplus-nord-ce`](profiles/oneplus/oneplus-nord-ce.json) | OnePlus Nord CE 5G (`OnePlusNordCE`) | 11 | documented, ask only |
 | [`oneplus-cph2719`](profiles/oneplus/oneplus-cph2719.json) | OnePlus Nord CE5 (CPH2719) | 16 | documented, ask only |
 | [`xiaomi-hyperos`](profiles/xiaomi/hyperos.json) | Xiaomi/Redmi/POCO, HyperOS | 14–16 | device, family profile, no auto-apply |
+| [`xiaomi-mi-10`](profiles/xiaomi/xiaomi-mi-10.json) | Mi 10 | 12 | documented, ask only |
+| [`xiaomi-mi-11-ultra`](profiles/xiaomi/xiaomi-mi-11-ultra.json) | Mi 11 Ultra (`star`) | 12 | documented, ask only |
 | [`xiaomi-11t`](profiles/xiaomi/xiaomi-11t.json) | Xiaomi 11T (`agate`) | 14 | documented, ask only |
 | [`xiaomi-11t-pro`](profiles/xiaomi/xiaomi-11t-pro.json) | Xiaomi 11T Pro (2107113SC) | 13 | documented, ask only |
 | [`xiaomi-12-lite`](profiles/xiaomi/xiaomi-12-lite.json) | Xiaomi 12 Lite (2203129C) | 13 | documented, ask only |
+| [`xiaomi-12x`](profiles/xiaomi/xiaomi-12x.json) | Xiaomi 12X (2112123AG) | 12 | documented, ask only |
 | [`xiaomi-15-ultra`](profiles/xiaomi/xiaomi-15-ultra.json) | Xiaomi 15 Ultra (25010PN30G) | 16 | documented, ask only |
 | [`xiaomi-15t`](profiles/xiaomi/xiaomi-15t.json) | Xiaomi 15T (25069PTEBG) | 16 | documented, ask only |
 | [`xiaomi-17-ultra`](profiles/xiaomi/xiaomi-17-ultra.json) | Xiaomi 17 Ultra (2512BPNDAG) | 16 | documented, ask only |
+| [`xiaomi-civi`](profiles/xiaomi/xiaomi-civi.json) | Xiaomi Civi (2109119BC) | 12 | documented, ask only |
+| [`redmi-note-9-pro-joyeuse`](profiles/redmi/redmi-note-9-pro-joyeuse.json) | joyeuse | 12 | documented, ask only |
 | [`redmi-10`](profiles/redmi/redmi-10.json) | Redmi 10 (21061119AG) | 13 | documented, ask only |
 | [`redmi-10-5g`](profiles/redmi/redmi-10-5g.json) | Redmi 10 5G / Redmi 11 Prime 5G (22041219G) | 14 | documented, ask only |
+| [`redmi-10c`](profiles/redmi/redmi-10c.json) | Redmi 10C (`fog`) | 12 | documented, ask only |
 | [`redmi-11-prime`](profiles/redmi/redmi-11-prime.json) | Redmi 11 Prime (22071219AI) | 14 | documented, ask only |
 | [`redmi-12`](profiles/redmi/redmi-12.json) | Redmi 12 (`fire`) | 14 | documented, ask only |
 | [`redmi-12-5g`](profiles/redmi/redmi-12-5g.json) | Redmi 12 5G (`sky`) | 15 | documented, ask only |
@@ -231,9 +238,12 @@ them to ask per package. `apply` only runs for a `device` profile on a build lis
 | [`redmi-9t`](profiles/redmi/redmi-9t.json) | Redmi 9T (M2010J19SL) | 12 | documented, ask only |
 | [`redmi-a1`](profiles/redmi/redmi-a1.json) | Redmi A1 (`ice`) | 12 | documented, ask only |
 | [`redmi-a2`](profiles/redmi/redmi-a2.json) | Redmi A2+ (`water`) | 13 | documented, ask only |
+| [`redmi-k30-4g`](profiles/redmi/redmi-k30-4g.json) | Redmi K30 4G (`phoenix`) | 12 | documented, ask only |
 | [`redmi-k40-gaming`](profiles/redmi/redmi-k40-gaming.json) | Redmi K40 Gaming (`ares`) | 12 | documented, ask only |
+| [`redmi-k40-pro`](profiles/redmi/redmi-k40-pro.json) | Redmi K40 Pro (M2012K11C) | 12 | documented, ask only |
 | [`redmi-k40s`](profiles/redmi/redmi-k40s.json) | Redmi K40S (22021211RC) | 13 | documented, ask only |
 | [`redmi-note-10`](profiles/redmi/redmi-note-10.json) | Redmi Note 10 (M2103K19C) | 12 | documented, ask only |
+| [`redmi-note-10-mojito`](profiles/redmi/redmi-note-10-mojito.json) | Redmi Note 10 (`mojito`) | 12 | documented, ask only |
 | [`redmi-note-10s`](profiles/redmi/redmi-note-10s.json) | Redmi Note 10S (`rosemary`) | 13 | documented, ask only |
 | [`redmi-note-11-pro`](profiles/redmi/redmi-note-11-pro.json) | Redmi Note 11 Pro (`pissarro`) | 13 | documented, ask only |
 | [`redmi-note-11-pro-5g`](profiles/redmi/redmi-note-11-pro-5g.json) | Redmi Note 11 Pro 5G (2201116SG) | 13 | documented, ask only |
@@ -252,13 +262,17 @@ them to ask per package. `apply` only runs for a `device` profile on a build lis
 | [`redmi-note-15-pro`](profiles/redmi/redmi-note-15-pro.json) | Redmi Note 15 Pro (`lapis`) | 16 | documented, ask only |
 | [`redmi-note-17-pro-max-5g`](profiles/redmi/redmi-note-17-pro-max-5g.json) | Redmi Note 17 Pro Max 5G (`brussels`) | 16 | documented, ask only |
 | [`redmi-note-9`](profiles/redmi/redmi-note-9.json) | Redmi Note 9 (`merlin`) | 12 | documented, ask only |
+| [`redmi-note-9-pro-gauguin`](profiles/redmi/redmi-note-9-pro-gauguin.json) | Redmi Note 9 Pro (`gauguin`) | 12 | documented, ask only |
 | [`redmi-note-9-pro`](profiles/redmi/redmi-note-9-pro.json) | Redmi Note 9 Pro / Redmi Note 9S (`miatoll`) | 12 | documented, ask only |
 | [`redmi-turbo-5-max`](profiles/redmi/redmi-turbo-5-max.json) | REDMI Turbo 5 Max (2602BRT18C) | 16 | documented, ask only |
+| [`poco-f3`](profiles/poco/poco-f3.json) | POCO F3 (M2012K11AG) | 12 | documented, ask only |
 | [`poco-f5`](profiles/poco/poco-f5.json) | POCO F5 (`marble`) | 15 | documented, ask only |
 | [`poco-f6`](profiles/poco/poco-f6.json) | POCO F6 (24069PC21G) | 16 | documented, ask only |
 | [`poco-f9-ultra`](profiles/poco/poco-f9-ultra.json) | POCO F9 Ultra (26077PC53G) | 16 | documented, ask only |
 | [`poco-m3`](profiles/poco/poco-m3.json) | POCO M3 (M2010J19CG) | 12 | documented, ask only |
 | [`poco-m4-pro-5g`](profiles/poco/poco-m4-pro-5g.json) | POCO M4 Pro 5G (`evergreen`) | 13 | documented, ask only |
+| [`poco-x3-nfc`](profiles/poco/poco-x3-nfc.json) | POCO X3 NFC (M2007J20CG) | 12 | documented, ask only |
+| [`poco-x3-pro`](profiles/poco/poco-x3-pro.json) | POCO X3 Pro (vayu_in) | 12 | documented, ask only |
 | [`poco-x5-5g`](profiles/poco/poco-x5-5g.json) | POCO X5 5G (22111317PI) | 12 | documented, ask only |
 | [`poco-x6-pro-5g`](profiles/poco/poco-x6-pro-5g.json) | POCO X6 Pro 5G (2311DRK48G) | 16 | documented, ask only |
 | [`poco-x7-pro`](profiles/poco/poco-x7-pro.json) | POCO X7 Pro (2412DPC0AG) | 16 | documented, ask only |
