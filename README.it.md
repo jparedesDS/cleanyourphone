@@ -21,7 +21,7 @@
 
 **Il tuo telefono, senza il superfluo.** Una skill open source e reversibile per pulire Android, pensata per gli agenti. Disattiva app e servizi preinstallati via ADB: senza root, senza ROM, senza disinstallare nulla e con un comando per annullare tutto.
 
-[Website](https://jparedesds.github.io/cleanyourphone-web/) · [SKILL.md](SKILL.md) · [PROMPT.md](PROMPT.md) · [Safety](docs/SAFETY.md) · [157 profiles](profiles/README.md)
+[Website](https://jparedesds.github.io/cleanyourphone-web/) · [SKILL.md](SKILL.md) · [PROMPT.md](PROMPT.md) · [Safety](docs/SAFETY.md) · [157 profiles](docs/PROFILES.md)
 
 ## Avvio rapido
 
@@ -48,7 +48,7 @@ python tools/phone.py doctor
 - [SKILL.md](SKILL.md) — the full procedure and safety rules.
 - [PROMPT.md](PROMPT.md) — paste this if your agent does not load skills.
 - [docs/SAFETY.md](docs/SAFETY.md) — protected packages, roles and restore.
-- [profiles/README.md](profiles/README.md) — 157 model/firmware profiles.
+- [docs/PROFILES.md](docs/PROFILES.md) — 157 model/firmware profiles.
 - [README.md](README.md) / [README.es.md](README.es.md) — La documentazione completa è in inglese e spagnolo.
 
 MIT. No account. No telemetry.

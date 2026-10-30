@@ -21,7 +21,7 @@
 
 **你的手机，减去多余。** 面向编程智能体的开源、可逆 Android 精简 Skill。通过 ADB 停用预装应用和服务：无需 root、无需刷机、不卸载任何应用，一条命令即可全部恢复。
 
-[Website](https://jparedesds.github.io/cleanyourphone-web/) · [SKILL.md](SKILL.md) · [PROMPT.md](PROMPT.md) · [Safety](docs/SAFETY.md) · [157 profiles](profiles/README.md)
+[Website](https://jparedesds.github.io/cleanyourphone-web/) · [SKILL.md](SKILL.md) · [PROMPT.md](PROMPT.md) · [Safety](docs/SAFETY.md) · [157 profiles](docs/PROFILES.md)
 
 ## 快速开始
 
@@ -48,7 +48,7 @@ python tools/phone.py doctor
 - [SKILL.md](SKILL.md) — the full procedure and safety rules.
 - [PROMPT.md](PROMPT.md) — paste this if your agent does not load skills.
 - [docs/SAFETY.md](docs/SAFETY.md) — protected packages, roles and restore.
-- [profiles/README.md](profiles/README.md) — 157 model/firmware profiles.
+- [docs/PROFILES.md](docs/PROFILES.md) — 157 model/firmware profiles.
 - [README.md](README.md) / [README.es.md](README.es.md) — 完整文档为英文和西班牙文。
 
 MIT. No account. No telemetry.

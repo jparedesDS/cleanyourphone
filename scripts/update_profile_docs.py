@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Maintainer helper: rebuild the profile tables and file tree in the docs."""
+"""Maintainer helper: rebuild the profile catalog and documentation tables."""
 
 from __future__ import annotations
 
@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parent.parent
 PROFILES = ROOT / "profiles"
 ORDER = {"google": 0, "samsung": 1, "oneplus": 2, "xiaomi": 3, "redmi": 4, "poco": 5, "generic": 6}
 VERIFY_RANK = {"device": 0, "documented": 1, "reference": 2}
+BRANDS = ["Google", "Samsung", "Xiaomi", "Redmi", "POCO", "OnePlus"]
 
 
 def load():
@@ -74,20 +75,6 @@ def verification(profile, spanish=False):
     return f"{text}, tablet" if tablet else text
 
 
-def fix_link(row, rel):
-    return re.sub(r"\]\(profiles/[^)]+\)", f"](profiles/{rel})", row, count=1)
-
-
-def row_en(rel, profile):
-    return (f"| [`{profile['id']}`](profiles/{rel}) | {display(profile)} | "
-            f"{android_text(profile)} | {verification(profile)} |")
-
-
-def row_es(rel, profile):
-    return (f"| [`{profile['id']}`](profiles/{rel}) | {display(profile)} | "
-            f"{android_text(profile)} | {verification(profile, spanish=True)} |")
-
-
 def row_catalog(rel, profile):
     level = str(profile.get("verification", "")).strip()
     if level == "device":
@@ -108,22 +95,26 @@ def row_catalog(rel, profile):
             f"{level} | {notes} |")
 
 
-def existing_rows(text, marker, key_re):
-    rows = {}
-    lines = text.splitlines()
-    for index, line in enumerate(lines):
-        if line.startswith(marker):
-            for row in lines[index + 2:]:
-                if not row.startswith("|"):
-                    break
-                match = key_re.search(row)
-                if match:
-                    rows[match.group(1)] = row
-            return rows
-    return rows
+def summary_rows(rows, spanish=False):
+    lines = []
+    for brand in BRANDS:
+        values = [profile for _, _, profile in rows if profile.get("brand") == brand]
+        if not values:
+            continue
+        device = sum(1 for profile in values if profile.get("verification") == "device")
+        tablets = sum(1 for profile in values if profile.get("form_factor") == "tablet")
+        lines.append(f"| **{brand}** | {len(values)} | {device} | {tablets} |")
+    generic = sum(1 for _, _, profile in rows if profile.get("generic") is True)
+    if generic:
+        lines.append(f"| **{'Generic' if not spanish else 'Genérico'}** | {generic} | 0 | 0 |")
+    return lines
 
 
-def replace_table(text, marker, rows):
+def full_table(rows):
+    return [row_catalog(rel, profile) for _, rel, profile in rows]
+
+
+def replace_full_table(text, marker, header, rows):
     lines = text.splitlines()
     for index, line in enumerate(lines):
         if line.startswith(marker):
@@ -134,6 +125,14 @@ def replace_table(text, marker, rows):
     return text
 
 
+def replace_summary_table(text, marker, header, rows):
+    pattern = re.compile(
+        re.escape(marker) + r"\n\|(?:---\|)+\n(?:\|.*\n)+"
+    )
+    block = marker + "\n" + header + "\n" + "\n".join(rows) + "\n"
+    return pattern.sub(block, text, count=1)
+
+
 def replace_tree(text, entries):
     block = "```text\nprofiles/\n" + "\n".join(entries) + "\n```"
     return re.sub(r"```text\nprofiles/\n.*?\n```", block, text, count=1, flags=re.S)
@@ -141,30 +140,44 @@ def replace_tree(text, entries):
 
 def main():
     argparse.ArgumentParser(
-        description="Rebuild the profile tables and file tree in the documentation."
+        description="Rebuild the profile catalog and documentation tables."
     ).parse_args()
     rows = load()
-    key_re = re.compile(r"\[`([^`]+)`\]")
     catalog_key = re.compile(r"^\| `([^`]+)`")
 
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    old_en = existing_rows(readme, "| Profile | Model | Android | Verification |", key_re)
-    new_en = [fix_link(old_en[profile["id"]], rel) if profile["id"] in old_en
-              else row_en(rel, profile) for _, rel, profile in rows]
-    readme = replace_table(readme, "| Profile | Model | Android | Verification |", new_en)
+    readme = replace_summary_table(
+        readme,
+        "| Brand | Profiles | Device-tested | Tablets |",
+        "|---|---|---|---|",
+        summary_rows(rows),
+    )
     (ROOT / "README.md").write_text(readme, encoding="utf-8")
 
     readme_es = (ROOT / "README.es.md").read_text(encoding="utf-8")
-    old_es = existing_rows(readme_es, "| Perfil | Modelo | Android | Verificaci\u00f3n |", key_re)
-    new_es = [fix_link(old_es[profile["id"]], rel) if profile["id"] in old_es
-              else row_es(rel, profile) for _, rel, profile in rows]
-    readme_es = replace_table(readme_es, "| Perfil | Modelo | Android | Verificaci\u00f3n |", new_es)
+    readme_es = replace_summary_table(
+        readme_es,
+        "| Marca | Perfiles | Probados en móvil | Tablets |",
+        "|---|---|---|---|",
+        summary_rows(rows, spanish=True),
+    )
     (ROOT / "README.es.md").write_text(readme_es, encoding="utf-8")
 
     catalog = (PROFILES / "README.md").read_text(encoding="utf-8")
-    old_cat = existing_rows(catalog, "| ID | Model | Android | Verification | Notes |", catalog_key)
+    old_cat = {}
+    lines = catalog.splitlines()
+    for index, line in enumerate(lines):
+        if line.startswith("| ID | Model | Android | Verification | Notes |"):
+            for row in lines[index + 2:]:
+                if not row.startswith("|"):
+                    break
+                match = catalog_key.search(row)
+                if match:
+                    old_cat[match.group(1)] = row
+            break
     new_cat = [old_cat.get(profile["id"]) or row_catalog(rel, profile) for _, rel, profile in rows]
-    catalog = replace_table(catalog, "| ID | Model | Android | Verification | Notes |", new_cat)
+    catalog = replace_full_table(catalog, "| ID | Model | Android | Verification | Notes |",
+                                 "|---|---|---|---|---|", new_cat)
 
     entries = ["\u251c\u2500\u2500 schema.json"]
     for group in sorted({rel.split("/")[0] for _, rel, _ in rows}, key=lambda item: ORDER.get(item, 9)):
@@ -175,6 +188,19 @@ def main():
     entries[-1] = "\u2514\u2500\u2500 " + entries[-1][4:]
     catalog = replace_tree(catalog, entries)
     (PROFILES / "README.md").write_text(catalog, encoding="utf-8")
+
+    docs = ROOT / "docs"
+    docs.mkdir(exist_ok=True)
+    doc = ["# Profile catalog", "",
+           f"CleanYourPhone ships **{len(rows)} profiles** across six brands. A `device` profile was",
+           "tested on a real phone and can auto-apply only on the build listed in `tested`. A",
+           "`documented` profile comes from a primary firmware dump, never auto-applies and only asks.",
+           "", "| Brand | Profiles | Device-tested | Tablets |", "|---|---|---|---|"]
+    doc += summary_rows(rows)
+    doc += ["", "## Full catalog", "",
+            "| ID | Model | Android | Verification | Notes |", "|---|---|---|---|---|"]
+    doc += full_table(rows)
+    (docs / "PROFILES.md").write_text("\n".join(doc) + "\n", encoding="utf-8")
     print(f"updated docs for {len(rows)} profiles")
 
 

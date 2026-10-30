@@ -21,7 +21,7 @@
 
 **불필요한 것을 뺀, 당신의 폰.** 코딩 에이전트를 위한 오픈소스·되돌릴 수 있는 Android 정리 Skill입니다. ADB로 사전 설치된 앱과 서비스를 비활성화합니다. root도, 커스텀 ROM도, 삭제도 필요 없고 명령 하나로 모두 되돌릴 수 있습니다.
 
-[Website](https://jparedesds.github.io/cleanyourphone-web/) · [SKILL.md](SKILL.md) · [PROMPT.md](PROMPT.md) · [Safety](docs/SAFETY.md) · [157 profiles](profiles/README.md)
+[Website](https://jparedesds.github.io/cleanyourphone-web/) · [SKILL.md](SKILL.md) · [PROMPT.md](PROMPT.md) · [Safety](docs/SAFETY.md) · [157 profiles](docs/PROFILES.md)
 
 ## 빠른 시작
 
@@ -48,7 +48,7 @@ python tools/phone.py doctor
 - [SKILL.md](SKILL.md) — the full procedure and safety rules.
 - [PROMPT.md](PROMPT.md) — paste this if your agent does not load skills.
 - [docs/SAFETY.md](docs/SAFETY.md) — protected packages, roles and restore.
-- [profiles/README.md](profiles/README.md) — 157 model/firmware profiles.
+- [docs/PROFILES.md](docs/PROFILES.md) — 157 model/firmware profiles.
 - [README.md](README.md) / [README.es.md](README.es.md) — 전체 문서는 영어와 스페인어로 제공됩니다.
 
 MIT. No account. No telemetry.

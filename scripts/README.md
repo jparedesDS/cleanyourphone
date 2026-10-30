@@ -50,8 +50,8 @@ a signal to curate the dump by hand, not to publish it.
 
 ## `update_profile_docs.py`
 
-Rebuilds the profile tables in `README.md`, `README.es.md` and `profiles/README.md`, plus the file
-tree in `profiles/README.md`:
+Rebuilds the brand summary in `README.md`/`README.es.md`, the full catalog in `docs/PROFILES.md`,
+the maintainer table in `profiles/README.md`, and the file tree in `profiles/README.md`:
 
 ```bash
 python scripts/update_profile_docs.py
