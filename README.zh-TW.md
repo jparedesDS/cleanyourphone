@@ -30,8 +30,8 @@
 3. 複製倉庫並在裡面開啟代理，或把 <code>SKILL.md</code> 複製到 skills 資料夾。
 
 ```bash
-git clone https://github.com/jparedesDS/clean-your-phone
-cd clean-your-phone
+git clone https://github.com/jparedesDS/cleanyourphone
+cd cleanyourphone
 python tools/phone.py doctor
 ```
 

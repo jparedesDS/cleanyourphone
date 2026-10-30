@@ -30,8 +30,8 @@
 3. 저장소를 clone해 에이전트에서 열거나 <code>SKILL.md</code>를 skills 폴더에 복사합니다.
 
 ```bash
-git clone https://github.com/jparedesDS/clean-your-phone
-cd clean-your-phone
+git clone https://github.com/jparedesDS/cleanyourphone
+cd cleanyourphone
 python tools/phone.py doctor
 ```
 

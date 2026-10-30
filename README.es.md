@@ -18,7 +18,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/jparedesDS/clean-your-phone/actions/workflows/ci.yml"><img src="https://github.com/jparedesDS/clean-your-phone/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="https://github.com/jparedesDS/cleanyourphone/actions/workflows/ci.yml"><img src="https://github.com/jparedesDS/cleanyourphone/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <img src="https://img.shields.io/badge/license-MIT-64f4c4?labelColor=061014" alt="MIT">
   <img src="https://img.shields.io/badge/python-3.10%2B-64f4c4?labelColor=061014" alt="Python 3.10+">
   <img src="https://img.shields.io/badge/telemetry-none-64f4c4?labelColor=061014" alt="Sin telemetría">
@@ -125,8 +125,8 @@ depuración USB?**. Mantén el móvil desbloqueado y con más del 30% de baterí
 ### 3. Clona y comprueba
 
 ```bash
-git clone https://github.com/jparedesDS/clean-your-phone
-cd clean-your-phone
+git clone https://github.com/jparedesDS/cleanyourphone
+cd cleanyourphone
 python tools/phone.py doctor
 ```
 
@@ -137,10 +137,10 @@ trabajar sin Python. El CLI está para que el agente no se invente las proteccio
 
 | Agente | Dónde ponerla |
 |---|---|
-| **Claude Code** | `~/.claude/skills/clean-your-phone/SKILL.md` (personal) o `.claude/skills/clean-your-phone/SKILL.md` (proyecto) |
-| **OpenCode** | `~/.config/opencode/skills/clean-your-phone/SKILL.md` (global) o `.opencode/skills/clean-your-phone/SKILL.md` (proyecto) |
+| **Claude Code** | `~/.claude/skills/cleanyourphone/SKILL.md` (personal) o `.claude/skills/cleanyourphone/SKILL.md` (proyecto) |
+| **OpenCode** | `~/.config/opencode/skills/cleanyourphone/SKILL.md` (global) o `.opencode/skills/cleanyourphone/SKILL.md` (proyecto) |
 | **Codex** | `AGENTS.md` en el proyecto, o `~/.codex/AGENTS.md`; pega `PROMPT.md` si tu versión no carga skills |
-| **Cursor** | `.cursor/rules/clean-your-phone.mdc` con el contenido de `SKILL.md` |
+| **Cursor** | `.cursor/rules/cleanyourphone.mdc` con el contenido de `SKILL.md` |
 | **Gemini CLI** | `GEMINI.md` en el proyecto |
 | **Cualquier chat** | Pega `PROMPT.md` y, cuando lo pida, pega `SKILL.md` |
 
@@ -149,14 +149,14 @@ Lo más sencillo es clonar el repo y abrir el agente en esa carpeta: `SKILL.md` 
 `SKILL.md` y mantén el repo clonado para que el CLI esté disponible:
 
 ```bash
-mkdir -p ~/.claude/skills/clean-your-phone
-cp SKILL.md ~/.claude/skills/clean-your-phone/SKILL.md
+mkdir -p ~/.claude/skills/cleanyourphone
+cp SKILL.md ~/.claude/skills/cleanyourphone/SKILL.md
 ```
 
 Sin el repo, la skill también funciona: incluye los comandos `adb` en crudo y le dice al agente que
 los use. También tienes el prompt en español en [PROMPT.es.md](PROMPT.es.md).
 
-Luego pide: **"Limpia mi móvil"** o **"Usa clean-your-phone en mi Pixel"**.
+Luego pide: **"Limpia mi móvil"** o **"Usa cleanyourphone en mi Pixel"**.
 
 ## Qué hace
 

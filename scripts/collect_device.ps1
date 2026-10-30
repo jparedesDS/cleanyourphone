@@ -11,13 +11,13 @@ function Find-Adb {
     if ($cmd) { return $cmd.Source }
     $local = Join-Path $PSScriptRoot "..\work\platform-tools\adb.exe"
     if (Test-Path $local) { return (Resolve-Path $local).Path }
-    $temp = Join-Path $env:TEMP "clean-your-phone-platform-tools\platform-tools\adb.exe"
+    $temp = Join-Path $env:TEMP "cleanyourphone-platform-tools\platform-tools\adb.exe"
     if (Test-Path $temp) { return $temp }
     return $null
 }
 
 function Install-Adb {
-    $toolsRoot = Join-Path $env:TEMP "clean-your-phone-platform-tools"
+    $toolsRoot = Join-Path $env:TEMP "cleanyourphone-platform-tools"
     $adb = Join-Path $toolsRoot "platform-tools\adb.exe"
     if (Test-Path $adb) { return $adb }
     New-Item -ItemType Directory -Force -Path $toolsRoot | Out-Null

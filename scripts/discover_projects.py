@@ -30,7 +30,7 @@ SOURCES = {
 
 
 def request(path: str) -> list:
-    headers = {"User-Agent": "clean-your-phone-profile-inventory"}
+    headers = {"User-Agent": "cleanyourphone-profile-inventory"}
     token = os.environ.get("GITLAB_TOKEN", "").strip()
     if token:
         headers["PRIVATE-TOKEN"] = token

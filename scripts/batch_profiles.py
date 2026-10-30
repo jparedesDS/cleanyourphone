@@ -102,7 +102,7 @@ def ensure_model_names():
         path = target / f"{name}.md"
         if path.is_file():
             continue
-        request = urllib.request.Request(url, headers={"User-Agent": "clean-your-phone-profile-inventory"})
+        request = urllib.request.Request(url, headers={"User-Agent": "cleanyourphone-profile-inventory"})
         with urllib.request.urlopen(request, timeout=60) as response:
             path.write_bytes(response.read())
 

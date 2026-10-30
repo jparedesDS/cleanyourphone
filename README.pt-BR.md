@@ -30,8 +30,8 @@
 3. Clone o repositório e abra seu agente nele, ou copie <code>SKILL.md</code> para a pasta de skills.
 
 ```bash
-git clone https://github.com/jparedesDS/clean-your-phone
-cd clean-your-phone
+git clone https://github.com/jparedesDS/cleanyourphone
+cd cleanyourphone
 python tools/phone.py doctor
 ```
 

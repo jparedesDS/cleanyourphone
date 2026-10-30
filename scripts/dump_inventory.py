@@ -30,7 +30,7 @@ sys.path.insert(0, str(ROOT / "tools"))
 import adb  # noqa: E402
 
 API = "https://gitlab.com/api/v4"
-USER_AGENT = "clean-your-phone-profile-inventory"
+USER_AGENT = "cleanyourphone-profile-inventory"
 README_KEYS = {
     "Manufacturer": "manufacturer",
     "Platform": "platform",

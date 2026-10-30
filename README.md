@@ -18,7 +18,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/jparedesDS/clean-your-phone/actions/workflows/ci.yml"><img src="https://github.com/jparedesDS/clean-your-phone/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="https://github.com/jparedesDS/cleanyourphone/actions/workflows/ci.yml"><img src="https://github.com/jparedesDS/cleanyourphone/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <img src="https://img.shields.io/badge/license-MIT-64f4c4?labelColor=061014" alt="MIT">
   <img src="https://img.shields.io/badge/python-3.10%2B-64f4c4?labelColor=061014" alt="Python 3.10+">
   <img src="https://img.shields.io/badge/telemetry-none-64f4c4?labelColor=061014" alt="No telemetry">
@@ -124,8 +124,8 @@ phone unlocked and above 30% battery.
 ### 3. Clone and check
 
 ```bash
-git clone https://github.com/jparedesDS/clean-your-phone
-cd clean-your-phone
+git clone https://github.com/jparedesDS/cleanyourphone
+cd cleanyourphone
 python tools/phone.py doctor
 ```
 
@@ -136,10 +136,10 @@ Python. The CLI exists so the agent does not improvise the guardrails.
 
 | Agent | Where to put it |
 |---|---|
-| **Claude Code** | `~/.claude/skills/clean-your-phone/SKILL.md` (personal) or `.claude/skills/clean-your-phone/SKILL.md` (project) |
-| **OpenCode** | `~/.config/opencode/skills/clean-your-phone/SKILL.md` (global) or `.opencode/skills/clean-your-phone/SKILL.md` (project) |
+| **Claude Code** | `~/.claude/skills/cleanyourphone/SKILL.md` (personal) or `.claude/skills/cleanyourphone/SKILL.md` (project) |
+| **OpenCode** | `~/.config/opencode/skills/cleanyourphone/SKILL.md` (global) or `.opencode/skills/cleanyourphone/SKILL.md` (project) |
 | **Codex** | `AGENTS.md` in the project, or `~/.codex/AGENTS.md`; paste `PROMPT.md` if your build does not load skills |
-| **Cursor** | `.cursor/rules/clean-your-phone.mdc` with the contents of `SKILL.md` |
+| **Cursor** | `.cursor/rules/cleanyourphone.mdc` with the contents of `SKILL.md` |
 | **Gemini CLI** | `GEMINI.md` in the project |
 | **Any chat agent** | Paste `PROMPT.md`, then paste `SKILL.md` when it asks |
 
@@ -150,14 +150,14 @@ the root, so `python tools/phone.py` works. If your agent loads skills from a gl
 `SKILL.md` there and keep the repo cloned so the CLI is available:
 
 ```bash
-mkdir -p ~/.claude/skills/clean-your-phone
-cp SKILL.md ~/.claude/skills/clean-your-phone/SKILL.md
+mkdir -p ~/.claude/skills/cleanyourphone
+cp SKILL.md ~/.claude/skills/cleanyourphone/SKILL.md
 ```
 
 Without the repo, the skill still works: it includes the raw `adb` commands and tells the agent to
 use them.
 
-Then ask: **"Clean my phone"** or **"Use clean-your-phone on my Pixel"**.
+Then ask: **"Clean my phone"** or **"Use cleanyourphone on my Pixel"**.
 
 ## What it does
 

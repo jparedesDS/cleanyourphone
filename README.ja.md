@@ -30,8 +30,8 @@
 3. リポジトリを clone してエージェントで開くか、<code>SKILL.md</code> を skills フォルダにコピーします。
 
 ```bash
-git clone https://github.com/jparedesDS/clean-your-phone
-cd clean-your-phone
+git clone https://github.com/jparedesDS/cleanyourphone
+cd cleanyourphone
 python tools/phone.py doctor
 ```
 

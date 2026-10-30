@@ -30,8 +30,8 @@
 3. 克隆仓库并在其中打开智能体，或把 <code>SKILL.md</code> 复制到 skills 目录。
 
 ```bash
-git clone https://github.com/jparedesDS/clean-your-phone
-cd clean-your-phone
+git clone https://github.com/jparedesDS/cleanyourphone
+cd cleanyourphone
 python tools/phone.py doctor
 ```
 
