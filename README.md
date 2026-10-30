@@ -7,7 +7,14 @@
 <p align="center">
   <b>English</b> ·
   <a href="README.es.md">Español</a> ·
-  <a href="https://jparedesds.github.io/cleanyourphone-web/">Website</a>
+  <a href="README.pt-BR.md">Português (BR)</a> ·
+  <a href="README.fr.md">Français</a> ·
+  <a href="README.de.md">Deutsch</a> ·
+  <a href="README.it.md">Italiano</a> ·
+  <a href="README.ja.md">日本語</a> ·
+  <a href="README.zh-CN.md">简体中文</a> ·
+  <a href="README.zh-TW.md">繁體中文</a> ·
+  <a href="README.ko.md">한국어</a>
 </p>
 
 <p align="center">
@@ -31,6 +38,15 @@ It is the phone version of [cleanyour.tv](https://cleanyour.tv), built the same 
 command, reversible, open source, and the person stays in control.
 
 [SKILL.md](SKILL.md) · [PROMPT.md](PROMPT.md) · [Safety](docs/SAFETY.md) · [157 profiles](profiles/README.md)
+
+## Start here
+
+| You have | Start with |
+|---|---|
+| A phone and a coding agent | The quick start below. |
+| Want to see it first | [The website](https://jparedesds.github.io/cleanyourphone-web/). |
+| Need the safety rules | [docs/SAFETY.md](docs/SAFETY.md). |
+| Need a model profile | [Browse the 157 profiles](profiles/README.md). |
 
 ---
 
