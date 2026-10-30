@@ -1,0 +1,254 @@
+{
+  "id": "samsung-sm-a022f",
+  "brand": "Samsung",
+  "model": "SM-A022F",
+  "marketing_name": "Galaxy A02",
+  "codename": "A02",
+  "android": [
+    "11"
+  ],
+  "fingerprint_regex": "^samsung/a02xx/a02:",
+  "auto_apply": false,
+  "verification": "documented",
+  "sources": [
+    {
+      "title": "Android Dumps: Android-Dumps/samsung/a02",
+      "url": "https://gitlab.com/Android-Dumps/samsung/a02",
+      "retrieved": "2026-10-30",
+      "note": "Firmware dump for Galaxy A02"
+    },
+    {
+      "title": "Dump README (build metadata)",
+      "url": "https://gitlab.com/Android-Dumps/samsung/a02/-/raw/a02xx-user-11-RP1A.200720.012-A022FXXS3BVB1-release-keys/README.md",
+      "retrieved": "2026-10-30",
+      "note": "Codename, build id and fingerprint"
+    },
+    {
+      "title": "Dump all_files.txt (APK and permission inventory)",
+      "url": "https://gitlab.com/Android-Dumps/samsung/a02/-/raw/a02xx-user-11-RP1A.200720.012-A022FXXS3BVB1-release-keys/all_files.txt",
+      "retrieved": "2026-10-30",
+      "note": "Evidence that each package path exists in the firmware"
+    }
+  ],
+  "tested": [],
+  "disable": [],
+  "ask": [
+    {
+      "package": "com.samsung.android.app.dressroom",
+      "why": "Wallpaper and theme service",
+      "breaks": "Wallpaper and theme customization"
+    },
+    {
+      "package": "com.samsung.android.app.galaxyfinder",
+      "why": "Samsung Finder search",
+      "breaks": "Finder search in the app drawer"
+    },
+    {
+      "package": "com.samsung.android.app.settings.bixby",
+      "why": "Bixby settings",
+      "breaks": "Bixby settings screens"
+    },
+    {
+      "package": "com.samsung.android.callbgprovider",
+      "why": "Samsung call background provider",
+      "breaks": "Call background images and related call UI"
+    },
+    {
+      "package": "com.samsung.android.forest",
+      "why": "Samsung Digital Wellbeing",
+      "breaks": "Screen-time reports and app timers"
+    },
+    {
+      "package": "com.samsung.android.sm.devicesecurity_v6",
+      "why": "Samsung device security scanner",
+      "breaks": "Samsung device security scans"
+    },
+    {
+      "package": "com.samsung.android.smartcallprovider",
+      "why": "Samsung caller ID / smart call provider",
+      "breaks": "Samsung caller ID and smart call features"
+    },
+    {
+      "package": "com.samsung.android.smartswitchassistant",
+      "why": "Smart Switch assistant",
+      "breaks": "Smart Switch setup/restore flows"
+    },
+    {
+      "package": "com.samsung.android.video",
+      "why": "Samsung Video player",
+      "breaks": "Samsung Video player"
+    },
+    {
+      "package": "com.sec.android.app.camera",
+      "why": "Samsung Camera app",
+      "breaks": "Camera app; keep it unless the person has a replacement"
+    },
+    {
+      "package": "com.sec.android.app.myfiles",
+      "why": "Samsung My Files",
+      "breaks": "My Files file manager"
+    },
+    {
+      "package": "com.sec.android.app.popupcalculator",
+      "why": "Samsung Calculator",
+      "breaks": "Calculator app"
+    },
+    {
+      "package": "com.sec.android.app.samsungapps",
+      "why": "Galaxy Store and Samsung app updates",
+      "breaks": "Galaxy Store and Samsung app updates"
+    },
+    {
+      "package": "com.sec.android.gallery3d",
+      "why": "Samsung Gallery app",
+      "breaks": "Gallery app and its editing/viewing features"
+    }
+  ],
+  "never": [
+    {
+      "package": "android",
+      "why": "Android framework"
+    },
+    {
+      "package": "com.android.bluetooth",
+      "why": "Bluetooth: earbuds, car, wearables"
+    },
+    {
+      "package": "com.android.documentsui",
+      "why": "System file picker"
+    },
+    {
+      "package": "com.android.emergency",
+      "why": "Emergency information and dialer"
+    },
+    {
+      "package": "com.android.incallui",
+      "why": "In-call UI"
+    },
+    {
+      "package": "com.android.mms.service",
+      "why": "MMS service"
+    },
+    {
+      "package": "com.android.nfc",
+      "why": "NFC payments and tags"
+    },
+    {
+      "package": "com.android.packageinstaller",
+      "why": "Package installer"
+    },
+    {
+      "package": "com.android.permissioncontroller",
+      "why": "Permission controller"
+    },
+    {
+      "package": "com.android.phone",
+      "why": "Telephony: calls, mobile data, SIM"
+    },
+    {
+      "package": "com.android.providers.contacts",
+      "why": "Contacts provider"
+    },
+    {
+      "package": "com.android.providers.telephony",
+      "why": "SMS/APN provider"
+    },
+    {
+      "package": "com.android.server.telecom",
+      "why": "Call routing"
+    },
+    {
+      "package": "com.android.settings",
+      "why": "Android Settings"
+    },
+    {
+      "package": "com.android.shell",
+      "why": "ADB shell"
+    },
+    {
+      "package": "com.android.systemui",
+      "why": "Status bar, notifications, lock screen"
+    },
+    {
+      "package": "com.android.vending",
+      "why": "Play Store"
+    },
+    {
+      "package": "com.android.vpndialogs",
+      "why": "VPN consent"
+    },
+    {
+      "package": "com.google.android.gms",
+      "why": "Play Services: push, banking, backups"
+    },
+    {
+      "package": "com.google.android.gsf",
+      "why": "Google Services Framework"
+    },
+    {
+      "package": "com.google.android.packageinstaller",
+      "why": "Package installer"
+    },
+    {
+      "package": "com.google.android.permissioncontroller",
+      "why": "Permission controller"
+    },
+    {
+      "package": "com.google.android.webview",
+      "why": "WebView for in-app browsers"
+    },
+    {
+      "package": "com.samsung.android.app.omcagent",
+      "why": "Carrier configuration (OMC)"
+    },
+    {
+      "package": "com.samsung.android.app.telephonyui",
+      "why": "Samsung telephony UI"
+    },
+    {
+      "package": "com.samsung.android.dialer",
+      "why": "Samsung dialer"
+    },
+    {
+      "package": "com.samsung.android.incallui",
+      "why": "Samsung in-call UI"
+    },
+    {
+      "package": "com.samsung.android.kgclient",
+      "why": "Samsung Knox Guard client"
+    },
+    {
+      "package": "com.samsung.android.lool",
+      "why": "Device Care: battery and optimization"
+    },
+    {
+      "package": "com.samsung.android.messaging",
+      "why": "Samsung Messages"
+    },
+    {
+      "package": "com.samsung.android.providers.contacts",
+      "why": "Samsung contacts provider"
+    },
+    {
+      "package": "com.samsung.android.providers.media",
+      "why": "Samsung media provider"
+    },
+    {
+      "package": "com.samsung.android.sdm.config",
+      "why": "Samsung device configuration"
+    },
+    {
+      "package": "com.sec.android.app.launcher",
+      "why": "System launcher and Recents"
+    },
+    {
+      "package": "com.wsomacp",
+      "why": "Carrier configuration (OMC)"
+    },
+    {
+      "package": "com.wssyncmldm",
+      "why": "Samsung OTA/DM client"
+    }
+  ],
+  "notes": "Documented from the A02 firmware dump (Android 11), not tested on a physical phone. Samsung package lists and preloads vary by region and carrier. No auto-apply; ask before every package."
+}

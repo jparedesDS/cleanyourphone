@@ -1,7 +1,7 @@
 {
   "id": "xiaomi-mi-10",
   "brand": "Xiaomi",
-  "model": "Mi 10",
+  "model": "*",
   "marketing_name": "Mi 10",
   "codename": "umi",
   "android": [
@@ -366,5 +366,5 @@
       "why": "IMS: VoLTE and Wi-Fi calling"
     }
   ],
-  "notes": "Documented from the umi firmware dump (Android 12), not tested on a physical phone. Xiaomi package lists and preloads vary by region and carrier. No auto-apply; ask before every package."
+  "notes": "Documented from the umi firmware dump (Android 12), not tested on a physical phone. Xiaomi package lists and preloads vary by region and carrier. Regional model numbers vary; the profile is pinned by fingerprint and codename. No auto-apply; ask before every package."
 }
