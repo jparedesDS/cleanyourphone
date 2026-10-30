@@ -1,6 +1,15 @@
 # OnePlus profiles
 
-## CPH2487 — OnePlus 11R 5G
+## IN2013 – OnePlus 8
+
+Documented from the Android Dumps project `oneplus/OnePlus8` (Android 11). No device test yet.
+
+## OnePlusNordCE – OnePlus Nord CE 5G
+
+Documented from the Android Dumps project `oneplus/OnePlusNordCE` (Android 11). Regional model
+numbers EB2101/EB2103; the dump is the global build. No device test yet.
+
+## CPH2487 – OnePlus 11R 5G
 
 Documented from the Android Dumps project `oneplus/OP5961L1` (Android 16). No device test yet.
 
