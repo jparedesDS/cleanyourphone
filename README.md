@@ -1,16 +1,36 @@
+<p align="center">
+  <a href="https://jparedesds.github.io/cleanyourphone-web/">
+    <img src="assets/banner.png" alt="CleanYourPhone — your phone, minus the bloat" width="100%">
+  </a>
+</p>
+
+<p align="center">
+  <b>English</b> ·
+  <a href="README.es.md">Español</a> ·
+  <a href="https://jparedesds.github.io/cleanyourphone-web/">Website</a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/jparedesDS/clean-your-phone/actions/workflows/ci.yml"><img src="https://github.com/jparedesDS/clean-your-phone/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <img src="https://img.shields.io/badge/license-MIT-64f4c4?labelColor=061014" alt="MIT">
+  <img src="https://img.shields.io/badge/python-3.10%2B-64f4c4?labelColor=061014" alt="Python 3.10+">
+  <img src="https://img.shields.io/badge/telemetry-none-64f4c4?labelColor=061014" alt="No telemetry">
+  <img src="https://img.shields.io/badge/profiles-157-5ec8ff?labelColor=061014" alt="157 profiles">
+</p>
+
 # CleanYourPhone
 
-**Your phone, minus the bloat.**
+**Your phone, minus the bloat.** An open-source, reversible debloat skill for Android, built for
+coding agents. It disables preinstalled apps and services over ADB: no root, no custom ROM, nothing
+uninstalled, and one command to undo every change.
 
-CleanYourPhone is a **skill for coding agents** (Claude Code, Codex, Cursor, Gemini CLI, OpenCode and
-friends) that debloats an Android phone over ADB. No app to install, no root, no custom ROM, nothing
-uninstalled. It disables preinstalled apps and services, optionally sets a Private DNS, verifies the
-phone, and can undo every change with one command.
+Read the story and the safety model at
+**[jparedesds.github.io/cleanyourphone-web](https://jparedesds.github.io/cleanyourphone-web/)**.
 
 It is the phone version of [cleanyour.tv](https://cleanyour.tv), built the same way: one prompt, one
 command, reversible, open source, and the person stays in control.
 
-[Leer en español](README.es.md)
+[SKILL.md](SKILL.md) · [PROMPT.md](PROMPT.md) · [Safety](docs/SAFETY.md) · [157 profiles](profiles/README.md)
 
 ---
 
@@ -88,8 +108,8 @@ phone unlocked and above 30% battery.
 ### 3. Clone and check
 
 ```bash
-git clone https://github.com/<your-user>/cleanyourphone
-cd cleanyourphone
+git clone https://github.com/jparedesDS/clean-your-phone
+cd clean-your-phone
 python tools/phone.py doctor
 ```
 

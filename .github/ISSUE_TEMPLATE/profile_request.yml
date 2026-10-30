@@ -1,0 +1,69 @@
+name: Profile request
+description: Request a model profile, or contribute a firmware dump or a real-device test.
+title: "profile: "
+labels: ["profile"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A `documented` profile needs a primary firmware dump (Android Dumps or an owner-collected
+        inventory). A `device` profile needs a real test on one exact build. Do not paste serial
+        numbers, IMEI, Android ID, MAC addresses, account emails or phone numbers.
+  - type: input
+    id: brand
+    attributes:
+      label: Brand
+      placeholder: Samsung
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Model and marketing name
+      placeholder: SM-S918B / Galaxy S23 Ultra
+    validations:
+      required: true
+  - type: input
+    id: codename
+    attributes:
+      label: Codename
+      placeholder: dm3q
+  - type: input
+    id: android
+    attributes:
+      label: Android version, build and region
+      placeholder: Android 14, UP1A.231005.007, Europe
+    validations:
+      required: true
+  - type: dropdown
+    id: evidence
+    attributes:
+      label: Evidence
+      options:
+        - Primary firmware dump (Android Dumps)
+        - Owner-collected device inventory
+        - Real-device test (may become a device profile)
+        - Only a forum or a copied package list
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source URL
+      description: Link the dump, the inventory or the test notes. No local paths.
+  - type: textarea
+    id: packages
+    attributes:
+      label: Packages and known breakage
+      description: Which packages should be disabled, asked or never touched? What did you verify?
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: The source is primary evidence, not a forum package list.
+          required: true
+        - label: I did not include identifiers or personal data.
+          required: true
+        - label: I understand that a documented profile never auto-applies.
+          required: true

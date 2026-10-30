@@ -1,0 +1,51 @@
+name: Feature request
+description: Suggest a safety rule, profile workflow, CLI improvement or documentation change.
+title: "feature: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        CleanYourPhone will not add uninstall, root, ROM flashing, `pm hide`, `pm clear`, a
+        telemetry endpoint or a "but this protected package is safe" exception. See AGENTS.md.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Profiles
+        - Safety rules / protected list
+        - Role checks
+        - CLI / output
+        - Backup / restore
+        - Documentation
+        - Website
+        - Tests / CI
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+    validations:
+      required: true
+  - type: textarea
+    id: safety
+    attributes:
+      label: Safety impact
+      description: Does this touch protected packages, roles, backup, undo or the only-state-change rule?
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: This does not add uninstall, root, a custom ROM requirement or telemetry.
+          required: true
+        - label: This does not weaken the protected list or the role checks.
+          required: true

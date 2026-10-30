@@ -1,16 +1,36 @@
+<p align="center">
+  <a href="https://jparedesds.github.io/cleanyourphone-web/es.html">
+    <img src="assets/banner.png" alt="CleanYourPhone — tu móvil, sin lo que sobra" width="100%">
+  </a>
+</p>
+
+<p align="center">
+  <b>Español</b> ·
+  <a href="README.md">English</a> ·
+  <a href="https://jparedesds.github.io/cleanyourphone-web/es.html">Web</a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/jparedesDS/clean-your-phone/actions/workflows/ci.yml"><img src="https://github.com/jparedesDS/clean-your-phone/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <img src="https://img.shields.io/badge/license-MIT-64f4c4?labelColor=061014" alt="MIT">
+  <img src="https://img.shields.io/badge/python-3.10%2B-64f4c4?labelColor=061014" alt="Python 3.10+">
+  <img src="https://img.shields.io/badge/telemetry-none-64f4c4?labelColor=061014" alt="Sin telemetría">
+  <img src="https://img.shields.io/badge/profiles-157-5ec8ff?labelColor=061014" alt="157 perfiles">
+</p>
+
 # CleanYourPhone
 
-**Tu móvil, sin la morralla.**
+**Tu móvil, sin lo que sobra.** Una skill de código abierto y reversible para limpiar Android,
+pensada para agentes. Desactiva apps y servicios preinstalados por ADB: sin root, sin ROM cocinada,
+sin desinstalar nada y con un comando para deshacer todos los cambios.
 
-CleanYourPhone es una **skill para agentes de código** (Claude Code, Codex, Cursor, Gemini CLI,
-OpenCode y similares) que limpia un Android por ADB. Sin app que instalar, sin root, sin ROM cocinada
-y sin desinstalar nada. Desactiva apps y servicios preinstalados, opcionalmente configura un DNS
-privado, verifica el teléfono y puede deshacer todos los cambios con un comando.
+La historia y el modelo de seguridad, en
+**[jparedesds.github.io/cleanyourphone-web/es.html](https://jparedesds.github.io/cleanyourphone-web/es.html)**.
 
 Es la versión móvil de [cleanyour.tv](https://cleanyour.tv), con la misma idea: un prompt, un comando,
 reversible, open source y la persona siempre al mando.
 
-[Read in English](README.md)
+[SKILL.md](SKILL.md) · [PROMPT.es.md](PROMPT.es.md) · [Seguridad](docs/SAFETY.md) · [157 perfiles](profiles/README.md)
 
 ---
 
@@ -89,8 +109,8 @@ depuración USB?**. Mantén el móvil desbloqueado y con más del 30% de baterí
 ### 3. Clona y comprueba
 
 ```bash
-git clone https://github.com/<tu-usuario>/cleanyourphone
-cd cleanyourphone
+git clone https://github.com/jparedesDS/clean-your-phone
+cd clean-your-phone
 python tools/phone.py doctor
 ```
 
