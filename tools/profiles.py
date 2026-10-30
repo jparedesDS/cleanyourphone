@@ -292,6 +292,10 @@ def validate_profile(profile: Dict[str, Any], path: Optional[Path] = None) -> Li
         )
     verification = verification_level(profile)
 
+    form_factor = str(profile.get("form_factor", "")).strip().lower()
+    if form_factor and form_factor not in ("phone", "tablet"):
+        errors.append(f"{label}: form_factor must be 'phone' or 'tablet', got '{form_factor}'")
+
     if "auto_apply" in profile and not isinstance(profile.get("auto_apply"), bool):
         errors.append(f"{label}: auto_apply must be true or false")
     if verification in ("documented", "reference") and profile.get("auto_apply") is not False:

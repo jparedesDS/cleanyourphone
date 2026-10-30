@@ -41,6 +41,8 @@ profiles/
 ├── samsung/sm-e625f.json
 ├── samsung/sm-f707u1.json
 ├── samsung/sm-f916u.json
+├── samsung/sm-g770f.json
+├── samsung/sm-g780f.json
 ├── samsung/sm-g980f.json
 ├── samsung/sm-g981n.json
 ├── samsung/sm-g986b.json
@@ -61,8 +63,15 @@ profiles/
 ├── samsung/sm-n970f.json
 ├── samsung/sm-n981b.json
 ├── samsung/sm-n986b.json
+├── samsung/sm-p615.json
 ├── samsung/sm-s918b.json
 ├── samsung/sm-s938b.json
+├── samsung/sm-t227u.json
+├── samsung/sm-t500.json
+├── samsung/sm-t505.json
+├── samsung/sm-t577u.json
+├── samsung/sm-t875.json
+├── samsung/sm-t975.json
 ├── oneplus/README.md
 ├── oneplus/oneplus-a6013.json
 ├── oneplus/oneplus-ac2003.json
@@ -84,6 +93,8 @@ profiles/
 ├── xiaomi/xiaomi-mi-11-ultra.json
 ├── xiaomi/xiaomi-mi-9-se.json
 ├── xiaomi/xiaomi-mi-note-10.json
+├── xiaomi/xiaomi-pad-6-pro.json
+├── xiaomi/xiaomi-pad-6.json
 ├── redmi/redmi-10-5g.json
 ├── redmi/redmi-10.json
 ├── redmi/redmi-10a.json
@@ -137,6 +148,8 @@ profiles/
 ├── redmi/redmi-note-9-pro-max.json
 ├── redmi/redmi-note-9-pro.json
 ├── redmi/redmi-note-9.json
+├── redmi/redmi-pad-2.json
+├── redmi/redmi-pad.json
 ├── redmi/redmi-turbo-5-max.json
 ├── redmi/redmi-y3.json
 ├── poco/poco-c31.json
@@ -232,6 +245,7 @@ A documented profile looks like this:
 | `sources` | Required for `documented`: at least one `http(s)` URL with `title`, `url`, `retrieved` and optional `note`. |
 | `auto_apply` | `false` for `documented` and `reference`. A `device` profile also needs the phone to run a build listed in `tested`. |
 | `generic` | `true` for a reference profile. A generic profile cannot have a `disable` list and cannot be auto-applied. |
+| `form_factor` | Optional: `phone` (default) or `tablet`. Tablet profiles keep the same rules; the CLI treats a missing dialer/SMS role as a warning. |
 | `tested` | Required for `device`: the actual Android version, exact build, date, who. Empty for `documented` and `reference`. |
 | `disable` | Packages tested on this model; low risk. Must be empty for `documented` and `reference`. |
 | `ask` | User-facing or dependency-heavy; ask per package. A documented profile needs a non-empty `ask` list. |
@@ -339,8 +353,10 @@ list. It does not replace a real test.
 | `samsung-sm-n970f` | Galaxy Note10 (SM-N970F) | 12 | documented | From the `d1` firmware dump; ask only, no auto-apply. |
 | `samsung-sm-n981b` | Galaxy Note20 (SM-N981B) | 12 | documented | From the `c1s` firmware dump; ask only, no auto-apply. |
 | `samsung-sm-n986b` | Galaxy Note20 Ultra (SM-N986B) | 12 | documented | From the `c2s` firmware dump; ask only, no auto-apply. |
+| `samsung-sm-g770f` | Galaxy S10 Lite (SM-G770F) | 13 | documented | From the `r5q` firmware dump; ask only, no auto-apply. |
 | `samsung-sm-g980f` | Galaxy S20 (SM-G980F) | 12 | documented | From the `x1s` firmware dump; ask only, no auto-apply. |
 | `samsung-sm-g981n` | Galaxy S20 (SM-G981N) | 12 | documented | From the `x1q` firmware dump; ask only, no auto-apply. |
+| `samsung-sm-g780f` | Galaxy S20 FE (SM-G780F) | 13 | documented | From the `r8s` firmware dump; ask only, no auto-apply. |
 | `samsung-sm-g988b` | Galaxy S20 Ultra (SM-G988B) | 12 | documented | From the `z3s` firmware dump; ask only, no auto-apply. |
 | `samsung-sm-g986b` | Galaxy S20+ (SM-G986B) | 12 | documented | From the `y2s` firmware dump; ask only, no auto-apply. |
 | `samsung-sm-g991b` | Galaxy S21 (SM-G991B) | 12 | documented | From the `o1s` firmware dump; ask only, no auto-apply. |
@@ -348,6 +364,13 @@ list. It does not replace a real test.
 | `samsung-sm-g998b` | Galaxy S21 Ultra (SM-G998B) | 12 | documented | From the `p3s` firmware dump; ask only, no auto-apply. |
 | `samsung-sm-g996b` | Galaxy S21+ (SM-G996B) | 12 | documented | From the `t2s` firmware dump; ask only, no auto-apply. |
 | `samsung-sm-s938b` | Galaxy S25 Ultra (SM-S938B) | 16 | documented | From the `pa3q` firmware dump; ask only, no auto-apply. |
+| `samsung-sm-t500` | Galaxy Tab A7 10.4 (SM-T500) | 11 | documented | Tablet; From the `gta4lwifi` firmware dump; ask only, no auto-apply. |
+| `samsung-sm-t505` | Galaxy Tab A7 10.4 (SM-T505) | 12 | documented | Tablet; From the `gta4l` firmware dump; ask only, no auto-apply. |
+| `samsung-sm-t227u` | Galaxy Tab A7 Lite (SM-T227U) | 11 | documented | Tablet; From the `gta7lite` firmware dump; ask only, no auto-apply. |
+| `samsung-sm-t577u` | Galaxy Tab Active3 (SM-T577U) | 13 | documented | Tablet; From the `gtactive3` firmware dump; ask only, no auto-apply. |
+| `samsung-sm-p615` | Galaxy Tab S6 Lite (SM-P615) | 13 | documented | Tablet; From the `gta4xl` firmware dump; ask only, no auto-apply. |
+| `samsung-sm-t875` | Galaxy Tab S7 (SM-T875) | 13 | documented | Tablet; From the `gts7l` firmware dump; ask only, no auto-apply. |
+| `samsung-sm-t975` | Galaxy Tab S7+ (SM-T975) | 13 | documented | Tablet; From the `gts7xl` firmware dump; ask only, no auto-apply. |
 | `samsung-sm-f707u1` | Galaxy Z Flip 5G (SM-F707U1) | 13 | documented | From the `bloomxq` firmware dump; ask only, no auto-apply. |
 | `samsung-sm-f916u` | Galaxy Z Fold2 (SM-F916U) | 13 | documented | From the `f2q` firmware dump; ask only, no auto-apply. |
 | `oneplus-a6013` | OnePlus 6T (ONEPLUS A6013) | 11 | device | Tested on OxygenOS 11.1.2.2 build `ONEPLUS A6013_41_211125`; 8 low-risk telemetry packages in `disable`, user-facing apps in `ask`. |
@@ -370,6 +393,8 @@ list. It does not replace a real test.
 | `xiaomi-15t` | Xiaomi 15T (25069PTEBG) | 16 | documented | From the `goya` firmware dump; ask only, no auto-apply. |
 | `xiaomi-17-ultra` | Xiaomi 17 Ultra (2512BPNDAG) | 16 | documented | From the `nezha` firmware dump; ask only, no auto-apply. |
 | `xiaomi-civi` | Xiaomi Civi (2109119BC) | 12 | documented | From the `mona` firmware dump; ask only, no auto-apply. |
+| `xiaomi-pad-6` | Xiaomi Pad 6 (23043RP34C) | 13 | documented | Tablet; From the `pipa` firmware dump; ask only, no auto-apply. |
+| `xiaomi-pad-6-pro` | Xiaomi Pad 6 Pro (23046RP50C) | 13 | documented | Tablet; From the `liuqin` firmware dump; ask only, no auto-apply. |
 | `redmi-note-9-pro-joyeuse` | joyeuse | 12 | documented | From the `joyeuse` firmware dump; ask only, no auto-apply. |
 | `redmi-10` | Redmi 10 (21061119AG) | 13 | documented | From the `selene` firmware dump; ask only, no auto-apply. |
 | `redmi-10-5g` | Redmi 10 5G / Redmi 11 Prime 5G (22041219G) | 14 | documented | From the `light` firmware dump; ask only, no auto-apply. |
@@ -423,6 +448,8 @@ list. It does not replace a real test.
 | `redmi-note-9-pro-gauguin` | Redmi Note 9 Pro (`gauguin`) | 12 | documented | From the `gauguin` firmware dump; ask only, no auto-apply. |
 | `redmi-note-9-pro` | Redmi Note 9 Pro / Redmi Note 9S (`miatoll`) | 12 | documented | From the `miatoll` firmware dump; ask only, no auto-apply. |
 | `redmi-note-9-pro-max` | excalibur | 11 | documented | From the `excalibur` firmware dump; ask only, no auto-apply. |
+| `redmi-pad` | Redmi Pad (22081283G) | 12 | documented | Tablet; From the `yunluo` firmware dump; ask only, no auto-apply. |
+| `redmi-pad-2` | Redmi Pad 2 (`taiko`) | 16 | documented | Tablet; From the `taiko` firmware dump; ask only, no auto-apply. |
 | `redmi-turbo-5-max` | REDMI Turbo 5 Max (2602BRT18C) | 16 | documented | From the `dash` firmware dump; ask only, no auto-apply. |
 | `redmi-y3` | Redmi Y3 (`onc`) | 10 | documented | From the `onc` firmware dump; ask only, no auto-apply. |
 | `poco-c31` | POCO C31 (211033MI) | 11 | documented | From the `angelicain` firmware dump; ask only, no auto-apply. |

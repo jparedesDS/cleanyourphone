@@ -163,7 +163,8 @@ Lee [docs/SAFETY.md](docs/SAFETY.md) antes de la primera ejecución. Resumen:
 Un perfil es una lista probada en un móvil real (`device`) o una lista construida desde un dump de
 firmware primario (`documented`). Los perfiles documentados nunca se auto-aplican y no tienen lista
 `disable`: sirven para preguntar paquete a paquete. `apply` solo se ejecuta para un perfil `device`
-en un build incluido en `tested`.
+en un build incluido en `tested`. Los perfiles de tablet llevan `form_factor: tablet`; si falta el
+rol de dialer/SMS es un aviso, no un fallo.
 
 | Perfil | Modelo | Android | Verificación |
 |---|---|---|---|
@@ -207,8 +208,10 @@ en un build incluido en `tested`.
 | [`samsung-sm-n970f`](profiles/samsung/sm-n970f.json) | Galaxy Note10 (SM-N970F) | 12 | documented, solo preguntar |
 | [`samsung-sm-n981b`](profiles/samsung/sm-n981b.json) | Galaxy Note20 (SM-N981B) | 12 | documented, solo preguntar |
 | [`samsung-sm-n986b`](profiles/samsung/sm-n986b.json) | Galaxy Note20 Ultra (SM-N986B) | 12 | documented, solo preguntar |
+| [`samsung-sm-g770f`](profiles/samsung/sm-g770f.json) | Galaxy S10 Lite (SM-G770F) | 13 | documented, solo preguntar |
 | [`samsung-sm-g980f`](profiles/samsung/sm-g980f.json) | Galaxy S20 (SM-G980F) | 12 | documented, solo preguntar |
 | [`samsung-sm-g981n`](profiles/samsung/sm-g981n.json) | Galaxy S20 (SM-G981N) | 12 | documented, solo preguntar |
+| [`samsung-sm-g780f`](profiles/samsung/sm-g780f.json) | Galaxy S20 FE (SM-G780F) | 13 | documented, solo preguntar |
 | [`samsung-sm-g988b`](profiles/samsung/sm-g988b.json) | Galaxy S20 Ultra (SM-G988B) | 12 | documented, solo preguntar |
 | [`samsung-sm-g986b`](profiles/samsung/sm-g986b.json) | Galaxy S20+ (SM-G986B) | 12 | documented, solo preguntar |
 | [`samsung-sm-g991b`](profiles/samsung/sm-g991b.json) | Galaxy S21 (SM-G991B) | 12 | documented, solo preguntar |
@@ -216,6 +219,13 @@ en un build incluido en `tested`.
 | [`samsung-sm-g998b`](profiles/samsung/sm-g998b.json) | Galaxy S21 Ultra (SM-G998B) | 12 | documented, solo preguntar |
 | [`samsung-sm-g996b`](profiles/samsung/sm-g996b.json) | Galaxy S21+ (SM-G996B) | 12 | documented, solo preguntar |
 | [`samsung-sm-s938b`](profiles/samsung/sm-s938b.json) | Galaxy S25 Ultra (SM-S938B) | 16 | documented, solo preguntar |
+| [`samsung-sm-t500`](profiles/samsung/sm-t500.json) | Galaxy Tab A7 10.4 (SM-T500) | 11 | documented, solo preguntar, tablet |
+| [`samsung-sm-t505`](profiles/samsung/sm-t505.json) | Galaxy Tab A7 10.4 (SM-T505) | 12 | documented, solo preguntar, tablet |
+| [`samsung-sm-t227u`](profiles/samsung/sm-t227u.json) | Galaxy Tab A7 Lite (SM-T227U) | 11 | documented, solo preguntar, tablet |
+| [`samsung-sm-t577u`](profiles/samsung/sm-t577u.json) | Galaxy Tab Active3 (SM-T577U) | 13 | documented, solo preguntar, tablet |
+| [`samsung-sm-p615`](profiles/samsung/sm-p615.json) | Galaxy Tab S6 Lite (SM-P615) | 13 | documented, solo preguntar, tablet |
+| [`samsung-sm-t875`](profiles/samsung/sm-t875.json) | Galaxy Tab S7 (SM-T875) | 13 | documented, solo preguntar, tablet |
+| [`samsung-sm-t975`](profiles/samsung/sm-t975.json) | Galaxy Tab S7+ (SM-T975) | 13 | documented, solo preguntar, tablet |
 | [`samsung-sm-f707u1`](profiles/samsung/sm-f707u1.json) | Galaxy Z Flip 5G (SM-F707U1) | 13 | documented, solo preguntar |
 | [`samsung-sm-f916u`](profiles/samsung/sm-f916u.json) | Galaxy Z Fold2 (SM-F916U) | 13 | documented, solo preguntar |
 | [`oneplus-a6013`](profiles/oneplus/oneplus-a6013.json) | OnePlus 6T (ONEPLUS A6013) | 11 | device, build OxygenOS 11.1.2.2 probado |
@@ -238,6 +248,8 @@ en un build incluido en `tested`.
 | [`xiaomi-15t`](profiles/xiaomi/xiaomi-15t.json) | Xiaomi 15T (25069PTEBG) | 16 | documented, solo preguntar |
 | [`xiaomi-17-ultra`](profiles/xiaomi/xiaomi-17-ultra.json) | Xiaomi 17 Ultra (2512BPNDAG) | 16 | documented, solo preguntar |
 | [`xiaomi-civi`](profiles/xiaomi/xiaomi-civi.json) | Xiaomi Civi (2109119BC) | 12 | documented, solo preguntar |
+| [`xiaomi-pad-6`](profiles/xiaomi/xiaomi-pad-6.json) | Xiaomi Pad 6 (23043RP34C) | 13 | documented, solo preguntar, tablet |
+| [`xiaomi-pad-6-pro`](profiles/xiaomi/xiaomi-pad-6-pro.json) | Xiaomi Pad 6 Pro (23046RP50C) | 13 | documented, solo preguntar, tablet |
 | [`redmi-note-9-pro-joyeuse`](profiles/redmi/redmi-note-9-pro-joyeuse.json) | joyeuse | 12 | documented, solo preguntar |
 | [`redmi-10`](profiles/redmi/redmi-10.json) | Redmi 10 (21061119AG) | 13 | documented, solo preguntar |
 | [`redmi-10-5g`](profiles/redmi/redmi-10-5g.json) | Redmi 10 5G / Redmi 11 Prime 5G (22041219G) | 14 | documented, solo preguntar |
@@ -291,6 +303,8 @@ en un build incluido en `tested`.
 | [`redmi-note-9-pro-gauguin`](profiles/redmi/redmi-note-9-pro-gauguin.json) | Redmi Note 9 Pro (`gauguin`) | 12 | documented, solo preguntar |
 | [`redmi-note-9-pro`](profiles/redmi/redmi-note-9-pro.json) | Redmi Note 9 Pro / Redmi Note 9S (`miatoll`) | 12 | documented, solo preguntar |
 | [`redmi-note-9-pro-max`](profiles/redmi/redmi-note-9-pro-max.json) | excalibur | 11 | documented, solo preguntar |
+| [`redmi-pad`](profiles/redmi/redmi-pad.json) | Redmi Pad (22081283G) | 12 | documented, solo preguntar, tablet |
+| [`redmi-pad-2`](profiles/redmi/redmi-pad-2.json) | Redmi Pad 2 (`taiko`) | 16 | documented, solo preguntar, tablet |
 | [`redmi-turbo-5-max`](profiles/redmi/redmi-turbo-5-max.json) | REDMI Turbo 5 Max (2602BRT18C) | 16 | documented, solo preguntar |
 | [`redmi-y3`](profiles/redmi/redmi-y3.json) | Redmi Y3 (`onc`) | 10 | documented, solo preguntar |
 | [`poco-c31`](profiles/poco/poco-c31.json) | POCO C31 (211033MI) | 11 | documented, solo preguntar |

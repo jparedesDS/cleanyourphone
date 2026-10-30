@@ -20,6 +20,11 @@
     },
     "fingerprint_regex": {"type": "string"},
     "generic": {"type": "boolean"},
+    "form_factor": {
+      "type": "string",
+      "enum": ["phone", "tablet"],
+      "default": "phone"
+    },
     "auto_apply": {"type": "boolean", "default": true},
     "verification": {
       "type": "string",

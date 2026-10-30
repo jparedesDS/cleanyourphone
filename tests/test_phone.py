@@ -390,6 +390,17 @@ class ValidationTests(unittest.TestCase):
     def test_documented_profile_is_valid(self):
         self.assertEqual(profiles.validate_profile(self.documented_profile()), [])
 
+    def test_tablet_form_factor_is_valid(self):
+        profile = self.documented_profile()
+        profile["form_factor"] = "tablet"
+        self.assertEqual(profiles.validate_profile(profile), [])
+
+    def test_unknown_form_factor_is_rejected(self):
+        profile = self.documented_profile()
+        profile["form_factor"] = "watch"
+        errors = profiles.validate_profile(profile)
+        self.assertTrue(any("form_factor" in error for error in errors))
+
     def test_documented_requires_sources(self):
         profile = self.documented_profile()
         profile["sources"] = []
