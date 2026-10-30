@@ -19,13 +19,20 @@ profiles/
 ├── google/pixel-8.json
 ├── samsung/sm-a042f.json
 ├── samsung/sm-a065f.json
+├── samsung/sm-a145f.json
 ├── samsung/sm-a146p.json
 ├── samsung/sm-a226b.json
 ├── samsung/sm-a245f.json
+├── samsung/sm-a325f.json
+├── samsung/sm-a326b.json
 ├── samsung/sm-a546e.json
 ├── samsung/sm-a576b.json
+├── samsung/sm-e045f.json
 ├── samsung/sm-e055f.json
+├── samsung/sm-f707u1.json
+├── samsung/sm-f916u.json
 ├── samsung/sm-m136b.json
+├── samsung/sm-m146b.json
 ├── samsung/sm-s918b.json
 ├── samsung/sm-s938b.json
 ├── oneplus/README.md
@@ -37,18 +44,29 @@ profiles/
 ├── oneplus/oneplus-in2013.json
 ├── oneplus/oneplus-nord-ce.json
 ├── xiaomi/hyperos.json
+├── xiaomi/xiaomi-11t-pro.json
 ├── xiaomi/xiaomi-11t.json
+├── xiaomi/xiaomi-12-lite.json
 ├── xiaomi/xiaomi-15-ultra.json
 ├── xiaomi/xiaomi-15t.json
 ├── xiaomi/xiaomi-17-ultra.json
 ├── redmi/redmi-10-5g.json
+├── redmi/redmi-10.json
 ├── redmi/redmi-11-prime.json
 ├── redmi/redmi-12-5g.json
 ├── redmi/redmi-12.json
 ├── redmi/redmi-12c.json
 ├── redmi/redmi-13c-5g.json
 ├── redmi/redmi-15c.json
+├── redmi/redmi-a2.json
+├── redmi/redmi-k40s.json
+├── redmi/redmi-note-10s.json
+├── redmi/redmi-note-11-pro-5g.json
+├── redmi/redmi-note-11-pro.json
+├── redmi/redmi-note-11s.json
+├── redmi/redmi-note-11t-5g.json
 ├── redmi/redmi-note-12-pro-5g.json
+├── redmi/redmi-note-12-pro-speed.json
 ├── redmi/redmi-note-12s.json
 ├── redmi/redmi-note-13-5g.json
 ├── redmi/redmi-note-13-pro.json
@@ -63,6 +81,7 @@ profiles/
 ├── poco/poco-f5.json
 ├── poco/poco-f6.json
 ├── poco/poco-f9-ultra.json
+├── poco/poco-m4-pro-5g.json
 ├── poco/poco-x6-pro-5g.json
 ├── poco/poco-x7-pro.json
 ├── poco/poco-x8-pro.json
@@ -218,14 +237,21 @@ list. It does not replace a real test.
 | `samsung-sm-s918b` | Galaxy S23 Ultra (SM-S918B) | 13–16 | device | Tested on Android 14 (`UP1A.231005.007`); Samsung Free is the main ad surface; Knox is permanent. |
 | `samsung-sm-a042f` | Galaxy A04e (SM-A042F) | 14 | documented | From the `a04e` firmware dump; ask only, no auto-apply. |
 | `samsung-sm-a065f` | Galaxy A06 (SM-A065F) | 16 | documented | From the `a06` firmware dump; ask only, no auto-apply. |
+| `samsung-sm-a145f` | Galaxy A14 (SM-A145F) | 13 | documented | From the `a14` firmware dump; ask only, no auto-apply. |
 | `samsung-sm-a146p` | Galaxy A14 5G (SM-A146P) | 14 | documented | From the `a14xm` firmware dump; ask only, no auto-apply. |
 | `samsung-sm-a226b` | Galaxy A22 5G (SM-A226B) | 13 | documented | From the `a22x` firmware dump; ask only, no auto-apply. |
 | `samsung-sm-a245f` | Galaxy A24 (SM-A245F) | 13 | documented | From the `a24` firmware dump; ask only, no auto-apply. |
+| `samsung-sm-a325f` | Galaxy A32 (SM-A325F) | 13 | documented | From the `a32` firmware dump; ask only, no auto-apply. |
+| `samsung-sm-a326b` | Galaxy A32 5G (SM-A326B) | 13 | documented | From the `a32x` firmware dump; ask only, no auto-apply. |
 | `samsung-sm-a546e` | Galaxy A54 5G (SM-A546E) | 13 | documented | From the `a54x` firmware dump; ask only, no auto-apply. |
 | `samsung-sm-a576b` | Galaxy A57 5G (SM-A576B) | 16 | documented | From the `a57x` firmware dump; ask only, no auto-apply. |
+| `samsung-sm-e045f` | Galaxy F04 (SM-E045F) | 13 | documented | From the `m04` firmware dump; ask only, no auto-apply. |
 | `samsung-sm-e055f` | Galaxy F05 (SM-E055F) | 16 | documented | From the `a05m` firmware dump; ask only, no auto-apply. |
 | `samsung-sm-m136b` | Galaxy M13 5G (SM-M136B) | 14 | documented | From the `a13x` firmware dump; ask only, no auto-apply. |
+| `samsung-sm-m146b` | Galaxy M14 5G (SM-M146B) | 13 | documented | From the `essi` firmware dump; ask only, no auto-apply. |
 | `samsung-sm-s938b` | Galaxy S25 Ultra (SM-S938B) | 16 | documented | From the `pa3q` firmware dump; ask only, no auto-apply. |
+| `samsung-sm-f707u1` | Galaxy Z Flip 5G (SM-F707U1) | 13 | documented | From the `bloomxq` firmware dump; ask only, no auto-apply. |
+| `samsung-sm-f916u` | Galaxy Z Fold2 (SM-F916U) | 13 | documented | From the `f2q` firmware dump; ask only, no auto-apply. |
 | `oneplus-a6013` | OnePlus 6T (ONEPLUS A6013) | 11 | device | Tested on OxygenOS 11.1.2.2 build `ONEPLUS A6013_41_211125`; 8 low-risk telemetry packages in `disable`, user-facing apps in `ask`. |
 | `oneplus-cph2487` | OnePlus 11R 5G (CPH2487) | 16 | documented | From the `OP5961L1` firmware dump; ask only, no auto-apply. |
 | `oneplus-hd1925` | OnePlus 7T Pro 5G McLaren (HD1925) | 11 | documented | From the `OnePlus7TProNR` firmware dump; ask only, no auto-apply. |
@@ -235,9 +261,12 @@ list. It does not replace a real test.
 | `oneplus-cph2719` | OnePlus Nord CE5 (CPH2719) | 16 | documented | From the `OP613BL1` firmware dump; ask only, no auto-apply. |
 | `xiaomi-hyperos` | Xiaomi/Redmi/POCO HyperOS | 14–16 | device | Family profile; `auto_apply: false`; MSA/GetApps; region-specific names; re-check after OTA. |
 | `xiaomi-11t` | Xiaomi 11T (`agate`) | 14 | documented | From the `agate` firmware dump; ask only, no auto-apply. |
+| `xiaomi-11t-pro` | Xiaomi 11T Pro (2107113SC) | 13 | documented | From the `vili` firmware dump; ask only, no auto-apply. |
+| `xiaomi-12-lite` | Xiaomi 12 Lite (2203129C) | 13 | documented | From the `taoyao` firmware dump; ask only, no auto-apply. |
 | `xiaomi-15-ultra` | Xiaomi 15 Ultra (25010PN30G) | 16 | documented | From the `xuanyuan` firmware dump; ask only, no auto-apply. |
 | `xiaomi-15t` | Xiaomi 15T (25069PTEBG) | 16 | documented | From the `goya` firmware dump; ask only, no auto-apply. |
 | `xiaomi-17-ultra` | Xiaomi 17 Ultra (2512BPNDAG) | 16 | documented | From the `nezha` firmware dump; ask only, no auto-apply. |
+| `redmi-10` | Redmi 10 (21061119AG) | 13 | documented | From the `selene` firmware dump; ask only, no auto-apply. |
 | `redmi-10-5g` | Redmi 10 5G / Redmi 11 Prime 5G (22041219G) | 14 | documented | From the `light` firmware dump; ask only, no auto-apply. |
 | `redmi-11-prime` | Redmi 11 Prime (22071219AI) | 14 | documented | From the `rock` firmware dump; ask only, no auto-apply. |
 | `redmi-12` | Redmi 12 (`fire`) | 14 | documented | From the `fire` firmware dump; ask only, no auto-apply. |
@@ -245,7 +274,15 @@ list. It does not replace a real test.
 | `redmi-12c` | Redmi 12C (22120RN86C) | 14 | documented | From the `earth` firmware dump; ask only, no auto-apply. |
 | `redmi-13c-5g` | Redmi 13C 5G / Redmi 13R 5G (`air`) | 15 | documented | From the `air` firmware dump; ask only, no auto-apply. |
 | `redmi-15c` | Redmi 15C (`dew`) | 16 | documented | Also sold as POCO C85 in some regions; fingerprint-pinned family profile; ask only. |
+| `redmi-a2` | Redmi A2+ (`water`) | 13 | documented | From the `water` firmware dump; ask only, no auto-apply. |
+| `redmi-k40s` | Redmi K40S (22021211RC) | 13 | documented | From the `munch` firmware dump; ask only, no auto-apply. |
+| `redmi-note-10s` | Redmi Note 10S (`rosemary`) | 13 | documented | From the `rosemary` firmware dump; ask only, no auto-apply. |
+| `redmi-note-11-pro` | Redmi Note 11 Pro (`pissarro`) | 13 | documented | From the `pissarro` firmware dump; ask only, no auto-apply. |
+| `redmi-note-11-pro-5g` | Redmi Note 11 Pro 5G (2201116SG) | 13 | documented | From the `veux` firmware dump; ask only, no auto-apply. |
+| `redmi-note-11s` | Redmi Note 11S (`fleur`) | 13 | documented | From the `fleur` firmware dump; ask only, no auto-apply. |
+| `redmi-note-11t-5g` | Redmi Note 11T 5G (`evergo`) | 13 | documented | From the `evergo` firmware dump; ask only, no auto-apply. |
 | `redmi-note-12-pro-5g` | Redmi Note 12 Pro 5G (`ruby`) | 14 | documented | From the `ruby` firmware dump; ask only, no auto-apply. |
+| `redmi-note-12-pro-speed` | Redmi Note 12 Pro Speed (22101320C) | 13 | documented | From the `redwood` firmware dump; ask only, no auto-apply. |
 | `redmi-note-12s` | Redmi Note 12S (`sea`) | 15 | documented | From the `sea` firmware dump; ask only, no auto-apply. |
 | `redmi-note-13` | Redmi Note 13 (`sapphire`) | 15 | documented | From the `sapphire` firmware dump; ask only, no auto-apply. |
 | `redmi-note-13-5g` | Redmi Note 13 5G (`gold`) | 15 | documented | From the `gold` firmware dump; ask only, no auto-apply. |
@@ -260,6 +297,7 @@ list. It does not replace a real test.
 | `poco-f5` | POCO F5 (`marble`) | 15 | documented | From the `marble` firmware dump; ask only, no auto-apply. |
 | `poco-f6` | POCO F6 (24069PC21G) | 16 | documented | From the `peridot` firmware dump; ask only, no auto-apply. |
 | `poco-f9-ultra` | POCO F9 Ultra (26077PC53G) | 16 | documented | From the `songyuan` firmware dump; ask only, no auto-apply. |
+| `poco-m4-pro-5g` | POCO M4 Pro 5G (`evergreen`) | 13 | documented | From the `evergreen` firmware dump; ask only, no auto-apply. |
 | `poco-x6-pro-5g` | POCO X6 Pro 5G (2311DRK48G) | 16 | documented | From the `duchamp` firmware dump; ask only, no auto-apply. |
 | `poco-x7-pro` | POCO X7 Pro (2412DPC0AG) | 16 | documented | From the `rodin` firmware dump; ask only, no auto-apply. |
 | `poco-x8-pro` | POCO X8 Pro (2511FPC34G) | 16 | documented | From the `klee` firmware dump; ask only, no auto-apply. |
