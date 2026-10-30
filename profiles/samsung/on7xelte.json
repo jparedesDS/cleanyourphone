@@ -245,5 +245,5 @@
       "why": "Samsung OTA/DM client"
     }
   ],
-  "notes": "Documented from the on7xelte firmware dump (Android 8), not tested on a physical phone. Samsung package lists and preloads vary by region and carrier. Regional model numbers vary; the profile is pinned by fingerprint and codename. No auto-apply; ask before every package."
+  "notes": "Documented from the on7xelte firmware dump (Android 8), not tested on a physical phone. Samsung package lists and preloads vary by region and carrier. Regional model numbers vary; the profile is pinned by fingerprint and codename. This dump has limited package coverage; review each package. No auto-apply; ask before every package."
 }

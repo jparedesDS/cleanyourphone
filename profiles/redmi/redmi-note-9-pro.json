@@ -196,5 +196,5 @@
       "why": "IMS: VoLTE and Wi-Fi calling"
     }
   ],
-  "notes": "Documented from the miatoll firmware dump (Android 12), not tested on a physical phone. Redmi package lists and preloads vary by region and carrier. Regional model numbers vary; the profile is pinned by fingerprint and codename. No auto-apply; ask before every package."
+  "notes": "Documented from the miatoll firmware dump (Android 12), not tested on a physical phone. Redmi package lists and preloads vary by region and carrier. Regional model numbers vary; the profile is pinned by fingerprint and codename. This dump has limited package coverage; review each package. No auto-apply; ask before every package."
 }

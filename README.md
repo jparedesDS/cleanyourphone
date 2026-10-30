@@ -229,6 +229,7 @@ Tablet profiles set `form_factor: tablet`; a missing dialer/SMS role is a warnin
 | [`samsung-sm-f916u`](profiles/samsung/sm-f916u.json) | Galaxy Z Fold2 (SM-F916U) | 13 | documented, ask only |
 | [`oneplus-a6013`](profiles/oneplus/oneplus-a6013.json) | OnePlus 6T (ONEPLUS A6013) | 11 | device, tested OxygenOS 11.1.2.2 build |
 | [`oneplus-cph2487`](profiles/oneplus/oneplus-cph2487.json) | OnePlus 11R 5G (CPH2487) | 16 | documented, ask only |
+| [`oneplus-5t`](profiles/oneplus/oneplus-5t.json) | OnePlus 5T (`OnePlus5T`) | 10 | documented, ask only |
 | [`oneplus-hd1925`](profiles/oneplus/oneplus-hd1925.json) | OnePlus 7T Pro 5G McLaren (HD1925) | 11 | documented, ask only |
 | [`oneplus-in2013`](profiles/oneplus/oneplus-in2013.json) | OnePlus 8 (IN2013) | 11 | documented, ask only |
 | [`oneplus-ac2003`](profiles/oneplus/oneplus-ac2003.json) | OnePlus Nord (AC2003) | 11 | documented, ask only |
@@ -249,7 +250,6 @@ Tablet profiles set `form_factor: tablet`; a missing dialer/SMS role is a warnin
 | [`xiaomi-civi`](profiles/xiaomi/xiaomi-civi.json) | Xiaomi Civi (2109119BC) | 12 | documented, ask only |
 | [`xiaomi-pad-6`](profiles/xiaomi/xiaomi-pad-6.json) | Xiaomi Pad 6 (23043RP34C) | 13 | documented, ask only, tablet |
 | [`xiaomi-pad-6-pro`](profiles/xiaomi/xiaomi-pad-6-pro.json) | Xiaomi Pad 6 Pro (23046RP50C) | 13 | documented, ask only, tablet |
-| [`redmi-note-9-pro-joyeuse`](profiles/redmi/redmi-note-9-pro-joyeuse.json) | joyeuse | 12 | documented, ask only |
 | [`redmi-10`](profiles/redmi/redmi-10.json) | Redmi 10 (21061119AG) | 13 | documented, ask only |
 | [`redmi-10-5g`](profiles/redmi/redmi-10-5g.json) | Redmi 10 5G / Redmi 11 Prime 5G (22041219G) | 14 | documented, ask only |
 | [`redmi-10a`](profiles/redmi/redmi-10a.json) | Redmi 10A (220233L2G) | 11 | documented, ask only |
@@ -268,8 +268,8 @@ Tablet profiles set `form_factor: tablet`; a missing dialer/SMS role is a warnin
 | [`redmi-a1`](profiles/redmi/redmi-a1.json) | Redmi A1 (`ice`) | 12 | documented, ask only |
 | [`redmi-a2`](profiles/redmi/redmi-a2.json) | Redmi A2+ (`water`) | 13 | documented, ask only |
 | [`redmi-k20`](profiles/redmi/redmi-k20.json) | Redmi K20 (`davinciin`) | 11 | documented, ask only |
-| [`redmi-k20-pro`](profiles/redmi/redmi-k20-pro.json) | Redmi K20 Pro (`raphaelin`) | 10 | documented, ask only |
 | [`redmi-k20-pro-raphael`](profiles/redmi/redmi-k20-pro-raphael.json) | raphael | 11 | documented, ask only |
+| [`redmi-k20-pro`](profiles/redmi/redmi-k20-pro.json) | Redmi K20 Pro (`raphaelin`) | 10 | documented, ask only |
 | [`redmi-k30-4g`](profiles/redmi/redmi-k30-4g.json) | Redmi K30 4G (`phoenix`) | 12 | documented, ask only |
 | [`redmi-k40-gaming`](profiles/redmi/redmi-k40-gaming.json) | Redmi K40 Gaming (`ares`) | 12 | documented, ask only |
 | [`redmi-k40-pro`](profiles/redmi/redmi-k40-pro.json) | Redmi K40 Pro (M2012K11C) | 12 | documented, ask only |
@@ -299,6 +299,7 @@ Tablet profiles set `form_factor: tablet`; a missing dialer/SMS role is a warnin
 | [`redmi-note-8-2021`](profiles/redmi/redmi-note-8-2021.json) | Redmi Note 8 (2021) (`biloba`) | 11 | documented, ask only |
 | [`redmi-note-8-pro`](profiles/redmi/redmi-note-8-pro.json) | Redmi Note 8 Pro (`begonia`) | 11 | documented, ask only |
 | [`redmi-note-9`](profiles/redmi/redmi-note-9.json) | Redmi Note 9 (`merlin`) | 12 | documented, ask only |
+| [`redmi-note-9-pro-joyeuse`](profiles/redmi/redmi-note-9-pro-joyeuse.json) | joyeuse | 12 | documented, ask only |
 | [`redmi-note-9-pro-gauguin`](profiles/redmi/redmi-note-9-pro-gauguin.json) | Redmi Note 9 Pro (`gauguin`) | 12 | documented, ask only |
 | [`redmi-note-9-pro`](profiles/redmi/redmi-note-9-pro.json) | Redmi Note 9 Pro / Redmi Note 9S (`miatoll`) | 12 | documented, ask only |
 | [`redmi-note-9-pro-max`](profiles/redmi/redmi-note-9-pro-max.json) | excalibur | 11 | documented, ask only |

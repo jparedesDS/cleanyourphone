@@ -73,6 +73,7 @@ profiles/
 ├── samsung/sm-t875.json
 ├── samsung/sm-t975.json
 ├── oneplus/README.md
+├── oneplus/oneplus-5t.json
 ├── oneplus/oneplus-a6013.json
 ├── oneplus/oneplus-ac2003.json
 ├── oneplus/oneplus-cph2487.json
@@ -375,6 +376,7 @@ list. It does not replace a real test.
 | `samsung-sm-f916u` | Galaxy Z Fold2 (SM-F916U) | 13 | documented | From the `f2q` firmware dump; ask only, no auto-apply. |
 | `oneplus-a6013` | OnePlus 6T (ONEPLUS A6013) | 11 | device | Tested on OxygenOS 11.1.2.2 build `ONEPLUS A6013_41_211125`; 8 low-risk telemetry packages in `disable`, user-facing apps in `ask`. |
 | `oneplus-cph2487` | OnePlus 11R 5G (CPH2487) | 16 | documented | From the `OP5961L1` firmware dump; ask only, no auto-apply. |
+| `oneplus-5t` | OnePlus 5T (`OnePlus5T`) | 10 | documented | From the `OnePlus5T` firmware dump; ask only, no auto-apply. |
 | `oneplus-hd1925` | OnePlus 7T Pro 5G McLaren (HD1925) | 11 | documented | From the `OnePlus7TProNR` firmware dump; ask only, no auto-apply. |
 | `oneplus-in2013` | OnePlus 8 (IN2013) | 11 | documented | From the `OnePlus8` firmware dump; ask only, no auto-apply. |
 | `oneplus-ac2003` | OnePlus Nord (AC2003) | 11 | documented | From the `Nord` firmware dump; ask only, no auto-apply. |
@@ -395,7 +397,6 @@ list. It does not replace a real test.
 | `xiaomi-civi` | Xiaomi Civi (2109119BC) | 12 | documented | From the `mona` firmware dump; ask only, no auto-apply. |
 | `xiaomi-pad-6` | Xiaomi Pad 6 (23043RP34C) | 13 | documented | Tablet; From the `pipa` firmware dump; ask only, no auto-apply. |
 | `xiaomi-pad-6-pro` | Xiaomi Pad 6 Pro (23046RP50C) | 13 | documented | Tablet; From the `liuqin` firmware dump; ask only, no auto-apply. |
-| `redmi-note-9-pro-joyeuse` | joyeuse | 12 | documented | From the `joyeuse` firmware dump; ask only, no auto-apply. |
 | `redmi-10` | Redmi 10 (21061119AG) | 13 | documented | From the `selene` firmware dump; ask only, no auto-apply. |
 | `redmi-10-5g` | Redmi 10 5G / Redmi 11 Prime 5G (22041219G) | 14 | documented | From the `light` firmware dump; ask only, no auto-apply. |
 | `redmi-10a` | Redmi 10A (220233L2G) | 11 | documented | From the `dandelion` firmware dump; ask only, no auto-apply. |
@@ -414,8 +415,8 @@ list. It does not replace a real test.
 | `redmi-a1` | Redmi A1 (`ice`) | 12 | documented | From the `ice` firmware dump; ask only, no auto-apply. |
 | `redmi-a2` | Redmi A2+ (`water`) | 13 | documented | From the `water` firmware dump; ask only, no auto-apply. |
 | `redmi-k20` | Redmi K20 (`davinciin`) | 11 | documented | From the `davinciin` firmware dump; ask only, no auto-apply. |
-| `redmi-k20-pro` | Redmi K20 Pro (`raphaelin`) | 10 | documented | From the `raphaelin` firmware dump; ask only, no auto-apply. |
 | `redmi-k20-pro-raphael` | raphael | 11 | documented | From the `raphael` firmware dump; ask only, no auto-apply. |
+| `redmi-k20-pro` | Redmi K20 Pro (`raphaelin`) | 10 | documented | From the `raphaelin` firmware dump; ask only, no auto-apply. |
 | `redmi-k30-4g` | Redmi K30 4G (`phoenix`) | 12 | documented | From the `phoenix` firmware dump; ask only, no auto-apply. |
 | `redmi-k40-gaming` | Redmi K40 Gaming (`ares`) | 12 | documented | From the `ares` firmware dump; ask only, no auto-apply. |
 | `redmi-k40-pro` | Redmi K40 Pro (M2012K11C) | 12 | documented | From the `haydn` firmware dump; ask only, no auto-apply. |
@@ -445,6 +446,7 @@ list. It does not replace a real test.
 | `redmi-note-8-2021` | Redmi Note 8 (2021) (`biloba`) | 11 | documented | From the `biloba` firmware dump; ask only, no auto-apply. |
 | `redmi-note-8-pro` | Redmi Note 8 Pro (`begonia`) | 11 | documented | From the `begonia` firmware dump; ask only, no auto-apply. |
 | `redmi-note-9` | Redmi Note 9 (`merlin`) | 12 | documented | From the `merlin` firmware dump; ask only, no auto-apply. |
+| `redmi-note-9-pro-joyeuse` | joyeuse | 12 | documented | From the `joyeuse` firmware dump; ask only, no auto-apply. |
 | `redmi-note-9-pro-gauguin` | Redmi Note 9 Pro (`gauguin`) | 12 | documented | From the `gauguin` firmware dump; ask only, no auto-apply. |
 | `redmi-note-9-pro` | Redmi Note 9 Pro / Redmi Note 9S (`miatoll`) | 12 | documented | From the `miatoll` firmware dump; ask only, no auto-apply. |
 | `redmi-note-9-pro-max` | excalibur | 11 | documented | From the `excalibur` firmware dump; ask only, no auto-apply. |

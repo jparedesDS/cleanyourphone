@@ -250,5 +250,5 @@
       "why": "Samsung OTA/DM client"
     }
   ],
-  "notes": "Documented from the A02 firmware dump (Android 11), not tested on a physical phone. Samsung package lists and preloads vary by region and carrier. No auto-apply; ask before every package."
+  "notes": "Documented from the A02 firmware dump (Android 11), not tested on a physical phone. Samsung package lists and preloads vary by region and carrier. This dump has limited package coverage; review each package. No auto-apply; ask before every package."
 }
