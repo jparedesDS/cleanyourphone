@@ -476,5 +476,5 @@
       "why": "Xiaomi dialer"
     }
   ],
-  "notes": "Documented from the lapis firmware dump (Android 16), not tested on a physical phone. HyperOS package lists and preloads vary by region and carrier. No auto-apply; ask before every package. Only system/OEM packages are listed; user apps are excluded."
+  "notes": "Documented from the lapis firmware dump (Android 16), not tested on a physical phone. HyperOS package lists and preloads vary by region and carrier. Regional model numbers vary; the profile is pinned by fingerprint and codename. No auto-apply; ask before every package. Only system/OEM packages are listed; user apps are excluded."
 }

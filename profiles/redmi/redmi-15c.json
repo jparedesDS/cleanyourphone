@@ -471,5 +471,5 @@
       "why": "Xiaomi dialer"
     }
   ],
-  "notes": "Documented from the dew firmware dump (Android 16), not tested on a physical phone. Sold in some regions as POCO C85; this dump is the Redmi 15C global build. HyperOS package lists and preloads vary by region and carrier. No auto-apply; ask before every package. Only system/OEM packages are listed; user apps are excluded."
+  "notes": "Documented from the dew firmware dump (Android 16), not tested on a physical phone. Sold in some regions as POCO C85; this dump is the Redmi 15C global build. HyperOS package lists and preloads vary by region and carrier. Regional model numbers vary; the profile is pinned by fingerprint and codename. No auto-apply; ask before every package. Only system/OEM packages are listed; user apps are excluded."
 }

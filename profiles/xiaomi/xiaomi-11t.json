@@ -464,5 +464,5 @@
       "why": "Xiaomi Bluetooth"
     }
   ],
-  "notes": "Documented from the agate firmware dump (Android 14), not tested on a physical phone. Xiaomi package lists and preloads vary by region and carrier. the profile is pinned by fingerprint and codename. No auto-apply; ask before every package."
+  "notes": "Documented from the agate firmware dump (Android 14), not tested on a physical phone. Xiaomi package lists and preloads vary by region and carrier. The profile is pinned by fingerprint and codename. Regional model numbers vary; the profile is pinned by fingerprint and codename. No auto-apply; ask before every package."
 }
