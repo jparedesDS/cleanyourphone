@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: ${{ matrix.os }} / Python ${{ matrix.python }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python: ["3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Validate profiles
+        run: python tools/phone.py validate
+      - name: CLI smoke test
+        run: |
+          python tools/phone.py --help
+          python tools/phone.py protected
+          python tools/phone.py profiles
+      - name: Maintainer scripts smoke test
+        run: |
+          python scripts/dump_inventory.py --help
+          python scripts/batch_profiles.py --help
+          python scripts/discover_projects.py --help
+          python scripts/update_profile_docs.py --help
+          python scripts/report_profiles.py --help
+
+  python-versions:
+    name: ubuntu-latest / Python ${{ matrix.python }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.10", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Validate profiles
+        run: python tools/phone.py validate

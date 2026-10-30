@@ -1,0 +1,1301 @@
+{
+  "samsung": {
+    "ask": {
+      "com.samsung.accessory.budsunitemgr": [
+        "Galaxy Buds manager",
+        "Galaxy Buds pairing"
+      ],
+      "com.samsung.android.app.aodservice": [
+        "Always On Display",
+        "Always On Display"
+      ],
+      "com.samsung.android.app.appsedge": [
+        "Edge panels",
+        "Edge panels and their shortcuts"
+      ],
+      "com.samsung.android.app.cocktailbarservice": [
+        "Edge panel service",
+        "Edge panel gesture and shortcuts"
+      ],
+      "com.samsung.android.app.dofviewer": [
+        "Depth of field viewer",
+        "Depth-of-field photos"
+      ],
+      "com.samsung.android.app.dressroom": [
+        "Wallpaper and theme service",
+        "Wallpaper and theme customization"
+      ],
+      "com.samsung.android.app.earphonetypec": [
+        "Earphone type detection",
+        "Wired/earphone detection and related audio behavior"
+      ],
+      "com.samsung.android.app.find": [
+        "Find My Mobile",
+        "Find My Mobile remote locate/lock"
+      ],
+      "com.samsung.android.app.galaxyfinder": [
+        "Samsung Finder search",
+        "Finder search in the app drawer"
+      ],
+      "com.samsung.android.app.interpreter": [
+        "Interpreter",
+        "Interpreter app"
+      ],
+      "com.samsung.android.app.notes": [
+        "Samsung Notes",
+        "Samsung Notes and its sync"
+      ],
+      "com.samsung.android.app.parentalcare": [
+        "Parental care",
+        "Parental controls"
+      ],
+      "com.samsung.android.app.readingglass": [
+        "Reading glass",
+        "Reading glass features"
+      ],
+      "com.samsung.android.app.reminder": [
+        "Samsung Reminder",
+        "Reminder app and notifications"
+      ],
+      "com.samsung.android.app.routines": [
+        "Modes and Routines automation",
+        "Modes and Routines"
+      ],
+      "com.samsung.android.app.settings.bixby": [
+        "Bixby settings",
+        "Bixby settings screens"
+      ],
+      "com.samsung.android.app.sharelive": [
+        "Quick Share live sharing",
+        "Quick Share live sharing"
+      ],
+      "com.samsung.android.app.smartcapture": [
+        "Screenshot toolbar and smart capture",
+        "Screenshot toolbar and smart capture"
+      ],
+      "com.samsung.android.app.spage": [
+        "Samsung Free: the main ad and recommendation surface on One UI",
+        "Samsung Free (news, games, promotions)"
+      ],
+      "com.samsung.android.app.tips": [
+        "Samsung Tips preload and its cards",
+        "Tips app and its tips cards"
+      ],
+      "com.samsung.android.app.updatecenter": [
+        "Samsung software update UI",
+        "System update prompts"
+      ],
+      "com.samsung.android.app.vex.scanner": [
+        "Document scanner",
+        "Document scanning"
+      ],
+      "com.samsung.android.app.watchmanager": [
+        "Galaxy Wearable",
+        "Galaxy Watch pairing and watch apps"
+      ],
+      "com.samsung.android.ardrawing": [
+        "AR Doodle / AR drawing",
+        "AR drawing features"
+      ],
+      "com.samsung.android.aremoji": [
+        "AR Emoji",
+        "AR Emoji and avatar features"
+      ],
+      "com.samsung.android.aremojieditor": [
+        "AR Emoji editor",
+        "Editing AR Emoji"
+      ],
+      "com.samsung.android.arzone": [
+        "AR Zone",
+        "AR Zone apps"
+      ],
+      "com.samsung.android.aware.service": [
+        "Samsung awareness service",
+        "Context-aware Samsung features"
+      ],
+      "com.samsung.android.beaconmanager": [
+        "Beacon manager",
+        "Beacon-related features"
+      ],
+      "com.samsung.android.bixby.agent": [
+        "Bixby voice assistant",
+        "Bixby voice and its side-key action"
+      ],
+      "com.samsung.android.bixby.wakeup": [
+        "Bixby always-on wake word",
+        "Always-on 'Hi Bixby' wake word"
+      ],
+      "com.samsung.android.bixbyvision.framework": [
+        "Bixby Vision framework",
+        "Bixby Vision and camera-based visual search"
+      ],
+      "com.samsung.android.calendar": [
+        "Samsung Calendar",
+        "Samsung Calendar and its sync"
+      ],
+      "com.samsung.android.callassistant": [
+        "Samsung call assistant features",
+        "Call assistant features"
+      ],
+      "com.samsung.android.callbgprovider": [
+        "Samsung call background provider",
+        "Call background images and related call UI"
+      ],
+      "com.samsung.android.dqagent": [
+        "Samsung diagnostics agent",
+        "Samsung diagnostic logs"
+      ],
+      "com.samsung.android.email.provider": [
+        "Samsung Email",
+        "Samsung Email app"
+      ],
+      "com.samsung.android.fmm": [
+        "Find My Mobile",
+        "Find My Mobile remote locate/lock"
+      ],
+      "com.samsung.android.forest": [
+        "Samsung Digital Wellbeing",
+        "Screen-time reports and app timers"
+      ],
+      "com.samsung.android.game.gamehome": [
+        "Game Launcher and game recommendations",
+        "Game Launcher and game tools"
+      ],
+      "com.samsung.android.ipsgeofence": [
+        "Indoor positioning / geofence service",
+        "Indoor positioning and geofence features"
+      ],
+      "com.samsung.android.mdx": [
+        "Link to Windows / Phone Link integration",
+        "Phone Link and Link to Windows"
+      ],
+      "com.samsung.android.networkdiagnostic": [
+        "Samsung network diagnostics",
+        "Built-in network diagnostics"
+      ],
+      "com.samsung.android.oneconnect": [
+        "SmartThings",
+        "SmartThings and smart-home control"
+      ],
+      "com.samsung.android.photoremasterservice": [
+        "Photo remaster service",
+        "Photo remaster features in Gallery"
+      ],
+      "com.samsung.android.rubin.app": [
+        "Samsung research/AI service",
+        "Some Samsung AI or research features"
+      ],
+      "com.samsung.android.samsungpositioning": [
+        "Samsung positioning service",
+        "Samsung location/positioning features"
+      ],
+      "com.samsung.android.scloud": [
+        "Samsung Cloud backup and sync",
+        "Samsung Cloud backup/restore and sync"
+      ],
+      "com.samsung.android.service.peoplestripe": [
+        "People edge",
+        "People edge contacts"
+      ],
+      "com.samsung.android.service.stplatform": [
+        "Samsung service platform",
+        "Some Samsung service integrations"
+      ],
+      "com.samsung.android.service.tagservice": [
+        "Samsung tag service",
+        "Samsung tag-related features"
+      ],
+      "com.samsung.android.sm.devicesecurity": [
+        "Samsung device security scanner",
+        "Device security scans"
+      ],
+      "com.samsung.android.sm.devicesecurity_v6": [
+        "Samsung device security scanner",
+        "Samsung device security scans"
+      ],
+      "com.samsung.android.smartcallprovider": [
+        "Samsung caller ID / smart call provider",
+        "Samsung caller ID and smart call features"
+      ],
+      "com.samsung.android.smartsuggestions": [
+        "Samsung Smart Suggestions",
+        "Smart suggestions in the keyboard/share sheet"
+      ],
+      "com.samsung.android.smartswitchassistant": [
+        "Smart Switch assistant",
+        "Smart Switch setup/restore flows"
+      ],
+      "com.samsung.android.themecenter": [
+        "Samsung Theme Center",
+        "Theme and wallpaper customization"
+      ],
+      "com.samsung.android.themestore": [
+        "Samsung Theme Store",
+        "Theme purchases and downloads"
+      ],
+      "com.samsung.android.video": [
+        "Samsung Video player",
+        "Samsung Video player"
+      ],
+      "com.samsung.android.visualars": [
+        "Visual AR service",
+        "Visual AR features"
+      ],
+      "com.sec.android.app.camera": [
+        "Samsung Camera app",
+        "Camera app; keep it unless the person has a replacement"
+      ],
+      "com.sec.android.app.clockpackage": [
+        "Samsung Clock and alarms",
+        "Alarm, timer and clock app"
+      ],
+      "com.sec.android.app.myfiles": [
+        "Samsung My Files",
+        "My Files file manager"
+      ],
+      "com.sec.android.app.popupcalculator": [
+        "Samsung Calculator",
+        "Calculator app"
+      ],
+      "com.sec.android.app.samsungapps": [
+        "Galaxy Store and Samsung app updates",
+        "Galaxy Store and Samsung app updates"
+      ],
+      "com.sec.android.app.sbrowser": [
+        "Samsung Internet browser",
+        "Samsung Internet browser"
+      ],
+      "com.sec.android.app.shealth": [
+        "Samsung Health",
+        "Samsung Health and its sync"
+      ],
+      "com.sec.android.app.voicenote": [
+        "Samsung Voice Recorder",
+        "Voice Recorder app"
+      ],
+      "com.sec.android.diagmonagent": [
+        "Samsung diagnostic and support-log agent",
+        "Samsung diagnostic logs and some support flows"
+      ],
+      "com.sec.android.gallery3d": [
+        "Samsung Gallery app",
+        "Gallery app and its editing/viewing features"
+      ],
+      "com.sec.location.nsflp2_v6_0": [
+        "Samsung network location provider",
+        "Network-based location"
+      ]
+    },
+    "never": {
+      "android": "Android framework",
+      "com.android.bluetooth": "Bluetooth: earbuds, car, wearables",
+      "com.android.cellbroadcastreceiver": "Emergency alerts",
+      "com.android.documentsui": "System file picker",
+      "com.android.emergency": "Emergency information and dialer",
+      "com.android.ims": "VoLTE and Wi-Fi calling",
+      "com.android.incallui": "In-call UI",
+      "com.android.keychain": "Certificates for banking/VPN/Wi-Fi",
+      "com.android.mms.service": "MMS service",
+      "com.android.nfc": "NFC payments and tags",
+      "com.android.packageinstaller": "Package installer",
+      "com.android.permissioncontroller": "Permission controller",
+      "com.android.phone": "Telephony: calls, mobile data, SIM",
+      "com.android.providers.contacts": "Contacts provider",
+      "com.android.providers.telephony": "SMS/APN provider",
+      "com.android.se": "eSIM and NFC secure element",
+      "com.android.server.telecom": "Call routing",
+      "com.android.settings": "Android Settings",
+      "com.android.shell": "ADB shell",
+      "com.android.systemui": "Status bar, notifications, lock screen",
+      "com.android.vending": "Play Store",
+      "com.android.vpndialogs": "VPN consent",
+      "com.google.android.cellbroadcastreceiver": "Emergency alerts",
+      "com.google.android.gms": "Play Services: push, banking, backups",
+      "com.google.android.gsf": "Google Services Framework",
+      "com.google.android.ims": "VoLTE, Wi-Fi calling and RCS",
+      "com.google.android.packageinstaller": "Package installer",
+      "com.google.android.permissioncontroller": "Permission controller",
+      "com.google.android.webview": "WebView for in-app browsers",
+      "com.samsung.android.app.omcagent": "Carrier configuration (OMC)",
+      "com.samsung.android.app.settings": "Samsung Settings",
+      "com.samsung.android.app.telephonyui": "Samsung telephony UI",
+      "com.samsung.android.appseparation": "Samsung app separation service",
+      "com.samsung.android.authfw": "Samsung authentication framework",
+      "com.samsung.android.dialer": "Samsung dialer",
+      "com.samsung.android.emergency": "Emergency information and dialer",
+      "com.samsung.android.ese": "eSIM secure element",
+      "com.samsung.android.incallui": "Samsung in-call UI",
+      "com.samsung.android.kgclient": "Samsung Knox Guard client",
+      "com.samsung.android.knox": "Samsung Knox",
+      "com.samsung.android.lool": "Device Care: battery and optimization",
+      "com.samsung.android.messaging": "Samsung Messages",
+      "com.samsung.android.mobileservice": "Samsung account services",
+      "com.samsung.android.privacydashboard": "Privacy dashboard",
+      "com.samsung.android.privateaccesstokens": "Private access tokens",
+      "com.samsung.android.providers.contacts": "Samsung contacts provider",
+      "com.samsung.android.providers.media": "Samsung media provider",
+      "com.samsung.android.samsungpass": "Samsung Pass autofill/passwords",
+      "com.samsung.android.samsungpassautofill": "Samsung Pass autofill",
+      "com.samsung.android.scpm": "Samsung cloud push/configuration",
+      "com.samsung.android.sdm.config": "Samsung device configuration",
+      "com.samsung.android.settingshelper": "Samsung Settings helper",
+      "com.samsung.android.spay": "Samsung Wallet/Pay",
+      "com.samsung.android.spayfw": "Samsung Wallet/Pay framework",
+      "com.samsung.android.thermal": "Thermal management",
+      "com.samsung.euicc": "eSIM management",
+      "com.samsung.euicc.mep": "eSIM management",
+      "com.sec.android.app.launcher": "System launcher and Recents",
+      "com.wsomacp": "Carrier configuration (OMC)",
+      "com.wssyncmldm": "Samsung OTA/DM client"
+    }
+  },
+  "xiaomi": {
+    "ask": {
+      "com.android.bips": [
+        "Built-in print service",
+        "Printing"
+      ],
+      "com.android.camera": [
+        "AOSP Camera",
+        "Camera app"
+      ],
+      "com.android.contacts": [
+        "AOSP Contacts",
+        "Contacts app"
+      ],
+      "com.android.deskclock": [
+        "AOSP Clock",
+        "Alarms and timers"
+      ],
+      "com.android.dialer": [
+        "AOSP Phone",
+        "Calls if default; role guard blocks"
+      ],
+      "com.android.email": [
+        "AOSP Email",
+        "Email app"
+      ],
+      "com.android.fmradio": [
+        "FM Radio",
+        "FM radio"
+      ],
+      "com.android.gallery3d": [
+        "AOSP Gallery",
+        "Gallery app"
+      ],
+      "com.android.mms": [
+        "AOSP Messages",
+        "SMS if default; role guard blocks"
+      ],
+      "com.android.music": [
+        "AOSP Music",
+        "Music player"
+      ],
+      "com.android.musicfx": [
+        "MusicFX",
+        "Audio effects"
+      ],
+      "com.android.providers.partnerbookmarks": [
+        "Partner bookmarks",
+        "Preloaded browser bookmarks"
+      ],
+      "com.android.quicksearchbox": [
+        "Quick Search",
+        "Quick search"
+      ],
+      "com.android.soundrecorder": [
+        "AOSP Recorder",
+        "Voice recorder"
+      ],
+      "com.android.storagemanager": [
+        "Storage Manager",
+        "Storage cleanup UI"
+      ],
+      "com.android.updater": [
+        "AOSP updater",
+        "System update UI"
+      ],
+      "com.android.wallpaper": [
+        "Wallpaper picker",
+        "Wallpaper picker"
+      ],
+      "com.android.wallpaper.livepicker": [
+        "Live Wallpaper picker",
+        "Live wallpapers"
+      ],
+      "com.google.android.apps.assistant": [
+        "Google Assistant",
+        "Assistant"
+      ],
+      "com.google.android.apps.messaging": [
+        "Google Messages",
+        "SMS/RCS if default; role guard blocks"
+      ],
+      "com.google.android.apps.nbu.files": [
+        "Files by Google",
+        "Files app"
+      ],
+      "com.google.android.apps.photos": [
+        "Google Photos preload",
+        "Photos backup and gallery"
+      ],
+      "com.google.android.apps.safetyhub": [
+        "Personal Safety",
+        "Emergency sharing"
+      ],
+      "com.google.android.apps.tachyon": [
+        "Google Meet",
+        "Meet calls"
+      ],
+      "com.google.android.apps.turbo": [
+        "Adaptive Battery / Device Health",
+        "Adaptive Battery and diagnostics"
+      ],
+      "com.google.android.apps.wellbeing": [
+        "Digital Wellbeing",
+        "Screen-time reports and app timers"
+      ],
+      "com.google.android.calendar": [
+        "Google Calendar",
+        "Calendar and reminders"
+      ],
+      "com.google.android.contacts": [
+        "Google Contacts",
+        "Contacts app"
+      ],
+      "com.google.android.deskclock": [
+        "Google Clock",
+        "Alarms and timers"
+      ],
+      "com.google.android.dialer": [
+        "Google Phone",
+        "Calls if default; role guard blocks"
+      ],
+      "com.google.android.googlequicksearchbox": [
+        "Google app / Assistant",
+        "Google app and Assistant"
+      ],
+      "com.google.android.inputmethod.latin": [
+        "Gboard",
+        "Keyboard if default; role guard blocks"
+      ],
+      "com.google.android.projection.gearhead": [
+        "Android Auto",
+        "Android Auto"
+      ],
+      "com.mediatek.systemupdate": [
+        "MediaTek system update",
+        "System update UI"
+      ],
+      "com.miui.accessibility": [
+        "Mi Accessibility",
+        "Accessibility features"
+      ],
+      "com.miui.aod": [
+        "Always On Display",
+        "Always On Display"
+      ],
+      "com.miui.backup": [
+        "Mi Backup",
+        "Local backup"
+      ],
+      "com.miui.bugreport": [
+        "Bug report tool",
+        "Built-in bug reporting"
+      ],
+      "com.miui.calculator": [
+        "Mi Calculator",
+        "Calculator app"
+      ],
+      "com.miui.camera": [
+        "Mi Camera",
+        "Camera app"
+      ],
+      "com.miui.cleaner": [
+        "Mi Cleaner preload",
+        "Cleaner app and its shortcuts"
+      ],
+      "com.miui.cleanmaster": [
+        "Clean Master preload",
+        "Cleaner/booster features"
+      ],
+      "com.miui.cloudbackup": [
+        "Mi Cloud backup",
+        "Mi Cloud backup/restore"
+      ],
+      "com.miui.cloudservice": [
+        "Mi Cloud service",
+        "Mi Cloud backup/sync"
+      ],
+      "com.miui.compass": [
+        "Mi Compass",
+        "Compass app"
+      ],
+      "com.miui.dmregservice": [
+        "Mi device management",
+        "Device management/telemetry"
+      ],
+      "com.miui.extraphoto": [
+        "Extra photo features",
+        "Some gallery/camera effects"
+      ],
+      "com.miui.fm": [
+        "FM radio",
+        "FM radio (if the hardware has it)"
+      ],
+      "com.miui.freeform": [
+        "Freeform windows",
+        "Freeform window mode"
+      ],
+      "com.miui.gallery": [
+        "Mi Gallery",
+        "Gallery app"
+      ],
+      "com.miui.huanji": [
+        "Mi Mover",
+        "Phone-to-phone migration"
+      ],
+      "com.miui.hybrid": [
+        "Hybrid content/recommendation service",
+        "Some system content pages"
+      ],
+      "com.miui.miservice": [
+        "Services & feedback",
+        "Feedback and service shortcuts"
+      ],
+      "com.miui.mishare.connectivity": [
+        "Mi Share",
+        "Mi Share file transfer"
+      ],
+      "com.miui.miwallpaper": [
+        "Mi Wallpaper",
+        "Wallpaper picker and some launcher themes"
+      ],
+      "com.miui.notes": [
+        "Mi Notes",
+        "Notes app and sync"
+      ],
+      "com.miui.player": [
+        "Mi Music",
+        "Mi Music player"
+      ],
+      "com.miui.powerinsight": [
+        "Power insight",
+        "Battery usage insights"
+      ],
+      "com.miui.rom": [
+        "Mi system update",
+        "System update UI"
+      ],
+      "com.miui.screenrecorder": [
+        "Screen recorder",
+        "Screen recording"
+      ],
+      "com.miui.sysopt": [
+        "System optimization",
+        "System optimization features"
+      ],
+      "com.miui.thirdappassistant": [
+        "Third-party app assistant/recommendations",
+        "App recommendations"
+      ],
+      "com.miui.videoplayer": [
+        "Mi Video",
+        "Mi Video player"
+      ],
+      "com.miui.weather2": [
+        "Mi Weather",
+        "Weather app and widget"
+      ],
+      "com.xiaomi.aiasst.service": [
+        "Xiaomi AI assistant",
+        "AI assistant"
+      ],
+      "com.xiaomi.aicr": [
+        "Xiaomi AI service",
+        "Some AI features"
+      ],
+      "com.xiaomi.aiservice": [
+        "Xiaomi AI service",
+        "Some AI features"
+      ],
+      "com.xiaomi.dmregservice": [
+        "Xiaomi device management",
+        "Device management/telemetry"
+      ],
+      "com.xiaomi.entitlement.o2": [
+        "O2 entitlement service",
+        "O2 carrier entitlement"
+      ],
+      "com.xiaomi.finddevice": [
+        "Find Device",
+        "Remote locate/lock"
+      ],
+      "com.xiaomi.glgm": [
+        "Game Center",
+        "Game Center and game downloads"
+      ],
+      "com.xiaomi.hypercamera": [
+        "Xiaomi Camera",
+        "Camera app"
+      ],
+      "com.xiaomi.hypercomm": [
+        "HyperConnect",
+        "Cross-device features"
+      ],
+      "com.xiaomi.mihomemanager": [
+        "Xiaomi Home manager",
+        "Xiaomi smart-home features"
+      ],
+      "com.xiaomi.mirror": [
+        "Screen mirroring",
+        "Screen mirroring"
+      ],
+      "com.xiaomi.misettings": [
+        "Mi Settings",
+        "Some Mi settings screens"
+      ],
+      "com.xiaomi.registration": [
+        "Xiaomi account registration",
+        "Xiaomi account registration"
+      ],
+      "com.xiaomi.uatalive": [
+        "Xiaomi usage/telemetry",
+        "Usage analytics"
+      ],
+      "com.xiaomi.ugd": [
+        "Xiaomi user growth/ads",
+        "Promotions and recommendations"
+      ]
+    },
+    "never": {
+      "android": "Android framework",
+      "com.android.bluetooth": "Bluetooth: earbuds, car, wearables",
+      "com.android.carrierconfig": "Carrier configuration",
+      "com.android.cellbroadcastreceiver": "Emergency alerts",
+      "com.android.certinstaller": "Certificate installer",
+      "com.android.documentsui": "System file picker",
+      "com.android.emergency": "Emergency information and dialer",
+      "com.android.ims": "VoLTE and Wi-Fi calling",
+      "com.android.incallui": "In-call UI",
+      "com.android.intentresolver": "Share/open-with dialog",
+      "com.android.keychain": "Certificates for banking/VPN/Wi-Fi",
+      "com.android.launcher3": "System launcher",
+      "com.android.mms.service": "MMS service",
+      "com.android.networkstack": "Network stack",
+      "com.android.nfc": "NFC payments and tags",
+      "com.android.ons": "Network selection",
+      "com.android.packageinstaller": "Package installer",
+      "com.android.permissioncontroller": "Permission controller",
+      "com.android.phone": "Telephony: calls, mobile data, SIM",
+      "com.android.phone.config": "Telephony configuration",
+      "com.android.providers.contacts": "Contacts provider",
+      "com.android.providers.media": "Media provider",
+      "com.android.providers.partnerbookmarks": "Preloaded partner bookmarks",
+      "com.android.providers.telephony": "SMS/APN provider",
+      "com.android.se": "eSIM and NFC secure element",
+      "com.android.server.telecom": "Call routing",
+      "com.android.settings": "Android Settings",
+      "com.android.shell": "ADB shell",
+      "com.android.stk": "SIM Toolkit",
+      "com.android.systemui": "Status bar, notifications, lock screen",
+      "com.android.vending": "Play Store",
+      "com.android.vpndialogs": "VPN consent",
+      "com.android.wm.shell": "Window management and Recents",
+      "com.google.android.cellbroadcastreceiver": "Emergency alerts",
+      "com.google.android.documentsui": "System file picker",
+      "com.google.android.euicc": "eSIM",
+      "com.google.android.gms": "Play Services: push, banking, backups",
+      "com.google.android.gsf": "Google Services Framework",
+      "com.google.android.ims": "VoLTE, Wi-Fi calling and RCS",
+      "com.google.android.networkstack": "Network stack",
+      "com.google.android.networkstack.tethering": "Network stack",
+      "com.google.android.packageinstaller": "Package installer",
+      "com.google.android.permissioncontroller": "Permission controller",
+      "com.google.android.webview": "WebView for in-app browsers",
+      "com.mediatek.bluetooth": "Bluetooth stack",
+      "com.mediatek.cellbroadcastreceiver": "Emergency alerts",
+      "com.mediatek.ims": "IMS: VoLTE and Wi-Fi calling",
+      "com.mediatek.ims.config": "IMS configuration",
+      "com.mediatek.ims.pco": "IMS PCO",
+      "com.mediatek.ims.rcsua.service": "IMS/RCS service",
+      "com.mediatek.omacp": "Carrier provisioning",
+      "com.mediatek.op08.ims": "IMS",
+      "com.mediatek.simprocessor": "SIM processing",
+      "com.mediatek.telephony": "MediaTek telephony",
+      "com.mediatek.wfo.impl": "Wi-Fi calling",
+      "com.mi.android.globallauncher": "System launcher",
+      "com.miui.euicc": "eSIM",
+      "com.miui.home": "System launcher",
+      "com.miui.permcenter": "Permission center",
+      "com.miui.powerkeeper": "Battery management",
+      "com.miui.securitycenter": "Security app: permissions, privacy, battery",
+      "com.miui.telephony": "Telephony",
+      "com.qti.phone": "Qualcomm telephony",
+      "com.qualcomm.qcrilmsgtunnel": "Qualcomm telephony",
+      "com.quicinc.cne.CNEService": "Connectivity engine",
+      "com.xiaomi.bluetooth": "Xiaomi Bluetooth",
+      "com.xiaomi.dialer": "Xiaomi dialer",
+      "com.xiaomi.euicc": "eSIM",
+      "com.xiaomi.phone": "Xiaomi phone service",
+      "com.xiaomi.push": "Xiaomi push service",
+      "com.xiaomi.xmsf": "Xiaomi push service",
+      "com.xring.dialer": "Dialer",
+      "org.codeaurora.ims": "IMS: VoLTE and Wi-Fi calling"
+    }
+  },
+  "oneplus": {
+    "ask": {
+      "cn.oneplus.photos": [
+        "OnePlus Photos",
+        "OnePlus Photos app"
+      ],
+      "com.LogiaGroup.LogiaDeck": [
+        "Logitech/Logia preload",
+        "Logia companion features"
+      ],
+      "com.aiunit.aon": [
+        "AI Unit always-on service",
+        "Some AI/always-on features"
+      ],
+      "com.android.chrome": [
+        "Chrome preload",
+        "Chrome browser"
+      ],
+      "com.coloros.blacklist": [
+        "ColorOS blacklist service",
+        "Call/SMS blocking rules"
+      ],
+      "com.coloros.blacklistapp": [
+        "ColorOS blacklist UI",
+        "Call/SMS blocking UI"
+      ],
+      "com.coloros.bootreg": [
+        "ColorOS boot registration",
+        "Some first-boot/registration flows"
+      ],
+      "com.coloros.browser": [
+        "ColorOS Browser",
+        "ColorOS Browser"
+      ],
+      "com.coloros.findmyphone": [
+        "ColorOS Find My Phone",
+        "Remote locate/lock features"
+      ],
+      "com.coloros.gallery3d": [
+        "ColorOS Gallery",
+        "Gallery app and its editing features"
+      ],
+      "com.coloros.photoeffects": [
+        "ColorOS photo effects",
+        "Gallery photo effects"
+      ],
+      "com.coloros.safesdkproxy": [
+        "ColorOS safe SDK proxy",
+        "Some app security SDK features"
+      ],
+      "com.coloros.sceneservice": [
+        "ColorOS scene service",
+        "Context-aware scene features"
+      ],
+      "com.coloros.smartdrive": [
+        "ColorOS Smart Drive",
+        "Driving mode"
+      ],
+      "com.coloros.soundrecorder": [
+        "ColorOS Voice Recorder",
+        "Voice Recorder app"
+      ],
+      "com.coloros.speechassist": [
+        "ColorOS voice assistant",
+        "Voice assistant"
+      ],
+      "com.coloros.speechassist.engine": [
+        "ColorOS voice engine",
+        "Voice assistant and speech features"
+      ],
+      "com.coloros.video": [
+        "ColorOS Video player",
+        "Video player"
+      ],
+      "com.coloros.wifisecuredetect": [
+        "ColorOS Wi-Fi security detection",
+        "Wi-Fi security warnings"
+      ],
+      "com.facebook.appmanager": [
+        "Facebook app manager preload",
+        "Facebook app management"
+      ],
+      "com.facebook.services": [
+        "Facebook services preload",
+        "Facebook background services"
+      ],
+      "com.facebook.system": [
+        "Facebook system preload",
+        "Facebook system components"
+      ],
+      "com.google.android.apps.docs": [
+        "Google Drive preload",
+        "Drive app and sync"
+      ],
+      "com.google.android.apps.googleassistant": [
+        "Google Assistant",
+        "Assistant"
+      ],
+      "com.google.android.apps.maps": [
+        "Google Maps preload",
+        "Maps and navigation"
+      ],
+      "com.google.android.apps.messaging": [
+        "Google Messages",
+        "SMS/RCS if default; role guard blocks"
+      ],
+      "com.google.android.apps.nbu.files": [
+        "Files by Google",
+        "Files app"
+      ],
+      "com.google.android.apps.photos": [
+        "Google Photos preload",
+        "Photos backup and gallery"
+      ],
+      "com.google.android.apps.restore": [
+        "Google restore",
+        "Restore apps/data on a new phone"
+      ],
+      "com.google.android.apps.safetyhub": [
+        "Personal Safety",
+        "Emergency sharing"
+      ],
+      "com.google.android.apps.tachyon": [
+        "Google Meet",
+        "Meet calls"
+      ],
+      "com.google.android.apps.turbo": [
+        "Adaptive Battery / Device Health",
+        "Adaptive Battery and diagnostics"
+      ],
+      "com.google.android.apps.walletnfcrel": [
+        "Google Wallet",
+        "Tap-to-pay and transit cards"
+      ],
+      "com.google.android.apps.wellbeing": [
+        "Digital Wellbeing",
+        "Screen-time reports and app timers"
+      ],
+      "com.google.android.apps.youtube.music": [
+        "YouTube Music preload",
+        "YouTube Music"
+      ],
+      "com.google.android.calendar": [
+        "Google Calendar preload",
+        "Calendar and reminders"
+      ],
+      "com.google.android.contacts": [
+        "Google Contacts",
+        "Contacts app"
+      ],
+      "com.google.android.deskclock": [
+        "Google Clock",
+        "Alarms and timers"
+      ],
+      "com.google.android.dialer": [
+        "Google Phone",
+        "Calls if default; role guard blocks"
+      ],
+      "com.google.android.feedback": [
+        "Google feedback",
+        "Nothing user-facing"
+      ],
+      "com.google.android.gm": [
+        "Gmail preload",
+        "Gmail app and notifications"
+      ],
+      "com.google.android.googlequicksearchbox": [
+        "Google app / Assistant",
+        "Google app and Assistant"
+      ],
+      "com.google.android.inputmethod.latin": [
+        "Gboard",
+        "Keyboard if default; role guard blocks"
+      ],
+      "com.google.android.projection.gearhead": [
+        "Android Auto",
+        "Android Auto"
+      ],
+      "com.google.android.setupwizard": [
+        "Google Setup Wizard",
+        "Setup/restore flows"
+      ],
+      "com.google.android.videos": [
+        "Google TV / Play Movies",
+        "Google TV app"
+      ],
+      "com.google.android.youtube": [
+        "YouTube preload",
+        "YouTube app"
+      ],
+      "com.heytap.browser": [
+        "HeyTap Browser preload",
+        "HeyTap Browser"
+      ],
+      "com.heytap.cloud": [
+        "HeyTap Cloud backup and sync",
+        "Cloud backup/restore and sync"
+      ],
+      "com.heytap.colorfulengine": [
+        "HeyTap Colorful Engine",
+        "Some theme/color features"
+      ],
+      "com.heytap.habit.analysis": [
+        "HeyTap usage analysis",
+        "Usage analysis features"
+      ],
+      "com.heytap.market": [
+        "HeyTap App Market and its recommendations",
+        "App Market and app updates"
+      ],
+      "com.heytap.quicksearchbox": [
+        "HeyTap Quick Search",
+        "Quick Search and its suggestions"
+      ],
+      "com.heytap.speechassist": [
+        "HeyTap voice assistant",
+        "Voice assistant"
+      ],
+      "com.heytap.speechassist.engine": [
+        "HeyTap voice engine",
+        "Voice assistant and speech features"
+      ],
+      "com.heytap.themestore": [
+        "HeyTap Theme Store",
+        "Theme purchases and downloads"
+      ],
+      "com.heytap.usercenter": [
+        "HeyTap user center",
+        "HeyTap account features"
+      ],
+      "com.heytap.yoli": [
+        "Soloop video editor",
+        "Soloop video editing"
+      ],
+      "com.mediatek.callrecorder": [
+        "MediaTek call recorder",
+        "Call recording"
+      ],
+      "com.mediatek.systemupdate": [
+        "MediaTek system update",
+        "System updates"
+      ],
+      "com.microsoft.deviceintegrationservice": [
+        "Link to Windows / Phone Link",
+        "Phone Link integration"
+      ],
+      "com.nearme.themespace": [
+        "Theme Space",
+        "Theme and wallpaper customization"
+      ],
+      "com.nearme.themestore": [
+        "Oppo/OnePlus Theme Store",
+        "Theme purchases and downloads"
+      ],
+      "com.oneplus.account": [
+        "OnePlus Account",
+        "OnePlus account and cloud features"
+      ],
+      "com.oneplus.aod": [
+        "OnePlus Always On Display",
+        "Always On Display"
+      ],
+      "com.oneplus.appupgrader": [
+        "OnePlus App Upgrader",
+        "OnePlus app updates"
+      ],
+      "com.oneplus.backuprestore.remoteservice": [
+        "OnePlus backup/restore service",
+        "Backup and restore"
+      ],
+      "com.oneplus.brickmode": [
+        "OnePlus Zen Mode",
+        "Zen Mode"
+      ],
+      "com.oneplus.calculator": [
+        "OnePlus Calculator",
+        "Calculator app"
+      ],
+      "com.oneplus.camera": [
+        "OnePlus Camera",
+        "Camera app"
+      ],
+      "com.oneplus.camera.service": [
+        "OnePlus Camera service",
+        "Camera features"
+      ],
+      "com.oneplus.contacts": [
+        "OnePlus Contacts",
+        "Contacts app"
+      ],
+      "com.oneplus.deskclock": [
+        "OnePlus Clock and alarms",
+        "Alarm, timer and clock app"
+      ],
+      "com.oneplus.dirac.simplemanager": [
+        "OnePlus Dirac audio manager",
+        "Dirac audio effects"
+      ],
+      "com.oneplus.filemanager": [
+        "OnePlus File Manager",
+        "File manager"
+      ],
+      "com.oneplus.gallery": [
+        "OnePlus Gallery",
+        "Gallery app and editing"
+      ],
+      "com.oneplus.gamespace": [
+        "OnePlus Game Space and game recommendations",
+        "Game Space and game tools"
+      ],
+      "com.oneplus.membership": [
+        "OnePlus membership/community",
+        "OnePlus membership and community"
+      ],
+      "com.oneplus.opbackup": [
+        "OnePlus Backup",
+        "Backup features"
+      ],
+      "com.oneplus.opshelf": [
+        "OnePlus Shelf",
+        "Shelf and its cards"
+      ],
+      "com.oneplus.screenrecord": [
+        "OnePlus screen recorder",
+        "Screen recording"
+      ],
+      "com.oneplus.screenshot": [
+        "OnePlus screenshot service",
+        "Screenshot toolbar/features"
+      ],
+      "com.oneplus.setupwizard": [
+        "OnePlus Setup Wizard",
+        "Setup and restore flows"
+      ],
+      "com.oneplus.voicewakeup": [
+        "OnePlus voice wakeup",
+        "Voice wake word"
+      ],
+      "com.oneplus.wallpaper": [
+        "OnePlus Wallpaper",
+        "Wallpaper picker and themes"
+      ],
+      "com.oplus.appplatform": [
+        "Oplus app platform",
+        "Some Oplus app integrations"
+      ],
+      "com.oplus.cota": [
+        "Oplus OTA/update client",
+        "System update notifications and downloads"
+      ],
+      "com.oplus.customize.coreapp": [
+        "Oplus customization service",
+        "Some customization features"
+      ],
+      "com.oplus.deepthinker": [
+        "Oplus DeepThinker AI/analytics",
+        "Some AI and usage-analysis features"
+      ],
+      "com.oplus.nearcomm": [
+        "Oplus near communication",
+        "Nearby communication features"
+      ],
+      "com.oplus.nhs": [
+        "Oplus network health service",
+        "Network health diagnostics"
+      ],
+      "com.oplus.onet": [
+        "Oplus network service",
+        "Some network optimizations"
+      ],
+      "com.oplus.ovoicemanager.wakeup": [
+        "Oplus voice wakeup",
+        "Voice wake word"
+      ],
+      "com.oplus.remotecontrol": [
+        "Oplus remote control",
+        "Remote control features"
+      ],
+      "com.oplus.screenshot": [
+        "Oplus screenshot service",
+        "Screenshot toolbar/features"
+      ],
+      "com.oplus.smartlock": [
+        "Oplus smart lock",
+        "Smart Lock features"
+      ],
+      "com.oplus.stdid": [
+        "Oplus advertising/standard ID service",
+        "Advertising ID and some ad targeting"
+      ],
+      "com.oplus.trafficmonitor": [
+        "Oplus traffic monitor",
+        "Data traffic monitor"
+      ],
+      "com.oplus.upgradeguide": [
+        "Oplus upgrade guide",
+        "Upgrade guide prompts"
+      ],
+      "com.oppo.quicksearchbox": [
+        "Oppo Quick Search",
+        "Quick Search and its suggestions"
+      ],
+      "com.orange.update": [
+        "Orange carrier update",
+        "Carrier update services"
+      ],
+      "com.payjoy.access": [
+        "PayJoy device financing agent",
+        "Device financing/lock features"
+      ],
+      "com.qti.service.colorservice": [
+        "Qualcomm color service",
+        "Display color features"
+      ],
+      "com.qualcomm.location": [
+        "Qualcomm location",
+        "Location services"
+      ],
+      "com.qualcomm.qti.qcolor": [
+        "Qualcomm QColor",
+        "Display color features"
+      ],
+      "com.qualcomm.qtil.aptxals": [
+        "Qualcomm aptX",
+        "aptX Bluetooth audio"
+      ],
+      "com.qualcomm.wfd.service": [
+        "Wi-Fi Display service",
+        "Screen casting"
+      ],
+      "com.ses.entitlement.o2": [
+        "O2 entitlement service",
+        "O2 carrier entitlement"
+      ],
+      "com.tmobile.rsuapp": [
+        "T-Mobile RSU app",
+        "T-Mobile update/services"
+      ],
+      "com.tmobile.rsusrv": [
+        "T-Mobile RSU service",
+        "T-Mobile update/services"
+      ],
+      "net.oneplus.commonlogtool": [
+        "OnePlus common log tool",
+        "OnePlus diagnostic log capture"
+      ],
+      "net.oneplus.odm": [
+        "OnePlus Device Manager",
+        "Device management and telemetry"
+      ],
+      "net.oneplus.odm.provider": [
+        "OnePlus Device Manager provider",
+        "Device management"
+      ],
+      "net.oneplus.push": [
+        "OnePlus Push",
+        "OnePlus push notifications"
+      ]
+    },
+    "never": {
+      "android": "Android framework",
+      "com.android.bluetooth": "Bluetooth: earbuds, car, wearables",
+      "com.android.carrierconfig": "Carrier configuration",
+      "com.android.carrierdefaultapp": "Carrier default app",
+      "com.android.cellbroadcastreceiver": "Emergency alerts",
+      "com.android.certinstaller": "Certificate installer",
+      "com.android.documentsui": "System file picker",
+      "com.android.emergency": "Emergency information and dialer",
+      "com.android.incallui": "In-call UI",
+      "com.android.intentresolver": "Share/open-with dialog",
+      "com.android.keychain": "Certificates for banking/VPN/Wi-Fi",
+      "com.android.launcher": "System launcher",
+      "com.android.launcher3": "System launcher",
+      "com.android.mms.service": "MMS service",
+      "com.android.nfc": "NFC payments and tags",
+      "com.android.ons": "Network selection",
+      "com.android.packageinstaller": "Package installer",
+      "com.android.permissioncontroller": "Permission controller",
+      "com.android.phone": "Telephony: calls, mobile data, SIM",
+      "com.android.phone.overlay.common": "Telephony overlay",
+      "com.android.providers.contacts": "Contacts provider",
+      "com.android.providers.media": "Media provider",
+      "com.android.providers.telephony": "SMS/APN provider",
+      "com.android.se": "eSIM and NFC secure element",
+      "com.android.server.telecom": "Call routing",
+      "com.android.settings": "Android Settings",
+      "com.android.shell": "ADB shell",
+      "com.android.stk": "SIM Toolkit",
+      "com.android.systemui": "Status bar, notifications, lock screen",
+      "com.android.vending": "Play Store",
+      "com.android.vpndialogs": "VPN consent",
+      "com.android.wm.shell": "Window management and Recents",
+      "com.google.android.cellbroadcastreceiver": "Emergency alerts",
+      "com.google.android.documentsui": "System file picker",
+      "com.google.android.gms": "Play Services: push, banking, backups",
+      "com.google.android.gsf": "Google Services Framework",
+      "com.google.android.ims": "VoLTE, Wi-Fi calling and RCS",
+      "com.google.android.networkstack": "Network stack",
+      "com.google.android.networkstack.tethering": "Network stack",
+      "com.google.android.packageinstaller": "Package installer",
+      "com.google.android.permissioncontroller": "Permission controller",
+      "com.google.android.webview": "WebView for in-app browsers",
+      "com.mediatek.bluetooth": "Bluetooth stack",
+      "com.mediatek.cellbroadcastreceiver": "Emergency alerts",
+      "com.mediatek.ims": "IMS: VoLTE and Wi-Fi calling",
+      "com.mediatek.ims.config": "IMS configuration",
+      "com.mediatek.ims.pco": "IMS PCO",
+      "com.mediatek.ims.rcsua.service": "IMS/RCS service",
+      "com.mediatek.omacp": "Carrier provisioning",
+      "com.mediatek.op08.ims": "IMS",
+      "com.mediatek.simprocessor": "SIM processing",
+      "com.mediatek.telephony": "MediaTek telephony",
+      "com.mediatek.wfo.impl": "Wi-Fi calling",
+      "com.oem.nfc": "NFC",
+      "com.oneplus": "OnePlus system package",
+      "com.oneplus.config": "OnePlus configuration",
+      "com.oneplus.coreservice": "OnePlus core service",
+      "com.oneplus.dialer": "Stock OnePlus dialer",
+      "com.oneplus.faceunlock": "Face unlock",
+      "com.oneplus.mms": "Stock OnePlus Messages",
+      "com.oneplus.orm": "OnePlus ORM",
+      "com.oneplus.providers.media": "OnePlus media provider",
+      "com.oneplus.security": "OnePlus Security: permissions, privacy",
+      "com.oneplus.ses": "OnePlus secure element",
+      "com.oneplus.sms.smscplugger": "SMS plugin",
+      "com.oneplus.telephonyoptimization": "Telephony optimization",
+      "com.qti.confuridialer": "Conference dialer",
+      "com.qti.phone": "Qualcomm telephony",
+      "com.qualcomm.qcrilmsgtunnel": "Telephony",
+      "com.qualcomm.qti.biometrics.fingerprint.service": "Fingerprint service",
+      "com.qualcomm.qti.dynamicddsservice": "Dual-SIM service",
+      "com.qualcomm.qti.ims": "IMS: VoLTE and Wi-Fi calling",
+      "com.qualcomm.qti.lpa": "eSIM LPA",
+      "com.qualcomm.qti.networksetting": "Network settings",
+      "com.qualcomm.qti.poweroffalarm": "Power-off alarm",
+      "com.qualcomm.qti.remoteSimlockAuth": "SIM lock",
+      "com.qualcomm.qti.simsettings": "SIM settings",
+      "com.qualcomm.qti.telephonyservice": "Telephony",
+      "com.qualcomm.qti.uceShimService": "RCS",
+      "com.qualcomm.qti.uim": "SIM/UIM",
+      "com.qualcomm.qti.uimGbaApp": "SIM/UIM",
+      "com.qualcomm.timeservice": "Time service",
+      "com.quicinc.cne.CNEService": "Connectivity engine",
+      "com.redteamobile.roaming": "eSIM/roaming",
+      "com.redteamobile.roaming.deamon": "eSIM/roaming",
+      "com.redteamobile.virtual.softsim": "eSIM/roaming",
+      "com.tencent.soter.soterserver": "Soter biometric/payment security",
+      "net.oneplus.launcher": "System launcher and Recents",
+      "org.codeaurora.ims": "IMS: VoLTE and Wi-Fi calling",
+      "org.ifaa.aidl.manager": "IFAA biometric service",
+      "vendor.qti.hardware.cacert.server": "CA certificates",
+      "vendor.qti.iwlan": "Wi-Fi calling"
+    }
+  }
+}

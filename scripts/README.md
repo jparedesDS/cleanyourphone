@@ -16,6 +16,58 @@ It downloads Platform-Tools to `%TEMP%` if needed, reads the model/build/fingerp
 roles, IME and user list, and writes a ZIP with no serial, IMEI or MAC. It never changes the phone.
 Run it locally when the phone is connected by USB and USB debugging is authorized.
 
+## `discover_projects.py`
+
+Caches the Android-Dumps project list used by the batch builder:
+
+```bash
+python scripts/discover_projects.py
+```
+
+It writes `work/cache/discovery/<brand>.json` for Samsung, Xiaomi, Redmi, POCO and OnePlus. The
+OnePlus list also includes `noescape-firmware-dumps/ONEPLUS`; generic `ossi` system images there are
+skipped unless the build is device-specific. Set `GITLAB_TOKEN` to avoid the anonymous API rate
+limit.
+
+## `batch_profiles.py`
+
+Builds documented profiles in bulk from the cached project lists:
+
+```bash
+python scripts/batch_profiles.py --min 14 --max 16 --dry-run
+python scripts/batch_profiles.py --min 14 --max 16 --write
+python scripts/batch_profiles.py --tablets --min 8 --max 16 --write
+```
+
+It clones the selected stock branches into `work/batch/dumps`, runs `dump_inventory.py` and writes
+one profile per device to `profiles/`. Model names come from the public
+[MobileModels](https://github.com/KHwang9883/MobileModels) tables, downloaded on demand into
+`work/cache/models`. The curated `ask`/`never` catalog is `scripts/profile_catalog.json`.
+
+The script skips custom ROMs, tablets unless `--tablets` is set, duplicate model numbers and
+marketing names, and dumps whose package inventory does not match the catalog. A low-`ask` result is
+a signal to curate the dump by hand, not to publish it.
+
+## `update_profile_docs.py`
+
+Rebuilds the profile tables in `README.md`, `README.es.md` and `profiles/README.md`, plus the file
+tree in `profiles/README.md`:
+
+```bash
+python scripts/update_profile_docs.py
+```
+
+Existing rows keep their hand-written notes; new profiles are inserted in brand order.
+
+## `report_profiles.py`
+
+Reports coverage and curation flags: brand counts, thin `ask` lists, profiles without a marketing
+name, `model: "*"` profiles and duplicate model/marketing groups.
+
+```bash
+python scripts/report_profiles.py
+```
+
 ## `dump_inventory.py`
 
 Builds a documented-profile draft from an Android Dumps repository.
