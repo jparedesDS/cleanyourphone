@@ -183,10 +183,26 @@ en un build incluido en `tested`.
 | [`samsung-sm-a326b`](profiles/samsung/sm-a326b.json) | Galaxy A32 5G (SM-A326B) | 13 | documented, solo preguntar |
 | [`samsung-sm-a546e`](profiles/samsung/sm-a546e.json) | Galaxy A54 5G (SM-A546E) | 13 | documented, solo preguntar |
 | [`samsung-sm-a576b`](profiles/samsung/sm-a576b.json) | Galaxy A57 5G (SM-A576B) | 16 | documented, solo preguntar |
+| [`samsung-sm-a715f`](profiles/samsung/sm-a715f.json) | Galaxy A71 (SM-A715F) | 12 | documented, solo preguntar |
+| [`samsung-sm-a725f`](profiles/samsung/sm-a725f.json) | Galaxy A72 (SM-A725F) | 12 | documented, solo preguntar |
 | [`samsung-sm-e045f`](profiles/samsung/sm-e045f.json) | Galaxy F04 (SM-E045F) | 13 | documented, solo preguntar |
 | [`samsung-sm-e055f`](profiles/samsung/sm-e055f.json) | Galaxy F05 (SM-E055F) | 16 | documented, solo preguntar |
+| [`samsung-sm-e225f`](profiles/samsung/sm-e225f.json) | Galaxy F22 (SM-E225F) | 12 | documented, solo preguntar |
+| [`samsung-sm-e236b`](profiles/samsung/sm-e236b.json) | Galaxy F23 5G (SM-E236B) | 12 | documented, solo preguntar |
+| [`samsung-sm-e625f`](profiles/samsung/sm-e625f.json) | Galaxy F62 (SM-E625F) | 12 | documented, solo preguntar |
 | [`samsung-sm-m136b`](profiles/samsung/sm-m136b.json) | Galaxy M13 5G (SM-M136B) | 14 | documented, solo preguntar |
 | [`samsung-sm-m146b`](profiles/samsung/sm-m146b.json) | Galaxy M14 5G (SM-M146B) | 13 | documented, solo preguntar |
+| [`samsung-sm-m526b`](profiles/samsung/sm-m526b.json) | Galaxy M52 5G (SM-M526B) | 12 | documented, solo preguntar |
+| [`samsung-sm-n970f`](profiles/samsung/sm-n970f.json) | Galaxy Note10 (SM-N970F) | 12 | documented, solo preguntar |
+| [`samsung-sm-n981b`](profiles/samsung/sm-n981b.json) | Galaxy Note20 (SM-N981B) | 12 | documented, solo preguntar |
+| [`samsung-sm-n986b`](profiles/samsung/sm-n986b.json) | Galaxy Note20 Ultra (SM-N986B) | 12 | documented, solo preguntar |
+| [`samsung-sm-g980f`](profiles/samsung/sm-g980f.json) | Galaxy S20 (SM-G980F) | 12 | documented, solo preguntar |
+| [`samsung-sm-g981n`](profiles/samsung/sm-g981n.json) | Galaxy S20 (SM-G981N) | 12 | documented, solo preguntar |
+| [`samsung-sm-g986b`](profiles/samsung/sm-g986b.json) | Galaxy S20+ (SM-G986B) | 12 | documented, solo preguntar |
+| [`samsung-sm-g991b`](profiles/samsung/sm-g991b.json) | Galaxy S21 (SM-G991B) | 12 | documented, solo preguntar |
+| [`samsung-sm-g990b`](profiles/samsung/sm-g990b.json) | Galaxy S21 FE (SM-G990B) | 12 | documented, solo preguntar |
+| [`samsung-sm-g998b`](profiles/samsung/sm-g998b.json) | Galaxy S21 Ultra (SM-G998B) | 12 | documented, solo preguntar |
+| [`samsung-sm-g996b`](profiles/samsung/sm-g996b.json) | Galaxy S21+ (SM-G996B) | 12 | documented, solo preguntar |
 | [`samsung-sm-s938b`](profiles/samsung/sm-s938b.json) | Galaxy S25 Ultra (SM-S938B) | 16 | documented, solo preguntar |
 | [`samsung-sm-f707u1`](profiles/samsung/sm-f707u1.json) | Galaxy Z Flip 5G (SM-F707U1) | 13 | documented, solo preguntar |
 | [`samsung-sm-f916u`](profiles/samsung/sm-f916u.json) | Galaxy Z Fold2 (SM-F916U) | 13 | documented, solo preguntar |
@@ -212,8 +228,13 @@ en un build incluido en `tested`.
 | [`redmi-12c`](profiles/redmi/redmi-12c.json) | Redmi 12C (22120RN86C) | 14 | documented, solo preguntar |
 | [`redmi-13c-5g`](profiles/redmi/redmi-13c-5g.json) | Redmi 13C 5G / Redmi 13R 5G (`air`) | 15 | documented, solo preguntar |
 | [`redmi-15c`](profiles/redmi/redmi-15c.json) | Redmi 15C (`dew`) | 16 | documented, solo preguntar |
+| [`redmi-9`](profiles/redmi/redmi-9.json) | Redmi 9 / Redmi 9 Prime (`lancelot`) | 12 | documented, solo preguntar |
+| [`redmi-9t`](profiles/redmi/redmi-9t.json) | Redmi 9T (M2010J19SL) | 12 | documented, solo preguntar |
+| [`redmi-a1`](profiles/redmi/redmi-a1.json) | Redmi A1 (`ice`) | 12 | documented, solo preguntar |
 | [`redmi-a2`](profiles/redmi/redmi-a2.json) | Redmi A2+ (`water`) | 13 | documented, solo preguntar |
+| [`redmi-k40-gaming`](profiles/redmi/redmi-k40-gaming.json) | Redmi K40 Gaming (`ares`) | 12 | documented, solo preguntar |
 | [`redmi-k40s`](profiles/redmi/redmi-k40s.json) | Redmi K40S (22021211RC) | 13 | documented, solo preguntar |
+| [`redmi-note-10`](profiles/redmi/redmi-note-10.json) | Redmi Note 10 (M2103K19C) | 12 | documented, solo preguntar |
 | [`redmi-note-10s`](profiles/redmi/redmi-note-10s.json) | Redmi Note 10S (`rosemary`) | 13 | documented, solo preguntar |
 | [`redmi-note-11-pro`](profiles/redmi/redmi-note-11-pro.json) | Redmi Note 11 Pro (`pissarro`) | 13 | documented, solo preguntar |
 | [`redmi-note-11-pro-5g`](profiles/redmi/redmi-note-11-pro-5g.json) | Redmi Note 11 Pro 5G (2201116SG) | 13 | documented, solo preguntar |
@@ -231,11 +252,15 @@ en un build incluido en `tested`.
 | [`redmi-note-15-5g`](profiles/redmi/redmi-note-15-5g.json) | Redmi Note 15 5G (`kunzite`) | 16 | documented, solo preguntar |
 | [`redmi-note-15-pro`](profiles/redmi/redmi-note-15-pro.json) | Redmi Note 15 Pro (`lapis`) | 16 | documented, solo preguntar |
 | [`redmi-note-17-pro-max-5g`](profiles/redmi/redmi-note-17-pro-max-5g.json) | Redmi Note 17 Pro Max 5G (`brussels`) | 16 | documented, solo preguntar |
+| [`redmi-note-9`](profiles/redmi/redmi-note-9.json) | Redmi Note 9 (`merlin`) | 12 | documented, solo preguntar |
+| [`redmi-note-9-pro`](profiles/redmi/redmi-note-9-pro.json) | Redmi Note 9 Pro / Redmi Note 9S (`miatoll`) | 12 | documented, solo preguntar |
 | [`redmi-turbo-5-max`](profiles/redmi/redmi-turbo-5-max.json) | REDMI Turbo 5 Max (2602BRT18C) | 16 | documented, solo preguntar |
 | [`poco-f5`](profiles/poco/poco-f5.json) | POCO F5 (`marble`) | 15 | documented, solo preguntar |
 | [`poco-f6`](profiles/poco/poco-f6.json) | POCO F6 (24069PC21G) | 16 | documented, solo preguntar |
 | [`poco-f9-ultra`](profiles/poco/poco-f9-ultra.json) | POCO F9 Ultra (26077PC53G) | 16 | documented, solo preguntar |
+| [`poco-m3`](profiles/poco/poco-m3.json) | POCO M3 (M2010J19CG) | 12 | documented, solo preguntar |
 | [`poco-m4-pro-5g`](profiles/poco/poco-m4-pro-5g.json) | POCO M4 Pro 5G (`evergreen`) | 13 | documented, solo preguntar |
+| [`poco-x5-5g`](profiles/poco/poco-x5-5g.json) | POCO X5 5G (22111317PI) | 12 | documented, solo preguntar |
 | [`poco-x6-pro-5g`](profiles/poco/poco-x6-pro-5g.json) | POCO X6 Pro 5G (2311DRK48G) | 16 | documented, solo preguntar |
 | [`poco-x7-pro`](profiles/poco/poco-x7-pro.json) | POCO X7 Pro (2412DPC0AG) | 16 | documented, solo preguntar |
 | [`poco-x8-pro`](profiles/poco/poco-x8-pro.json) | POCO X8 Pro (2511FPC34G) | 16 | documented, solo preguntar |

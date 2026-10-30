@@ -1,0 +1,458 @@
+{
+  "id": "samsung-sm-n981b",
+  "brand": "Samsung",
+  "model": "SM-N981B",
+  "marketing_name": "Galaxy Note20",
+  "codename": "c1s",
+  "android": [
+    "12"
+  ],
+  "fingerprint_regex": "^samsung/c1sxxx/c1s:",
+  "auto_apply": false,
+  "verification": "documented",
+  "sources": [
+    {
+      "title": "Android Dumps: Android-Dumps/samsung/c1s",
+      "url": "https://gitlab.com/Android-Dumps/samsung/c1s",
+      "retrieved": "2026-10-30",
+      "note": "Firmware dump for Galaxy Note20"
+    },
+    {
+      "title": "Dump README (build metadata)",
+      "url": "https://gitlab.com/Android-Dumps/samsung/c1s/-/raw/c1sxxx-user-12-SP1A.210812.016-N981BXXU3FVC5-release-keys/README.md",
+      "retrieved": "2026-10-30",
+      "note": "Codename, build id and fingerprint"
+    },
+    {
+      "title": "Dump all_files.txt (APK and permission inventory)",
+      "url": "https://gitlab.com/Android-Dumps/samsung/c1s/-/raw/c1sxxx-user-12-SP1A.210812.016-N981BXXU3FVC5-release-keys/all_files.txt",
+      "retrieved": "2026-10-30",
+      "note": "Evidence that each package path exists in the firmware"
+    }
+  ],
+  "tested": [],
+  "disable": [],
+  "ask": [
+    {
+      "package": "com.samsung.android.app.aodservice",
+      "why": "Always On Display",
+      "breaks": "Always On Display"
+    },
+    {
+      "package": "com.samsung.android.app.appsedge",
+      "why": "Edge panels",
+      "breaks": "Edge panels and their shortcuts"
+    },
+    {
+      "package": "com.samsung.android.app.cocktailbarservice",
+      "why": "Edge panel service",
+      "breaks": "Edge panel gesture and shortcuts"
+    },
+    {
+      "package": "com.samsung.android.app.dofviewer",
+      "why": "Depth of field viewer",
+      "breaks": "Depth-of-field photos"
+    },
+    {
+      "package": "com.samsung.android.app.dressroom",
+      "why": "Wallpaper and theme service",
+      "breaks": "Wallpaper and theme customization"
+    },
+    {
+      "package": "com.samsung.android.app.earphonetypec",
+      "why": "Earphone type detection",
+      "breaks": "Wired/earphone detection and related audio behavior"
+    },
+    {
+      "package": "com.samsung.android.app.galaxyfinder",
+      "why": "Samsung Finder search",
+      "breaks": "Finder search in the app drawer"
+    },
+    {
+      "package": "com.samsung.android.app.readingglass",
+      "why": "Reading glass",
+      "breaks": "Reading glass features"
+    },
+    {
+      "package": "com.samsung.android.app.routines",
+      "why": "Modes and Routines automation",
+      "breaks": "Modes and Routines"
+    },
+    {
+      "package": "com.samsung.android.app.settings.bixby",
+      "why": "Bixby settings",
+      "breaks": "Bixby settings screens"
+    },
+    {
+      "package": "com.samsung.android.app.sharelive",
+      "why": "Quick Share live sharing",
+      "breaks": "Quick Share live sharing"
+    },
+    {
+      "package": "com.samsung.android.app.tips",
+      "why": "Samsung Tips preload and its cards",
+      "breaks": "Tips app and its tips cards"
+    },
+    {
+      "package": "com.samsung.android.app.updatecenter",
+      "why": "Samsung software update UI",
+      "breaks": "System update prompts"
+    },
+    {
+      "package": "com.samsung.android.ardrawing",
+      "why": "AR Doodle / AR drawing",
+      "breaks": "AR drawing features"
+    },
+    {
+      "package": "com.samsung.android.aremoji",
+      "why": "AR Emoji",
+      "breaks": "AR Emoji and avatar features"
+    },
+    {
+      "package": "com.samsung.android.aremojieditor",
+      "why": "AR Emoji editor",
+      "breaks": "Editing AR Emoji"
+    },
+    {
+      "package": "com.samsung.android.arzone",
+      "why": "AR Zone",
+      "breaks": "AR Zone apps"
+    },
+    {
+      "package": "com.samsung.android.beaconmanager",
+      "why": "Beacon manager",
+      "breaks": "Beacon-related features"
+    },
+    {
+      "package": "com.samsung.android.bixby.agent",
+      "why": "Bixby voice assistant",
+      "breaks": "Bixby voice and its side-key action"
+    },
+    {
+      "package": "com.samsung.android.bixby.wakeup",
+      "why": "Bixby always-on wake word",
+      "breaks": "Always-on 'Hi Bixby' wake word"
+    },
+    {
+      "package": "com.samsung.android.bixbyvision.framework",
+      "why": "Bixby Vision framework",
+      "breaks": "Bixby Vision and camera-based visual search"
+    },
+    {
+      "package": "com.samsung.android.callbgprovider",
+      "why": "Samsung call background provider",
+      "breaks": "Call background images and related call UI"
+    },
+    {
+      "package": "com.samsung.android.dqagent",
+      "why": "Samsung diagnostics agent",
+      "breaks": "Samsung diagnostic logs"
+    },
+    {
+      "package": "com.samsung.android.fmm",
+      "why": "Find My Mobile",
+      "breaks": "Find My Mobile remote locate/lock"
+    },
+    {
+      "package": "com.samsung.android.forest",
+      "why": "Samsung Digital Wellbeing",
+      "breaks": "Screen-time reports and app timers"
+    },
+    {
+      "package": "com.samsung.android.game.gamehome",
+      "why": "Game Launcher and game recommendations",
+      "breaks": "Game Launcher and game tools"
+    },
+    {
+      "package": "com.samsung.android.ipsgeofence",
+      "why": "Indoor positioning / geofence service",
+      "breaks": "Indoor positioning and geofence features"
+    },
+    {
+      "package": "com.samsung.android.mdx",
+      "why": "Link to Windows / Phone Link integration",
+      "breaks": "Phone Link and Link to Windows"
+    },
+    {
+      "package": "com.samsung.android.networkdiagnostic",
+      "why": "Samsung network diagnostics",
+      "breaks": "Built-in network diagnostics"
+    },
+    {
+      "package": "com.samsung.android.rubin.app",
+      "why": "Samsung research/AI service",
+      "breaks": "Some Samsung AI or research features"
+    },
+    {
+      "package": "com.samsung.android.samsungpositioning",
+      "why": "Samsung positioning service",
+      "breaks": "Samsung location/positioning features"
+    },
+    {
+      "package": "com.samsung.android.scloud",
+      "why": "Samsung Cloud backup and sync",
+      "breaks": "Samsung Cloud backup/restore and sync"
+    },
+    {
+      "package": "com.samsung.android.service.peoplestripe",
+      "why": "People edge",
+      "breaks": "People edge contacts"
+    },
+    {
+      "package": "com.samsung.android.service.stplatform",
+      "why": "Samsung service platform",
+      "breaks": "Some Samsung service integrations"
+    },
+    {
+      "package": "com.samsung.android.service.tagservice",
+      "why": "Samsung tag service",
+      "breaks": "Samsung tag-related features"
+    },
+    {
+      "package": "com.samsung.android.sm.devicesecurity_v6",
+      "why": "Samsung device security scanner",
+      "breaks": "Samsung device security scans"
+    },
+    {
+      "package": "com.samsung.android.smartcallprovider",
+      "why": "Samsung caller ID / smart call provider",
+      "breaks": "Samsung caller ID and smart call features"
+    },
+    {
+      "package": "com.samsung.android.smartsuggestions",
+      "why": "Samsung Smart Suggestions",
+      "breaks": "Smart suggestions in the keyboard/share sheet"
+    },
+    {
+      "package": "com.samsung.android.smartswitchassistant",
+      "why": "Smart Switch assistant",
+      "breaks": "Smart Switch setup/restore flows"
+    },
+    {
+      "package": "com.samsung.android.themecenter",
+      "why": "Samsung Theme Center",
+      "breaks": "Theme and wallpaper customization"
+    },
+    {
+      "package": "com.samsung.android.video",
+      "why": "Samsung Video player",
+      "breaks": "Samsung Video player"
+    },
+    {
+      "package": "com.samsung.android.visualars",
+      "why": "Visual AR service",
+      "breaks": "Visual AR features"
+    },
+    {
+      "package": "com.sec.android.app.camera",
+      "why": "Samsung Camera app",
+      "breaks": "Camera app; keep it unless the person has a replacement"
+    },
+    {
+      "package": "com.sec.android.app.myfiles",
+      "why": "Samsung My Files",
+      "breaks": "My Files file manager"
+    },
+    {
+      "package": "com.sec.android.app.popupcalculator",
+      "why": "Samsung Calculator",
+      "breaks": "Calculator app"
+    },
+    {
+      "package": "com.sec.android.app.samsungapps",
+      "why": "Galaxy Store and Samsung app updates",
+      "breaks": "Galaxy Store and Samsung app updates"
+    },
+    {
+      "package": "com.sec.android.app.shealth",
+      "why": "Samsung Health",
+      "breaks": "Samsung Health and its sync"
+    },
+    {
+      "package": "com.sec.android.diagmonagent",
+      "why": "Samsung diagnostic and support-log agent",
+      "breaks": "Samsung diagnostic logs and some support flows"
+    },
+    {
+      "package": "com.sec.android.gallery3d",
+      "why": "Samsung Gallery app",
+      "breaks": "Gallery app and its editing/viewing features"
+    },
+    {
+      "package": "com.sec.location.nsflp2_v6_0",
+      "why": "Samsung network location provider",
+      "breaks": "Network-based location"
+    }
+  ],
+  "never": [
+    {
+      "package": "android",
+      "why": "Android framework"
+    },
+    {
+      "package": "com.android.bluetooth",
+      "why": "Bluetooth: earbuds, car, wearables"
+    },
+    {
+      "package": "com.android.documentsui",
+      "why": "System file picker"
+    },
+    {
+      "package": "com.android.emergency",
+      "why": "Emergency information and dialer"
+    },
+    {
+      "package": "com.android.incallui",
+      "why": "In-call UI"
+    },
+    {
+      "package": "com.android.mms.service",
+      "why": "MMS service"
+    },
+    {
+      "package": "com.android.nfc",
+      "why": "NFC payments and tags"
+    },
+    {
+      "package": "com.android.packageinstaller",
+      "why": "Package installer"
+    },
+    {
+      "package": "com.android.permissioncontroller",
+      "why": "Permission controller"
+    },
+    {
+      "package": "com.android.phone",
+      "why": "Telephony: calls, mobile data, SIM"
+    },
+    {
+      "package": "com.android.providers.contacts",
+      "why": "Contacts provider"
+    },
+    {
+      "package": "com.android.providers.telephony",
+      "why": "SMS/APN provider"
+    },
+    {
+      "package": "com.android.server.telecom",
+      "why": "Call routing"
+    },
+    {
+      "package": "com.android.settings",
+      "why": "Android Settings"
+    },
+    {
+      "package": "com.android.shell",
+      "why": "ADB shell"
+    },
+    {
+      "package": "com.android.systemui",
+      "why": "Status bar, notifications, lock screen"
+    },
+    {
+      "package": "com.android.vending",
+      "why": "Play Store"
+    },
+    {
+      "package": "com.android.vpndialogs",
+      "why": "VPN consent"
+    },
+    {
+      "package": "com.google.android.gms",
+      "why": "Play Services: push, banking, backups"
+    },
+    {
+      "package": "com.google.android.gsf",
+      "why": "Google Services Framework"
+    },
+    {
+      "package": "com.google.android.packageinstaller",
+      "why": "Package installer"
+    },
+    {
+      "package": "com.google.android.permissioncontroller",
+      "why": "Permission controller"
+    },
+    {
+      "package": "com.google.android.webview",
+      "why": "WebView for in-app browsers"
+    },
+    {
+      "package": "com.samsung.android.app.omcagent",
+      "why": "Carrier configuration (OMC)"
+    },
+    {
+      "package": "com.samsung.android.app.telephonyui",
+      "why": "Samsung telephony UI"
+    },
+    {
+      "package": "com.samsung.android.appseparation",
+      "why": "Samsung app separation service"
+    },
+    {
+      "package": "com.samsung.android.authfw",
+      "why": "Samsung authentication framework"
+    },
+    {
+      "package": "com.samsung.android.dialer",
+      "why": "Samsung dialer"
+    },
+    {
+      "package": "com.samsung.android.incallui",
+      "why": "Samsung in-call UI"
+    },
+    {
+      "package": "com.samsung.android.kgclient",
+      "why": "Samsung Knox Guard client"
+    },
+    {
+      "package": "com.samsung.android.lool",
+      "why": "Device Care: battery and optimization"
+    },
+    {
+      "package": "com.samsung.android.messaging",
+      "why": "Samsung Messages"
+    },
+    {
+      "package": "com.samsung.android.mobileservice",
+      "why": "Samsung account services"
+    },
+    {
+      "package": "com.samsung.android.providers.contacts",
+      "why": "Samsung contacts provider"
+    },
+    {
+      "package": "com.samsung.android.providers.media",
+      "why": "Samsung media provider"
+    },
+    {
+      "package": "com.samsung.android.samsungpass",
+      "why": "Samsung Pass autofill/passwords"
+    },
+    {
+      "package": "com.samsung.android.sdm.config",
+      "why": "Samsung device configuration"
+    },
+    {
+      "package": "com.samsung.android.spayfw",
+      "why": "Samsung Wallet/Pay framework"
+    },
+    {
+      "package": "com.samsung.euicc",
+      "why": "eSIM management"
+    },
+    {
+      "package": "com.sec.android.app.launcher",
+      "why": "System launcher and Recents"
+    },
+    {
+      "package": "com.wsomacp",
+      "why": "Carrier configuration (OMC)"
+    },
+    {
+      "package": "com.wssyncmldm",
+      "why": "Samsung OTA/DM client"
+    }
+  ],
+  "notes": "Documented from the c1s firmware dump (Android 12), not tested on a physical phone. Samsung package lists and preloads vary by region and carrier. No auto-apply; ask before every package."
+}
