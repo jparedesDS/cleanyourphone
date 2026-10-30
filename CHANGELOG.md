@@ -4,6 +4,22 @@ All notable changes to CleanYourPhone are documented here. The format is based o
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project uses
 [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Added
+
+- Simulated-device test harness in `tests/test_simulation.py` and `docs/SIMULATION.md`: 8 scenarios
+  plus a plan sweep over all 157 profiles. It checks plan/apply/verify/restore, the protected list,
+  role holders, backup requirement, batch limits, managed phones and tablets without a real phone.
+- The simulator records any unknown or dangerous ADB command (`pm uninstall`, `pm hide`, `pm clear`,
+  `fastboot`, `reboot`) and fails the test if one appears.
+
+### Changed
+
+- Stable, readable ids for the Redmi K20 Pro (global/India), Redmi Note 9 Pro (global/India) and
+  Redmi 9T Android 10 variants.
+- Added regional-model notes to Redmi 15C, Redmi Note 15 and Note 15 Pro.
+
 ## [0.1.0] - 2026-10-30
 
 The first public release.

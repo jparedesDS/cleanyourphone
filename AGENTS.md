@@ -85,6 +85,11 @@ python -m unittest discover -s tests -v
 The suite must pass on Windows, macOS and Linux. It must not need a phone or a real `adb`; use the
 fixtures in `tests/`. Add a test for every new guard, parser or profile rule.
 
+`tests/test_simulation.py` runs the real CLI against a fake ADB transport (see
+[docs/SIMULATION.md](docs/SIMULATION.md)). It may prove plan/apply/restore and guardrail behaviour,
+but it must **never** promote a profile to `verification: device`; that still needs a real phone and
+the checklist in `profiles/README.md`.
+
 Also run, without a phone:
 
 ```bash
