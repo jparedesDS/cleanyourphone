@@ -1,0 +1,470 @@
+{
+  "id": "samsung-sm-e055f",
+  "brand": "Samsung",
+  "model": "SM-E055F",
+  "marketing_name": "Galaxy F05",
+  "codename": "a05m",
+  "android": [
+    "16"
+  ],
+  "fingerprint_regex": "^samsung/a05mdxx/a05m:",
+  "auto_apply": false,
+  "verification": "documented",
+  "sources": [
+    {
+      "title": "Android Dumps: Android-Dumps/samsung/a05m",
+      "url": "https://gitlab.com/Android-Dumps/samsung/a05m",
+      "retrieved": "2026-10-30",
+      "note": "Firmware dump for Galaxy F05"
+    },
+    {
+      "title": "Dump README (build metadata)",
+      "url": "https://gitlab.com/Android-Dumps/samsung/a05m/-/raw/a05mdxx-user-16-BP2A.250605.031.A3-E055FXXS8CZE1-release-keys/README.md",
+      "retrieved": "2026-10-30",
+      "note": "Codename, build id and fingerprint"
+    },
+    {
+      "title": "Dump all_files.txt (APK and permission inventory)",
+      "url": "https://gitlab.com/Android-Dumps/samsung/a05m/-/raw/a05mdxx-user-16-BP2A.250605.031.A3-E055FXXS8CZE1-release-keys/all_files.txt",
+      "retrieved": "2026-10-30",
+      "note": "Evidence that each package path exists in the firmware"
+    }
+  ],
+  "tested": [],
+  "disable": [],
+  "ask": [
+    {
+      "package": "com.samsung.accessory.budsunitemgr",
+      "why": "Galaxy Buds manager",
+      "breaks": "Galaxy Buds pairing"
+    },
+    {
+      "package": "com.samsung.android.app.dressroom",
+      "why": "Wallpaper and theme service",
+      "breaks": "Wallpaper and theme customization"
+    },
+    {
+      "package": "com.samsung.android.app.find",
+      "why": "Find My Mobile",
+      "breaks": "Find My Mobile remote locate/lock"
+    },
+    {
+      "package": "com.samsung.android.app.interpreter",
+      "why": "Interpreter",
+      "breaks": "Interpreter app"
+    },
+    {
+      "package": "com.samsung.android.app.notes",
+      "why": "Samsung Notes",
+      "breaks": "Samsung Notes and its sync"
+    },
+    {
+      "package": "com.samsung.android.app.parentalcare",
+      "why": "Parental care",
+      "breaks": "Parental controls"
+    },
+    {
+      "package": "com.samsung.android.app.reminder",
+      "why": "Samsung Reminder",
+      "breaks": "Reminder app and notifications"
+    },
+    {
+      "package": "com.samsung.android.app.routines",
+      "why": "Modes and Routines automation",
+      "breaks": "Modes and Routines"
+    },
+    {
+      "package": "com.samsung.android.app.sharelive",
+      "why": "Quick Share live sharing",
+      "breaks": "Quick Share live sharing"
+    },
+    {
+      "package": "com.samsung.android.app.smartcapture",
+      "why": "Screenshot toolbar and smart capture",
+      "breaks": "Screenshot toolbar and smart capture"
+    },
+    {
+      "package": "com.samsung.android.app.spage",
+      "why": "Samsung Free: the main ad and recommendation surface on One UI",
+      "breaks": "Samsung Free (news, games, promotions)"
+    },
+    {
+      "package": "com.samsung.android.app.tips",
+      "why": "Samsung Tips preload and its cards",
+      "breaks": "Tips app and its tips cards"
+    },
+    {
+      "package": "com.samsung.android.app.updatecenter",
+      "why": "Samsung software update UI",
+      "breaks": "System update prompts"
+    },
+    {
+      "package": "com.samsung.android.app.watchmanager",
+      "why": "Galaxy Wearable",
+      "breaks": "Galaxy Watch pairing and watch apps"
+    },
+    {
+      "package": "com.samsung.android.ardrawing",
+      "why": "AR Doodle / AR drawing",
+      "breaks": "AR drawing features"
+    },
+    {
+      "package": "com.samsung.android.aware.service",
+      "why": "Samsung awareness service",
+      "breaks": "Context-aware Samsung features"
+    },
+    {
+      "package": "com.samsung.android.beaconmanager",
+      "why": "Beacon manager",
+      "breaks": "Beacon-related features"
+    },
+    {
+      "package": "com.samsung.android.bixby.agent",
+      "why": "Bixby voice assistant",
+      "breaks": "Bixby voice and its side-key action"
+    },
+    {
+      "package": "com.samsung.android.bixby.wakeup",
+      "why": "Bixby always-on wake word",
+      "breaks": "Always-on 'Hi Bixby' wake word"
+    },
+    {
+      "package": "com.samsung.android.calendar",
+      "why": "Samsung Calendar",
+      "breaks": "Samsung Calendar and its sync"
+    },
+    {
+      "package": "com.samsung.android.callassistant",
+      "why": "Samsung call assistant features",
+      "breaks": "Call assistant features"
+    },
+    {
+      "package": "com.samsung.android.callbgprovider",
+      "why": "Samsung call background provider",
+      "breaks": "Call background images and related call UI"
+    },
+    {
+      "package": "com.samsung.android.dqagent",
+      "why": "Samsung diagnostics agent",
+      "breaks": "Samsung diagnostic logs"
+    },
+    {
+      "package": "com.samsung.android.email.provider",
+      "why": "Samsung Email",
+      "breaks": "Samsung Email app"
+    },
+    {
+      "package": "com.samsung.android.fmm",
+      "why": "Find My Mobile",
+      "breaks": "Find My Mobile remote locate/lock"
+    },
+    {
+      "package": "com.samsung.android.forest",
+      "why": "Samsung Digital Wellbeing",
+      "breaks": "Screen-time reports and app timers"
+    },
+    {
+      "package": "com.samsung.android.game.gamehome",
+      "why": "Game Launcher and game recommendations",
+      "breaks": "Game Launcher and game tools"
+    },
+    {
+      "package": "com.samsung.android.mdx",
+      "why": "Link to Windows / Phone Link integration",
+      "breaks": "Phone Link and Link to Windows"
+    },
+    {
+      "package": "com.samsung.android.networkdiagnostic",
+      "why": "Samsung network diagnostics",
+      "breaks": "Built-in network diagnostics"
+    },
+    {
+      "package": "com.samsung.android.oneconnect",
+      "why": "SmartThings",
+      "breaks": "SmartThings and smart-home control"
+    },
+    {
+      "package": "com.samsung.android.rubin.app",
+      "why": "Samsung research/AI service",
+      "breaks": "Some Samsung AI or research features"
+    },
+    {
+      "package": "com.samsung.android.scloud",
+      "why": "Samsung Cloud backup and sync",
+      "breaks": "Samsung Cloud backup/restore and sync"
+    },
+    {
+      "package": "com.samsung.android.service.peoplestripe",
+      "why": "People edge",
+      "breaks": "People edge contacts"
+    },
+    {
+      "package": "com.samsung.android.service.stplatform",
+      "why": "Samsung service platform",
+      "breaks": "Some Samsung service integrations"
+    },
+    {
+      "package": "com.samsung.android.sm.devicesecurity",
+      "why": "Samsung device security scanner",
+      "breaks": "Device security scans"
+    },
+    {
+      "package": "com.samsung.android.smartcallprovider",
+      "why": "Samsung caller ID / smart call provider",
+      "breaks": "Samsung caller ID and smart call features"
+    },
+    {
+      "package": "com.samsung.android.smartsuggestions",
+      "why": "Samsung Smart Suggestions",
+      "breaks": "Smart suggestions in the keyboard/share sheet"
+    },
+    {
+      "package": "com.samsung.android.smartswitchassistant",
+      "why": "Smart Switch assistant",
+      "breaks": "Smart Switch setup/restore flows"
+    },
+    {
+      "package": "com.samsung.android.themecenter",
+      "why": "Samsung Theme Center",
+      "breaks": "Theme and wallpaper customization"
+    },
+    {
+      "package": "com.samsung.android.themestore",
+      "why": "Samsung Theme Store",
+      "breaks": "Theme purchases and downloads"
+    },
+    {
+      "package": "com.samsung.android.video",
+      "why": "Samsung Video player",
+      "breaks": "Samsung Video player"
+    },
+    {
+      "package": "com.sec.android.app.camera",
+      "why": "Samsung Camera app",
+      "breaks": "Camera app; keep it unless the person has a replacement"
+    },
+    {
+      "package": "com.sec.android.app.clockpackage",
+      "why": "Samsung Clock and alarms",
+      "breaks": "Alarm, timer and clock app"
+    },
+    {
+      "package": "com.sec.android.app.myfiles",
+      "why": "Samsung My Files",
+      "breaks": "My Files file manager"
+    },
+    {
+      "package": "com.sec.android.app.popupcalculator",
+      "why": "Samsung Calculator",
+      "breaks": "Calculator app"
+    },
+    {
+      "package": "com.sec.android.app.samsungapps",
+      "why": "Galaxy Store and Samsung app updates",
+      "breaks": "Galaxy Store and Samsung app updates"
+    },
+    {
+      "package": "com.sec.android.app.sbrowser",
+      "why": "Samsung Internet browser",
+      "breaks": "Samsung Internet browser"
+    },
+    {
+      "package": "com.sec.android.app.voicenote",
+      "why": "Samsung Voice Recorder",
+      "breaks": "Voice Recorder app"
+    },
+    {
+      "package": "com.sec.android.diagmonagent",
+      "why": "Samsung diagnostic and support-log agent",
+      "breaks": "Samsung diagnostic logs and some support flows"
+    },
+    {
+      "package": "com.sec.android.gallery3d",
+      "why": "Samsung Gallery app",
+      "breaks": "Gallery app and its editing/viewing features"
+    }
+  ],
+  "never": [
+    {
+      "package": "android",
+      "why": "Android framework"
+    },
+    {
+      "package": "com.android.bluetooth",
+      "why": "Bluetooth: earbuds, car, wearables"
+    },
+    {
+      "package": "com.android.cellbroadcastreceiver",
+      "why": "Emergency alerts"
+    },
+    {
+      "package": "com.android.documentsui",
+      "why": "System file picker"
+    },
+    {
+      "package": "com.android.emergency",
+      "why": "Emergency information and dialer"
+    },
+    {
+      "package": "com.android.incallui",
+      "why": "In-call UI"
+    },
+    {
+      "package": "com.android.mms.service",
+      "why": "MMS service"
+    },
+    {
+      "package": "com.android.nfc",
+      "why": "NFC payments and tags"
+    },
+    {
+      "package": "com.android.packageinstaller",
+      "why": "Package installer"
+    },
+    {
+      "package": "com.android.permissioncontroller",
+      "why": "Permission controller"
+    },
+    {
+      "package": "com.android.phone",
+      "why": "Telephony: calls, mobile data, SIM"
+    },
+    {
+      "package": "com.android.providers.contacts",
+      "why": "Contacts provider"
+    },
+    {
+      "package": "com.android.providers.telephony",
+      "why": "SMS/APN provider"
+    },
+    {
+      "package": "com.android.server.telecom",
+      "why": "Call routing"
+    },
+    {
+      "package": "com.android.settings",
+      "why": "Android Settings"
+    },
+    {
+      "package": "com.android.shell",
+      "why": "ADB shell"
+    },
+    {
+      "package": "com.android.systemui",
+      "why": "Status bar, notifications, lock screen"
+    },
+    {
+      "package": "com.android.vending",
+      "why": "Play Store"
+    },
+    {
+      "package": "com.android.vpndialogs",
+      "why": "VPN consent"
+    },
+    {
+      "package": "com.google.android.gms",
+      "why": "Play Services: push, banking, backups"
+    },
+    {
+      "package": "com.google.android.gsf",
+      "why": "Google Services Framework"
+    },
+    {
+      "package": "com.google.android.ims",
+      "why": "VoLTE, Wi-Fi calling and RCS"
+    },
+    {
+      "package": "com.google.android.packageinstaller",
+      "why": "Package installer"
+    },
+    {
+      "package": "com.google.android.permissioncontroller",
+      "why": "Permission controller"
+    },
+    {
+      "package": "com.google.android.webview",
+      "why": "WebView for in-app browsers"
+    },
+    {
+      "package": "com.samsung.android.app.omcagent",
+      "why": "Carrier configuration (OMC)"
+    },
+    {
+      "package": "com.samsung.android.app.telephonyui",
+      "why": "Samsung telephony UI"
+    },
+    {
+      "package": "com.samsung.android.dialer",
+      "why": "Samsung dialer"
+    },
+    {
+      "package": "com.samsung.android.emergency",
+      "why": "Emergency information and dialer"
+    },
+    {
+      "package": "com.samsung.android.incallui",
+      "why": "Samsung in-call UI"
+    },
+    {
+      "package": "com.samsung.android.kgclient",
+      "why": "Samsung Knox Guard client"
+    },
+    {
+      "package": "com.samsung.android.lool",
+      "why": "Device Care: battery and optimization"
+    },
+    {
+      "package": "com.samsung.android.messaging",
+      "why": "Samsung Messages"
+    },
+    {
+      "package": "com.samsung.android.mobileservice",
+      "why": "Samsung account services"
+    },
+    {
+      "package": "com.samsung.android.privacydashboard",
+      "why": "Privacy dashboard"
+    },
+    {
+      "package": "com.samsung.android.providers.contacts",
+      "why": "Samsung contacts provider"
+    },
+    {
+      "package": "com.samsung.android.providers.media",
+      "why": "Samsung media provider"
+    },
+    {
+      "package": "com.samsung.android.scpm",
+      "why": "Samsung cloud push/configuration"
+    },
+    {
+      "package": "com.samsung.android.sdm.config",
+      "why": "Samsung device configuration"
+    },
+    {
+      "package": "com.samsung.android.settingshelper",
+      "why": "Samsung Settings helper"
+    },
+    {
+      "package": "com.samsung.android.spay",
+      "why": "Samsung Wallet/Pay"
+    },
+    {
+      "package": "com.samsung.euicc",
+      "why": "eSIM management"
+    },
+    {
+      "package": "com.sec.android.app.launcher",
+      "why": "System launcher and Recents"
+    },
+    {
+      "package": "com.wsomacp",
+      "why": "Carrier configuration (OMC)"
+    },
+    {
+      "package": "com.wssyncmldm",
+      "why": "Samsung OTA/DM client"
+    }
+  ],
+  "notes": "Documented from the a05m firmware dump (Android 16), not tested on a physical phone. Samsung package lists and preloads vary by region and carrier. No auto-apply; ask before every package."
+}
