@@ -46,14 +46,14 @@ never irreversible deletion.
 
 | Color | Role |
 |---|---|
-| Graphite `#121316` | Primary background, icon tile, one-color mark on light surfaces. |
-| Violet `#9650FF` | Phone structure, links, secondary states and what stays intact. |
-| Amber `#FFC400` | Return gesture, primary actions, commands and active information. |
-| Orange `#FF5500` | Only `ASK` and warning states; never a decorative accent. |
-| Text `#F3F1EC` | Headlines and wordmark on graphite. |
-| Muted `#A19E96` | Secondary text; never part of the essential symbol. |
+| Graphite `#15161A` | Primary background, icon tile, one-color mark on light surfaces. |
+| Violet `#A78BFA` | Phone structure, commands, links, secondary states and what stays intact. |
+| Gold `#E2C15C` | Return gesture, primary actions and headline accent. |
+| Lavender `#C4B5FD` | Only `ASK` and warning states; never a decorative accent. |
+| Text `#ECE9E2` | Headlines and wordmark on graphite. |
+| Muted `#A8A39B` | Secondary text; never part of the essential symbol. |
 
-Amber, violet and orange are functional accents, not decoration or gradients.
+Gold, violet and lavender are functional accents, not decoration or gradients.
 
 ## Typography
 
@@ -75,7 +75,7 @@ from the previous mark is retired because it reads as generic "magic cleaner".
 |---|---|
 | `assets/logo.svg` | Primary app-icon tile, 64×64, dark background. |
 | `assets/favicon.svg` | Simplified 32×32 favicon. |
-| `assets/logo-mark.svg` | Mark-only, transparent, violet/amber. |
+| `assets/logo-mark.svg` | Mark-only, transparent, violet/gold. |
 | `assets/logo-mono.svg` | One-color mark for light backgrounds. |
 | `assets/logo-lockup.svg` | Horizontal mark + wordmark for dark backgrounds. |
 | `assets/logo-lockup-mono.svg` | Horizontal mark + wordmark for light backgrounds. |
@@ -91,8 +91,8 @@ The same files exist in `cleanyourphone-web/assets/` for the website.
 
 ### Color use
 
-- Dark backgrounds: primary tile or the violet/amber mark.
-- Light backgrounds: the monochrome `#121316` mark or mono lockup. Do not put the violet/amber mark on
+- Dark backgrounds: primary tile or the violet/gold mark.
+- Light backgrounds: the monochrome `#15161A` mark or mono lockup. Do not put the violet/gold mark on
   white or busy imagery.
 - Do not use color as the only state indicator in UI; pair it with a label.
 

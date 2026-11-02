@@ -19,11 +19,11 @@
 
 <p align="center">
   <a href="https://github.com/jparedesDS/cleanyourphone/actions/workflows/ci.yml"><img src="https://github.com/jparedesDS/cleanyourphone/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
-  <img src="https://img.shields.io/badge/license-MIT-ffc400?labelColor=121316" alt="MIT">
-  <img src="https://img.shields.io/badge/python-3.10%2B-ffc400?labelColor=121316" alt="Python 3.10+">
-  <img src="https://img.shields.io/badge/telemetry-none-ffc400?labelColor=121316" alt="No telemetry">
-  <img src="https://img.shields.io/badge/profiles-156-ffc400?labelColor=121316" alt="156 profiles">
-  <a href="https://github.com/jparedesDS/cleanyourphone/releases"><img src="https://img.shields.io/github/v/release/jparedesDS/cleanyourphone?color=ffc400&labelColor=121316" alt="release"></a>
+  <img src="https://img.shields.io/badge/license-MIT-e2c15c?labelColor=15161a" alt="MIT">
+  <img src="https://img.shields.io/badge/python-3.10%2B-e2c15c?labelColor=15161a" alt="Python 3.10+">
+  <img src="https://img.shields.io/badge/telemetry-none-e2c15c?labelColor=15161a" alt="No telemetry">
+  <img src="https://img.shields.io/badge/profiles-156-e2c15c?labelColor=15161a" alt="156 profiles">
+  <a href="https://github.com/jparedesDS/cleanyourphone/releases"><img src="https://img.shields.io/github/v/release/jparedesDS/cleanyourphone?color=e2c15c&labelColor=15161a" alt="release"></a>
 </p>
 
 # CleanYourPhone
