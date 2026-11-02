@@ -46,13 +46,15 @@ never irreversible deletion.
 
 | Color | Role |
 |---|---|
-| Ink `#121316` | Primary background shared with CleanYourMail; icon tile and one-color mark on light surfaces. |
-| Purple `#A78BFA` | Phone, return gesture, primary actions, links, commands and the `Phone` wordmark. |
-| Light purple `#C4B5FD` | Only `ASK` and warning states; a tint, never a second brand color. |
-| Text `#F3F1EC` | Headlines and the `CleanYour` wordmark on the ink background. |
-| Muted `#A19E96` | Secondary text; never part of the essential symbol. |
-
-Purple and white/ink are the brand colors. The light purple is only a functional tint for `ASK`.
+| Ink `#15161A` | Primary background and icon tile. |
+| Panel `#1C1E24` | Cards and prompt block. |
+| Panel 2 `#23252D` | Raised panels and gradients. |
+| Text `#ECE9E2` | Headlines and the `CleanYour` wordmark. |
+| Muted `#A8A39B` | Secondary text; never part of the essential symbol. |
+| Gold `#E2C15C` | Primary actions, the return arrow and the main CTA. |
+| Lavender `#A78BFA` | Phone outline, links, commands and undo. |
+| Bright lavender `#C4B5FD` | The `Phone` wordmark only. |
+| Coral `#D97A5E` | Warning states only; never a decorative accent. |
 
 ## Typography
 
@@ -61,7 +63,7 @@ Purple and white/ink are the brand colors. The light purple is only a functional
 - **Mono:** `Cascadia Code`, `SFMono-Regular`, `Consolas`, `Liberation Mono`, monospace, for commands,
   package names, states and evidence.
 - The wordmark is always **CleanYourPhone**, with no spaces or alternate capitalization. In the color
-  version, **CleanYour** uses the text color and **Phone** uses the logo purple `#A78BFA`; the
+  version, **CleanYour** uses the text color and **Phone** uses bright lavender `#C4B5FD`; the
   monochrome lockup stays one color.
 
 ## Logo
@@ -76,12 +78,12 @@ from the previous mark is retired because it reads as generic "magic cleaner".
 |---|---|
 | `assets/logo.svg` | Primary app-icon tile, 64×64, dark background. |
 | `assets/favicon.svg` | Simplified 32×32 favicon. |
-| `assets/logo-mark.svg` | Mark-only, transparent, purple/white. |
+| `assets/logo-mark.svg` | Mark-only, transparent, lavender/gold. |
 | `assets/logo-mono.svg` | One-color mark for light backgrounds. |
 | `assets/logo-lockup.svg` | Horizontal mark + wordmark for dark backgrounds. |
 | `assets/logo-lockup-mono.svg` | Horizontal mark + wordmark for light backgrounds. |
 
-The same files exist in `cleanyourphone-web/assets/` for the website.
+The website uses `logo.svg` and `favicon.svg`; the full set remains in the skill repository.
 
 ### Clear space and minimum sizes
 
@@ -92,8 +94,8 @@ The same files exist in `cleanyourphone-web/assets/` for the website.
 
 ### Color use
 
-- Dark backgrounds: primary tile or the purple/white mark.
-- Light backgrounds: the monochrome `#121316` mark or mono lockup. Do not put the purple/white mark on
+- Dark backgrounds: primary tile or the lavender/gold mark.
+- Light backgrounds: the monochrome `#15161A` mark or mono lockup. Do not put the lavender/gold mark on
   white or busy imagery.
 - Do not use color as the only state indicator in UI; pair it with a label.
 
