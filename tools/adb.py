@@ -12,7 +12,15 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
-ROOT = Path(__file__).resolve().parent.parent
+
+def _source_root() -> Optional[Path]:
+    """Return the repository root in a source checkout, or None in an installed package."""
+    candidate = Path(__file__).resolve().parent.parent
+    return candidate if (candidate / "profiles").is_dir() else None
+
+
+_SOURCE_ROOT = _source_root()
+ROOT = _SOURCE_ROOT or Path.home() / ".cleanyourphone"
 BACKUP_DIR = Path(os.environ.get("CLEANYOURPHONE_BACKUP", ROOT / "backup"))
 STATE_DIR = Path(os.environ.get("CLEANYOURPHONE_STATE", Path.home() / ".cleanyourphone"))
 

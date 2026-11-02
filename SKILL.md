@@ -68,6 +68,9 @@ python tools/phone.py doctor
 python tools/phone.py probe
 ```
 
+If `cleanyourphone` is installed, use `cleanyourphone doctor` and `cleanyourphone probe` instead;
+both commands are the same CLI with the same guards. The rest of this skill uses the repo-local form.
+
 If `adb` is not installed, use the platform-tools for the computer's OS. If there are several
 devices, ask which serial to use and pass `--serial <serial>` to every command.
 

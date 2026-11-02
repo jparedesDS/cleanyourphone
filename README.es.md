@@ -52,6 +52,7 @@ reversible, open source y la persona siempre al mando.
 | Ganas de verlo primero | [La web](https://jparedesds.github.io/cleanyourphone-web/es.html). |
 | Dudas de seguridad | [docs/SAFETY.md](docs/SAFETY.md). |
 | Un modelo concreto | [Los 156 perfiles](docs/PROFILES.md). |
+| Prefieres la terminal | [Instala el CLI](docs/CLI.md). |
 
 ---
 
@@ -138,6 +139,16 @@ python tools/phone.py doctor
 El CLI es opcional. `SKILL.md` incluye también los comandos `adb` en crudo, así que un agente puede
 trabajar sin Python. El CLI está para que el agente no se invente las protecciones.
 
+¿Prefieres la terminal? Instala el comando con [pipx](https://pipx.pypa.io/):
+
+```bash
+pipx install git+https://github.com/jparedesDS/cleanyourphone.git
+cleanyourphone doctor
+```
+
+Añade `cleanyourphone` y el alias corto `cyp`. [docs/CLI.md](docs/CLI.md) explica el wizard, dónde
+quedan los backups instalados y las reglas de seguridad. `python tools/phone.py` sigue funcionando.
+
 ### 4. Pásale la skill a tu agente
 
 | Agente | Dónde ponerla |
@@ -151,7 +162,7 @@ trabajar sin Python. El CLI está para que el agente no se invente las proteccio
 
 Lo más sencillo es clonar el repo y abrir el agente en esa carpeta: `SKILL.md` ya está en la raíz y
 `python tools/phone.py` funciona. Si tu agente carga skills desde una carpeta global, copia ahí
-`SKILL.md` y mantén el repo clonado para que el CLI esté disponible:
+`SKILL.md`; instala el CLI con pipx (arriba) y no necesitas mantener el repo clonado:
 
 ```bash
 mkdir -p ~/.claude/skills/cleanyourphone

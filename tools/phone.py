@@ -18,7 +18,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-VERSION = "0.1.1"
+VERSION = "0.2.0"
 
 try:  # imported as tools.phone
     from . import adb, checks, extra, profiles, protected, ui
@@ -205,6 +205,57 @@ def rollback_batch(serial: str, packages: List[str], applied: Dict[str, Any]) ->
                 save_applied(serial, applied)
         except BaseException as exc:  # keep trying the rest, then report
             print(f"ROLLBACK FAILED {package}: {exc}", file=sys.stderr)
+
+
+def apply_rows(
+    serial: str,
+    probe: Dict[str, Any],
+    profile: Dict[str, Any],
+    rows: List[Dict[str, str]],
+    meta: Dict[str, Any],
+    batch_size: int = 5,
+) -> int:
+    """Disable rows in small batches, re-check roles and verify after every batch.
+
+    Shared by `apply` and `wizard` so both paths keep the same rollback and verification rules.
+    """
+    if batch_size < 1:
+        ui.die("batch size must be at least 1")
+    if batch_size > 5:
+        ui.die("batch size cannot exceed 5: verify the phone between batches")
+    applied = load_applied(serial)
+    never = profiles.never_packages(profile)
+    for start in range(0, len(rows), batch_size):
+        batch = rows[start : start + batch_size]
+        # Roles can move between batches; re-read them before every batch.
+        holders, ime = guard_roles(serial, probe)
+        done: List[str] = []
+        failed = False
+        try:
+            for row in batch:
+                disable_one(
+                    serial,
+                    row["package"],
+                    meta,
+                    applied,
+                    why=row.get("why", ""),
+                    profile=profile.get("id"),
+                    holders=holders,
+                    ime=ime,
+                    never=never,
+                    done=done,
+                )
+            result = checks.verify_checks(serial)
+            checks.print_checks(result)
+            if checks.has_failures(result):
+                failed = True
+        except BaseException:
+            rollback_batch(serial, done, applied)
+            raise
+        if failed:
+            rollback_batch(serial, done, applied)
+            ui.die("verification failed after batch; the batch was re-enabled. Stop and investigate.")
+    return len(rows)
 
 
 def enable_one(serial: str, package: str, applied: Dict[str, Any], record: bool = True) -> bool:
@@ -630,7 +681,6 @@ def cmd_apply(args: argparse.Namespace) -> int:
     holders, ime = guard_roles(serial, probe)
     rows = profiles.classify(profile, enabled, disabled, holders, ime)
     to_apply = [row for row in rows if row["action"] == "DISABLE"]
-    never = profiles.never_packages(profile)
 
     if not to_apply:
         print("Nothing to disable: every 'disable' entry is blocked, missing or already disabled.")
@@ -644,40 +694,9 @@ def cmd_apply(args: argparse.Namespace) -> int:
         print("Dry run. Re-run with --yes to apply, or use `disable <package>` one at a time.")
         return 0
 
-    applied = load_applied(serial)
-    batch_size = args.batch_size
-    for start in range(0, len(to_apply), batch_size):
-        batch = to_apply[start : start + batch_size]
-        # Roles can move between batches; re-read them before every batch.
-        holders, ime = guard_roles(serial, probe)
-        done: List[str] = []
-        failed = False
-        try:
-            for row in batch:
-                disable_one(
-                    serial,
-                    row["package"],
-                    meta,
-                    applied,
-                    why=row.get("why", ""),
-                    profile=profile.get("id"),
-                    holders=holders,
-                    ime=ime,
-                    never=never,
-                    done=done,
-                )
-            result = checks.verify_checks(serial)
-            checks.print_checks(result)
-            if checks.has_failures(result):
-                failed = True
-        except BaseException:
-            rollback_batch(serial, done, applied)
-            raise
-        if failed:
-            rollback_batch(serial, done, applied)
-            ui.die("verification failed after batch; the batch was re-enabled. Stop and investigate.")
+    apply_rows(serial, probe, profile, to_apply, meta, args.batch_size)
     print("")
-    print(f"Done. {len(to_apply)} packages disabled. Undo: python tools/phone.py restore")
+    print(f"Done. {len(to_apply)} packages disabled. Undo: cleanyourphone restore")
     return 0
 
 
@@ -772,9 +791,170 @@ def cmd_verify(args: argparse.Namespace) -> int:
     return 1 if checks.has_failures(result) else 0
 
 
+def ask_text(prompt: str) -> str:
+    try:
+        return input(prompt).strip()
+    except (EOFError, KeyboardInterrupt):
+        print()
+        ui.die("cancelled; nothing changed")
+
+
+def ask_yes_no(prompt: str, default: bool = False) -> bool:
+    answer = ask_text(prompt).lower()
+    if not answer:
+        return default
+    return answer in ("y", "yes", "s", "si", "sí")
+
+
+def choose_profile(matches: List[Dict[str, Any]]) -> Dict[str, Any]:
+    if len(matches) == 1:
+        return matches[0]
+    print("Matching profiles:")
+    for index, profile in enumerate(matches, 1):
+        name = profile.get("marketing_name") or profile.get("model") or profile["id"]
+        print(f"  {index}. {profile['id']} - {name} ({profiles.verification_level(profile)})")
+    while True:
+        answer = ask_text(f"Choose 1-{len(matches)} [1]: ")
+        if not answer:
+            return matches[0]
+        if answer.isdigit() and 1 <= int(answer) <= len(matches):
+            return matches[int(answer) - 1]
+        print("Enter a number from the list.")
+
+
+def cmd_wizard(args: argparse.Namespace) -> int:
+    """Guided path: detect, choose a profile, back up, review and apply with the same guards."""
+    serial = adb.pick_serial(args.serial)
+    probe = guard_writable(serial)
+    print("CleanYourPhone wizard")
+    print(f"Phone:  {probe['brand']} {probe['model']} ({probe['device']}), Android {probe['android']}")
+    print(f"Build:  {probe['build'] or '?'}")
+    print("")
+
+    if args.profile:
+        try:
+            profile = profiles.load_profile(args.profile)
+        except KeyError as exc:
+            ui.die(str(exc.args[0]) if exc.args else str(exc))
+        if profile.get("generic"):
+            ui.die("the generic profile has no per-model package list. Use `plan` and `disable` manually.")
+        if not profiles.profile_matches(profile, probe):
+            ui.die(
+                f"profile {profile.get('id')} does not match this phone. Run `cleanyourphone probe` "
+                "and choose an exact profile."
+            )
+    else:
+        loaded = profiles.load_profiles(strict=True)
+        matches = [
+            item for item in loaded
+            if not item.get("generic") and profiles.profile_matches(item, probe)
+        ]
+        matches.sort(
+            key=lambda item: (
+                0 if profiles.verification_level(item) == "device" else 1,
+                item["id"],
+            )
+        )
+        if not matches:
+            print("No exact profile for this phone.")
+            print("Run `cleanyourphone probe` and `cleanyourphone plan --profile <id>`, or use SKILL.md.")
+            return 1
+        profile = choose_profile(matches)
+
+    errors = profiles.validate_profile(profile)
+    if errors:
+        ui.die("invalid profile:\n  " + "\n  ".join(errors))
+    verification = profiles.verification_level(profile)
+    auto = profiles.build_matches(profile, probe)
+    print(f"Profile:    {profile['id']} ({verification})")
+    print("Match:      yes")
+    print(f"Auto-apply: {'yes' if auto else 'no'}")
+    if not auto:
+        print("This build is not in `tested` (or the profile is documented). Every package is asked one by one.")
+    print("")
+    print("The wizard never uninstalls. It backs up first, refuses protected packages and role holders,")
+    print("disables in batches of five and verifies after each batch.")
+    print("")
+    if not ask_yes_no("Create a backup now? [Y/n] ", default=True):
+        print("Nothing changed. Run `cleanyourphone backup` when you are ready.")
+        return 0
+    rc = cmd_backup(argparse.Namespace(serial=args.serial))
+    if rc != 0:
+        return rc
+    _folder, meta = require_backup(serial, probe)
+    print("")
+
+    enabled = adb.package_set(serial, "-e")
+    disabled = adb.package_set(serial, "-d")
+    holders, ime = guard_roles(serial, probe)
+    rows = profiles.classify(profile, enabled, disabled, holders, ime)
+
+    blocked = [row for row in rows if row["action"] == "BLOCKED"]
+    if blocked:
+        print("Blocked by the protected list or a role check:")
+        for row in blocked:
+            print(f"  {row['package']}: {row.get('reason') or 'protected or role holder'}")
+        print("")
+    for action in ("KEEP", "MISSING", "SKIP"):
+        items = [row for row in rows if row["action"] == action]
+        if items:
+            print(f"{action}: {len(items)} package(s) not touched.")
+    if any(row["action"] in ("KEEP", "MISSING", "SKIP") for row in rows):
+        print("")
+
+    selected: List[Dict[str, str]] = []
+    batch_rows = [row for row in rows if row["action"] == "DISABLE"] if auto else []
+    if batch_rows:
+        print("Low-risk batch from the tested device profile:")
+        for row in batch_rows:
+            print(f"  {row['package']}  -  {row.get('why', '')}")
+        print("")
+        if ask_yes_no(f"Disable these {len(batch_rows)} packages? [y/N] "):
+            selected.extend(batch_rows)
+        print("")
+
+    individual = [row for row in rows if row["action"] == "ASK"]
+    if not auto:
+        individual = [row for row in rows if row["action"] == "DISABLE"] + individual
+    if individual:
+        print("Review one by one. Nothing is disabled until the final confirmation.")
+        for row in individual:
+            print("")
+            print(f"{row['package']}")
+            if row.get("why"):
+                print(f"  why: {row['why']}")
+            if row.get("breaks"):
+                print(f"  breaks: {row['breaks']}")
+            if row["action"] == "DISABLE" and not auto:
+                print("  note: this build is not in `tested`; review it as a manual change.")
+            answer = ask_text("Disable? [y/N/q] ").lower()
+            if answer in ("q", "quit"):
+                break
+            if answer in ("y", "yes", "s", "si", "sí"):
+                selected.append(row)
+
+    if not selected:
+        print("")
+        print("Nothing selected. Nothing changed.")
+        return 0
+
+    print("")
+    print("Selected packages:")
+    for row in selected:
+        print(f"  {row['package']}")
+    print("")
+    if not ask_yes_no(f"Disable {len(selected)} packages now? [y/N] "):
+        print("Nothing changed.")
+        return 0
+    apply_rows(serial, probe, profile, selected, meta, 5)
+    print("")
+    print(f"Done. {len(selected)} packages disabled. Undo: cleanyourphone restore")
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        prog="phone.py",
+        prog="cleanyourphone",
         description="CleanYourPhone: safe Android debloat over ADB. Disable, never uninstall.",
     )
     parser.add_argument("--serial", help="ADB serial to use when more than one device is connected")
@@ -809,6 +989,10 @@ def build_parser() -> argparse.ArgumentParser:
     apply_cmd.add_argument("--yes", action="store_true", help="actually change the phone")
     apply_cmd.add_argument("--batch-size", type=int, default=5, help="packages per batch (default 5)")
     apply_cmd.set_defaults(func=cmd_apply)
+
+    wizard = sub.add_parser("wizard", help="guided backup, profile choice and per-package review")
+    wizard.add_argument("--profile", help="profile id or path; skip automatic matching")
+    wizard.set_defaults(func=cmd_wizard)
 
     disable = sub.add_parser("disable", help="disable one or more packages (checks protected list and roles)")
     disable.add_argument("packages", nargs="+")

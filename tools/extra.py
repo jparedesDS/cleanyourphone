@@ -264,6 +264,9 @@ def cmd_validate(args: argparse.Namespace) -> int:
     except ValueError as exc:
         print(f"ERROR: {exc}")
         return 1
+    if not loaded:
+        print("ERROR: no profiles found. Check CLEANYOURPHONE_PROFILES or the installed package data.")
+        return 1
     errors: List[str] = []
     for profile in loaded:
         errors += profiles.validate_profile(profile, Path(profile.get("_path", "")))

@@ -21,11 +21,12 @@ longer without making it safer or clearer is probably a bad change.
 | `SKILL.md` | The skill. Agent-agnostic procedure and safety rules. |
 | `PROMPT.md`, `PROMPT.es.md` | The short prompt people paste into an agent that does not support skills, in English and Spanish. |
 | `README.md`, `README.es.md` | Front page and Spanish translation. |
-| `tools/phone.py` | Cross-platform ADB CLI: `doctor`, `probe`, `backup`, `list`, `roles`, `plan`, `apply`, `disable`, `enable`, `restore`, `verify`, `battery`, `dns`, `report`, `profiles`, `protected`, `validate`. Stdlib only. |
+| `tools/phone.py` | Cross-platform ADB CLI: `doctor`, `probe`, `backup`, `list`, `roles`, `plan`, `apply`, `wizard`, `disable`, `enable`, `restore`, `verify`, `battery`, `dns`, `report`, `profiles`, `protected`, `validate`. Stdlib only. |
 | `tools/protected.py` | The packages that must never be disabled, with a reason for each. Imported by the CLI and the tests. |
+| `pyproject.toml` | Installs the same CLI as `cleanyourphone` and `cyp`; source stays in `tools/`. |
 | `profiles/` | One JSON file per model/firmware. `verification`, `sources`, `disable`, `ask`, `never`. |
 | `scripts/` | Maintainer tools only. `dump_inventory.py` builds documented-profile drafts from Android Dumps. Not used at runtime. |
-| `docs/` | `SAFETY.md`, `RESTORE.md`, `BATTERY.md`, `ROMS.md`, `FAQ.md`, `TROUBLESHOOTING.md`. |
+| `docs/` | `SAFETY.md`, `RESTORE.md`, `BATTERY.md`, `ROMS.md`, `FAQ.md`, `TROUBLESHOOTING.md`, `CLI.md`. |
 | `tests/` | Python `unittest` suite for the pure logic: protected list, role conflicts, profile matching, verification rules, command building. |
 | `backup/` | Created at runtime. Never commit it. It contains the person's package list and settings. |
 
@@ -97,6 +98,7 @@ python tools/phone.py --help
 python tools/phone.py protected
 python tools/phone.py profiles
 python tools/phone.py validate
+python tools/phone.py wizard --help
 python scripts/dump_inventory.py --help
 ```
 

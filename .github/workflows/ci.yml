@@ -38,6 +38,27 @@ jobs:
           python scripts/update_profile_docs.py --help
           python scripts/report_profiles.py --help
 
+  package:
+    name: package / Python 3.12
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build and install the wheel
+        run: |
+          python -m venv .pkgtest
+          .pkgtest/bin/python -m pip install --upgrade pip
+          .pkgtest/bin/python -m pip install .
+      - name: Smoke-test the installed command
+        run: |
+          cd /tmp
+          "$GITHUB_WORKSPACE/.pkgtest/bin/cleanyourphone" --version
+          "$GITHUB_WORKSPACE/.pkgtest/bin/cleanyourphone" validate
+          "$GITHUB_WORKSPACE/.pkgtest/bin/cyp" profiles > /dev/null
+          "$GITHUB_WORKSPACE/.pkgtest/bin/python" -m cleanyourphone --version
+
   python-versions:
     name: ubuntu-latest / Python ${{ matrix.python }}
     runs-on: ubuntu-latest

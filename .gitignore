@@ -6,6 +6,10 @@ __pycache__/
 *.py[cod]
 .venv/
 venv/
+.pkgtest/
+build/
+dist/
+*.egg-info/
 .DS_Store
 Thumbs.db
 *.log

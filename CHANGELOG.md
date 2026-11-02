@@ -6,6 +6,26 @@ All notable changes to CleanYourPhone are documented here. The format is based o
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-11-02
+
+### Added
+
+- Installable CLI via `pyproject.toml`: `pipx install git+https://github.com/jparedesDS/cleanyourphone.git`
+  adds the `cleanyourphone` command and the short alias `cyp`. `python -m cleanyourphone` works too.
+- `wizard` command: detects the phone, chooses an exact profile, creates a backup, offers the tested
+  `disable` list as one batch and asks for every user-facing package individually.
+- `docs/CLI.md`: install, wizard, file locations, environment overrides and uninstall.
+- CI job that builds and installs the wheel, then runs `cleanyourphone validate` from outside the repo.
+
+### Changed
+
+- `apply` and `wizard` share the same `apply_rows` batch, role-check, verification and rollback path.
+- An installed CLI writes backups to `~/.cleanyourphone/backup` and battery reports to
+  `~/.cleanyourphone/battery`; a source checkout keeps `backup/` and `battery/` at the repo root.
+- Installed profiles are read from the package data in `share/cleanyourphone/profiles`; a source
+  checkout keeps using `profiles/`.
+- `--version` now reports 0.2.0.
+
 ## [0.1.1] - 2026-11-02
 
 ### Added
@@ -70,5 +90,6 @@ The first public release.
   holder is disabled.
 - A documented profile never auto-applies, has no `disable` list and asks for every package.
 
+[0.2.0]: https://github.com/jparedesDS/cleanyourphone/releases/tag/v0.2.0
 [0.1.1]: https://github.com/jparedesDS/cleanyourphone/releases/tag/v0.1.1
 [0.1.0]: https://github.com/jparedesDS/cleanyourphone/releases/tag/v0.1.0

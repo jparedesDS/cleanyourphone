@@ -3,7 +3,10 @@
 from __future__ import annotations
 
 import json
+import os
 import re
+import sys
+import sysconfig
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
@@ -14,7 +17,29 @@ except ImportError:  # run from tools/
     import protected  # type: ignore
 
 ROOT = Path(__file__).resolve().parent.parent
-PROFILES_DIR = ROOT / "profiles"
+
+
+def _profiles_dir() -> Path:
+    """Find profiles in a source checkout, a wheel install, or an explicit override."""
+    override = os.environ.get("CLEANYOURPHONE_PROFILES")
+    if override:
+        return Path(override).expanduser()
+    source = ROOT / "profiles"
+    if source.is_dir():
+        return source
+    candidates = []
+    data = sysconfig.get_path("data")
+    if data:
+        candidates.append(Path(data) / "share" / "cleanyourphone" / "profiles")
+    candidates.append(Path(sys.prefix) / "share" / "cleanyourphone" / "profiles")
+    candidates.append(Path.home() / ".cleanyourphone" / "profiles")
+    for candidate in candidates:
+        if candidate.is_dir():
+            return candidate
+    return source
+
+
+PROFILES_DIR = _profiles_dir()
 
 REQUIRED = [
     "id",

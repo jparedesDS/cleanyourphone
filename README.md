@@ -52,6 +52,7 @@ command, reversible, open source, and the person stays in control.
 | Want to see it first | [The website](https://jparedesds.github.io/cleanyourphone-web/). |
 | Need the safety rules | [docs/SAFETY.md](docs/SAFETY.md). |
 | Need a model profile | [Browse the 156 profiles](profiles/README.md). |
+| Prefer a terminal | [Install the CLI](docs/CLI.md). |
 
 ---
 
@@ -137,6 +138,16 @@ python tools/phone.py doctor
 The CLI is optional. `SKILL.md` contains the raw `adb` commands too, so an agent can work without
 Python. The CLI exists so the agent does not improvise the guardrails.
 
+Prefer a terminal? Install the command with [pipx](https://pipx.pypa.io/):
+
+```bash
+pipx install git+https://github.com/jparedesDS/cleanyourphone.git
+cleanyourphone doctor
+```
+
+This adds `cleanyourphone` and the short alias `cyp`. [docs/CLI.md](docs/CLI.md) covers the wizard,
+the installed file locations and the safety rules. `python tools/phone.py` keeps working.
+
 ### 4. Give the skill to your agent
 
 | Agent | Where to put it |
@@ -152,7 +163,7 @@ Spanish prompt: [PROMPT.es.md](PROMPT.es.md). The skill answers in the language 
 
 The simplest setup is to clone the repo and open your agent in that folder: `SKILL.md` is already at
 the root, so `python tools/phone.py` works. If your agent loads skills from a global folder, copy
-`SKILL.md` there and keep the repo cloned so the CLI is available:
+`SKILL.md` there; install the CLI with pipx (above) and you do not need to keep the repo cloned:
 
 ```bash
 mkdir -p ~/.claude/skills/cleanyourphone

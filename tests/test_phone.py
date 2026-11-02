@@ -547,6 +547,13 @@ class ValidationTests(unittest.TestCase):
 
 
 class CatalogTests(unittest.TestCase):
+    def test_empty_catalog_is_an_error(self):
+        with mock.patch.object(profiles, "load_profiles", return_value=[]):
+            out = io.StringIO()
+            with contextlib.redirect_stdout(out):
+                self.assertEqual(extra.cmd_validate(SimpleNamespace()), 1)
+        self.assertIn("no profiles found", out.getvalue())
+
     def test_codename_is_traceable_to_fingerprint_or_source(self):
         """A codename that appears nowhere in the match rule or sources is a dead profile."""
         for profile in profiles.load_profiles(strict=True):
@@ -564,6 +571,74 @@ class CatalogTests(unittest.TestCase):
                 any(codename.lower() in value.lower() for value in haystack),
                 f"{profile['id']}: codename {codename!r} is not in fingerprint_regex or sources",
             )
+
+
+class WizardTests(unittest.TestCase):
+    def probe(self):
+        return {
+            "brand": "Test",
+            "model": "Phone",
+            "device": "test",
+            "android": "15",
+            "sdk": 35,
+            "build": "BUILD",
+            "fingerprint": "test/test/test:15/BUILD/x",
+            "telephony": True,
+        }
+
+    def test_no_exact_profile_is_a_clean_stop(self):
+        with mock.patch.object(phone.adb, "pick_serial", return_value="SERIAL"), \
+             mock.patch.object(phone, "guard_writable", return_value=self.probe()), \
+             mock.patch.object(phone.profiles, "load_profiles", return_value=[]):
+            out = io.StringIO()
+            with contextlib.redirect_stdout(out):
+                self.assertEqual(phone.cmd_wizard(SimpleNamespace(profile=None, serial=None)), 1)
+        self.assertIn("No exact profile", out.getvalue())
+
+    def test_generic_profile_is_refused(self):
+        with mock.patch.object(phone.adb, "pick_serial", return_value="SERIAL"), \
+             mock.patch.object(phone, "guard_writable", return_value=self.probe()), \
+             mock.patch.object(phone.profiles, "load_profile", return_value={"id": "generic", "generic": True}):
+            with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+                with self.assertRaises(SystemExit):
+                    phone.cmd_wizard(SimpleNamespace(profile="generic", serial=None))
+
+    def test_wizard_applies_batch_and_skips_ask_row(self):
+        profile = {"id": "test-device", "verification": "device"}
+        rows = [
+            {"action": "DISABLE", "package": "com.example.bloat", "why": "test", "breaks": "nothing"},
+            {"action": "ASK", "package": "com.example.ask", "why": "user app", "breaks": "feature"},
+        ]
+        calls = {}
+
+        def fake_apply(serial, probe, profile_arg, selected, meta, batch_size=5):
+            calls["selected"] = [row["package"] for row in selected]
+            return len(selected)
+
+        with mock.patch.object(phone.adb, "pick_serial", return_value="SERIAL"), \
+             mock.patch.object(phone, "guard_writable", return_value=self.probe()), \
+             mock.patch.object(phone.profiles, "load_profiles", return_value=[profile]), \
+             mock.patch.object(phone.profiles, "profile_matches", return_value=True), \
+             mock.patch.object(phone.profiles, "verification_level", return_value="device"), \
+             mock.patch.object(phone.profiles, "build_matches", return_value=True), \
+             mock.patch.object(phone.profiles, "validate_profile", return_value=[]), \
+             mock.patch.object(phone.profiles, "classify", return_value=rows), \
+             mock.patch.object(phone, "cmd_backup", return_value=0), \
+             mock.patch.object(
+                 phone,
+                 "require_backup",
+                 return_value=("folder", {"enabled": ["com.example.bloat"]}),
+             ), \
+             mock.patch.object(phone.adb, "package_set", side_effect=[{"com.example.bloat"}, set()]), \
+             mock.patch.object(phone, "guard_roles", return_value=({}, "ime")), \
+             mock.patch.object(phone, "apply_rows", side_effect=fake_apply), \
+             mock.patch("builtins.input", side_effect=["y", "y", "n", "y"]):
+            out = io.StringIO()
+            with contextlib.redirect_stdout(out):
+                self.assertEqual(phone.cmd_wizard(SimpleNamespace(profile=None, serial=None)), 0)
+
+        self.assertEqual(calls["selected"], ["com.example.bloat"])
+        self.assertIn("Done. 1 packages disabled", out.getvalue())
 
 
 class StateTests(unittest.TestCase):
