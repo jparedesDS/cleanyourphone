@@ -21,6 +21,7 @@ longer without making it safer or clearer is probably a bad change.
 | `SKILL.md` | The skill. Agent-agnostic procedure and safety rules. |
 | `PROMPT.md`, `PROMPT.es.md` | The short prompt people paste into an agent that does not support skills, in English and Spanish. |
 | `README.md`, `README.es.md` | Front page and Spanish translation. |
+| `CLAUDE.md` | Short Claude Code entry point. `AGENTS.md` remains canonical. |
 | `tools/phone.py` | Cross-platform ADB CLI: `doctor`, `probe`, `backup`, `list`, `roles`, `plan`, `apply`, `wizard`, `disable`, `enable`, `restore`, `verify`, `battery`, `dns`, `report`, `profiles`, `protected`, `validate`. Stdlib only. |
 | `tools/protected.py` | The packages that must never be disabled, with a reason for each. Imported by the CLI and the tests. |
 | `pyproject.toml` | Installs the same CLI as `cleanyourphone` and `cyp`; source stays in `tools/`. |
