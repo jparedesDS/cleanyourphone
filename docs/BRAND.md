@@ -46,11 +46,11 @@ never irreversible deletion.
 
 | Color | Role |
 |---|---|
-| Ink `#15161A` | Primary background shared with CleanYourMail; icon tile and one-color mark on light surfaces. |
+| Ink `#121316` | Primary background shared with CleanYourMail; icon tile and one-color mark on light surfaces. |
 | Purple `#A78BFA` | Phone, return gesture, primary actions, links, commands and the `Phone` wordmark. |
 | Light purple `#C4B5FD` | Only `ASK` and warning states; a tint, never a second brand color. |
-| Text `#ECE9E2` | Headlines and the `CleanYour` wordmark on the ink background. |
-| Muted `#A8A39B` | Secondary text; never part of the essential symbol. |
+| Text `#F3F1EC` | Headlines and the `CleanYour` wordmark on the ink background. |
+| Muted `#A19E96` | Secondary text; never part of the essential symbol. |
 
 Purple and white/ink are the brand colors. The light purple is only a functional tint for `ASK`.
 
@@ -93,7 +93,7 @@ The same files exist in `cleanyourphone-web/assets/` for the website.
 ### Color use
 
 - Dark backgrounds: primary tile or the purple/white mark.
-- Light backgrounds: the monochrome `#15161A` mark or mono lockup. Do not put the purple/white mark on
+- Light backgrounds: the monochrome `#121316` mark or mono lockup. Do not put the purple/white mark on
   white or busy imagery.
 - Do not use color as the only state indicator in UI; pair it with a label.
 
