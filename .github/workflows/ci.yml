@@ -46,11 +46,15 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Build and install the wheel
+      - name: Build sdist and wheel
+        run: |
+          python -m pip install build
+          python -m build
+      - name: Install the wheel
         run: |
           python -m venv .pkgtest
           .pkgtest/bin/python -m pip install --upgrade pip
-          .pkgtest/bin/python -m pip install .
+          .pkgtest/bin/python -m pip install dist/*.whl
       - name: Smoke-test the installed command
         run: |
           cd /tmp

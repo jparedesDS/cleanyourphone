@@ -27,7 +27,7 @@ longer without making it safer or clearer is probably a bad change.
 | `pyproject.toml` | Installs the same CLI as `cleanyourphone` and `cyp`; source stays in `tools/`. |
 | `profiles/` | One JSON file per model/firmware. `verification`, `sources`, `disable`, `ask`, `never`. |
 | `scripts/` | Maintainer tools only. `dump_inventory.py` builds documented-profile drafts from Android Dumps. Not used at runtime. |
-| `docs/` | `SAFETY.md`, `RESTORE.md`, `BATTERY.md`, `ROMS.md`, `FAQ.md`, `TROUBLESHOOTING.md`, `CLI.md`. |
+| `docs/` | `SAFETY.md`, `RESTORE.md`, `BATTERY.md`, `ROMS.md`, `FAQ.md`, `TROUBLESHOOTING.md`, `CLI.md`, `RELEASING.md`. |
 | `tests/` | Python `unittest` suite for the pure logic: protected list, role conflicts, profile matching, verification rules, command building. |
 | `backup/` | Created at runtime. Never commit it. It contains the person's package list and settings. |
 

@@ -118,4 +118,5 @@ one they must fail with a clear message and exit code 2.
 - `SKILL.md` — the product and the safety procedure.
 - `profiles/README.md` — profile policy and the device-test checklist.
 - `docs/CLI.md` — install, wizard, file locations and uninstall.
+- `docs/RELEASING.md` — version bump, artifacts, PyPI trusted publishing and website sync.
 - `docs/SAFETY.md` — the safety model in detail.

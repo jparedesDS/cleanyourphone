@@ -26,6 +26,12 @@ pipx install git+https://github.com/jparedesDS/cleanyourphone.git
 cleanyourphone --version
 ```
 
+Each GitHub release also attaches a wheel and an sdist. Install a pinned wheel with:
+
+```bash
+pipx install ./cleanyourphone-X.Y.Z-py3-none-any.whl
+```
+
 For development, install the checkout in editable mode:
 
 ```bash
