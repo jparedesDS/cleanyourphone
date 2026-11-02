@@ -121,4 +121,5 @@ one they must fail with a clear message and exit code 2.
 - `profiles/README.md` — profile policy and the device-test checklist.
 - `docs/CLI.md` — install, wizard, file locations and uninstall.
 - `docs/RELEASING.md` — version bump, artifacts, PyPI trusted publishing and website sync.
+- `docs/BRAND.md` — final mark, palette, voice and logo usage.
 - `docs/SAFETY.md` — the safety model in detail.

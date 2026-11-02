@@ -288,6 +288,7 @@ stdlib-only and has no dependencies.
   keep `disable` empty.
 - A guard, parser or CLI fix: add a test in `tests/`.
 - A safety rule change: open an issue first. Those rules are the product.
+- Brand or logo changes: read [docs/BRAND.md](docs/BRAND.md) before changing assets.
 - Read [AGENTS.md](AGENTS.md) before changing the repo.
 
 ## License

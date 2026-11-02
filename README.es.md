@@ -290,6 +290,7 @@ la librería estándar y no tiene dependencias.
   `disable` vacío.
 - Un guard, parser o arreglo del CLI: añade un test en `tests/`.
 - Un cambio de regla de seguridad: abre un issue primero. Esas reglas son el producto.
+- Cambios de marca o logotipo: lee [docs/BRAND.md](docs/BRAND.md) antes de tocar los assets.
 - Lee [AGENTS.md](AGENTS.md) antes de cambiar el repo.
 
 ## Licencia

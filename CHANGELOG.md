@@ -6,6 +6,11 @@ All notable changes to CleanYourPhone are documented here. The format is based o
 
 ## [Unreleased]
 
+### Changed
+
+- Final logo system: the sparkle is replaced by a contained return arrow, with primary, mark-only,
+  monochrome, favicon and horizontal lockup assets. The brand rules are in `docs/BRAND.md`.
+
 ## [0.2.1] - 2026-11-02
 
 ### Added
