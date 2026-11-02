@@ -8,7 +8,8 @@ All notable changes to CleanYourPhone are documented here. The format is based o
 
 ### Changed
 
-- Final logo system: the sparkle is replaced by a contained return arrow, with primary, mark-only,
+- Final logo system and palette: graphite `#121316`, violet `#9650FF`, amber `#FFC400` and warning
+  orange `#FF5500`. The sparkle is replaced by a contained return arrow, with primary, mark-only,
   monochrome, favicon and horizontal lockup assets. The brand rules are in `docs/BRAND.md`.
 
 ## [0.2.1] - 2026-11-02

@@ -46,13 +46,14 @@ never irreversible deletion.
 
 | Color | Role |
 |---|---|
-| Navy `#061014` | Primary background, icon tile, one-color mark on light surfaces. |
-| Mint `#64F4C4` | Phone structure, stability, confirmed states and what stays intact. |
-| Cyan `#5EC8FF` | Return gesture, actions, links, commands and active information. |
-| Text `#EAF7FB` | Headlines and wordmark on navy. |
-| Muted `#9DB4BF` | Secondary text; never part of the essential symbol. |
+| Graphite `#121316` | Primary background, icon tile, one-color mark on light surfaces. |
+| Violet `#9650FF` | Phone structure, links, secondary states and what stays intact. |
+| Amber `#FFC400` | Return gesture, primary actions, commands and active information. |
+| Orange `#FF5500` | Only `ASK` and warning states; never a decorative accent. |
+| Text `#F3F1EC` | Headlines and wordmark on graphite. |
+| Muted `#A19E96` | Secondary text; never part of the essential symbol. |
 
-Cyan and mint are functional accents, not decoration or gradients.
+Amber, violet and orange are functional accents, not decoration or gradients.
 
 ## Typography
 
@@ -74,7 +75,7 @@ from the previous mark is retired because it reads as generic "magic cleaner".
 |---|---|
 | `assets/logo.svg` | Primary app-icon tile, 64×64, dark background. |
 | `assets/favicon.svg` | Simplified 32×32 favicon. |
-| `assets/logo-mark.svg` | Mark-only, transparent, cyan/mint. |
+| `assets/logo-mark.svg` | Mark-only, transparent, violet/amber. |
 | `assets/logo-mono.svg` | One-color mark for light backgrounds. |
 | `assets/logo-lockup.svg` | Horizontal mark + wordmark for dark backgrounds. |
 | `assets/logo-lockup-mono.svg` | Horizontal mark + wordmark for light backgrounds. |
@@ -90,8 +91,8 @@ The same files exist in `cleanyourphone-web/assets/` for the website.
 
 ### Color use
 
-- Dark backgrounds: primary tile or the cyan/mint mark.
-- Light backgrounds: the monochrome `#061014` mark or mono lockup. Do not put the cyan/mint mark on
+- Dark backgrounds: primary tile or the violet/amber mark.
+- Light backgrounds: the monochrome `#121316` mark or mono lockup. Do not put the violet/amber mark on
   white or busy imagery.
 - Do not use color as the only state indicator in UI; pair it with a label.
 
@@ -109,7 +110,7 @@ The same files exist in `cleanyourphone-web/assets/` for the website.
   full lockup there; it would duplicate the name.
 - **Footer:** the same tile at 26 px.
 - **Favicon:** `assets/favicon.svg`; check it in light and dark browser tabs.
-- **README banner:** navy background, large lockup, tagline and plenty of negative space. Export PNG
+- **README banner:** graphite background, large lockup, tagline and plenty of negative space. Export PNG
   at high resolution and keep both repositories in sync.
 - **Social preview:** 1280×640 with the lockup and tagline as the main hierarchy. No mockups,
   sparkles or small print; the symbol must survive the thumbnail.
