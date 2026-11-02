@@ -71,7 +71,7 @@ Override them with environment variables:
 | `wizard` | Guided flow: detect, choose profile, back up, review every package, then apply. |
 | `disable PKG...` | Disables up to five reviewed packages. |
 | `enable PKG...` | Re-enables packages. |
-| `restore` | Re-enables everything this tool disabled and restores Private DNS. |
+| `restore` | Re-enables everything this tool disabled and restores Private DNS. Use `--from-backup DIR` if the undo journal is lost. |
 | `verify` | Checks dialer, SMS, Home, keyboard, Play and protected packages. |
 | `battery`, `dns`, `report` | Measurement and reporting helpers. |
 | `profiles`, `protected`, `validate` | Catalog, protected list and profile validation. |
@@ -97,6 +97,20 @@ The wizard:
 
 On a documented profile, or on a device build that is not in `tested`, the wizard asks for every
 package individually. It never turns an untested build into an automatic apply.
+
+## Recovery
+
+`restore` reads the exact undo journal at `~/.cleanyourphone/applied.json`. If that file is lost,
+use the backup as the baseline:
+
+```bash
+cleanyourphone restore --from-backup ~/.cleanyourphone/backup/<timestamp>_<model>
+```
+
+It compares the backup's pre-session disabled list with the phone, refuses a backup from a different
+build or phone, and changes nothing until you add `--yes`. It also restores the Private DNS state
+saved in the backup. This is a reconstruction, not the exact journal, so review the list before
+confirming.
 
 ## Safety
 

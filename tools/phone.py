@@ -18,7 +18,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-VERSION = "0.2.0"
+VERSION = "0.2.1"
 
 try:  # imported as tools.phone
     from . import adb, checks, extra, profiles, protected, ui
@@ -484,6 +484,10 @@ def cmd_backup(args: argparse.Namespace) -> int:
         holders, roles_supported = adb.role_holders(serial)
     except adb.AdbError:
         holders, roles_supported = {}, False
+    try:
+        dns = adb.dns_status(serial)
+    except adb.AdbError:
+        dns = None
     meta = {
         "timestamp": stamp,
         "serial": serial,
@@ -497,6 +501,7 @@ def cmd_backup(args: argparse.Namespace) -> int:
         "ime": adb.default_ime(serial),
         "home": adb.home_activities(serial),
         "managed": probe["managed"],
+        "dns": dns,
     }
     adb.write_json(folder / "meta.json", meta)
 
@@ -745,8 +750,82 @@ def cmd_enable(args: argparse.Namespace) -> int:
     return 0
 
 
+def _restore_backup_dns(serial: str, meta: Dict[str, Any]) -> None:
+    dns = meta.get("dns")
+    if isinstance(dns, dict):
+        mode, specifier = extra.apply_dns(serial, dns)
+        print(f"DNS restored to mode={mode}" + (f" specifier={specifier}" if specifier else ""))
+    else:
+        extra.restore_dns(serial)
+
+
+def _restore_from_backup(
+    serial: str, folder: str, dry_run: bool = False, confirmed: bool = False
+) -> int:
+    """Recover when the undo journal is missing: compare the backup baseline with the phone."""
+    backup = Path(folder).expanduser()
+    meta = adb.read_json(backup / "meta.json", None)
+    if not isinstance(meta, dict):
+        ui.die(f"no readable meta.json in backup: {backup}")
+    baseline = meta.get("disabled")
+    if not isinstance(baseline, list):
+        ui.die("this backup has no pre-session disabled list; use docs/RESTORE.md and restore manually")
+    backup_probe = meta.get("probe")
+    if not isinstance(backup_probe, dict):
+        ui.die("this backup has no phone metadata; refusing to restore from it")
+    backup_fingerprint = str(backup_probe.get("fingerprint", "")).strip()
+    if not backup_fingerprint:
+        ui.die("this backup has no build fingerprint; cannot prove it belongs to this phone")
+
+    probe = adb.probe_device(serial)
+    if backup_fingerprint != str(probe.get("fingerprint", "")).strip():
+        ui.die("this backup is from a different build or phone; refusing to restore from it")
+
+    current = adb.package_set(serial, "-d")
+    candidates = sorted(current - set(baseline))
+    print(f"Backup: {backup}")
+    print(f"Phone:  {probe['brand']} {probe['model']} ({probe['device']})")
+    print(f"Baseline disabled: {len(baseline)} package(s)")
+    if not candidates:
+        print("No package is disabled now that was enabled at backup time.")
+        if not dry_run and confirmed:
+            _restore_backup_dns(serial, meta)
+        return 0
+
+    print("Packages disabled now but not at backup time:")
+    for package in candidates:
+        print(f"  {package}")
+    print("")
+    if dry_run or not confirmed:
+        print("Dry run. Review the list, then re-run with --yes to enable these packages.")
+        return 0
+
+    applied = load_applied(serial)
+    for package in candidates:
+        enable_one(serial, package, applied)
+    still_disabled = sorted(package for package in candidates if package in adb.package_set(serial, "-d"))
+    if still_disabled:
+        ui.die(
+            "restore from backup is incomplete; still disabled: "
+            + ", ".join(still_disabled)
+            + ". Re-run or enable them manually, then verify."
+        )
+
+    _restore_backup_dns(serial, meta)
+    print("Restore from backup complete. Run `cleanyourphone verify` and test calls, SMS, keyboard and Home.")
+    return 0
+
+
 def cmd_restore(args: argparse.Namespace) -> int:
     serial = adb.pick_serial(args.serial)
+    from_backup = getattr(args, "from_backup", None)
+    if from_backup:
+        return _restore_from_backup(
+            serial,
+            from_backup,
+            getattr(args, "dry_run", False),
+            getattr(args, "yes", False),
+        )
     applied = load_applied(serial)
     packages = sorted(applied.get("packages", {}))
     if not packages:
@@ -1004,6 +1083,16 @@ def build_parser() -> argparse.ArgumentParser:
 
     restore = sub.add_parser("restore", help="re-enable everything this tool disabled")
     restore.add_argument("--dry-run", action="store_true")
+    restore.add_argument(
+        "--from-backup",
+        metavar="DIR",
+        help="if the undo journal is lost, infer changes from a backup's meta.json",
+    )
+    restore.add_argument(
+        "--yes",
+        action="store_true",
+        help="confirm the changes proposed by --from-backup",
+    )
     restore.set_defaults(func=cmd_restore)
 
     verify = sub.add_parser("verify", help="check dialer, SMS, Home, keyboard, Play and protected packages")

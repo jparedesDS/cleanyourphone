@@ -260,7 +260,9 @@ modificado. La skill no desbloquea el bootloader.
 
 **¿Puedo dejar el móvil frito?**
 Desactivar un paquete core equivocado puede provocar un bootloop. Por eso el CLI rechaza la lista
-protegida, comprueba roles, hace backup y verifica por lotes. La recuperación está en
+protegida, comprueba roles, hace backup y verifica por lotes. `restore` deshace exactamente lo que
+desactivó la herramienta; si se pierde el journal, `restore --from-backup` reconstruye el cambio
+desde el backup. La recuperación completa, incluido el modo seguro, está en
 [docs/RESTORE.md](docs/RESTORE.md).
 
 **¿Quita los anuncios de YouTube?**

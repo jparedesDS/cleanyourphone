@@ -40,14 +40,12 @@ def _record_dns_before(serial: str) -> Dict[str, Any]:
     return changes
 
 
-def restore_dns(serial: str) -> None:
-    changes = adb.load_changes(serial)
-    before = changes.get("dns", {}).get("before")
-    if not before:
-        print("No DNS change recorded; leaving Private DNS alone.")
-        return
-    mode = before.get("mode") or "opportunistic"
-    specifier = before.get("specifier") or ""
+def apply_dns(serial: str, before: Any) -> tuple:
+    """Apply a recorded Private DNS state and return (mode, specifier)."""
+    if not isinstance(before, dict):
+        raise ValueError("no Private DNS state to restore")
+    mode = str(before.get("mode") or "opportunistic")
+    specifier = str(before.get("specifier") or "")
     if mode not in ("off", "opportunistic", "hostname"):
         mode = "opportunistic"
     if mode == "hostname" and not specifier:
@@ -57,6 +55,16 @@ def restore_dns(serial: str) -> None:
             ui.die("the recorded Private DNS specifier is invalid; restore it manually in Settings")
         adb.shell(f"settings put global private_dns_specifier {specifier}", serial=serial)
     adb.shell(f"settings put global private_dns_mode {mode}", serial=serial)
+    return mode, specifier
+
+
+def restore_dns(serial: str) -> None:
+    changes = adb.load_changes(serial)
+    before = changes.get("dns", {}).get("before")
+    if not before:
+        print("No DNS change recorded; leaving Private DNS alone.")
+        return
+    mode, specifier = apply_dns(serial, before)
     changes.pop("dns", None)
     adb.save_changes(serial, changes)
     print(f"DNS restored to mode={mode}" + (f" specifier={specifier}" if specifier else ""))

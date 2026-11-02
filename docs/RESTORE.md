@@ -2,8 +2,9 @@
 
 Every change the CLI makes is reversible. It records what it disabled (per phone serial) and
 re-enables exactly that. It does not touch packages that were already disabled before the backup.
-If you used raw `adb` instead of the CLI, read [Manual undo](#manual-undo) first: `restore` cannot see
-those changes.
+If that record is lost, the backup can reconstruct the difference; see
+[If the journal is lost](#if-the-journal-is-lost). If you used raw `adb` instead of the CLI, read
+[Manual undo](#manual-undo) first: `restore` cannot see those changes.
 
 ## The one command
 
@@ -26,6 +27,26 @@ Dry run first if you want to see the list:
 ```bash
 python tools/phone.py restore --dry-run
 ```
+
+## If the journal is lost
+
+`~/.cleanyourphone/applied.json` is the exact undo journal. If it is missing, the backup's
+`meta.json` still has the phone's **pre-session** disabled list. The CLI can compare that baseline
+with the current phone and show what changed:
+
+```bash
+python tools/phone.py restore --from-backup backup/<timestamp>_<model>
+```
+
+It refuses a backup from a different build or phone, and it is a dry run until you add `--yes`.
+Review the list first: it is a reconstruction from the backup, not the exact journal, so it can also
+include packages that were disabled after the backup by something other than this tool.
+
+```bash
+python tools/phone.py restore --from-backup backup/<timestamp>_<model> --yes
+```
+
+This also restores the Private DNS state saved in the backup, when the backup contains it.
 
 ## Manual undo
 

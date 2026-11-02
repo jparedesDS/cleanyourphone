@@ -641,6 +641,88 @@ class WizardTests(unittest.TestCase):
         self.assertIn("Done. 1 packages disabled", out.getvalue())
 
 
+class BackupRestoreTests(unittest.TestCase):
+    def probe(self, fingerprint="test/test/test:15/BUILD/x"):
+        return {
+            "brand": "Test",
+            "model": "Phone",
+            "device": "test",
+            "fingerprint": fingerprint,
+        }
+
+    def write_backup(self, folder, fingerprint="test/test/test:15/BUILD/x", disabled=None):
+        meta = {
+            "probe": {"fingerprint": fingerprint},
+            "disabled": ["com.example.old"] if disabled is None else disabled,
+            "dns": {"mode": "off", "specifier": ""},
+        }
+        Path(folder, "meta.json").write_text(json.dumps(meta), encoding="utf-8")
+
+    def test_from_backup_is_dry_run_until_yes(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            self.write_backup(tmp)
+            with mock.patch.object(phone.adb, "pick_serial", return_value="SERIAL"), \
+                 mock.patch.object(phone.adb, "probe_device", return_value=self.probe()), \
+                 mock.patch.object(phone.adb, "package_set", return_value={"com.example.new"}), \
+                 mock.patch.object(phone, "enable_one") as enable:
+                out = io.StringIO()
+                with contextlib.redirect_stdout(out):
+                    code = phone.cmd_restore(
+                        SimpleNamespace(serial=None, dry_run=False, from_backup=tmp, yes=False)
+                    )
+        self.assertEqual(code, 0)
+        enable.assert_not_called()
+        self.assertIn("com.example.new", out.getvalue())
+        self.assertIn("--yes", out.getvalue())
+
+    def test_from_backup_enables_inferred_packages(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            self.write_backup(tmp)
+            applied = {"packages": {}}
+            with mock.patch.object(phone.adb, "pick_serial", return_value="SERIAL"), \
+                 mock.patch.object(phone.adb, "probe_device", return_value=self.probe()), \
+                 mock.patch.object(phone.adb, "package_set", side_effect=[{"com.example.new"}, set()]), \
+                 mock.patch.object(phone, "load_applied", return_value=applied), \
+                 mock.patch.object(phone, "enable_one") as enable, \
+                 mock.patch.object(phone.extra, "apply_dns", return_value=("off", "")) as dns:
+                out = io.StringIO()
+                with contextlib.redirect_stdout(out):
+                    code = phone.cmd_restore(
+                        SimpleNamespace(serial=None, dry_run=False, from_backup=tmp, yes=True)
+                    )
+        self.assertEqual(code, 0)
+        enable.assert_called_once_with("SERIAL", "com.example.new", applied)
+        dns.assert_called_once_with("SERIAL", {"mode": "off", "specifier": ""})
+        self.assertIn("Restore from backup complete", out.getvalue())
+
+    def test_from_backup_refuses_a_different_build(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            self.write_backup(tmp, fingerprint="other/test/test:15/BUILD/x")
+            with mock.patch.object(phone.adb, "pick_serial", return_value="SERIAL"), \
+                 mock.patch.object(phone.adb, "probe_device", return_value=self.probe()):
+                with contextlib.redirect_stderr(io.StringIO()):
+                    with self.assertRaises(SystemExit):
+                        phone.cmd_restore(
+                            SimpleNamespace(serial=None, dry_run=False, from_backup=tmp, yes=True)
+                        )
+
+    def test_from_backup_with_no_changes(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            self.write_backup(tmp)
+            with mock.patch.object(phone.adb, "pick_serial", return_value="SERIAL"), \
+                 mock.patch.object(phone.adb, "probe_device", return_value=self.probe()), \
+                 mock.patch.object(phone.adb, "package_set", return_value={"com.example.old"}), \
+                 mock.patch.object(phone.extra, "apply_dns", return_value=("off", "")) as dns:
+                out = io.StringIO()
+                with contextlib.redirect_stdout(out):
+                    code = phone.cmd_restore(
+                        SimpleNamespace(serial=None, dry_run=False, from_backup=tmp, yes=True)
+                    )
+        self.assertEqual(code, 0)
+        self.assertIn("No package is disabled now", out.getvalue())
+        dns.assert_called_once_with("SERIAL", {"mode": "off", "specifier": ""})
+
+
 class StateTests(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()

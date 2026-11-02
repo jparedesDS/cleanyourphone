@@ -259,8 +259,9 @@ skill does not unlock the bootloader.
 
 **Can I brick my phone?**
 Disabling the wrong core package can cause a boot loop. That is why the CLI refuses a protected list,
-checks roles, backs up first and verifies in batches. The recovery path is in
-[docs/RESTORE.md](docs/RESTORE.md).
+checks roles, backs up first and verifies in batches. `restore` undoes exactly what the tool disabled;
+if its journal is lost, `restore --from-backup` reconstructs the change from the backup. The full
+recovery path, including safe mode, is in [docs/RESTORE.md](docs/RESTORE.md).
 
 **Does it remove ads from YouTube?**
 No. An ad-blocking resolver over Private DNS blocks many in-app ads and trackers, but YouTube serves

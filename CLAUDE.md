@@ -24,6 +24,8 @@ repository.
 - No root, ROM, bootloader unlock, flashing, Magisk or Shizuku.
 - Never disable a package in `tools/protected.py`, or the current dialer, SMS, Home or keyboard.
 - Back up before the first change.
+- The backup is the baseline; `~/.cleanyourphone/applied.json` is the exact undo journal. Keep
+  `restore --from-backup` working if the journal is lost.
 - At most five packages per batch, then verify.
 - No secrets or personal identifiers in profiles, docs, tests or screenshots.
 - No telemetry, analytics, network calls or third-party runtime dependencies in `tools/`.

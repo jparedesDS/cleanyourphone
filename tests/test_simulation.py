@@ -294,6 +294,23 @@ class SimulationTests(unittest.TestCase):
             self.assertEqual(device.disabled, set())
             self.assertEqual(device.unknown, [])
 
+    def test_restore_from_backup_when_journal_is_lost(self):
+        profile = profiles.load_profile("google-pixel-8")
+        device = device_for(
+            profile,
+            build="BP2A.250705.008",
+            fingerprint="google/shiba/shiba:16/BP2A.250705.008/1234567:user/release-keys",
+        )
+        with simulated(device):
+            code, out, err = run_cli(device, "apply", "--profile", "google-pixel-8", "--yes")
+            self.assertEqual(code, 0, out)
+            self.assertEqual(len(device.disabled), 2)
+            adb.APPLIED_PATH.unlink()
+            backup = adb.BACKUP_DIR / "2026-10-30T00-00-00"
+            code, out, err = run_cli(device, "restore", "--from-backup", str(backup), "--yes")
+            self.assertEqual(code, 0, out + err)
+            self.assertEqual(device.disabled, set())
+
     def test_oneplus_applies_in_two_batches(self):
         profile = profiles.load_profile("oneplus-a6013")
         device = device_for(

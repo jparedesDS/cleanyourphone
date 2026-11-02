@@ -6,6 +6,22 @@ All notable changes to CleanYourPhone are documented here. The format is based o
 
 ## [Unreleased]
 
+## [0.2.1] - 2026-11-02
+
+### Added
+
+- `restore --from-backup DIR`: if the undo journal is lost, compare the backup's pre-session
+  disabled list with the phone, show the difference and require `--yes` before enabling anything.
+  It refuses a backup from a different build or phone.
+- Backups now record the Private DNS state, so a backup-based restore can put DNS back as well.
+
+### Changed
+
+- `SKILL.md` now has an explicit "If something breaks" section and distinguishes the backup
+  baseline from the exact undo journal.
+- `docs/RESTORE.md` and `docs/CLI.md` document the backup-based recovery path.
+- `--version` now reports 0.2.1.
+
 ## [0.2.0] - 2026-11-02
 
 ### Added
@@ -90,6 +106,7 @@ The first public release.
   holder is disabled.
 - A documented profile never auto-applies, has no `disable` list and asks for every package.
 
+[0.2.1]: https://github.com/jparedesDS/cleanyourphone/releases/tag/v0.2.1
 [0.2.0]: https://github.com/jparedesDS/cleanyourphone/releases/tag/v0.2.0
 [0.1.1]: https://github.com/jparedesDS/cleanyourphone/releases/tag/v0.1.1
 [0.1.0]: https://github.com/jparedesDS/cleanyourphone/releases/tag/v0.1.0

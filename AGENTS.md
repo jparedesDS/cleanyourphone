@@ -54,6 +54,8 @@ Never do these in a PR or in a profile:
   explain the trade-off; it must not provide a bypass recipe.
 - **No changes to the safety rules in `SKILL.md`** without an issue and a maintainer review. Those
   rules are the product.
+- **No recovery path may depend on a single file.** `restore --from-backup` must keep working when
+  `~/.cleanyourphone/applied.json` is lost; it compares the backup baseline and requires `--yes`.
 
 ## Profiles
 

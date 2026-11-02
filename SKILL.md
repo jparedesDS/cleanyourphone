@@ -130,8 +130,10 @@ adb shell dumpsys device_policy
 adb shell dumpsys battery
 ```
 
-The backup is your baseline and safety net; the CLI also records each change in
-`~/.cleanyourphone/applied.json`. Do not skip either because "it is only a few packages".
+The backup is the baseline. The exact undo journal is `~/.cleanyourphone/applied.json`; `restore`
+uses it. If the journal is lost, `restore --from-backup <backup-folder>` compares the backup's
+disabled list with the phone and asks before enabling anything. Do not skip either because "it is
+only a few packages".
 
 ## Phase 2 — Inventory and plan
 
@@ -329,7 +331,19 @@ Wait until `sys.boot_completed` is `1`. Then ask the person to test, on the phon
 - Turn Wi-Fi off/on, mobile data off/on, Bluetooth off/on.
 - If they use it: hotspot, NFC payment, VoLTE/Wi-Fi calling, smartwatch, eSIM.
 
-If anything fails, run `python tools/phone.py restore` and stop. Do not "fix it" by disabling more.
+If anything fails, stop and follow the recovery section below. Do not "fix it" by disabling more.
+
+## If something breaks
+
+Stop. Do not disable more packages.
+
+1. If `adb devices` still shows the phone, run `python tools/phone.py restore` (or
+   `cleanyourphone restore`). If it says there is no record, run
+   `python tools/phone.py restore --from-backup <backup-folder>`, review the list and add `--yes`
+   only when it is correct.
+2. If the phone does not boot, follow [docs/RESTORE.md](docs/RESTORE.md): safe mode first, then ADB,
+   then recovery. A factory reset is the last resort; explain what will be lost before it.
+3. If the phone is managed, a TV/box or has more than one user, stop before changing anything.
 
 ## Phase 6 — Report and close
 
@@ -345,6 +359,7 @@ Give the person:
 - What was kept and why.
 - DNS state.
 - The exact undo command: `python tools/phone.py restore`.
+- If the journal is ever lost: `python tools/phone.py restore --from-backup <backup-folder>`.
 - The battery baseline, if they want to measure it (see `docs/BATTERY.md`).
 
 Then close ADB:
