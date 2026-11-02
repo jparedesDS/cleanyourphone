@@ -30,7 +30,7 @@
 
 **Tu móvil, sin lo que sobra.** Una skill de código abierto y reversible para limpiar Android,
 pensada para agentes. Desactiva apps y servicios preinstalados por ADB: sin root, sin ROM cocinada,
-sin desinstalar nada y con un comando para deshacer todos los cambios.
+sin desinstalar nada y con un comando para restaurar los cambios que registró la CLI.
 
 La historia y el modelo de seguridad, en
 **[jparedesds.github.io/cleanyourphone-web/es.html](https://jparedesds.github.io/cleanyourphone-web/es.html)**.

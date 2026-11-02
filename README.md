@@ -30,7 +30,7 @@
 
 **Your phone, minus the bloat.** An open-source, reversible debloat skill for Android, built for
 coding agents. It disables preinstalled apps and services over ADB: no root, no custom ROM, nothing
-uninstalled, and one command to undo every change.
+uninstalled, and one command to restore the changes the CLI recorded.
 
 Read the story and the safety model at
 **[jparedesds.github.io/cleanyourphone-web](https://jparedesds.github.io/cleanyourphone-web/)**.
