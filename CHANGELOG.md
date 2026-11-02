@@ -8,7 +8,7 @@ All notable changes to CleanYourPhone are documented here. The format is based o
 
 ### Changed
 
-- Final logo system and two-color palette: graphite `#0F0D14`, purple `#A78BFA`, white `#F5F3FA`
+- Final logo system and two-color palette: ink `#07100D` shared with CleanYourMail, purple `#A78BFA`, white `#F5F3FA`
   and a light purple `#C4B5FD` tint only for `ASK`. The sparkle is replaced by a contained return
   arrow, and the wordmark tints **Phone** in the logo purple. Primary, mark-only, monochrome,
   favicon and horizontal lockup assets are included. The brand rules are in `docs/BRAND.md`.

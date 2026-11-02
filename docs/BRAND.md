@@ -46,13 +46,13 @@ never irreversible deletion.
 
 | Color | Role |
 |---|---|
-| Graphite `#0F0D14` | Primary background, icon tile, one-color mark on light surfaces. |
+| Ink `#07100D` | Primary background shared with CleanYourMail; icon tile and one-color mark on light surfaces. |
 | Purple `#A78BFA` | Phone, return gesture, primary actions, links, commands and the `Phone` wordmark. |
 | Light purple `#C4B5FD` | Only `ASK` and warning states; a tint, never a second brand color. |
-| Text `#F5F3FA` | Headlines and the `CleanYour` wordmark on graphite. |
+| Text `#F5F3FA` | Headlines and the `CleanYour` wordmark on the ink background. |
 | Muted `#B8B2C4` | Secondary text; never part of the essential symbol. |
 
-Purple and white/graphite are the brand colors. The light purple is only a functional tint for `ASK`.
+Purple and white/ink are the brand colors. The light purple is only a functional tint for `ASK`.
 
 ## Typography
 
@@ -93,7 +93,7 @@ The same files exist in `cleanyourphone-web/assets/` for the website.
 ### Color use
 
 - Dark backgrounds: primary tile or the purple/white mark.
-- Light backgrounds: the monochrome `#0F0D14` mark or mono lockup. Do not put the purple/white mark on
+- Light backgrounds: the monochrome `#07100D` mark or mono lockup. Do not put the purple/white mark on
   white or busy imagery.
 - Do not use color as the only state indicator in UI; pair it with a label.
 
@@ -111,7 +111,7 @@ The same files exist in `cleanyourphone-web/assets/` for the website.
   full lockup there; it would duplicate the name.
 - **Footer:** the same tile at 26 px.
 - **Favicon:** `assets/favicon.svg`; check it in light and dark browser tabs.
-- **README banner:** graphite background, large lockup, tagline and plenty of negative space. Export PNG
+- **README banner:** ink background, large lockup, tagline and plenty of negative space. Export PNG
   at high resolution and keep both repositories in sync.
 - **Social preview:** 1280×640 with the lockup and tagline as the main hierarchy. No mockups,
   sparkles or small print; the symbol must survive the thumbnail.
