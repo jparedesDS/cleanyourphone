@@ -1,6 +1,6 @@
 # Profile catalog
 
-CleanYourPhone ships **157 profiles** across six brands. A `device` profile was
+CleanYourPhone ships **156 profiles** across six brands. A `device` profile was
 tested on a real phone and can auto-apply only on the build listed in `tested`. A
 `documented` profile comes from a primary firmware dump, never auto-applies and only asks.
 
@@ -9,7 +9,7 @@ tested on a real phone and can auto-apply only on the build listed in `tested`. 
 | **Google** | 5 | 1 | 0 |
 | **Samsung** | 55 | 1 | 7 |
 | **Xiaomi** | 15 | 1 | 2 |
-| **Redmi** | 57 | 0 | 2 |
+| **Redmi** | 56 | 0 | 1 |
 | **POCO** | 16 | 0 | 0 |
 | **OnePlus** | 8 | 1 | 0 |
 | **Generic** | 1 | 0 | 0 |
@@ -115,7 +115,7 @@ tested on a real phone and can auto-apply only on the build listed in `tested`. 
 | `redmi-9` | Redmi 9 / Redmi 9 Prime (`lancelot`) | 12 | documented | From the `lancelot` firmware dump; ask only, no auto-apply. |
 | `redmi-9c-nfc` | Redmi 9C NFC (M2006C3MNG) | 11 | documented | From the `angelican` firmware dump; ask only, no auto-apply. |
 | `redmi-9t` | Redmi 9T (M2010J19SL) | 12 | documented | From the `lime` firmware dump; ask only, no auto-apply. |
-| `redmi-9t-android-10` | Redmi 9T (`lime`) | 10 | documented | From the `lime` firmware dump; ask only, no auto-apply. |
+| `redmi-9t-android-10` | Redmi 9T NFC (`lemon`) | 10 | documented | From the `lemon` firmware dump; ask only, no auto-apply. |
 | `redmi-a1` | Redmi A1 (`ice`) | 12 | documented | From the `ice` firmware dump; ask only, no auto-apply. |
 | `redmi-a2` | Redmi A2+ (`water`) | 13 | documented | From the `water` firmware dump; ask only, no auto-apply. |
 | `redmi-k20` | Redmi K20 (`davinciin`) | 11 | documented | From the `davinciin` firmware dump; ask only, no auto-apply. |
@@ -154,7 +154,6 @@ tested on a real phone and can auto-apply only on the build listed in `tested`. 
 | `redmi-note-9-pro-india` | Redmi Note 9 Pro (India) (`gauguin`) | 12 | documented | From the `gauguin` firmware dump; ask only, no auto-apply. |
 | `redmi-note-9-pro` | Redmi Note 9 Pro / Redmi Note 9S (`miatoll`) | 12 | documented | From the `miatoll` firmware dump; ask only, no auto-apply. |
 | `redmi-note-9-pro-max` | Redmi Note 9 Pro Max (`excalibur`) | 11 | documented | From the `excalibur` firmware dump; ask only, no auto-apply. |
-| `redmi-pad` | Redmi Pad (22081283G) | 12 | documented | Tablet; From the `yunluo` firmware dump; ask only, no auto-apply. |
 | `redmi-pad-2` | Redmi Pad 2 (`taiko`) | 16 | documented | Tablet; From the `taiko` firmware dump; ask only, no auto-apply. |
 | `redmi-turbo-5-max` | Redmi Turbo 5 Max (2602BRT18C) | 16 | documented | From the `dash` firmware dump; ask only, no auto-apply. |
 | `redmi-y3` | Redmi Y3 (`onc`) | 10 | documented | From the `onc` firmware dump; ask only, no auto-apply. |

@@ -546,6 +546,26 @@ class ValidationTests(unittest.TestCase):
                     profiles.load_profiles(strict=True)
 
 
+class CatalogTests(unittest.TestCase):
+    def test_codename_is_traceable_to_fingerprint_or_source(self):
+        """A codename that appears nowhere in the match rule or sources is a dead profile."""
+        for profile in profiles.load_profiles(strict=True):
+            if profile.get("generic"):
+                continue
+            codename = str(profile.get("codename", "")).strip()
+            if not codename:
+                continue
+            haystack = [str(profile.get("fingerprint_regex", ""))]
+            for source in profile.get("sources", []):
+                if isinstance(source, dict):
+                    haystack.append(str(source.get("url", "")))
+                    haystack.append(str(source.get("title", "")))
+            self.assertTrue(
+                any(codename.lower() in value.lower() for value in haystack),
+                f"{profile['id']}: codename {codename!r} is not in fingerprint_regex or sources",
+            )
+
+
 class StateTests(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()

@@ -6,19 +6,36 @@ All notable changes to CleanYourPhone are documented here. The format is based o
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-11-02
+
 ### Added
 
 - Simulated-device test harness in `tests/test_simulation.py` and `docs/SIMULATION.md`: 8 scenarios
-  plus a plan sweep over all 157 profiles. It checks plan/apply/verify/restore, the protected list,
+  plus a plan sweep over all 156 profiles. It checks plan/apply/verify/restore, the protected list,
   role holders, backup requirement, batch limits, managed phones and tablets without a real phone.
 - The simulator records any unknown or dangerous ADB command (`pm uninstall`, `pm hide`, `pm clear`,
   `fastboot`, `reboot`) and fails the test if one appears.
+- Catalog test in `tests/test_phone.py`: every profile codename must appear in its
+  `fingerprint_regex` or a primary source, so a dead profile cannot pass CI again.
+- GitHub Actions now runs the test suite on Python 3.14.
 
 ### Changed
 
 - Stable, readable ids for the Redmi K20 Pro (global/India), Redmi Note 9 Pro (global/India) and
   Redmi 9T Android 10 variants.
 - Added regional-model notes to Redmi 15C, Redmi Note 15 and Note 15 Pro.
+- Corrected `redmi-9t-android-10` to the `lemon` codename (Redmi 9T NFC). The Android 12 profile
+  `redmi-9t` remains `lime`.
+- Corrected the `samsung-sm-m146b` source note from `essi` to `m14x`.
+- Corrected stale catalog rows for `redmi-k20-pro` (`raphael`, not `raphaelin`) and
+  `redmi-9t-android-10`.
+- Localized READMEs now highlight their own language in the language selector.
+- `--version` now reports 0.1.1.
+
+### Removed
+
+- `profiles/redmi/redmi-pad.json`: the profile claimed the `yunluo` codename but was built from the
+  `mihal` firmware dump, so it could never match a real Redmi Pad. The catalog now has 156 profiles.
 
 ## [0.1.0] - 2026-10-30
 
@@ -53,4 +70,5 @@ The first public release.
   holder is disabled.
 - A documented profile never auto-applies, has no `disable` list and asks for every package.
 
+[0.1.1]: https://github.com/jparedesDS/cleanyourphone/releases/tag/v0.1.1
 [0.1.0]: https://github.com/jparedesDS/cleanyourphone/releases/tag/v0.1.0

@@ -5,7 +5,7 @@ fake ADB transport and representative package sets, without a phone and without 
 
 ## What it proves
 
-- Every one of the 157 profiles can produce a plan without crashing or malformed rows.
+- Every one of the 156 profiles can produce a plan without crashing or malformed rows.
 - `apply` refuses documented/family profiles and never runs without a backup.
 - The protected list and current role holders cannot be disabled.
 - A missing package is refused instead of guessed.

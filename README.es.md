@@ -5,8 +5,8 @@
 </p>
 
 <p align="center">
-  <b>English</b> ·
-  <a href="README.es.md">Español</a> ·
+  <a href="README.md">English</a> ·
+  <b>Español</b> ·
   <a href="README.pt-BR.md">Português (BR)</a> ·
   <a href="README.fr.md">Français</a> ·
   <a href="README.de.md">Deutsch</a> ·
@@ -22,7 +22,7 @@
   <img src="https://img.shields.io/badge/license-MIT-64f4c4?labelColor=061014" alt="MIT">
   <img src="https://img.shields.io/badge/python-3.10%2B-64f4c4?labelColor=061014" alt="Python 3.10+">
   <img src="https://img.shields.io/badge/telemetry-none-64f4c4?labelColor=061014" alt="Sin telemetría">
-  <img src="https://img.shields.io/badge/profiles-157-5ec8ff?labelColor=061014" alt="157 perfiles">
+  <img src="https://img.shields.io/badge/profiles-156-5ec8ff?labelColor=061014" alt="156 perfiles">
   <a href="https://github.com/jparedesDS/cleanyourphone/releases"><img src="https://img.shields.io/github/v/release/jparedesDS/cleanyourphone?color=64f4c4&labelColor=061014" alt="release"></a>
 </p>
 
@@ -38,7 +38,7 @@ La historia y el modelo de seguridad, en
 Es la versión móvil de [cleanyour.tv](https://cleanyour.tv), con la misma idea: un prompt, un comando,
 reversible, open source y la persona siempre al mando.
 
-[SKILL.md](SKILL.md) · [PROMPT.es.md](PROMPT.es.md) · [Seguridad](docs/SAFETY.md) · [157 perfiles](docs/PROFILES.md) · [Cambios](CHANGELOG.md)
+[SKILL.md](SKILL.md) · [PROMPT.es.md](PROMPT.es.md) · [Seguridad](docs/SAFETY.md) · [156 perfiles](docs/PROFILES.md) · [Cambios](CHANGELOG.md)
 
 <p align="center">
   <img src="assets/demo.gif" alt="Antes y después: WhatsApp, el banco y tus apps se quedan; Samsung Free, TV Plus, Bixby, Tips, Themes, Games y Cloud desaparecen" width="520">
@@ -51,7 +51,7 @@ reversible, open source y la persona siempre al mando.
 | Un móvil y un agente de código | El inicio rápido de abajo. |
 | Ganas de verlo primero | [La web](https://jparedesds.github.io/cleanyourphone-web/es.html). |
 | Dudas de seguridad | [docs/SAFETY.md](docs/SAFETY.md). |
-| Un modelo concreto | [Los 157 perfiles](docs/PROFILES.md). |
+| Un modelo concreto | [Los 156 perfiles](docs/PROFILES.md). |
 
 ---
 
@@ -214,7 +214,7 @@ El catálogo completo, modelo a modelo, está en [docs/PROFILES.md](docs/PROFILE
 | **Google** | 5 | 1 | 0 |
 | **Samsung** | 55 | 1 | 7 |
 | **Xiaomi** | 15 | 1 | 2 |
-| **Redmi** | 57 | 0 | 2 |
+| **Redmi** | 56 | 0 | 1 |
 | **POCO** | 16 | 0 | 0 |
 | **OnePlus** | 8 | 1 | 0 |
 | **Genérico** | 1 | 0 | 0 |

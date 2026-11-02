@@ -150,7 +150,6 @@ profiles/
 ├── redmi/redmi-note-9-pro.json
 ├── redmi/redmi-note-9.json
 ├── redmi/redmi-pad-2.json
-├── redmi/redmi-pad.json
 ├── redmi/redmi-turbo-5-max.json
 ├── redmi/redmi-y3.json
 ├── poco/poco-c31.json
@@ -348,7 +347,7 @@ list. It does not replace a real test.
 | `samsung-sm-m105g` | Galaxy M10 (SM-M105G) | 10 | documented | From the `m10lte` firmware dump; ask only, no auto-apply. |
 | `samsung-sm-m115f` | Galaxy M11 (SM-M115F) | 11 | documented | From the `m11q` firmware dump; ask only, no auto-apply. |
 | `samsung-sm-m136b` | Galaxy M13 5G (SM-M136B) | 14 | documented | From the `a13x` firmware dump; ask only, no auto-apply. |
-| `samsung-sm-m146b` | Galaxy M14 5G (SM-M146B) | 13 | documented | From the `essi` firmware dump; ask only, no auto-apply. |
+| `samsung-sm-m146b` | Galaxy M14 5G (SM-M146B) | 13 | documented | From the `m14x` firmware dump; ask only, no auto-apply. |
 | `samsung-sm-m325f` | Galaxy M32 (SM-M325F) | 11 | documented | From the `m32` firmware dump; ask only, no auto-apply. |
 | `samsung-sm-m526b` | Galaxy M52 5G (SM-M526B) | 12 | documented | From the `m52xq` firmware dump; ask only, no auto-apply. |
 | `samsung-sm-n970f` | Galaxy Note10 (SM-N970F) | 12 | documented | From the `d1` firmware dump; ask only, no auto-apply. |
@@ -411,11 +410,11 @@ list. It does not replace a real test.
 | `redmi-9` | Redmi 9 / Redmi 9 Prime (`lancelot`) | 12 | documented | From the `lancelot` firmware dump; ask only, no auto-apply. |
 | `redmi-9c-nfc` | Redmi 9C NFC (M2006C3MNG) | 11 | documented | From the `angelican` firmware dump; ask only, no auto-apply. |
 | `redmi-9t` | Redmi 9T (M2010J19SL) | 12 | documented | From the `lime` firmware dump; ask only, no auto-apply. |
-| `redmi-9t-android-10` | Redmi 9T (`lime`) | 10 | documented | From the `lime` firmware dump; ask only, no auto-apply. |
+| `redmi-9t-android-10` | Redmi 9T NFC (`lemon`) | 10 | documented | From the `lemon` firmware dump; ask only, no auto-apply. |
 | `redmi-a1` | Redmi A1 (`ice`) | 12 | documented | From the `ice` firmware dump; ask only, no auto-apply. |
 | `redmi-a2` | Redmi A2+ (`water`) | 13 | documented | From the `water` firmware dump; ask only, no auto-apply. |
 | `redmi-k20` | Redmi K20 (`davinciin`) | 11 | documented | From the `davinciin` firmware dump; ask only, no auto-apply. |
-| `redmi-k20-pro` | Redmi K20 Pro (`raphaelin`) | 10 | documented | From the `raphaelin` firmware dump; ask only, no auto-apply. |
+| `redmi-k20-pro` | Redmi K20 Pro (`raphael`) | 10 | documented | From the `raphael` firmware dump; ask only, no auto-apply. |
 | `redmi-k20-pro-india` | Redmi K20 Pro (India) (`raphaelin`) | 10 | documented | From the `raphaelin` firmware dump; ask only, no auto-apply. |
 | `redmi-k30-4g` | Redmi K30 4G (`phoenix`) | 12 | documented | From the `phoenix` firmware dump; ask only, no auto-apply. |
 | `redmi-k40-gaming` | Redmi K40 Gaming (`ares`) | 12 | documented | From the `ares` firmware dump; ask only, no auto-apply. |
@@ -450,7 +449,6 @@ list. It does not replace a real test.
 | `redmi-note-9-pro-india` | Redmi Note 9 Pro (India) (`gauguin`) | 12 | documented | From the `gauguin` firmware dump; ask only, no auto-apply. |
 | `redmi-note-9-pro` | Redmi Note 9 Pro / Redmi Note 9S (`miatoll`) | 12 | documented | From the `miatoll` firmware dump; ask only, no auto-apply. |
 | `redmi-note-9-pro-max` | excalibur | 11 | documented | From the `excalibur` firmware dump; ask only, no auto-apply. |
-| `redmi-pad` | Redmi Pad (22081283G) | 12 | documented | Tablet; From the `yunluo` firmware dump; ask only, no auto-apply. |
 | `redmi-pad-2` | Redmi Pad 2 (`taiko`) | 16 | documented | Tablet; From the `taiko` firmware dump; ask only, no auto-apply. |
 | `redmi-turbo-5-max` | REDMI Turbo 5 Max (2602BRT18C) | 16 | documented | From the `dash` firmware dump; ask only, no auto-apply. |
 | `redmi-y3` | Redmi Y3 (`onc`) | 10 | documented | From the `onc` firmware dump; ask only, no auto-apply. |

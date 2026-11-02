@@ -18,6 +18,8 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
+VERSION = "0.1.1"
+
 try:  # imported as tools.phone
     from . import adb, checks, extra, profiles, protected, ui
 except ImportError:  # run as tools/phone.py
@@ -777,7 +779,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--serial", help="ADB serial to use when more than one device is connected")
     parser.add_argument("--json", action="store_true", help="machine-readable output where supported")
-    parser.add_argument("--version", action="version", version="CleanYourPhone 0.1.0")
+    parser.add_argument("--version", action="version", version=f"CleanYourPhone {VERSION}")
 
     sub = parser.add_subparsers(dest="command", required=True)
 

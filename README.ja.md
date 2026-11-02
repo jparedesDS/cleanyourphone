@@ -5,13 +5,13 @@
 </p>
 
 <p align="center">
-  <b>English</b> ·
+  <a href="README.md">English</a> ·
   <a href="README.es.md">Español</a> ·
   <a href="README.pt-BR.md">Português (BR)</a> ·
   <a href="README.fr.md">Français</a> ·
   <a href="README.de.md">Deutsch</a> ·
   <a href="README.it.md">Italiano</a> ·
-  <a href="README.ja.md">日本語</a> ·
+  <b>日本語</b> ·
   <a href="README.zh-CN.md">简体中文</a> ·
   <a href="README.zh-TW.md">繁體中文</a> ·
   <a href="README.ko.md">한국어</a>
@@ -21,7 +21,7 @@
 
 **あなたのスマホを、余計なものなしで。** コーディングエージェント向けの、オープンソースで元に戻せる Android デブロート Skill です。ADB でプリインストールアプリとサービスを無効化します。root もカスタム ROM も不要、アンインストールはせず、1 コマンドで元に戻せます。
 
-[Website](https://jparedesds.github.io/cleanyourphone-web/) · [SKILL.md](SKILL.md) · [PROMPT.md](PROMPT.md) · [Safety](docs/SAFETY.md) · [157 profiles](docs/PROFILES.md)
+[Website](https://jparedesds.github.io/cleanyourphone-web/) · [SKILL.md](SKILL.md) · [PROMPT.md](PROMPT.md) · [Safety](docs/SAFETY.md) · [156 profiles](docs/PROFILES.md)
 
 ## クイックスタート
 
@@ -48,7 +48,7 @@ python tools/phone.py doctor
 - [SKILL.md](SKILL.md) — the full procedure and safety rules.
 - [PROMPT.md](PROMPT.md) — paste this if your agent does not load skills.
 - [docs/SAFETY.md](docs/SAFETY.md) — protected packages, roles and restore.
-- [docs/PROFILES.md](docs/PROFILES.md) — 157 model/firmware profiles.
+- [docs/PROFILES.md](docs/PROFILES.md) — 156 model/firmware profiles.
 - [README.md](README.md) / [README.es.md](README.es.md) — 完全なドキュメントは英語とスペイン語です。
 
 MIT. No account. No telemetry.

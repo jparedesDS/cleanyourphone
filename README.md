@@ -22,7 +22,7 @@
   <img src="https://img.shields.io/badge/license-MIT-64f4c4?labelColor=061014" alt="MIT">
   <img src="https://img.shields.io/badge/python-3.10%2B-64f4c4?labelColor=061014" alt="Python 3.10+">
   <img src="https://img.shields.io/badge/telemetry-none-64f4c4?labelColor=061014" alt="No telemetry">
-  <img src="https://img.shields.io/badge/profiles-157-5ec8ff?labelColor=061014" alt="157 profiles">
+  <img src="https://img.shields.io/badge/profiles-156-5ec8ff?labelColor=061014" alt="156 profiles">
   <a href="https://github.com/jparedesDS/cleanyourphone/releases"><img src="https://img.shields.io/github/v/release/jparedesDS/cleanyourphone?color=64f4c4&labelColor=061014" alt="release"></a>
 </p>
 
@@ -38,7 +38,7 @@ Read the story and the safety model at
 It is the phone version of [cleanyour.tv](https://cleanyour.tv), built the same way: one prompt, one
 command, reversible, open source, and the person stays in control.
 
-[SKILL.md](SKILL.md) · [PROMPT.md](PROMPT.md) · [Safety](docs/SAFETY.md) · [157 profiles](docs/PROFILES.md) · [Changelog](CHANGELOG.md)
+[SKILL.md](SKILL.md) · [PROMPT.md](PROMPT.md) · [Safety](docs/SAFETY.md) · [156 profiles](docs/PROFILES.md) · [Changelog](CHANGELOG.md)
 
 <p align="center">
   <img src="assets/demo.gif" alt="Before and after: WhatsApp, banking and user apps stay; Samsung Free, TV Plus, Bixby, Tips, Themes, Games and Cloud leave" width="520">
@@ -51,7 +51,7 @@ command, reversible, open source, and the person stays in control.
 | A phone and a coding agent | The quick start below. |
 | Want to see it first | [The website](https://jparedesds.github.io/cleanyourphone-web/). |
 | Need the safety rules | [docs/SAFETY.md](docs/SAFETY.md). |
-| Need a model profile | [Browse the 157 profiles](profiles/README.md). |
+| Need a model profile | [Browse the 156 profiles](profiles/README.md). |
 
 ---
 
@@ -213,7 +213,7 @@ The full, model-by-model catalog is in [docs/PROFILES.md](docs/PROFILES.md).
 | **Google** | 5 | 1 | 0 |
 | **Samsung** | 55 | 1 | 7 |
 | **Xiaomi** | 15 | 1 | 2 |
-| **Redmi** | 57 | 0 | 2 |
+| **Redmi** | 56 | 0 | 1 |
 | **POCO** | 16 | 0 | 0 |
 | **OnePlus** | 8 | 1 | 0 |
 | **Generic** | 1 | 0 | 0 |

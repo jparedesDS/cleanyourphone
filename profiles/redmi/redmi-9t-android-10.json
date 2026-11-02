@@ -2,8 +2,8 @@
   "id": "redmi-9t-android-10",
   "brand": "Redmi",
   "model": "*",
-  "marketing_name": "Redmi 9T",
-  "codename": "lime",
+  "marketing_name": "Redmi 9T NFC",
+  "codename": "lemon",
   "android": [
     "10"
   ],
@@ -15,7 +15,7 @@
       "title": "Android Dumps: Android-Dumps/redmi/lemon",
       "url": "https://gitlab.com/Android-Dumps/redmi/lemon",
       "retrieved": "2026-10-30",
-      "note": "Firmware dump for Redmi 9T / Redmi 9 Power"
+      "note": "Firmware dump for Redmi 9T NFC"
     },
     {
       "title": "Dump README (build metadata)",
@@ -330,5 +330,5 @@
       "why": "IMS: VoLTE and Wi-Fi calling"
     }
   ],
-  "notes": "Documented from the lime firmware dump (Android 10), not tested on a physical phone. Redmi package lists and preloads vary by region and carrier. Regional model numbers vary; the profile is pinned by fingerprint and codename. This is the Android 10 build of the same model as redmi-9t (Android 12). No auto-apply; ask before every package."
+  "notes": "Documented from the lemon firmware dump (Android 10), not tested on a physical phone. Redmi package lists and preloads vary by region and carrier. Regional model numbers vary; the profile is pinned by fingerprint and codename. This is the Android 10 build of the Redmi 9T NFC; the Android 12 profile redmi-9t uses the lime codename. No auto-apply; ask before every package."
 }
