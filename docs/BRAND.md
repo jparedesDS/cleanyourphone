@@ -61,7 +61,9 @@ Gold, violet and lavender are functional accents, not decoration or gradients.
   Weights 700-800 for headlines and wordmark; 400-600 for body.
 - **Mono:** `Cascadia Code`, `SFMono-Regular`, `Consolas`, `Liberation Mono`, monospace, for commands,
   package names, states and evidence.
-- The wordmark is always **CleanYourPhone**, with no spaces or alternate capitalization.
+- The wordmark is always **CleanYourPhone**, with no spaces or alternate capitalization. In the color
+  version, **CleanYour** uses the text color and **Phone** uses lavender `#C4B5FD`; the monochrome
+  lockup stays one color.
 
 ## Logo
 

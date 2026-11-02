@@ -9,8 +9,9 @@ All notable changes to CleanYourPhone are documented here. The format is based o
 ### Changed
 
 - Final logo system and softened palette: graphite `#15161A`, violet `#A78BFA`, gold `#E2C15C` and
-  lavender `#C4B5FD` for warnings. The sparkle is replaced by a contained return arrow, with primary,
-  mark-only, monochrome, favicon and horizontal lockup assets. The brand rules are in `docs/BRAND.md`.
+  lavender `#C4B5FD` for warnings. The sparkle is replaced by a contained return arrow, and the
+  wordmark tints **Phone** in lavender. Primary, mark-only, monochrome, favicon and horizontal lockup
+  assets are included. The brand rules are in `docs/BRAND.md`.
 
 ## [0.2.1] - 2026-11-02
 
