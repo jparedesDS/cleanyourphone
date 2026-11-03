@@ -46,15 +46,17 @@ never irreversible deletion.
 
 | Color | Role |
 |---|---|
-| Ink `#15161A` | Primary background and icon tile. |
-| Panel `#1C1E24` | Cards and prompt block. |
-| Panel 2 `#23252D` | Raised panels and gradients. |
-| Text `#ECE9E2` | Headlines and the `CleanYour` wordmark. |
-| Muted `#A8A39B` | Secondary text; never part of the essential symbol. |
-| Gold `#E2C15C` | Primary actions, the return arrow and the main CTA. |
-| Lavender `#A78BFA` | Phone outline, links, commands and undo. |
-| Bright lavender `#C4B5FD` | The `Phone` wordmark only. |
-| Coral `#D97A5E` | Warning states only; never a decorative accent. |
+| Graphite `#121316` | Primary background shared with CleanYourMail; icon tile and one-color mark on light surfaces. |
+| Panel `#1B1C21` | Cards, prompt block and raised surfaces. |
+| Panel 2 `#2A2C31` | Raised panels and gradients. |
+| Text `#F3F1EC` | Headlines, body text and the `CleanYour` wordmark. |
+| Muted `#A19E96` | Secondary text; never part of the essential symbol. |
+| Muted 2 `#8B8881` | Tertiary labels, terminal chrome and metadata. |
+| Purple `#A78BFA` | Phone, return gesture, primary actions, links, commands and the `Phone` wordmark. |
+| Light purple `#C4B5FD` | Only `ASK` and warning states; a tint, never a second brand color. |
+
+Purple and white/graphite are the brand colors. The light purple is only a functional tint for `ASK`.
+Gold and coral are retired.
 
 ## Typography
 
@@ -63,7 +65,7 @@ never irreversible deletion.
 - **Mono:** `Cascadia Code`, `SFMono-Regular`, `Consolas`, `Liberation Mono`, monospace, for commands,
   package names, states and evidence.
 - The wordmark is always **CleanYourPhone**, with no spaces or alternate capitalization. In the color
-  version, **CleanYour** uses the text color and **Phone** uses bright lavender `#C4B5FD`; the
+  version, **CleanYour** uses the text color and **Phone** uses the logo purple `#A78BFA`; the
   monochrome lockup stays one color.
 
 ## Logo
@@ -78,7 +80,7 @@ from the previous mark is retired because it reads as generic "magic cleaner".
 |---|---|
 | `assets/logo.svg` | Primary app-icon tile, 64×64, dark background. |
 | `assets/favicon.svg` | Simplified 32×32 favicon. |
-| `assets/logo-mark.svg` | Mark-only, transparent, lavender/gold. |
+| `assets/logo-mark.svg` | Mark-only, transparent, purple/white. |
 | `assets/logo-mono.svg` | One-color mark for light backgrounds. |
 | `assets/logo-lockup.svg` | Horizontal mark + wordmark for dark backgrounds. |
 | `assets/logo-lockup-mono.svg` | Horizontal mark + wordmark for light backgrounds. |
@@ -94,8 +96,8 @@ The website uses `logo.svg` and `favicon.svg`; the full set remains in the skill
 
 ### Color use
 
-- Dark backgrounds: primary tile or the lavender/gold mark.
-- Light backgrounds: the monochrome `#15161A` mark or mono lockup. Do not put the lavender/gold mark on
+- Dark backgrounds: primary tile or the purple/white mark.
+- Light backgrounds: the monochrome `#121316` mark or mono lockup. Do not put the purple/white mark on
   white or busy imagery.
 - Do not use color as the only state indicator in UI; pair it with a label.
 
@@ -113,8 +115,8 @@ The website uses `logo.svg` and `favicon.svg`; the full set remains in the skill
   full lockup there; it would duplicate the name.
 - **Footer:** the same tile at 26 px.
 - **Favicon:** `assets/favicon.svg`; check it in light and dark browser tabs.
-- **README banner:** ink background, large lockup, tagline and plenty of negative space. Export PNG
-  at high resolution and keep both repositories in sync.
+- **README banner:** graphite background, large lockup, tagline and plenty of negative space. Export
+  PNG at high resolution and keep both repositories in sync.
 - **Social preview:** 1280×640 with the lockup and tagline as the main hierarchy. No mockups,
   sparkles or small print; the symbol must survive the thumbnail.
 - **Release notes:** start with the user-facing change, then the technical detail.
