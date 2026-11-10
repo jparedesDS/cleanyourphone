@@ -1,8 +1,11 @@
+import contextlib
+import io
 import json
 import sys
 import tempfile
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
 from unittest import mock
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -10,6 +13,7 @@ sys.path.insert(0, str(ROOT / "tools"))
 
 import adb  # noqa: E402
 import bench  # noqa: E402
+import extra  # noqa: E402
 
 
 def fake_shell(command, serial=None, timeout=120):
@@ -123,6 +127,46 @@ class BenchTests(unittest.TestCase):
             wrong.write_text("[]", encoding="utf-8")
             with self.assertRaises(ValueError):
                 bench.load(wrong)
+
+
+    def test_cmd_bench_snapshot_json_wrapper(self):
+        data = {"ram_available_mb": 100, "processes": 2, "packages_enabled": 3, "packages_disabled": 1}
+        with mock.patch.object(extra.adb, "pick_serial", return_value="SERIAL"), \
+                mock.patch.object(extra.bench, "measure", return_value=data), \
+                mock.patch.object(extra.bench, "save", return_value=Path("C:/tmp/before.json")):
+            out = io.StringIO()
+            with contextlib.redirect_stdout(out):
+                rc = extra.cmd_bench(SimpleNamespace(bench_command="snapshot", label="before", json=True, serial=None))
+        self.assertEqual(rc, 0)
+        payload = json.loads(out.getvalue())
+        self.assertEqual(Path(payload["path"]), Path("C:/tmp/before.json"))
+        self.assertEqual(payload["data"]["ram_available_mb"], 100)
+
+    def test_cmd_bench_compare_json_wrapper(self):
+        before = {
+            "timestamp": "before",
+            "model": "Pixel 8",
+            "android": "16",
+            "build": "A",
+            "ram_available_mb": 100,
+            "packages_enabled": 10,
+        }
+        after = dict(before, timestamp="after", ram_available_mb=120, packages_enabled=9)
+        with tempfile.TemporaryDirectory() as tmp:
+            first = Path(tmp) / "before.json"
+            second = Path(tmp) / "after.json"
+            first.write_text(json.dumps(before), encoding="utf-8")
+            second.write_text(json.dumps(after), encoding="utf-8")
+            with mock.patch.object(extra.bench, "BENCH_DIR", Path(tmp)):
+                out = io.StringIO()
+                with contextlib.redirect_stdout(out):
+                    rc = extra.cmd_bench(
+                        SimpleNamespace(bench_command="compare", before=str(first), after=str(second), json=True)
+                    )
+        self.assertEqual(rc, 0)
+        payload = json.loads(out.getvalue())
+        self.assertIn("path", payload)
+        self.assertEqual(payload["rows"][0]["delta"], 20)
 
 
 if __name__ == "__main__":

@@ -94,7 +94,7 @@ def measure(serial: str) -> dict
 def save(data: dict, label: str) -> Path
 def load(path: Path) -> dict
 def compare(before: dict, after: dict) -> list[dict]
-def write_markdown(before: dict, after: dict, rows: list[dict]) -> Path
+def write_markdown(before: dict, after: dict, rows: list[dict], path: Path) -> Path
 ```
 
 Metrics:
@@ -112,13 +112,17 @@ Metrics:
 Commands:
 
 - `cleanyourphone bench snapshot [--label before|after]` — saves
-  `~/.cleanyourphone/bench/<timestamp>_<label>.json`, prints the path; `--json` prints the data.
+  `~/.cleanyourphone/bench/<timestamp>_<label>.json`, prints the path; `--json` returns
+  `{"path": "...", "data": {...}}`.
 - `cleanyourphone bench compare BEFORE AFTER` — prints a metric/before/after/change table, writes
-  `~/.cleanyourphone/bench/compare-<timestamp>.md`, and prints the path; `--json` returns the rows.
+  `~/.cleanyourphone/bench/compare-<timestamp>.md`, and prints the path; `--json` returns
+  `{"path": "...", "rows": [...]}`.
 - `cleanyourphone bench list` — lists snapshots, newest first.
 
 Comparison rows show absolute values and a signed percentage/absolute delta. No “better/worse” labels
 for ambiguous metrics like refresh rate; the report says what changed, not that it is universally good.
+The Markdown report includes both devices/builds, Battery Saver and Private DNS, and warns when the
+devices/builds or Battery Saver differ. `load()` rejects empty/partial snapshots and missing core keys.
 
 ## App: ads
 

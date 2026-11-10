@@ -207,6 +207,19 @@ class AdsTests(unittest.TestCase):
         self.assertFalse(result["online"])
         self.assertIsNone(result["ad_blocked"])
 
+    def test_dns_check_control_no_reply_is_cannot_test(self):
+        with mock.patch.object(
+            extra.adb,
+            "adb_run",
+            side_effect=[
+                self._ping("", "ping: unknown host doubleclick.net", code=1),
+                self._ping("PING wikipedia.org (192.0.2.10) 56(84) bytes of data.\n100% packet loss", code=1),
+            ],
+        ):
+            result = extra.dns_check("SERIAL")
+        self.assertFalse(result["online"])
+        self.assertIsNone(result["ad_blocked"])
+
     def test_dns_check_reports_cannot_test_on_unparseable_ad_output(self):
         with mock.patch.object(
             extra.adb,
@@ -244,6 +257,51 @@ class AdsTests(unittest.TestCase):
         self.assertIn("settings put global private_dns_specifier dns.adguard-dns.com", commands)
         self.assertIn("settings put global private_dns_mode hostname", commands)
         self.assertIn("dns restore", out.getvalue())
+
+    def test_dns_set_records_before_writing(self):
+        events = []
+        changes = {"dns": {"before": {"mode": "opportunistic", "specifier": ""}, "at": "now"}}
+        args = SimpleNamespace(dns_command="set", hostname="adguard", json=False, serial=None)
+
+        def record(_serial):
+            events.append("record")
+            return changes
+
+        def shell(*_args, **_kwargs):
+            events.append("shell")
+
+        with mock.patch.object(extra.adb, "pick_serial", return_value="SERIAL"), \
+                mock.patch.object(extra, "_record_dns_before", side_effect=record), \
+                mock.patch.object(extra.adb, "shell", side_effect=shell), \
+                mock.patch.object(extra.adb, "dns_status", return_value={"mode": "hostname", "specifier": "dns.adguard-dns.com"}), \
+                mock.patch.object(extra.adb, "save_changes"), \
+                contextlib.redirect_stdout(io.StringIO()):
+            self.assertEqual(extra.cmd_dns(args), 0)
+        self.assertEqual(events[0], "record")
+        self.assertIn("shell", events)
+
+    def test_dns_restore_puts_back_exact_mode_and_specifier(self):
+        changes = {"dns": {"before": {"mode": "hostname", "specifier": "dns.example.com"}, "at": "now"}}
+        with mock.patch.object(extra.adb, "load_changes", return_value=changes), \
+                mock.patch.object(extra.adb, "shell") as shell, \
+                mock.patch.object(extra.adb, "save_changes"):
+            extra.restore_dns("SERIAL")
+        commands = [call.args[0] for call in shell.call_args_list]
+        self.assertIn("settings put global private_dns_specifier dns.example.com", commands)
+        self.assertIn("settings put global private_dns_mode hostname", commands)
+
+    def test_dns_check_json_exit_code(self):
+        args = SimpleNamespace(dns_command="check", json=True, serial=None)
+        with mock.patch.object(extra.adb, "pick_serial", return_value="SERIAL"), \
+                mock.patch.object(extra, "dns_check", return_value={
+                    "ad_domain": "doubleclick.net", "ad_ip": "", "ad_blocked": None,
+                    "control_domain": "wikipedia.org", "control_ip": "", "online": False,
+                }):
+            out = io.StringIO()
+            with contextlib.redirect_stdout(out):
+                rc = extra.cmd_dns(args)
+        self.assertEqual(rc, 1)
+        self.assertIsNone(json.loads(out.getvalue())["ad_blocked"])
 
     def test_json_flag_is_accepted_after_new_subcommands(self):
         parser = phone.build_parser()

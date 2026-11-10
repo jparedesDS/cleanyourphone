@@ -63,25 +63,26 @@ def _resolve(serial: str, host: str) -> Dict[str, str]:
     try:
         result = adb.adb_run(["shell", f"ping -c 1 -W 3 {host}"], serial=serial, timeout=20)
     except adb.AdbError:
-        return {"ip": "", "state": "unknown"}
+        return {"ip": "", "state": "unknown", "replied": False}
     text = ((result.stdout or "") + "\n" + (result.stderr or "")).strip()
     match = re.search(r"PING \S+ \(([^)]+)\)", text)
     ip = match.group(1) if match else ""
     low = text.lower()
+    replied = result.returncode == 0
     if ip in BLOCKED_IPS:
-        return {"ip": ip, "state": "blocked"}
+        return {"ip": ip, "state": "blocked", "replied": replied}
     if any(marker in low for marker in NXDOMAIN_MARKERS):
-        return {"ip": ip, "state": "nxdomain"}
+        return {"ip": ip, "state": "nxdomain", "replied": replied}
     if ip:
-        return {"ip": ip, "state": "ok"}
-    return {"ip": "", "state": "unknown"}
+        return {"ip": ip, "state": "ok", "replied": replied}
+    return {"ip": "", "state": "unknown", "replied": replied}
 
 
 def dns_check(serial: str) -> Dict[str, Any]:
     """Check an ad domain and a control domain from the phone."""
     ad = _resolve(serial, "doubleclick.net")
     control = _resolve(serial, "wikipedia.org")
-    online = control["state"] == "ok" and control["ip"] not in BLOCKED_IPS
+    online = control["state"] == "ok" and control["replied"] and control["ip"] not in BLOCKED_IPS
     if not online:
         blocked = None
     elif ad["state"] in ("blocked", "nxdomain"):
@@ -434,6 +435,14 @@ def cmd_bench(args: argparse.Namespace) -> int:
             )
             print(f"Comparison written to {path}")
             print("Approximate, measured on this phone; not causal.")
+            if (before.get("model"), before.get("android"), before.get("build")) != (
+                after.get("model"),
+                after.get("android"),
+                after.get("build"),
+            ):
+                ui.warn("the snapshots are from different models, Android versions or builds")
+            if before.get("battery_saver") != after.get("battery_saver"):
+                ui.warn("Battery Saver changed between snapshots; compare again under the same conditions")
         return 0
 
     if args.bench_command == "list":
