@@ -77,6 +77,9 @@ Override them with environment variables:
 | `dns set <preset\|hostname>` | Set a preset or a custom resolver; journaled and reversible. |
 | `dns check` | Check an ad domain and a control domain; distinguishes blocked from offline. |
 | `dns off`, `dns restore` | Return to opportunistic DNS or the exact recorded state. |
+| `bench snapshot [--label before\|after]` | Save RAM, processes, package counts, animation/refresh and DNS state. |
+| `bench compare BEFORE AFTER` | Compare two snapshots; writes a Markdown report. |
+| `bench list` | List saved snapshots, newest first. |
 | `battery`, `report` | Battery baselines and reporting helpers. |
 | `profiles`, `protected`, `validate` | Catalog, protected list and profile validation. |
 

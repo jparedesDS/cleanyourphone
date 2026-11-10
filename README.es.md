@@ -182,6 +182,8 @@ Luego pide: **"Limpia mi móvil"** o **"Usa cleanyourphone en mi Pixel"**.
   o tu propio resolver, y comprueba si los anuncios están bloqueados de verdad. No bloquea YouTube;
   consulta [docs/ADS.md](docs/ADS.md).
 - Genera un informe: qué cambió, por qué, qué se mantuvo, dónde está el backup y el comando de undo.
+- Mide RAM libre, procesos y número de paquetes antes/después con `bench snapshot` y `bench compare`;
+  aproximado, local y sin afirmar causalidad. Ver [docs/BENCH.md](docs/BENCH.md).
 - Mide una línea base de batería antes/después (`docs/BATTERY.md`), sin prometer milagros.
 
 ## Qué no hace

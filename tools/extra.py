@@ -10,9 +10,10 @@ from pathlib import Path
 from typing import Any, Dict, List
 
 try:  # imported as tools.extra
-    from . import adb, checks, profiles, protected, ui
+    from . import adb, bench, checks, profiles, protected, ui
 except ImportError:  # run from tools/
     import adb  # type: ignore
+    import bench  # type: ignore
     import checks  # type: ignore
     import profiles  # type: ignore
     import protected  # type: ignore
@@ -364,6 +365,61 @@ def cmd_validate(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_bench(args: argparse.Namespace) -> int:
+    if args.bench_command == "snapshot":
+        serial = adb.pick_serial(args.serial)
+        data = bench.measure(serial)
+        path = bench.save(data, args.label)
+        if args.json:
+            ui.print_json({"path": str(path), "data": data})
+        else:
+            print(f"Bench snapshot written to {path}")
+            print(
+                f"RAM {data['ram_available_mb']} MB, {data['processes']} processes, "
+                f"{data['packages_enabled']} enabled / {data['packages_disabled']} disabled packages"
+            )
+        return 0
+
+    if args.bench_command == "compare":
+        before = bench.load(Path(args.before))
+        after = bench.load(Path(args.after))
+        rows = bench.compare(before, after)
+        stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        path = bench.write_markdown(before, after, rows, bench.BENCH_DIR / f"compare-{stamp}.md")
+        if args.json:
+            ui.print_json({"path": str(path), "rows": rows})
+        else:
+            ui.print_table(
+                ["METRIC", "BEFORE", "AFTER", "CHANGE"],
+                [
+                    [
+                        row["label"],
+                        row["before"],
+                        row["after"],
+                        f"{row['delta']:+g}" + (f" ({row['pct']:+.1f}%)" if row["pct"] is not None else ""),
+                    ]
+                    for row in rows
+                ],
+            )
+            print(f"Comparison written to {path}")
+            print("Approximate, measured on this phone; not causal.")
+        return 0
+
+    if args.bench_command == "list":
+        paths = sorted(bench.BENCH_DIR.glob("*.json"), key=lambda item: item.stat().st_mtime, reverse=True)
+        if args.json:
+            ui.print_json([str(path) for path in paths])
+        elif not paths:
+            print("(none)")
+        else:
+            for path in paths:
+                print(path)
+        return 0
+
+    ui.die("unknown bench command")
+    return 2
+
+
 def add_subparsers(sub: argparse._SubParsersAction) -> None:
     battery = sub.add_parser("battery", help="battery baseline: reset, snapshot, compare")
     battery_sub = battery.add_subparsers(dest="battery_command", required=True)
@@ -391,6 +447,18 @@ def add_subparsers(sub: argparse._SubParsersAction) -> None:
     off.set_defaults(func=cmd_dns)
     restore = dns_sub.add_parser("restore", help="restore the value recorded before the first change")
     restore.set_defaults(func=cmd_dns)
+
+    bench_cmd = sub.add_parser("bench", help="measure RAM, packages and settings before/after")
+    bench_sub = bench_cmd.add_subparsers(dest="bench_command", required=True)
+    bench_snapshot = bench_sub.add_parser("snapshot", help="save a local benchmark snapshot")
+    bench_snapshot.add_argument("--label", default="snapshot", help="label, e.g. before or after")
+    bench_snapshot.set_defaults(func=cmd_bench)
+    bench_compare = bench_sub.add_parser("compare", help="compare two saved snapshots")
+    bench_compare.add_argument("before")
+    bench_compare.add_argument("after")
+    bench_compare.set_defaults(func=cmd_bench)
+    bench_list = bench_sub.add_parser("list", help="list saved snapshots")
+    bench_list.set_defaults(func=cmd_bench)
 
     report = sub.add_parser("report", help="write a Markdown report with changes and verification")
     report.set_defaults(func=cmd_report)

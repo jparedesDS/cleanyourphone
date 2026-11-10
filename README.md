@@ -183,6 +183,8 @@ Then ask: **"Clean my phone"** or **"Use cleanyourphone on my Pixel"**.
   your own resolver, and checks whether ads are actually blocked. Not a YouTube ad blocker; see
   [docs/ADS.md](docs/ADS.md).
 - Produces a report: what changed, why, what was kept, the backup path and the undo command.
+- Measures free RAM, processes and package counts before/after with `bench snapshot` and
+  `bench compare`; approximate, local and not causal. See [docs/BENCH.md](docs/BENCH.md).
 - Measures a battery baseline before/after (`docs/BATTERY.md`), without promising miracles.
 
 ## What it does not do

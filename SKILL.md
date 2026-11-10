@@ -135,6 +135,32 @@ uses it. If the journal is lost, `restore --from-backup <backup-folder>` compare
 disabled list with the phone and asks before enabling anything. Do not skip either because "it is
 only a few packages".
 
+Also capture a benchmark before the first change, after the backup:
+
+```bash
+python tools/phone.py bench snapshot --label before
+```
+
+Without the CLI, save the same fields manually:
+
+```bash
+adb shell cat /proc/meminfo
+adb shell ps -A -o NAME
+adb shell pm list packages -e
+adb shell pm list packages -d
+adb shell pm list packages -s
+adb shell pm list packages -3
+adb shell settings get global window_animation_scale
+adb shell settings get global transition_animation_scale
+adb shell settings get global animator_duration_scale
+adb shell settings get system peak_refresh_rate
+adb shell settings get global low_power
+adb shell settings get global private_dns_mode
+adb shell settings get global private_dns_specifier
+```
+
+Keep the output with the backup. This is evidence, not a promise.
+
 ## Phase 2 — Inventory and plan
 
 ```bash
@@ -377,6 +403,18 @@ Give the person:
 - The exact undo command: `python tools/phone.py restore`.
 - If the journal is ever lost: `python tools/phone.py restore --from-backup <backup-folder>`.
 - The battery baseline, if they want to measure it (see `docs/BATTERY.md`).
+- The before/after benchmark, if they asked for it.
+
+Measure after the reboot and verification, under the same conditions:
+
+```bash
+python tools/phone.py bench snapshot --label after
+python tools/phone.py bench compare <before.json> <after.json>
+```
+
+Without the CLI, repeat the same raw commands from Phase 1. Compare free RAM, processes, enabled and
+disabled package counts, animation scales, refresh rate and DNS. Say “measured on this phone,
+approximate, not causal”; do not claim that the phone is faster or that RAM gains are guaranteed.
 
 Then close ADB:
 
