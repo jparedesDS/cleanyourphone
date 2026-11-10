@@ -63,7 +63,7 @@ reversible, open source y la persona siempre al mando.
 | **Skill** | Producto principal, en este repositorio. |
 | **CLI** | `0.3.2`, en PyPI como `cleanyourphone` / `cyp`. |
 | **App Windows** | `0.2.0` Early MVP, opcional, sin firmar. |
-| **Web** | Bilingüe inglés/español en [jparedesds.github.io/cleanyourphone-web](https://jparedesds.github.io/cleanyourphone-web/es.html). |
+| **Web** | 10 idiomas en [jparedesds.github.io/cleanyourphone-web](https://jparedesds.github.io/cleanyourphone-web/es.html). |
 | **Feedback** | Formulario opcional app/web/skill a Discord; sin telemetría automática. |
 
 ---

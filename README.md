@@ -62,7 +62,7 @@ command, reversible, open source, and the person stays in control.
 | **Skill** | Main product, in this repository. |
 | **CLI** | `0.3.2`, published on PyPI as `cleanyourphone` / `cyp`. |
 | **Windows app** | `0.2.0` Early MVP, optional, unsigned. |
-| **Website** | Bilingual English/Spanish at [jparedesds.github.io/cleanyourphone-web](https://jparedesds.github.io/cleanyourphone-web/). |
+| **Website** | 10 languages at [jparedesds.github.io/cleanyourphone-web](https://jparedesds.github.io/cleanyourphone-web/). |
 | **Feedback** | Optional web/app/skill form to Discord; no automatic telemetry. |
 
 ---

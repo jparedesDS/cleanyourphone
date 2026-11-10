@@ -63,7 +63,7 @@ CLI를 감싼 GUI입니다. 스킬은 여전히 주요 제품이며, 프로필�
 | **스킬** | 주요 제품, 이 저장소에 있습니다. |
 | **CLI** | `0.3.2`, PyPI에 `cleanyourphone` / `cyp`로 배포됩니다. |
 | **Windows 앱** | `0.2.0` Early MVP, 선택 사항, 서명되지 않음. |
-| **웹사이트** | [jparedesds.github.io/cleanyourphone-web](https://jparedesds.github.io/cleanyourphone-web/)에서 영어/스페인어 2개 언어로 제공. |
+| **웹사이트** | [jparedesds.github.io/cleanyourphone-web](https://jparedesds.github.io/cleanyourphone-web/)에서 10개 언어로 제공. |
 | **피드백** | 웹/앱/스킬에서 Discord로 보내는 선택형 양식, 자동 텔레메트리 없음. |
 
 ---

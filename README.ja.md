@@ -56,7 +56,7 @@
 | **Skill** | 主力プロダクト。このリポジトリにあります。 |
 | **CLI** | `0.3.2`、PyPI で `cleanyourphone` / `cyp` として公開。 |
 | **Windows アプリ** | `0.2.0` Early MVP、オプション、未署名。 |
-| **ウェブサイト** | 英語/スペイン語のバイリンガル: [jparedesds.github.io/cleanyourphone-web](https://jparedesds.github.io/cleanyourphone-web/)。 |
+| **ウェブサイト** | 10言語対応: [jparedesds.github.io/cleanyourphone-web](https://jparedesds.github.io/cleanyourphone-web/)。 |
 | **フィードバック** | オプションの web/アプリ/skill フォームから Discord へ。自動テレメトリーはありません。 |
 
 ---

@@ -64,7 +64,7 @@ Prinzip gebaut: ein Prompt, ein Befehl, reversibel, Open Source, und die Person 
 | **Skill** | Hauptprodukt, in diesem Repository. |
 | **CLI** | `0.3.2`, auf PyPI als `cleanyourphone` / `cyp`. |
 | **Windows-App** | `0.2.0` frühe MVP-Version, optional, nicht signiert. |
-| **Website** | Zweisprachig Englisch/Spanisch unter [jparedesds.github.io/cleanyourphone-web](https://jparedesds.github.io/cleanyourphone-web/). |
+| **Website** | In 10 Sprachen unter [jparedesds.github.io/cleanyourphone-web](https://jparedesds.github.io/cleanyourphone-web/). |
 | **Feedback** | Optionales Web-/App-/Skill-Formular an Discord; keine automatische Telemetrie. |
 
 ---

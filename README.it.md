@@ -64,7 +64,7 @@ prompt, un comando, reversibile, open source e la persona resta al comando.
 | **Skill** | Prodotto principale, in questo repository. |
 | **CLI** | `0.3.2`, pubblicata su PyPI come `cleanyourphone` / `cyp`. |
 | **App per Windows** | `0.2.0` Early MVP, opzionale, non firmata. |
-| **Sito web** | Bilingue inglese/spagnolo su [jparedesds.github.io/cleanyourphone-web](https://jparedesds.github.io/cleanyourphone-web/). |
+| **Sito web** | Disponibile in 10 lingue su [jparedesds.github.io/cleanyourphone-web](https://jparedesds.github.io/cleanyourphone-web/). |
 | **Feedback** | Modulo opzionale web/app/skill verso Discord; nessuna telemetria automatica. |
 
 ---
