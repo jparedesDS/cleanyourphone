@@ -6,6 +6,13 @@ All notable changes to CleanYourPhone are documented here. The format is based o
 
 ## [Unreleased]
 
+### Added
+
+- `docs/FEEDBACK.md` and `scripts/feedback.py`: opt-in feedback and profile checklists for the
+  Cloudflare Worker, with a preview, explicit `--yes` and common-identifier redaction.
+- README links and screenshots for the optional Windows app, documented-profile mode, feedback and
+  the current website assets.
+
 ## [0.3.2] - 2026-11-10
 
 ### Fixed

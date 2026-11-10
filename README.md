@@ -24,6 +24,7 @@
   <img src="https://img.shields.io/badge/telemetry-none-a78bfa?labelColor=121316" alt="No telemetry">
   <img src="https://img.shields.io/badge/profiles-156-a78bfa?labelColor=121316" alt="156 profiles">
   <a href="https://github.com/jparedesDS/cleanyourphone/releases"><img src="https://img.shields.io/github/v/release/jparedesDS/cleanyourphone?color=a78bfa&labelColor=121316" alt="release"></a>
+  <a href="https://github.com/jparedesDS/cleanyourphone-app/releases"><img src="https://img.shields.io/github/v/release/jparedesDS/cleanyourphone-app?color=a78bfa&label=app&labelColor=121316" alt="app release"></a>
 </p>
 
 # CleanYourPhone
@@ -35,33 +36,49 @@ uninstalled, and one command to restore the changes the CLI recorded.
 Read the story and the safety model at
 **[jparedesds.github.io/cleanyourphone-web](https://jparedesds.github.io/cleanyourphone-web/)**.
 
+There is also an optional **Windows app** for people who prefer buttons over prompts:
+**[Download the Early MVP](https://github.com/jparedesDS/cleanyourphone-app/releases/latest)**. It is a
+GUI over the same CLI. The skill remains the main product and the path for phones without a profile.
+
 It is the phone version of [cleanyour.tv](https://cleanyour.tv), built the same way: one prompt, one
 command, reversible, open source, and the person stays in control.
 
-[SKILL.md](SKILL.md) · [PROMPT.md](PROMPT.md) · [Safety](docs/SAFETY.md) · [156 profiles](docs/PROFILES.md) · [Changelog](CHANGELOG.md)
-
-<p align="center">
-  <img src="assets/demo.gif" alt="Before and after: WhatsApp, banking and user apps stay; Samsung Free, TV Plus, Bixby, Tips, Themes, Games and Cloud leave" width="520">
-</p>
+[SKILL.md](SKILL.md) · [PROMPT.md](PROMPT.md) · [App](https://github.com/jparedesDS/cleanyourphone-app) · [Safety](docs/SAFETY.md) · [156 profiles](docs/PROFILES.md) · [Feedback](docs/FEEDBACK.md) · [Changelog](CHANGELOG.md)
 
 ## Start here
 
 | You have | Start with |
 |---|---|
 | A phone and a coding agent | The quick start below. |
+| Prefer buttons over prompts | [Download the Windows app](https://github.com/jparedesDS/cleanyourphone-app/releases/latest) (Early MVP). |
 | Want to see it first | [The website](https://jparedesds.github.io/cleanyourphone-web/). |
 | Need the safety rules | [docs/SAFETY.md](docs/SAFETY.md). |
 | Need a model profile | [Browse the 156 profiles](profiles/README.md). |
+| Your phone is not listed | Use the skill manually, or send a [profile request](docs/FEEDBACK.md). |
 | Prefer a terminal | [Install the CLI](docs/CLI.md). |
+
+| Part | Status |
+|---|---|
+| **Skill** | Main product, in this repository. |
+| **CLI** | `0.3.2`, published on PyPI as `cleanyourphone` / `cyp`. |
+| **Windows app** | `0.2.0` Early MVP, optional, unsigned. |
+| **Website** | Bilingual English/Spanish at [jparedesds.github.io/cleanyourphone-web](https://jparedesds.github.io/cleanyourphone-web/). |
+| **Feedback** | Optional web/app/skill form to Discord; no automatic telemetry. |
 
 ---
 
-## Why a skill and not an app
+## Why the skill comes first
 
 An app that disables other apps needs root, Shizuku or device-owner privileges. That is a lot of
 power and a lot of risk for something a shell command can do. A skill is just text: the person's
 agent reads it, runs `adb`, shows a plan, and asks before touching anything. There is nothing to
 install on the phone, nothing running in the background, and nothing that phones home.
+
+There is now an optional Windows app, but it does not replace the skill. It is a GUI over the same
+CLI, and it only continues when it can match an exact `device` profile with a tested build, or a
+`documented` profile after an explicit acknowledgement and one package per batch. If it cannot match
+the phone, it stops and sends the person here. The skill can still inspect the package list, ask
+about each app and continue manually.
 
 The phone is a daily driver, so the skill is deliberately conservative:
 
@@ -109,6 +126,31 @@ ASK      com.google.android.apps.turbo
          why: Adaptive Battery and Device Health
          breaks: Adaptive Battery, battery diagnostics
 ```
+
+## The optional Windows app
+
+For people who prefer buttons, the app wraps the same CLI in a guided Windows flow: connect, check,
+backup, review, apply, verify and undo.
+
+<p align="center">
+  <a href="https://github.com/jparedesDS/cleanyourphone-app/releases/latest">
+    <img src="assets/app-review.png" alt="CleanYourPhone app review screen with a documented profile warning and one selected app" width="760">
+  </a>
+</p>
+
+- **Connect by Wi-Fi or USB.** The app finds the phone, checks the build and shows the exact profile.
+- **Exact `device` profiles** follow the tested path. **`documented` profiles** are manual: visible
+  warning, explicit acknowledgement and one app per batch. No profile means stop and use the skill.
+- **Backup is mandatory.** Review every package, apply in batches, verify and undo the whole journal.
+- **Optional extras:** Private DNS ad blocking (not YouTube) and a local before/after benchmark.
+- **Optional feedback:** an editable checklist can be sent to the maintainer after consent. No
+  automatic telemetry.
+- **No root, no uninstall, no app installed on the phone.** The installer is unsigned; verify the
+  SHA-256 before running it.
+
+[Download `v0.2.0`](https://github.com/jparedesDS/cleanyourphone-app/releases/latest) ·
+[Source](https://github.com/jparedesDS/cleanyourphone-app) ·
+[Connection guide](docs/CONNECT.md).
 
 ## Quick start
 
@@ -188,9 +230,27 @@ Then ask: **"Clean my phone"** or **"Use cleanyourphone on my Pixel"**.
   your own resolver, and checks whether ads are actually blocked. Not a YouTube ad blocker; see
   [docs/ADS.md](docs/ADS.md).
 - Produces a report: what changed, why, what was kept, the backup path and the undo command.
+- Treats `documented` profiles as manual evidence: no `disable` list, no auto-apply, one package at
+  a time after review.
+- Offers an optional Windows GUI for the same flow (`device` profiles automatic, `documented`
+  manual, everything else stops and links here).
 - Measures free RAM, processes and package counts before/after with `bench snapshot` and
   `bench compare`; approximate, local and not causal. See [docs/BENCH.md](docs/BENCH.md).
 - Measures a battery baseline before/after (`docs/BATTERY.md`), without promising miracles.
+
+## Feedback and profile requests
+
+If a phone is not covered, the person can ask for a profile or report a bug without sharing a serial
+number, IP address, IMEI or MAC address:
+
+- **Web:** [cleanyourphone feedback form](https://jparedesds.github.io/cleanyourphone-web/#feedback).
+- **App:** **Feedback** in the header; the checklist is prefilled and editable.
+- **Skill:** `python scripts/feedback.py --kind profile --checklist-file feedback.txt` previews the
+  payload; add `--yes` only after the person approves.
+
+The message goes to a Cloudflare Worker and then to the maintainer's Discord. Nothing is sent at
+startup or during a scan. The app/website use the same Worker; `tools/phone.py` stays network-free.
+See [docs/FEEDBACK.md](docs/FEEDBACK.md) for the payload, redaction and rate limit.
 
 ## Block ads (optional)
 
@@ -222,16 +282,18 @@ The comparison is approximate and not causal. See [docs/BENCH.md](docs/BENCH.md)
 
 ## What it does not do
 
-- **No app.** Nothing is installed on the phone.
+- **No app installed on the phone.** The optional Windows app runs on the computer; the phone only
+  receives `pm disable-user` / `pm enable`.
 - **No root, no Magisk, no Shizuku requirement.**
 - **No custom ROM, no bootloader unlock, no flashing.**
 - **No uninstall.** `pm disable-user` is reversible; `pm uninstall` is not.
 - **No work profile or MDM changes.** If the phone is managed, it stops.
 - **No YouTube ad blocking.** Private DNS does not touch same-domain ads. `docs/FAQ.md` explains.
+- **No automatic telemetry.** The CLI is local; the optional feedback form sends only when a person
+  presses Send. A hosted agent still receives the session (model, package names, fingerprint), so
+  use a local model if that matters.
 - **No "double battery" claims.** Realistic standby gain from debloat is 0–10%; the big wins are
   background restrictions, brightness/refresh rate and DNS.
-- **No cloud requirement for the CLI.** It is local-only; a hosted agent still receives the session
-  (model, package names, fingerprint), so use a local model if that matters.
 
 ## Safety
 
@@ -253,6 +315,10 @@ A profile is either a package list tested on a real phone (`device`) or a list b
 firmware dump (`documented`). Documented profiles never auto-apply and have no `disable` list; use
 them to ask per package. `apply` only runs for a `device` profile on a build listed in `tested`.
 Tablet profiles set `form_factor: tablet`; a missing dialer/SMS role is a warning, not a failure.
+
+The Windows app follows the same rule: `device` profiles can use the tested flow, `documented`
+profiles require a warning and an explicit acknowledgement and run one package per batch. If no
+profile matches, the app stops and links to this skill instead of guessing.
 
 The full, model-by-model catalog is in [docs/PROFILES.md](docs/PROFILES.md).
 
@@ -315,7 +381,17 @@ without Google services, many `com.google.*` packages do not exist.
 
 **Do I need Python?**
 No. The skill includes the raw `adb` commands. The CLI is a guardrail and a convenience; it is
-stdlib-only and has no dependencies.
+stdlib-only and has no dependencies. The Windows app bundles the CLI and does not require Python.
+
+**Is there a GUI?**
+Yes, an optional Windows app in [cleanyourphone-app](https://github.com/jparedesDS/cleanyourphone-app).
+It is an Early MVP, not code-signed, and only continues on a known profile. The skill remains the
+path for every other phone.
+
+**How do I report a phone or send feedback?**
+Use the [web form](https://jparedesds.github.io/cleanyourphone-web/#feedback), **Feedback** in the
+app, or `scripts/feedback.py` from the skill. It is opt-in, previews the payload and excludes serial,
+IP, IMEI and MAC addresses. See [docs/FEEDBACK.md](docs/FEEDBACK.md).
 
 ## Contributing
 
@@ -325,6 +401,8 @@ stdlib-only and has no dependencies.
   keep `disable` empty.
 - A guard, parser or CLI fix: add a test in `tests/`.
 - A safety rule change: open an issue first. Those rules are the product.
+- A phone you cannot test yourself: send a [profile request](https://jparedesds.github.io/cleanyourphone-web/#feedback)
+  with model, Android, build and fingerprint. No serial or IP.
 - Brand or logo changes: read [docs/BRAND.md](docs/BRAND.md) before changing assets.
 - Read [AGENTS.md](AGENTS.md) before changing the repo.
 
