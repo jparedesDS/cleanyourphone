@@ -6,6 +6,15 @@ All notable changes to CleanYourPhone are documented here. The format is based o
 
 ## [Unreleased]
 
+## [0.3.1] - 2026-11-10
+
+### Fixed
+
+- `dns restore` clears the Private DNS specifier when the original state had none, instead of leaving
+  the ad-blocking hostname behind.
+- `dns check` uses a fresh wildcard ad subdomain, so a cached `doubleclick.net` answer no longer
+  reports a working ad blocker as inactive.
+
 ## [0.3.0] - 2026-11-10
 
 ### Added

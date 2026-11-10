@@ -55,17 +55,24 @@ applying.
 python tools/phone.py dns check
 ```
 
-The command resolves `doubleclick.net` and `wikipedia.org` from the phone. `ad_blocked` is true when
-the ad domain does not resolve or resolves to a sinkhole (`0.0.0.0`, `::`, `127.0.0.1`, `::1`). If
-`wikipedia.org` does not resolve, the result is “cannot test” because the phone is offline; it is not
-proof that ads are blocked. A real ad IP with no ping reply is also not proof of blocking.
+The command resolves a fresh `cyp-XXXXXXXX.adnxs.com` and `wikipedia.org` from the phone. The random
+subdomain avoids the resolver cache: a previously cached `doubleclick.net` can keep returning an old
+IP for its whole TTL and make a working setup look unblocked. `adnxs.com` has a real wildcard, so an
+unblocked resolver returns a public IP instead of NXDOMAIN.
+
+`ad_blocked` is true when the ad domain does not resolve or resolves to a sinkhole (`0.0.0.0`, `::`,
+`127.0.0.1`, `::1`). If `wikipedia.org` does not resolve, the result is “cannot test” because the
+phone is offline; it is not proof that ads are blocked. A real ad IP with no ping reply is also not
+proof of blocking.
 
 The raw ADB check is:
 
 ```bash
-adb shell ping -c 1 -W 3 doubleclick.net
+adb shell ping -c 1 -W 3 cyp-check.adnxs.com
 adb shell ping -c 1 -W 3 wikipedia.org
 ```
+
+Change the label if you repeat the check (`cyp-check2`, `cyp-check3`…) so the answer is not cached.
 
 ## Undo
 

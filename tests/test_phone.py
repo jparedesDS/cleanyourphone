@@ -155,6 +155,19 @@ class AdsTests(unittest.TestCase):
     def _ping(self, stdout="", stderr="", code=0):
         return subprocess.CompletedProcess([], code, stdout, stderr)
 
+    def test_dns_check_uses_a_fresh_ad_subdomain_to_bypass_cache(self):
+        with mock.patch.object(
+            extra.adb,
+            "adb_run",
+            side_effect=[
+                self._ping("PING cyp-abc.adnxs.com (0.0.0.0) 56(84) bytes of data."),
+                self._ping("PING wikipedia.org (192.0.2.10) 56(84) bytes of data."),
+            ],
+        ) as run:
+            result = extra.dns_check("SERIAL")
+        self.assertRegex(result["ad_domain"], r"^cyp-[0-9a-f]{8}\.adnxs\.com$")
+        self.assertIn(result["ad_domain"], run.call_args_list[0].args[0][1])
+
     def test_dns_check_reports_blocked_and_online(self):
         with mock.patch.object(
             extra.adb,
@@ -289,6 +302,16 @@ class AdsTests(unittest.TestCase):
         commands = [call.args[0] for call in shell.call_args_list]
         self.assertIn("settings put global private_dns_specifier dns.example.com", commands)
         self.assertIn("settings put global private_dns_mode hostname", commands)
+
+    def test_dns_restore_clears_specifier_when_original_had_none(self):
+        changes = {"dns": {"before": {"mode": "opportunistic", "specifier": ""}, "at": "now"}}
+        with mock.patch.object(extra.adb, "load_changes", return_value=changes), \
+                mock.patch.object(extra.adb, "shell") as shell, \
+                mock.patch.object(extra.adb, "save_changes"):
+            extra.restore_dns("SERIAL")
+        commands = [call.args[0] for call in shell.call_args_list]
+        self.assertIn("settings put global private_dns_specifier null", commands)
+        self.assertIn("settings put global private_dns_mode opportunistic", commands)
 
     def test_dns_check_json_exit_code(self):
         args = SimpleNamespace(dns_command="check", json=True, serial=None)

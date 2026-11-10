@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import os
 import re
+import secrets
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List
@@ -79,8 +80,16 @@ def _resolve(serial: str, host: str) -> Dict[str, str]:
 
 
 def dns_check(serial: str) -> Dict[str, Any]:
-    """Check an ad domain and a control domain from the phone."""
-    ad = _resolve(serial, "doubleclick.net")
+    """Check a fresh ad subdomain and a control domain from the phone.
+
+    A random label avoids the resolver cache: the exact ``doubleclick.net``
+    name can keep returning a pre-change IP for its whole TTL, which made a
+    working Private DNS setup look like it was not blocking anything.
+    ``adnxs.com`` has a real wildcard, so an unblocked resolver gets a public
+    IP instead of NXDOMAIN; ad blockers sink the whole domain to 127.0.0.1.
+    """
+    ad_domain = f"cyp-{secrets.token_hex(4)}.adnxs.com"
+    ad = _resolve(serial, ad_domain)
     control = _resolve(serial, "wikipedia.org")
     online = control["state"] == "ok" and control["replied"] and control["ip"] not in BLOCKED_IPS
     if not online:
@@ -92,7 +101,7 @@ def dns_check(serial: str) -> Dict[str, Any]:
     else:
         blocked = None
     return {
-        "ad_domain": "doubleclick.net",
+        "ad_domain": ad_domain,
         "ad_ip": ad["ip"],
         "ad_state": ad["state"],
         "ad_blocked": blocked,
@@ -126,6 +135,8 @@ def apply_dns(serial: str, before: Any) -> tuple:
         if not valid_hostname(specifier):
             ui.die("the recorded Private DNS specifier is invalid; restore it manually in Settings")
         adb.shell(f"settings put global private_dns_specifier {specifier}", serial=serial)
+    else:
+        adb.shell("settings put global private_dns_specifier null", serial=serial)
     adb.shell(f"settings put global private_dns_mode {mode}", serial=serial)
     return mode, specifier
 

@@ -327,18 +327,23 @@ adb shell settings put global private_dns_specifier dns.adguard-dns.com
 adb shell settings put global private_dns_mode hostname
 ```
 
-Verify with a control domain and an ad domain:
+Verify with a control domain and a fresh ad subdomain:
 
 ```bash
 adb shell settings get global private_dns_mode
-adb shell ping -c 1 -W 3 doubleclick.net
+adb shell ping -c 1 -W 3 cyp-check.adnxs.com
 adb shell ping -c 1 -W 3 wikipedia.org
 ```
 
-If the control domain does not resolve, the phone is offline or the DNS is misconfigured: do **not**
-claim ads are blocked. Say “cannot test” and fix the network first. `python tools/phone.py dns check`
-does the same check; `--json` returns the result. If the ad domain still resolves, the resolver is not
-active.
+Use a new label on every check (`cyp-check2`, `cyp-check3`…). Reusing a name can read the resolver
+cache and show the IP from before the change. `adnxs.com` has a real wildcard, so an unblocked
+resolver returns a public IP instead of NXDOMAIN.
+
+If the ad name resolves to a sinkhole (`0.0.0.0`, `::`, `127.0.0.1`, `::1`), the resolver is active.
+If it still resolves to a public IP, it is not. If the control domain does not resolve, the phone is
+offline or the DNS is misconfigured: do **not** claim ads are blocked. Say “cannot test” and fix the
+network first. `python tools/phone.py dns check` does the same check with a random label; `--json`
+returns the result.
 
 Open a browser and an app that uses the network. If they fail, restore the exact values you recorded:
 
