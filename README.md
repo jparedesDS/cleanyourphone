@@ -127,6 +127,11 @@ Settings → About phone → tap **Build number** 7 times → back → **Develop
 **USB debugging**. Connect the phone by USB and accept the **Allow USB debugging?** prompt. Keep the
 phone unlocked and above 30% battery.
 
+Android 11 and newer can use **Wireless debugging** instead: turn it on, tap the words (not only the
+switch), choose **Pair device with pairing code**, and keep that dialog open. The pairing dialog has
+its own port; it is not the connection port on the main screen. See
+[docs/CONNECT.md](docs/CONNECT.md) for the first-time walkthrough and the common fixes.
+
 ### 3. Clone and check
 
 ```bash

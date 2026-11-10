@@ -128,6 +128,11 @@ Ajustes → Acerca del teléfono → toca **Número de compilación** 7 veces �
 desarrollador** → activa **Depuración USB**. Conéctalo por USB y acepta el aviso **¿Permitir
 depuración USB?**. Mantén el móvil desbloqueado y con más del 30% de batería.
 
+Android 11 o posterior también puede usar **Depuración inalámbrica**: actívala, toca las palabras (no
+solo el interruptor), elige **Emparejar dispositivo con código** y deja ese diálogo abierto. El
+diálogo de emparejamiento tiene su propio puerto; no es el puerto de conexión de la pantalla
+principal. La guía paso a paso y los problemas comunes están en [docs/CONNECT.md](docs/CONNECT.md).
+
 ### 3. Clona y comprueba
 
 ```bash

@@ -58,9 +58,23 @@ Then run Phase 0.
 
 ## Phase 0 — Connect and identify
 
-On the phone: Settings → About phone → tap **Build number** 7 times → back → **Developer options** →
-turn on **USB debugging**. Connect the phone by USB. Tell the person an **Allow USB debugging?**
-prompt will appear and to accept it.
+For a first-time user, walk them through [docs/CONNECT.md](docs/CONNECT.md). Do not assume they know
+what ADB, a pairing port or a data cable is.
+
+The short version:
+
+1. **Developer options**: Settings → About phone → tap **Build number** 7 times. On Samsung it is
+   under **Software information**; on Xiaomi/Redmi/POCO tap the OS version instead.
+2. **Wi-Fi (Android 11+)**: turn on **Wireless debugging**, then **tap the words “Wireless
+   debugging”** (not only the switch) to open its detail screen. Tap **Pair device with pairing
+   code**. The dialog shows a six-digit code and its own **IP:port**. Keep that dialog open: the code
+   expires and its port closes with the dialog. The **pairing port** in the dialog is not the
+   **connection port** on the main screen. `adb mdns services` lists `_adb-tls-pairing._tcp` and
+   `_adb-tls-connect._tcp` when the dialog is open.
+3. **USB**: use a data cable, turn on **USB debugging**, choose **File transfer / MTP** in the USB
+   notification, and accept **Allow USB debugging?** with **Always allow from this computer**.
+4. If Windows sees no phone at all, it is a cable, port or OEM driver problem. Try another data
+   cable and a direct USB port before changing any package.
 
 ```bash
 adb devices -l
@@ -85,7 +99,8 @@ devices, ask which serial to use and pass `--serial <serial>` to every command.
   `--user 0` disable can still affect shared packages. Stop.
 - `ro.build.version.sdk` is below 26 (Android 8): the role commands and some package states differ.
   Do the backup and the safe list only, or stop.
-- ADB says `unauthorized`, `offline`, or no device: fix the cable/prompt first.
+- ADB says `unauthorized`, `offline`, or no device: fix the cable, USB mode, driver or pairing dialog
+  first. Do not continue with an unverified connection.
 - The phone has less than 30% battery: ask them to charge it before a reboot.
 
 Warn, but do not stop, if:
