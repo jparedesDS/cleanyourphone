@@ -18,7 +18,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-VERSION = "0.2.1"
+VERSION = "0.2.2"
 
 try:  # imported as tools.phone
     from . import adb, checks, extra, profiles, protected, ui

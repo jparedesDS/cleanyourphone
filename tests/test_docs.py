@@ -1,3 +1,4 @@
+import re
 from pathlib import Path
 import unittest
 
@@ -10,7 +11,9 @@ class DocsTest(unittest.TestCase):
             text = (ROOT / name).read_text(encoding="utf-8")
             with self.subTest(document=name):
                 self.assertIn("pipx install cleanyourphone", text)
-                self.assertNotIn(
-                    "pipx install git+https://github.com/jparedesDS/cleanyourphone.git",
-                    text,
+                self.assertIsNone(
+                    re.search(
+                        r"pipx install git\+https://github\.com/jparedesDS/cleanyourphone(?:\.git)?",
+                        text,
+                    )
                 )
