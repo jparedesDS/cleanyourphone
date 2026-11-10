@@ -59,23 +59,25 @@ def _meminfo(serial: str) -> Dict[str, int]:
     return values
 
 
-def _process_count(serial: str) -> int:
+def _process_count(serial: str) -> int | None:
     try:
         lines = adb.shell("ps -A -o NAME", serial=serial).splitlines()
     except adb.AdbError:
-        return 0
+        return None
     return max(0, len([line for line in lines if line.strip()]) - 1)
+
+
+def _package_count(serial: str, flag: str) -> int | None:
+    try:
+        return len(adb.package_set(serial, flag))
+    except adb.AdbError:
+        return None
 
 
 def measure(serial: str) -> Dict[str, Any]:
     """Capture local, comparable metrics. Never stores a serial or fingerprint."""
     probe = adb.probe_device(serial)
     mem = _meminfo(serial)
-    installed = adb.package_set(serial)
-    enabled = adb.package_set(serial, "-e")
-    disabled = adb.package_set(serial, "-d")
-    system = adb.package_set(serial, "-s")
-    user = adb.package_set(serial, "-3")
     dns = adb.dns_status(serial)
 
     data: Dict[str, Any] = {
@@ -83,14 +85,18 @@ def measure(serial: str) -> Dict[str, Any]:
         "model": f"{probe.get('brand', '')} {probe.get('model', '')}".strip(),
         "android": probe.get("android", ""),
         "build": probe.get("build", ""),
-        "ram_available_mb": mem.get("MemAvailable", 0) // 1024,
-        "swap_used_mb": max(0, mem.get("SwapTotal", 0) - mem.get("SwapFree", 0)) // 1024,
+        "ram_available_mb": (mem.get("MemAvailable", 0) // 1024) if "MemAvailable" in mem else None,
+        "swap_used_mb": (
+            max(0, mem.get("SwapTotal", 0) - mem.get("SwapFree", 0)) // 1024
+            if "SwapTotal" in mem and "SwapFree" in mem
+            else None
+        ),
         "processes": _process_count(serial),
-        "packages_installed": len(installed),
-        "packages_enabled": len(enabled),
-        "packages_disabled": len(disabled),
-        "packages_system": len(system),
-        "packages_user": len(user),
+        "packages_installed": _package_count(serial, ""),
+        "packages_enabled": _package_count(serial, "-e"),
+        "packages_disabled": _package_count(serial, "-d"),
+        "packages_system": _package_count(serial, "-s"),
+        "packages_user": _package_count(serial, "-3"),
         "animation_window": _number(_setting(serial, "global", "window_animation_scale"), 1.0),
         "animation_transition": _number(_setting(serial, "global", "transition_animation_scale"), 1.0),
         "animation_duration": _number(_setting(serial, "global", "animator_duration_scale"), 1.0),
@@ -112,14 +118,21 @@ def save(data: Dict[str, Any], label: str) -> Path:
     return path
 
 
+REQUIRED_KEYS = ("timestamp", "model", "android", "build", "ram_available_mb", "packages_enabled")
+
+
 def load(path: Path) -> Dict[str, Any]:
-    """Read a snapshot, rejecting a non-object or malformed JSON."""
+    """Read a snapshot, rejecting malformed JSON or a non-snapshot object."""
+    path = Path(path).expanduser()
     try:
-        data = json.loads(Path(path).read_text(encoding="utf-8"))
+        data = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as exc:
         raise ValueError(f"cannot read bench snapshot {path}: {exc}") from exc
     if not isinstance(data, dict):
         raise ValueError(f"bench snapshot {path} is not a JSON object")
+    missing = [key for key in REQUIRED_KEYS if key not in data]
+    if missing:
+        raise ValueError(f"bench snapshot {path} is missing: {', '.join(missing)}")
     return data
 
 
@@ -158,12 +171,30 @@ def write_markdown(
     lines = [
         "# CleanYourPhone before/after",
         "",
-        f"- Device: {before.get('model', '?')}",
-        f"- Android: {before.get('android', '?')}",
-        f"- Build: `{before.get('build', '?')}`",
+        f"- Before device: {before.get('model', '?')} / Android {before.get('android', '?')} / `{before.get('build', '?')}`",
+        f"- After device: {after.get('model', '?')} / Android {after.get('android', '?')} / `{after.get('build', '?')}`",
         f"- Before: `{before.get('timestamp', '?')}`",
         f"- After: `{after.get('timestamp', '?')}`",
+        f"- Battery Saver: {before.get('battery_saver', '?')} -> {after.get('battery_saver', '?')}",
+        f"- Private DNS: {before.get('private_dns_mode', '?')} `{before.get('private_dns_specifier', '')}` -> {after.get('private_dns_mode', '?')} `{after.get('private_dns_specifier', '')}`",
         "",
+    ]
+    if (before.get("model"), before.get("android"), before.get("build")) != (
+        after.get("model"),
+        after.get("android"),
+        after.get("build"),
+    ):
+        lines += [
+            "> **Warning:** these snapshots are from different models, Android versions or builds.",
+            "> Do not compare them as a before/after.",
+            "",
+        ]
+    if before.get("battery_saver") != after.get("battery_saver"):
+        lines += [
+            "> **Warning:** Battery Saver changed between snapshots; compare again under the same conditions.",
+            "",
+        ]
+    lines += [
         "| Metric | Before | After | Change |",
         "|---|---:|---:|---:|",
     ]

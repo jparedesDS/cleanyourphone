@@ -310,11 +310,11 @@ Only after the debloat is stable and verified. Ask first:
   router's DNS, so their rules stop applying. In that case, keep the router and skip this.
 - Do they use captive portals (hotels, airports)? A strict resolver can break the login page.
 
+Record the original values before changing anything:
+
 ```bash
 adb shell settings get global private_dns_mode
 adb shell settings get global private_dns_specifier
-adb shell settings put global private_dns_specifier dns.adguard-dns.com
-adb shell settings put global private_dns_mode hostname
 ```
 
 Presets: `adguard` (`dns.adguard-dns.com`), `adguard-family` (`family.adguard-dns.com`),
@@ -337,18 +337,22 @@ adb shell ping -c 1 -W 3 wikipedia.org
 
 If the control domain does not resolve, the phone is offline or the DNS is misconfigured: do **not**
 claim ads are blocked. Say “cannot test” and fix the network first. `python tools/phone.py dns check`
-does the same check and returns JSON with the CLI. If the ad domain still resolves, the resolver is
-not active.
+does the same check; `--json` returns the result. If the ad domain still resolves, the resolver is not
+active.
 
-Open a browser and an app that uses the network. If they fail, undo:
+Open a browser and an app that uses the network. If they fail, restore the exact values you recorded:
 
 ```bash
-adb shell settings put global private_dns_mode opportunistic
+adb shell settings put global private_dns_specifier <original-specifier>
+adb shell settings put global private_dns_mode <original-mode>
 ```
+
+If the original mode was `opportunistic`, `adb shell settings put global private_dns_mode opportunistic`
+is enough. The CLI does this with `python tools/phone.py dns restore`.
 
 Tell them plainly: an ad-blocking resolver over Private DNS blocks many in-app ads and trackers,
 **not YouTube ads** (same domain), and it is not a VPN. It also does not stop an app from tracking you
-once it has your data.
+once it has your data. The OEM checklist is in [docs/ADS.md](docs/ADS.md).
 
 ## Phase 5 — Reboot and verify
 

@@ -152,13 +152,42 @@ class AdsTests(unittest.TestCase):
         self.assertEqual(extra.resolve_dns_provider("dns.example.com"), "dns.example.com")
         self.assertIsNone(extra.resolve_dns_provider("not a hostname"))
 
+    def _ping(self, stdout="", stderr="", code=0):
+        return subprocess.CompletedProcess([], code, stdout, stderr)
+
     def test_dns_check_reports_blocked_and_online(self):
         with mock.patch.object(
             extra.adb,
-            "shell",
+            "adb_run",
             side_effect=[
-                "PING doubleclick.net (0.0.0.0) 56(84) bytes of data.",
-                "PING wikipedia.org (208.80.154.224) 56(84) bytes of data.",
+                self._ping("PING doubleclick.net (0.0.0.0) 56(84) bytes of data."),
+                self._ping("PING wikipedia.org (192.0.2.10) 56(84) bytes of data."),
+            ],
+        ):
+            result = extra.dns_check("SERIAL")
+        self.assertTrue(result["ad_blocked"])
+        self.assertTrue(result["online"])
+
+    def test_dns_check_does_not_call_a_real_ip_blocked_on_icmp_timeout(self):
+        with mock.patch.object(
+            extra.adb,
+            "adb_run",
+            side_effect=[
+                self._ping("PING doubleclick.net (192.0.2.20) 56(84) bytes of data.\n100% packet loss", code=1),
+                self._ping("PING wikipedia.org (192.0.2.10) 56(84) bytes of data."),
+            ],
+        ):
+            result = extra.dns_check("SERIAL")
+        self.assertFalse(result["ad_blocked"])
+        self.assertTrue(result["online"])
+
+    def test_dns_check_treats_nxdomain_as_blocked(self):
+        with mock.patch.object(
+            extra.adb,
+            "adb_run",
+            side_effect=[
+                self._ping("", "ping: unknown host doubleclick.net", code=1),
+                self._ping("PING wikipedia.org (192.0.2.10) 56(84) bytes of data."),
             ],
         ):
             result = extra.dns_check("SERIAL")
@@ -166,10 +195,30 @@ class AdsTests(unittest.TestCase):
         self.assertTrue(result["online"])
 
     def test_dns_check_reports_cannot_test_when_control_fails(self):
-        with mock.patch.object(extra.adb, "shell", side_effect=adb.AdbError("no dns")):
+        with mock.patch.object(
+            extra.adb,
+            "adb_run",
+            side_effect=[
+                self._ping("", "ping: unknown host doubleclick.net", code=1),
+                self._ping("", "ping: unknown host wikipedia.org", code=1),
+            ],
+        ):
             result = extra.dns_check("SERIAL")
         self.assertFalse(result["online"])
         self.assertIsNone(result["ad_blocked"])
+
+    def test_dns_check_reports_cannot_test_on_unparseable_ad_output(self):
+        with mock.patch.object(
+            extra.adb,
+            "adb_run",
+            side_effect=[
+                self._ping("unexpected output", code=1),
+                self._ping("PING wikipedia.org (192.0.2.10) 56(84) bytes of data."),
+            ],
+        ):
+            result = extra.dns_check("SERIAL")
+        self.assertIsNone(result["ad_blocked"])
+        self.assertTrue(result["online"])
 
     def test_dns_providers_json(self):
         out = io.StringIO()
@@ -188,10 +237,19 @@ class AdsTests(unittest.TestCase):
                 mock.patch.object(extra.adb, "shell") as shell, \
                 mock.patch.object(extra.adb, "dns_status", return_value={"mode": "hostname", "specifier": "dns.adguard-dns.com"}), \
                 mock.patch.object(extra.adb, "save_changes"):
-            self.assertEqual(extra.cmd_dns(args), 0)
+            out = io.StringIO()
+            with contextlib.redirect_stdout(out):
+                self.assertEqual(extra.cmd_dns(args), 0)
         commands = [call.args[0] for call in shell.call_args_list]
         self.assertIn("settings put global private_dns_specifier dns.adguard-dns.com", commands)
         self.assertIn("settings put global private_dns_mode hostname", commands)
+        self.assertIn("dns restore", out.getvalue())
+
+    def test_json_flag_is_accepted_after_new_subcommands(self):
+        parser = phone.build_parser()
+        self.assertTrue(parser.parse_args(["dns", "providers", "--json"]).json)
+        self.assertTrue(parser.parse_args(["dns", "check", "--json"]).json)
+        self.assertTrue(parser.parse_args(["bench", "list", "--json"]).json)
 
 
 class ProfileTests(unittest.TestCase):

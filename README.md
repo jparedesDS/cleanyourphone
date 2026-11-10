@@ -187,6 +187,34 @@ Then ask: **"Clean my phone"** or **"Use cleanyourphone on my Pixel"**.
   `bench compare`; approximate, local and not causal. See [docs/BENCH.md](docs/BENCH.md).
 - Measures a battery baseline before/after (`docs/BATTERY.md`), without promising miracles.
 
+## Block ads (optional)
+
+Private DNS can block many in-app ad and tracker domains. It is not a YouTube blocker, not a VPN, and
+it can break captive portals. The presets are:
+
+```bash
+python tools/phone.py dns providers
+python tools/phone.py dns set adguard
+python tools/phone.py dns check
+python tools/phone.py dns restore
+```
+
+`dns check` distinguishes “blocked” from “cannot test” when the control domain does not resolve. See
+[docs/ADS.md](docs/ADS.md) for the OEM ad-switch checklist and caveats.
+
+## Measure the result
+
+Record a local before/after snapshot; no serial or fingerprint is stored:
+
+```bash
+python tools/phone.py bench snapshot --label before
+# apply, reboot and verify
+python tools/phone.py bench snapshot --label after
+python tools/phone.py bench compare <before.json> <after.json>
+```
+
+The comparison is approximate and not causal. See [docs/BENCH.md](docs/BENCH.md).
+
 ## What it does not do
 
 - **No app.** Nothing is installed on the phone.

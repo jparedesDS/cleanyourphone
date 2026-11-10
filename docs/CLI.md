@@ -58,6 +58,7 @@ Override them with environment variables:
 - `CLEANYOURPHONE_BACKUP`: backup directory.
 - `CLEANYOURPHONE_STATE`: undo-journal directory.
 - `CLEANYOURPHONE_BATTERY`: battery-report directory.
+- `CLEANYOURPHONE_BENCH`: benchmark snapshot directory.
 
 ## Commands
 
@@ -74,6 +75,7 @@ Override them with environment variables:
 | `restore` | Re-enables everything this tool disabled and restores Private DNS. Use `--from-backup DIR` if the undo journal is lost. |
 | `verify` | Checks dialer, SMS, Home, keyboard, Play and protected packages. |
 | `dns providers` | List the built-in ad-blocking Private DNS presets. |
+| `dns status` | Show the current Private DNS mode and specifier. |
 | `dns set <preset\|hostname>` | Set a preset or a custom resolver; journaled and reversible. |
 | `dns check` | Check an ad domain and a control domain; distinguishes blocked from offline. |
 | `dns off`, `dns restore` | Return to opportunistic DNS or the exact recorded state. |

@@ -25,7 +25,7 @@ It is not a full ad blocker: it works at DNS level and has no access to traffic 
 | `adguard` | `dns.adguard-dns.com` | Ads and trackers |
 | `adguard-family` | `family.adguard-dns.com` | Ads, trackers and adult sites |
 | `controld` | `p2.freedns.controld.com` | Control D free resolver |
-| `mullvad` | `adblock.dns.mullvad.net` | Mullvad DNS, no logging |
+| `mullvad` | `adblock.dns.mullvad.net` | Mullvad ad-blocking DNS |
 
 List them with:
 
@@ -56,8 +56,9 @@ python tools/phone.py dns check
 ```
 
 The command resolves `doubleclick.net` and `wikipedia.org` from the phone. `ad_blocked` is true when
-the ad domain does not resolve or resolves to `0.0.0.0`/`::`. If `wikipedia.org` does not resolve,
-the result is “cannot test” because the phone is offline; it is not proof that ads are blocked.
+the ad domain does not resolve or resolves to a sinkhole (`0.0.0.0`, `::`, `127.0.0.1`, `::1`). If
+`wikipedia.org` does not resolve, the result is “cannot test” because the phone is offline; it is not
+proof that ads are blocked. A real ad IP with no ping reply is also not proof of blocking.
 
 The raw ADB check is:
 
@@ -105,7 +106,6 @@ if a path is not exact.
 ### Generic Android
 
 - Settings → Google → Ads → Delete advertising ID.
-- Play Store → profile → Settings → Network preferences → Auto-update apps: Wi-Fi only.
 - Turn off personalization in the apps that show “recommended” rows.
 
 ## See also

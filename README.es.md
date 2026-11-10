@@ -186,6 +186,34 @@ Luego pide: **"Limpia mi móvil"** o **"Usa cleanyourphone en mi Pixel"**.
   aproximado, local y sin afirmar causalidad. Ver [docs/BENCH.md](docs/BENCH.md).
 - Mide una línea base de batería antes/después (`docs/BATTERY.md`), sin prometer milagros.
 
+## Bloquear anuncios (opcional)
+
+El DNS privado puede bloquear muchos dominios de anuncios y trackers dentro de apps. No bloquea
+YouTube, no es una VPN y puede romper portales cautivos. Los presets son:
+
+```bash
+python tools/phone.py dns providers
+python tools/phone.py dns set adguard
+python tools/phone.py dns check
+python tools/phone.py dns restore
+```
+
+`dns check` distingue “bloqueado” de “no se pudo comprobar” cuando el dominio de control no resuelve.
+La checklist de ajustes por fabricante y las advertencias están en [docs/ADS.md](docs/ADS.md).
+
+## Medir el resultado
+
+Guarda una foto local antes/después; no se guarda el serial ni el fingerprint:
+
+```bash
+python tools/phone.py bench snapshot --label before
+# aplica, reinicia y verifica
+python tools/phone.py bench snapshot --label after
+python tools/phone.py bench compare <before.json> <after.json>
+```
+
+La comparación es aproximada y no afirma causalidad. Ver [docs/BENCH.md](docs/BENCH.md).
+
 ## Qué no hace
 
 - **No es una app.** No se instala nada en el móvil.

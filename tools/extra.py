@@ -48,28 +48,56 @@ def resolve_dns_provider(value: str) -> str | None:
     return value if valid_hostname(value) else None
 
 
-def _resolve(serial: str, host: str) -> str:
-    """Return the IP a host resolves to on the phone, or an empty string."""
+BLOCKED_IPS = {"0.0.0.0", "::", "127.0.0.1", "::1"}
+NXDOMAIN_MARKERS = (
+    "unknown host",
+    "bad address",
+    "name or service not known",
+    "no address associated",
+    "cannot resolve",
+)
+
+
+def _resolve(serial: str, host: str) -> Dict[str, str]:
+    """Resolve a hostname through a ping, distinguishing blocked from unknown."""
     try:
-        out = adb.shell(f"ping -c 1 -W 3 {host}", serial=serial, timeout=20)
+        result = adb.adb_run(["shell", f"ping -c 1 -W 3 {host}"], serial=serial, timeout=20)
     except adb.AdbError:
-        return ""
-    match = re.search(r"PING \S+ \(([^)]+)\)", out)
-    return match.group(1) if match else ""
+        return {"ip": "", "state": "unknown"}
+    text = ((result.stdout or "") + "\n" + (result.stderr or "")).strip()
+    match = re.search(r"PING \S+ \(([^)]+)\)", text)
+    ip = match.group(1) if match else ""
+    low = text.lower()
+    if ip in BLOCKED_IPS:
+        return {"ip": ip, "state": "blocked"}
+    if any(marker in low for marker in NXDOMAIN_MARKERS):
+        return {"ip": ip, "state": "nxdomain"}
+    if ip:
+        return {"ip": ip, "state": "ok"}
+    return {"ip": "", "state": "unknown"}
 
 
 def dns_check(serial: str) -> Dict[str, Any]:
     """Check an ad domain and a control domain from the phone."""
-    ad_ip = _resolve(serial, "doubleclick.net")
-    control_ip = _resolve(serial, "wikipedia.org")
-    online = control_ip not in ("", "0.0.0.0", "::")
-    blocked = None if not online else ad_ip in ("", "0.0.0.0", "::")
+    ad = _resolve(serial, "doubleclick.net")
+    control = _resolve(serial, "wikipedia.org")
+    online = control["state"] == "ok" and control["ip"] not in BLOCKED_IPS
+    if not online:
+        blocked = None
+    elif ad["state"] in ("blocked", "nxdomain"):
+        blocked = True
+    elif ad["state"] == "ok":
+        blocked = False
+    else:
+        blocked = None
     return {
         "ad_domain": "doubleclick.net",
-        "ad_ip": ad_ip,
+        "ad_ip": ad["ip"],
+        "ad_state": ad["state"],
         "ad_blocked": blocked,
         "control_domain": "wikipedia.org",
-        "control_ip": control_ip,
+        "control_ip": control["ip"],
+        "control_state": control["state"],
         "online": online,
     }
 
@@ -147,7 +175,10 @@ def cmd_dns(args: argparse.Namespace) -> int:
             )
         if result["ad_blocked"] is True and result["online"]:
             return 0
-        ui.warn("ads are not confirmed blocked; check Private DNS and the network")
+        if not result["online"]:
+            ui.warn("cannot test: the control domain did not resolve; check the network")
+        else:
+            ui.warn("ads are not confirmed blocked; check Private DNS")
         return 1
 
     if args.dns_command == "status":
@@ -172,7 +203,7 @@ def cmd_dns(args: argparse.Namespace) -> int:
         changes["dns"]["after"] = after
         changes["dns"]["at"] = adb.now()
         adb.save_changes(serial, changes)
-        print(f"Private DNS set to {hostname}. Undo: python tools/phone.py dns off")
+        print(f"Private DNS set to {hostname}. Undo: python tools/phone.py dns restore")
         print("An ad-blocking resolver over Private DNS blocks many in-app ads/trackers, not YouTube ads.")
         return 0
 
@@ -381,8 +412,8 @@ def cmd_bench(args: argparse.Namespace) -> int:
         return 0
 
     if args.bench_command == "compare":
-        before = bench.load(Path(args.before))
-        after = bench.load(Path(args.after))
+        before = bench.load(Path(args.before).expanduser())
+        after = bench.load(Path(args.after).expanduser())
         rows = bench.compare(before, after)
         stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         path = bench.write_markdown(before, after, rows, bench.BENCH_DIR / f"compare-{stamp}.md")
@@ -433,6 +464,7 @@ def add_subparsers(sub: argparse._SubParsersAction) -> None:
     compare.set_defaults(func=cmd_battery)
 
     dns = sub.add_parser("dns", help="Private DNS: providers, status, set, check, off, restore")
+    dns.add_argument("--json", action="store_true", default=argparse.SUPPRESS)
     dns_sub = dns.add_subparsers(dest="dns_command", required=True)
     providers = dns_sub.add_parser("providers", help="list ad-blocking DNS presets")
     providers.set_defaults(func=cmd_dns)
@@ -447,8 +479,11 @@ def add_subparsers(sub: argparse._SubParsersAction) -> None:
     off.set_defaults(func=cmd_dns)
     restore = dns_sub.add_parser("restore", help="restore the value recorded before the first change")
     restore.set_defaults(func=cmd_dns)
+    for dns_parser in (providers, status, set_cmd, check, off, restore):
+        dns_parser.add_argument("--json", action="store_true", default=argparse.SUPPRESS)
 
     bench_cmd = sub.add_parser("bench", help="measure RAM, packages and settings before/after")
+    bench_cmd.add_argument("--json", action="store_true", default=argparse.SUPPRESS)
     bench_sub = bench_cmd.add_subparsers(dest="bench_command", required=True)
     bench_snapshot = bench_sub.add_parser("snapshot", help="save a local benchmark snapshot")
     bench_snapshot.add_argument("--label", default="snapshot", help="label, e.g. before or after")
@@ -459,6 +494,8 @@ def add_subparsers(sub: argparse._SubParsersAction) -> None:
     bench_compare.set_defaults(func=cmd_bench)
     bench_list = bench_sub.add_parser("list", help="list saved snapshots")
     bench_list.set_defaults(func=cmd_bench)
+    for bench_parser in (bench_snapshot, bench_compare, bench_list):
+        bench_parser.add_argument("--json", action="store_true", default=argparse.SUPPRESS)
 
     report = sub.add_parser("report", help="write a Markdown report with changes and verification")
     report.set_defaults(func=cmd_report)

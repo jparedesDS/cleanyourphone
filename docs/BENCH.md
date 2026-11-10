@@ -13,7 +13,8 @@ not a promise that the phone will be faster.
 - Private DNS mode and specifier.
 - Battery Saver state.
 
-It does **not** store the serial, fingerprint, IMEI, IP, account, messages or app data.
+It does **not** store the serial, fingerprint, IMEI, IP, account, messages or app data. A custom
+Private DNS hostname can contain a provider profile ID; use a preset hostname if that matters.
 
 ## Commands
 
@@ -27,12 +28,15 @@ After the reboot and verification:
 
 ```bash
 python tools/phone.py bench snapshot --label after
-python tools/phone.py bench compare ~/.cleanyourphone/bench/<before>.json ~/.cleanyourphone/bench/<after>.json
+python tools/phone.py bench list
+python tools/phone.py bench compare <before.json> <after.json>
 ```
 
 `bench compare` prints a table and writes a Markdown file under
-`~/.cleanyourphone/bench/compare-<timestamp>.md`. `--json` returns the same rows for automation.
-`bench list` shows saved snapshots, newest first.
+`~/.cleanyourphone/bench/compare-<timestamp>.md`. `--json` returns `{"path": "...", "rows": [...]}`;
+`bench snapshot --json` returns `{"path": "...", "data": {...}}`. `bench list` shows saved snapshots,
+newest first. On Windows, use the paths printed by `bench snapshot` or `bench list`; `~` is not expanded
+by PowerShell.
 
 ## Raw ADB fallback
 

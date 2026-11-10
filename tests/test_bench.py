@@ -72,6 +72,7 @@ class BenchTests(unittest.TestCase):
         self.assertEqual(data["private_dns_mode"], "hostname")
         self.assertNotIn("serial", data)
         self.assertNotIn("fingerprint", data)
+        self.assertNotIn("SERIAL", json.dumps(data))
 
     def test_compare_reports_deltas(self):
         rows = bench.compare(
@@ -102,6 +103,26 @@ class BenchTests(unittest.TestCase):
             self.assertIn("approximate", text.lower())
             self.assertIn("not causal", text.lower())
             self.assertIn("RAM available", text)
+
+    def test_markdown_warns_on_different_devices_and_battery_saver(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            before = {"model": "Pixel 8", "android": "16", "build": "A", "battery_saver": False, "ram_available_mb": 1000}
+            after = {"model": "Galaxy S23", "android": "16", "build": "B", "battery_saver": True, "ram_available_mb": 1200}
+            path = bench.write_markdown(before, after, bench.compare(before, after), Path(tmp) / "report.md")
+            text = path.read_text(encoding="utf-8")
+            self.assertIn("different models", text)
+            self.assertIn("Battery Saver changed", text)
+
+    def test_load_rejects_empty_and_partial_snapshots(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            empty = Path(tmp) / "empty.json"
+            empty.write_text("{}", encoding="utf-8")
+            with self.assertRaises(ValueError):
+                bench.load(empty)
+            wrong = Path(tmp) / "wrong.json"
+            wrong.write_text("[]", encoding="utf-8")
+            with self.assertRaises(ValueError):
+                bench.load(wrong)
 
 
 if __name__ == "__main__":
