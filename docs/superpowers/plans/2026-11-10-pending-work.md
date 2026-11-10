@@ -18,7 +18,7 @@
 - No invented app build, installer, download, date or test claim.
 - Keep English/Spanish parity.
 - Preserve the CSP, the JSON-LD hash, inline icons and the no-third-party-request rule.
-- Website suite must stay at **27 tests**; the main suite goes from **109** to **110** after the docs test.
+- Website suite must stay at **28 tests**; the main suite goes from **109** to **110** after the docs test.
 - Work from clean `main` in each repository.
 
 ## Review Focus
@@ -245,7 +245,7 @@ Run:
 python -m unittest discover -s tests -v
 ```
 
-Expected: `Ran 27 tests ... OK`.
+Expected: `Ran 28 tests ... OK`.
 
 - [ ] **Step 7: Preview desktop and mobile**
 
@@ -546,7 +546,7 @@ cd C:\Users\xht\Desktop\cleanyourphone-web
 python -m unittest discover -s tests -v
 ```
 
-Expected: `Ran 110 tests ... OK`, `OK: 156 profile(s) valid.`, `Ran 27 tests ... OK`.
+Expected: `Ran 110 tests ... OK`, `OK: 156 profile(s) valid.`, `Ran 28 tests ... OK`.
 
 - [ ] **Step 3: Verify the public surfaces**
 
