@@ -447,6 +447,31 @@ Then close ADB:
 - Revoke USB debugging authorisations.
 - Unplug the cable and confirm `adb devices` no longer lists the phone.
 
+## Optional — feedback or a profile request
+
+Only if the person asks. Never send anything automatically.
+
+Build a short checklist from `probe`: brand/model/device, Android and SDK, build, fingerprint, profile
+id, packages touched and the result. Remove serial numbers, IP addresses, IMEI, MAC addresses,
+account emails and pairing codes.
+
+Show the checklist and ask for explicit permission. Then preview it:
+
+```bash
+python scripts/feedback.py --kind profile --checklist-file feedback.txt
+```
+
+If the preview is correct and the person approves, send it:
+
+```bash
+python scripts/feedback.py --yes --kind profile --checklist-file feedback.txt
+```
+
+Without `--yes`, the script prints the payload and sends nothing. It redacts common identifiers before
+the preview. The web form is at
+<https://jparedesds.github.io/cleanyourphone-web/#feedback>. The feedback helper is separate from
+`tools/phone.py`, which stays local and network-free. See [docs/FEEDBACK.md](docs/FEEDBACK.md).
+
 ## Stop conditions
 
 Stop immediately, explain what happened, and do not improvise if:
