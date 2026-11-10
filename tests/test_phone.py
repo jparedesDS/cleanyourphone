@@ -778,6 +778,17 @@ class WizardTests(unittest.TestCase):
             "telephony": True,
         }
 
+    def test_guard_roles_notes_go_to_stderr_so_json_stays_clean(self):
+        holders = {"DIALER": ["d"], "SMS": ["s"], "HOME": ["h"]}
+        with mock.patch.object(phone.adb, "role_holders", return_value=(holders, False)), \
+             mock.patch.object(phone.adb, "read_default_ime", return_value="ime"), \
+             mock.patch.object(phone.adb, "package_set", return_value={"d", "s", "h", "ime"}):
+            out, err = io.StringIO(), io.StringIO()
+            with contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
+                self.assertEqual(phone.guard_roles("SERIAL", self.probe()), (holders, "ime"))
+        self.assertEqual(out.getvalue(), "")
+        self.assertIn("cmd role", err.getvalue())
+
     def test_no_exact_profile_is_a_clean_stop(self):
         with mock.patch.object(phone.adb, "pick_serial", return_value="SERIAL"), \
              mock.patch.object(phone, "guard_writable", return_value=self.probe()), \

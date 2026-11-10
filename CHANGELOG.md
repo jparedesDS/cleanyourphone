@@ -6,6 +6,13 @@ All notable changes to CleanYourPhone are documented here. The format is based o
 
 ## [Unreleased]
 
+## [0.3.2] - 2026-11-10
+
+### Fixed
+
+- `plan --json` keeps stdout valid JSON on Android versions without `cmd role`; the fallback note now
+  goes to stderr.
+
 ## [0.3.1] - 2026-11-10
 
 ### Fixed

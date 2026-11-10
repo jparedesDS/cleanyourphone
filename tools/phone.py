@@ -18,7 +18,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-VERSION = "0.3.1"
+VERSION = "0.3.2"
 
 try:  # imported as tools.phone
     from . import adb, checks, extra, profiles, protected, ui
@@ -122,7 +122,10 @@ def guard_roles(serial: str, probe: Dict[str, Any]) -> tuple:
     if ime not in enabled:
         ui.die(f"the current keyboard {ime} is disabled. Re-enable it before changing packages.")
     if not supported:
-        print("note: `cmd role` is unavailable on this Android version; roles were read from settings.")
+        print(
+            "note: `cmd role` is unavailable on this Android version; roles were read from settings.",
+            file=sys.stderr,
+        )
     return holders, ime
 
 
