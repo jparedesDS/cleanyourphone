@@ -19,10 +19,10 @@ python -m cleanyourphone doctor
 
 ## Install the command
 
-With [pipx](https://pipx.pypa.io/), from a clone or directly from GitHub:
+From PyPI with [pipx](https://pipx.pypa.io/):
 
 ```bash
-pipx install git+https://github.com/jparedesDS/cleanyourphone.git
+pipx install cleanyourphone
 cleanyourphone --version
 ```
 

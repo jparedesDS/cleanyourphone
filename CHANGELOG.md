@@ -8,6 +8,7 @@ All notable changes to CleanYourPhone are documented here. The format is based o
 
 ### Changed
 
+- Published to PyPI: `pipx install cleanyourphone` installs the CLI and the `cyp` alias.
 - Final logo system and palette: graphite `#121316` shared with CleanYourMail, purple `#A78BFA`,
   white `#F3F1EC` and a light purple `#C4B5FD` tint only for `ASK`. The sparkle is replaced by a
   contained return arrow, and the wordmark tints **Phone** in the logo purple. Primary, mark-only,

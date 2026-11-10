@@ -141,7 +141,7 @@ Python. The CLI exists so the agent does not improvise the guardrails.
 Prefer a terminal? Install the command with [pipx](https://pipx.pypa.io/):
 
 ```bash
-pipx install git+https://github.com/jparedesDS/cleanyourphone.git
+pipx install cleanyourphone
 cleanyourphone doctor
 ```
 

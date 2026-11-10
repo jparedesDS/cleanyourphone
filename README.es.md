@@ -142,7 +142,7 @@ trabajar sin Python. El CLI está para que el agente no se invente las proteccio
 ¿Prefieres la terminal? Instala el comando con [pipx](https://pipx.pypa.io/):
 
 ```bash
-pipx install git+https://github.com/jparedesDS/cleanyourphone.git
+pipx install cleanyourphone
 cleanyourphone doctor
 ```
 
