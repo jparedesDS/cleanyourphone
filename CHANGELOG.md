@@ -6,6 +6,20 @@ All notable changes to CleanYourPhone are documented here. The format is based o
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-11-10
+
+### Added
+
+- `dns providers` with AdGuard, AdGuard Family, Control D and Mullvad presets.
+- `dns check` distinguishes an ad domain blocked from a control domain that cannot be tested.
+- `bench snapshot`, `bench compare` and `bench list` for local before/after measurements.
+- `docs/ADS.md` and `docs/BENCH.md`, plus raw-ADB procedures in `SKILL.md`.
+
+### Changed
+
+- `dns set` accepts a preset alias as well as a hostname and points undo at `dns restore`.
+- Bench reports are local and approximate, with no serial, fingerprint or causal performance claim.
+
 ## [0.2.2] - 2026-11-10
 
 ### Changed
