@@ -291,12 +291,28 @@ adb shell settings put global private_dns_specifier dns.adguard-dns.com
 adb shell settings put global private_dns_mode hostname
 ```
 
-Alternatives: `dns.nextdns.io` (with the person's NextDNS ID as a subdomain), `dot.de1.nextdns.io`,
-or their own resolver. Verify:
+Presets: `adguard` (`dns.adguard-dns.com`), `adguard-family` (`family.adguard-dns.com`),
+`controld` (`p2.freedns.controld.com`), `mullvad` (`adblock.dns.mullvad.net`). With the CLI,
+`python tools/phone.py dns providers` lists them and `dns set adguard` applies one. Raw ADB always
+works:
+
+```bash
+adb shell settings put global private_dns_specifier dns.adguard-dns.com
+adb shell settings put global private_dns_mode hostname
+```
+
+Verify with a control domain and an ad domain:
 
 ```bash
 adb shell settings get global private_dns_mode
+adb shell ping -c 1 -W 3 doubleclick.net
+adb shell ping -c 1 -W 3 wikipedia.org
 ```
+
+If the control domain does not resolve, the phone is offline or the DNS is misconfigured: do **not**
+claim ads are blocked. Say “cannot test” and fix the network first. `python tools/phone.py dns check`
+does the same check and returns JSON with the CLI. If the ad domain still resolves, the resolver is
+not active.
 
 Open a browser and an app that uses the network. If they fail, undo:
 

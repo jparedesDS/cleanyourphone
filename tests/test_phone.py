@@ -141,6 +141,59 @@ class ParserTests(unittest.TestCase):
         self.assertFalse(adb.valid_package(""))
 
 
+class AdsTests(unittest.TestCase):
+    def test_providers_are_valid_hostnames(self):
+        self.assertGreaterEqual(len(extra.DNS_PROVIDERS), 4)
+        for host, _description in extra.DNS_PROVIDERS.values():
+            self.assertTrue(extra.valid_hostname(host))
+
+    def test_resolve_dns_provider_accepts_alias_and_hostname(self):
+        self.assertEqual(extra.resolve_dns_provider("adguard"), "dns.adguard-dns.com")
+        self.assertEqual(extra.resolve_dns_provider("dns.example.com"), "dns.example.com")
+        self.assertIsNone(extra.resolve_dns_provider("not a hostname"))
+
+    def test_dns_check_reports_blocked_and_online(self):
+        with mock.patch.object(
+            extra.adb,
+            "shell",
+            side_effect=[
+                "PING doubleclick.net (0.0.0.0) 56(84) bytes of data.",
+                "PING wikipedia.org (208.80.154.224) 56(84) bytes of data.",
+            ],
+        ):
+            result = extra.dns_check("SERIAL")
+        self.assertTrue(result["ad_blocked"])
+        self.assertTrue(result["online"])
+
+    def test_dns_check_reports_cannot_test_when_control_fails(self):
+        with mock.patch.object(extra.adb, "shell", side_effect=adb.AdbError("no dns")):
+            result = extra.dns_check("SERIAL")
+        self.assertFalse(result["online"])
+        self.assertIsNone(result["ad_blocked"])
+
+    def test_dns_providers_json(self):
+        out = io.StringIO()
+        with contextlib.redirect_stdout(out):
+            rc = extra.cmd_dns(SimpleNamespace(dns_command="providers", json=True, serial=None))
+        self.assertEqual(rc, 0)
+        payload = json.loads(out.getvalue())
+        self.assertIn("adguard", payload)
+        self.assertEqual(payload["adguard"]["host"], "dns.adguard-dns.com")
+
+    def test_dns_set_alias_uses_the_preset_host(self):
+        changes = {"dns": {"before": {"mode": "opportunistic", "specifier": ""}, "at": "now"}}
+        args = SimpleNamespace(dns_command="set", hostname="adguard", json=False, serial=None)
+        with mock.patch.object(extra.adb, "pick_serial", return_value="SERIAL"), \
+                mock.patch.object(extra, "_record_dns_before", return_value=changes), \
+                mock.patch.object(extra.adb, "shell") as shell, \
+                mock.patch.object(extra.adb, "dns_status", return_value={"mode": "hostname", "specifier": "dns.adguard-dns.com"}), \
+                mock.patch.object(extra.adb, "save_changes"):
+            self.assertEqual(extra.cmd_dns(args), 0)
+        commands = [call.args[0] for call in shell.call_args_list]
+        self.assertIn("settings put global private_dns_specifier dns.adguard-dns.com", commands)
+        self.assertIn("settings put global private_dns_mode hostname", commands)
+
+
 class ProfileTests(unittest.TestCase):
     def test_pixel_matches(self):
         profile = {

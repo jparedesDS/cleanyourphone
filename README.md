@@ -179,7 +179,9 @@ Then ask: **"Clean my phone"** or **"Use cleanyourphone on my Pixel"**.
 
 - Disables OEM telemetry, ad surfaces, recommendation rows, duplicate browsers/stores and unused
   preloads.
-- Optionally sets Private DNS (`dns.adguard-dns.com`, NextDNS or your own resolver).
+- Optionally sets Private DNS with presets (`adguard`, `adguard-family`, `controld`, `mullvad`) or
+  your own resolver, and checks whether ads are actually blocked. Not a YouTube ad blocker; see
+  [docs/ADS.md](docs/ADS.md).
 - Produces a report: what changed, why, what was kept, the backup path and the undo command.
 - Measures a battery baseline before/after (`docs/BATTERY.md`), without promising miracles.
 

@@ -20,6 +20,13 @@ except ImportError:  # run from tools/
 
 BATTERY_DIR = Path(os.environ.get("CLEANYOURPHONE_BATTERY", adb.ROOT / "battery"))
 
+DNS_PROVIDERS = {
+    "adguard": ("dns.adguard-dns.com", "AdGuard DNS: ads and trackers"),
+    "adguard-family": ("family.adguard-dns.com", "AdGuard Family: ads, trackers and adult sites"),
+    "controld": ("p2.freedns.controld.com", "Control D free: ads and trackers"),
+    "mullvad": ("adblock.dns.mullvad.net", "Mullvad DNS: ads and trackers"),
+}
+
 
 def valid_hostname(hostname: str) -> bool:
     """A conservative hostname check for the Private DNS specifier."""
@@ -29,6 +36,41 @@ def valid_hostname(hostname: str) -> bool:
     if any(not label or len(label) > 63 for label in hostname.split(".")):
         return False
     return bool(re.match(r"^[A-Za-z0-9]([A-Za-z0-9.-]*[A-Za-z0-9])?$", hostname))
+
+
+def resolve_dns_provider(value: str) -> str | None:
+    """Resolve a preset alias or a raw hostname to a valid DNS hostname."""
+    value = (value or "").strip()
+    preset = DNS_PROVIDERS.get(value.lower())
+    if preset:
+        return preset[0]
+    return value if valid_hostname(value) else None
+
+
+def _resolve(serial: str, host: str) -> str:
+    """Return the IP a host resolves to on the phone, or an empty string."""
+    try:
+        out = adb.shell(f"ping -c 1 -W 3 {host}", serial=serial, timeout=20)
+    except adb.AdbError:
+        return ""
+    match = re.search(r"PING \S+ \(([^)]+)\)", out)
+    return match.group(1) if match else ""
+
+
+def dns_check(serial: str) -> Dict[str, Any]:
+    """Check an ad domain and a control domain from the phone."""
+    ad_ip = _resolve(serial, "doubleclick.net")
+    control_ip = _resolve(serial, "wikipedia.org")
+    online = control_ip not in ("", "0.0.0.0", "::")
+    blocked = None if not online else ad_ip in ("", "0.0.0.0", "::")
+    return {
+        "ad_domain": "doubleclick.net",
+        "ad_ip": ad_ip,
+        "ad_blocked": blocked,
+        "control_domain": "wikipedia.org",
+        "control_ip": control_ip,
+        "online": online,
+    }
 
 
 def _record_dns_before(serial: str) -> Dict[str, Any]:
@@ -71,7 +113,42 @@ def restore_dns(serial: str) -> None:
 
 
 def cmd_dns(args: argparse.Namespace) -> int:
+    if args.dns_command == "providers":
+        data = {
+            name: {"host": host, "description": description}
+            for name, (host, description) in sorted(DNS_PROVIDERS.items())
+        }
+        if args.json:
+            ui.print_json(data)
+        else:
+            ui.print_table(
+                ["PRESET", "HOST", "WHAT IT BLOCKS"],
+                [[name, item["host"], item["description"]] for name, item in data.items()],
+            )
+        return 0
+
     serial = adb.pick_serial(args.serial)
+    if args.dns_command == "check":
+        result = dns_check(serial)
+        if args.json:
+            ui.print_json(result)
+        else:
+            ui.print_table(
+                ["CHECK", "VALUE"],
+                [
+                    ["Ad domain", result["ad_domain"]],
+                    ["Ad resolves to", result["ad_ip"] or "(no answer)"],
+                    ["Ad blocked", "yes" if result["ad_blocked"] else ("cannot test" if result["ad_blocked"] is None else "no")],
+                    ["Control domain", result["control_domain"]],
+                    ["Control resolves to", result["control_ip"] or "(no answer)"],
+                    ["Online", "yes" if result["online"] else "no"],
+                ],
+            )
+        if result["ad_blocked"] is True and result["online"]:
+            return 0
+        ui.warn("ads are not confirmed blocked; check Private DNS and the network")
+        return 1
+
     if args.dns_command == "status":
         status = adb.dns_status(serial)
         if args.json:
@@ -82,9 +159,9 @@ def cmd_dns(args: argparse.Namespace) -> int:
         return 0
 
     if args.dns_command == "set":
-        hostname = (args.hostname or "").strip()
-        if not valid_hostname(hostname):
-            ui.die(f"invalid DNS hostname: {hostname!r}")
+        hostname = resolve_dns_provider(args.hostname)
+        if not hostname:
+            ui.die(f"invalid DNS hostname or preset: {args.hostname!r}")
         changes = _record_dns_before(serial)
         adb.shell(f"settings put global private_dns_specifier {hostname}", serial=serial)
         adb.shell("settings put global private_dns_mode hostname", serial=serial)
@@ -299,13 +376,17 @@ def add_subparsers(sub: argparse._SubParsersAction) -> None:
     compare.add_argument("second")
     compare.set_defaults(func=cmd_battery)
 
-    dns = sub.add_parser("dns", help="Private DNS: status, set, off, restore")
+    dns = sub.add_parser("dns", help="Private DNS: providers, status, set, check, off, restore")
     dns_sub = dns.add_subparsers(dest="dns_command", required=True)
+    providers = dns_sub.add_parser("providers", help="list ad-blocking DNS presets")
+    providers.set_defaults(func=cmd_dns)
     status = dns_sub.add_parser("status", help="show Private DNS mode and specifier")
     status.set_defaults(func=cmd_dns)
-    set_cmd = dns_sub.add_parser("set", help="set an ad-blocking Private DNS hostname")
+    set_cmd = dns_sub.add_parser("set", help="set a preset or an ad-blocking Private DNS hostname")
     set_cmd.add_argument("hostname")
     set_cmd.set_defaults(func=cmd_dns)
+    check = dns_sub.add_parser("check", help="check whether ads are blocked and the phone is online")
+    check.set_defaults(func=cmd_dns)
     off = dns_sub.add_parser("off", help="return Private DNS to opportunistic")
     off.set_defaults(func=cmd_dns)
     restore = dns_sub.add_parser("restore", help="restore the value recorded before the first change")

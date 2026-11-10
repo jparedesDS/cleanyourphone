@@ -178,7 +178,9 @@ Luego pide: **"Limpia mi móvil"** o **"Usa cleanyourphone en mi Pixel"**.
 
 - Desactiva telemetría del fabricante, superficies de anuncios, filas de recomendaciones, navegadores
   y tiendas duplicadas, y apps preinstaladas que no usas.
-- Opcionalmente configura DNS privado (`dns.adguard-dns.com`, NextDNS o tu propio resolver).
+- Opcionalmente configura DNS privado con presets (`adguard`, `adguard-family`, `controld`, `mullvad`)
+  o tu propio resolver, y comprueba si los anuncios están bloqueados de verdad. No bloquea YouTube;
+  consulta [docs/ADS.md](docs/ADS.md).
 - Genera un informe: qué cambió, por qué, qué se mantuvo, dónde está el backup y el comando de undo.
 - Mide una línea base de batería antes/después (`docs/BATTERY.md`), sin prometer milagros.
 
