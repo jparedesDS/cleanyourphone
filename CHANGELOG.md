@@ -139,7 +139,7 @@ The first public release.
 - **157 profiles.** Google, Samsung, Xiaomi, Redmi, POCO and OnePlus, Android 8–16, including 11
   tablet profiles. Only four are `device`-tested; the rest are documented from primary firmware
   dumps and never auto-apply.
-- **Bilingual website.** <https://jparedesds.github.io/cleanyourphone-web/> with a before/after demo,
+- **Bilingual website.** <https://cleanyourphone.org/> with a before/after demo,
   brand tabs, safety model, profile catalog and FAQ.
 - **Documentation.** Safety, restore, battery, ROMs, FAQ, troubleshooting, profile rules, a
   model-by-model catalog in `docs/PROFILES.md` and localized README front pages in ten languages.

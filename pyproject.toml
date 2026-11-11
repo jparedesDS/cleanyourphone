@@ -32,7 +32,7 @@ cleanyourphone = "cleanyourphone.phone:main"
 cyp = "cleanyourphone.phone:main"
 
 [project.urls]
-Homepage = "https://jparedesds.github.io/cleanyourphone-web/"
+Homepage = "https://cleanyourphone.org/"
 Repository = "https://github.com/jparedesDS/cleanyourphone"
 Changelog = "https://github.com/jparedesDS/cleanyourphone/blob/main/CHANGELOG.md"
 Issues = "https://github.com/jparedesDS/cleanyourphone/issues"
