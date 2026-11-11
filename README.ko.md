@@ -62,7 +62,7 @@ CLI를 감싼 GUI입니다. 스킬은 여전히 주요 제품이며, 프로필�
 |---|---|
 | **스킬** | 주요 제품, 이 저장소에 있습니다. |
 | **CLI** | `0.3.4`, PyPI에 `cleanyourphone` / `cyp`로 배포됩니다. |
-| **Windows 앱** | `0.2.1` Early MVP, 선택 사항, 서명되지 않음. |
+| **Windows 앱** | `0.2.2` Early MVP, 선택 사항, 서명되지 않음. |
 | **웹사이트** | [cleanyourphone.org](https://cleanyourphone.org/)에서 10개 언어로 제공. |
 | **피드백** | 웹/앱/스킬에서 Discord로 보내는 선택형 양식, 자동 텔레메트리 없음. |
 
@@ -149,7 +149,7 @@ ASK      com.google.android.apps.turbo
 - **root 없음, 삭제 없음, 폰에 설치되는 앱 없음.** 설치 프로그램은 서명되지 않았으므로 실행 전에
   SHA-256을 확인하세요.
 
-[`v0.2.1` 다운로드](https://github.com/jparedesDS/cleanyourphone-app/releases/latest) ·
+[`v0.2.2` 다운로드](https://github.com/jparedesDS/cleanyourphone-app/releases/latest) ·
 [소스](https://github.com/jparedesDS/cleanyourphone-app) ·
 [연결 가이드](docs/CONNECT.md).
 

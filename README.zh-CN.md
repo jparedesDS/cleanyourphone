@@ -55,7 +55,7 @@
 |---|---|
 | **Skill** | 主要产品，位于本仓库。 |
 | **CLI** | `0.3.4`，以 `cleanyourphone` / `cyp` 发布在 PyPI。 |
-| **Windows 应用** | `0.2.1` 早期 MVP，可选，未签名。 |
+| **Windows 应用** | `0.2.2` 早期 MVP，可选，未签名。 |
 | **网站** | 10 种语言，见 [cleanyourphone.org](https://cleanyourphone.org/)。 |
 | **反馈** | 可选的 Web/应用/Skill 表单，发送到 Discord；没有自动遥测。 |
 
@@ -128,7 +128,7 @@ ASK      com.google.android.apps.turbo
 - **可选反馈：** 经同意后，可以把一份可编辑的清单发送给维护者。没有自动遥测。
 - **无需 root、不卸载、手机上不安装应用。** 安装程序未签名；运行前请校验 SHA-256。
 
-[下载 `v0.2.1`](https://github.com/jparedesDS/cleanyourphone-app/releases/latest) · [源代码](https://github.com/jparedesDS/cleanyourphone-app) · [连接指南](docs/CONNECT.md)。
+[下载 `v0.2.2`](https://github.com/jparedesDS/cleanyourphone-app/releases/latest) · [源代码](https://github.com/jparedesDS/cleanyourphone-app) · [连接指南](docs/CONNECT.md)。
 
 ## 快速开始
 
