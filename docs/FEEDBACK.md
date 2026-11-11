@@ -16,7 +16,7 @@ The skill and the CLI stay local. `tools/phone.py` never makes a network call.
   "message": "The review screen could explain ...",
   "checklist": "Phone: ...\nAndroid: ...\nBuild: ...",
   "contact": "optional Discord/GitHub/email",
-  "app_version": "CleanYourPhone app 0.2.0",
+  "app_version": "CleanYourPhone app 0.2.1",
   "website": ""
 }
 ```

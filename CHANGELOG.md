@@ -6,6 +6,12 @@ All notable changes to CleanYourPhone are documented here. The format is based o
 
 ## [Unreleased]
 
+## [0.3.3] - 2026-11-11
+
+### Changed
+
+- Project homepage, README links and feedback links now use <https://cleanyourphone.org/>.
+
 ### Added
 
 - `docs/FEEDBACK.md` and `scripts/feedback.py`: opt-in feedback and profile checklists for the
@@ -156,6 +162,7 @@ The first public release.
   holder is disabled.
 - A documented profile never auto-applies, has no `disable` list and asks for every package.
 
+[0.3.3]: https://github.com/jparedesDS/cleanyourphone/releases/tag/v0.3.3
 [0.2.1]: https://github.com/jparedesDS/cleanyourphone/releases/tag/v0.2.1
 [0.2.0]: https://github.com/jparedesDS/cleanyourphone/releases/tag/v0.2.0
 [0.1.1]: https://github.com/jparedesDS/cleanyourphone/releases/tag/v0.1.1
