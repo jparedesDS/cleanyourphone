@@ -62,7 +62,7 @@ Prinzip gebaut: ein Prompt, ein Befehl, reversibel, Open Source, und die Person 
 | Teil | Status |
 |---|---|
 | **Skill** | Hauptprodukt, in diesem Repository. |
-| **CLI** | `0.3.3`, auf PyPI als `cleanyourphone` / `cyp`. |
+| **CLI** | `0.3.4`, auf PyPI als `cleanyourphone` / `cyp`. |
 | **Windows-App** | `0.2.1` frühe MVP-Version, optional, nicht signiert. |
 | **Website** | In 10 Sprachen unter [cleanyourphone.org](https://cleanyourphone.org/). |
 | **Feedback** | Optionales Web-/App-/Skill-Formular an Discord; keine automatische Telemetrie. |

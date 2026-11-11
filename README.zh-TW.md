@@ -60,7 +60,7 @@ CLI 的 GUI。skill 仍是主要產品，也是沒有設定檔的手機該走的
 | 部分 | 狀態 |
 |---|---|
 | **Skill** | 主要產品，位於這個儲存庫。 |
-| **CLI** | `0.3.3`，以 `cleanyourphone` / `cyp` 之名發佈於 PyPI。 |
+| **CLI** | `0.3.4`，以 `cleanyourphone` / `cyp` 之名發佈於 PyPI。 |
 | **Windows 應用程式** | `0.2.1` Early MVP，選用，未簽署。 |
 | **網站** | 10 種語言，位於 [cleanyourphone.org](https://cleanyourphone.org/)。 |
 | **意見回饋** | 選用的網頁／應用程式／skill 表單，送到 Discord；沒有自動遙測。 |

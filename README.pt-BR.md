@@ -60,7 +60,7 @@ um comando, reversível, código aberto e a pessoa no controle.
 | Parte | Status |
 |---|---|
 | **Skill** | Produto principal, neste repositório. |
-| **CLI** | `0.3.3`, publicada no PyPI como `cleanyourphone` / `cyp`. |
+| **CLI** | `0.3.4`, publicada no PyPI como `cleanyourphone` / `cyp`. |
 | **App para Windows** | `0.2.1` Early MVP, opcional, sem assinatura. |
 | **Site** | 10 idiomas em [cleanyourphone.org](https://cleanyourphone.org/). |
 | **Feedback** | Formulário opcional no site/app/skill para o Discord; sem telemetria automática. |

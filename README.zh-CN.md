@@ -54,7 +54,7 @@
 | 部分 | 状态 |
 |---|---|
 | **Skill** | 主要产品，位于本仓库。 |
-| **CLI** | `0.3.3`，以 `cleanyourphone` / `cyp` 发布在 PyPI。 |
+| **CLI** | `0.3.4`，以 `cleanyourphone` / `cyp` 发布在 PyPI。 |
 | **Windows 应用** | `0.2.1` 早期 MVP，可选，未签名。 |
 | **网站** | 10 种语言，见 [cleanyourphone.org](https://cleanyourphone.org/)。 |
 | **反馈** | 可选的 Web/应用/Skill 表单，发送到 Discord；没有自动遥测。 |

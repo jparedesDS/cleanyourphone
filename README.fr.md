@@ -62,7 +62,7 @@ prompt, une commande, réversible, open source, et la personne garde le contrôl
 | Partie | État |
 |---|---|
 | **Skill** | Produit principal, dans ce dépôt. |
-| **CLI** | `0.3.3`, publié sur PyPI sous `cleanyourphone` / `cyp`. |
+| **CLI** | `0.3.4`, publié sur PyPI sous `cleanyourphone` / `cyp`. |
 | **App Windows** | `0.2.1` Early MVP, facultative, non signée. |
 | **Site** | Disponible en 10 langues sur [cleanyourphone.org](https://cleanyourphone.org/). |
 | **Retours** | Formulaire facultatif web/app/skill vers Discord ; aucune télémétrie automatique. |

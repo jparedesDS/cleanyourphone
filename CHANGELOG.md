@@ -6,6 +6,13 @@ All notable changes to CleanYourPhone are documented here. The format is based o
 
 ## [Unreleased]
 
+## [0.3.4] - 2026-11-11
+
+### Added
+
+- Moto G75 5G (`paros`, Android 16) as a documented profile built from an Android 16
+  firmware dump. It never auto-applies and asks before every package.
+
 ## [0.3.3] - 2026-11-11
 
 ### Changed
@@ -162,6 +169,7 @@ The first public release.
   holder is disabled.
 - A documented profile never auto-applies, has no `disable` list and asks for every package.
 
+[0.3.4]: https://github.com/jparedesDS/cleanyourphone/releases/tag/v0.3.4
 [0.3.3]: https://github.com/jparedesDS/cleanyourphone/releases/tag/v0.3.3
 [0.2.1]: https://github.com/jparedesDS/cleanyourphone/releases/tag/v0.2.1
 [0.2.0]: https://github.com/jparedesDS/cleanyourphone/releases/tag/v0.2.0

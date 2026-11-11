@@ -54,7 +54,7 @@
 | 部分 | 状態 |
 |---|---|
 | **Skill** | 主力プロダクト。このリポジトリにあります。 |
-| **CLI** | `0.3.3`、PyPI で `cleanyourphone` / `cyp` として公開。 |
+| **CLI** | `0.3.4`、PyPI で `cleanyourphone` / `cyp` として公開。 |
 | **Windows アプリ** | `0.2.1` Early MVP、オプション、未署名。 |
 | **ウェブサイト** | 10言語対応: [cleanyourphone.org](https://cleanyourphone.org/)。 |
 | **フィードバック** | オプションの web/アプリ/skill フォームから Discord へ。自動テレメトリーはありません。 |

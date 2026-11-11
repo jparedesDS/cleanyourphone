@@ -61,7 +61,7 @@ reversible, open source y la persona siempre al mando.
 | Parte | Estado |
 |---|---|
 | **Skill** | Producto principal, en este repositorio. |
-| **CLI** | `0.3.3`, en PyPI como `cleanyourphone` / `cyp`. |
+| **CLI** | `0.3.4`, en PyPI como `cleanyourphone` / `cyp`. |
 | **App Windows** | `0.2.1` Early MVP, opcional, sin firmar. |
 | **Web** | 10 idiomas en [cleanyourphone.org](https://cleanyourphone.org/es.html). |
 | **Feedback** | Formulario opcional app/web/skill a Discord; sin telemetría automática. |

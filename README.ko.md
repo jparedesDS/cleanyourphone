@@ -61,7 +61,7 @@ CLI를 감싼 GUI입니다. 스킬은 여전히 주요 제품이며, 프로필�
 | 구성 요소 | 상태 |
 |---|---|
 | **스킬** | 주요 제품, 이 저장소에 있습니다. |
-| **CLI** | `0.3.3`, PyPI에 `cleanyourphone` / `cyp`로 배포됩니다. |
+| **CLI** | `0.3.4`, PyPI에 `cleanyourphone` / `cyp`로 배포됩니다. |
 | **Windows 앱** | `0.2.1` Early MVP, 선택 사항, 서명되지 않음. |
 | **웹사이트** | [cleanyourphone.org](https://cleanyourphone.org/)에서 10개 언어로 제공. |
 | **피드백** | 웹/앱/스킬에서 Discord로 보내는 선택형 양식, 자동 텔레메트리 없음. |
