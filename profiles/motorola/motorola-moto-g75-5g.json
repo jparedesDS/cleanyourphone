@@ -1,0 +1,320 @@
+{
+  "id": "motorola-moto-g75-5g",
+  "brand": "Motorola",
+  "model": "moto g75 5G",
+  "marketing_name": "Moto G75 5G",
+  "android": [
+    "16"
+  ],
+  "fingerprint_regex": "^motorola/paros",
+  "auto_apply": false,
+  "verification": "documented",
+  "sources": [
+    {
+      "title": "Android Dumps mirror: motorola/paros",
+      "url": "https://github.com/4mede/motorola_paros_dump",
+      "retrieved": "2026-11-11",
+      "note": "Android 16 paros dump used for the package inventory. The branch is a developer build, not the RETBR W1UQS36H.73-38-5 production build."
+    },
+    {
+      "title": "Dump README (build metadata)",
+      "url": "https://github.com/4mede/motorola_paros_dump/blob/user-16-VUQ35HV-W1-ST28-485db0-release-keys/README.md",
+      "retrieved": "2026-11-11",
+      "note": "Codename paros, Android 16, build VUQ35HV-W1-ST28."
+    },
+    {
+      "title": "Dump all_files.txt (APK and permission inventory)",
+      "url": "https://github.com/4mede/motorola_paros_dump/blob/user-16-VUQ35HV-W1-ST28-485db0-release-keys/all_files.txt",
+      "retrieved": "2026-11-11",
+      "note": "Evidence that each ask package exists in the Android 16 paros dump."
+    },
+    {
+      "title": "Official Android 16 paros firmware (RETAIL 38-3)",
+      "url": "https://mirrors.lolinet.com/firmware/lenomola/2024/paros/official/RETAIL/PAROS_RETAIL_16_W1UQS36H.73-38-3_subsidy-DEFAULT_regulatory-DEFAULT_cid50_CFC.xml.zip",
+      "retrieved": "2026-11-11",
+      "note": "Published production firmware reference. The requested RETBR 38-5 build is a later security patch and was not available as a dump."
+    }
+  ],
+  "tested": [],
+  "disable": [],
+  "ask": [
+    {
+      "package": "com.facebook.appmanager",
+      "why": "Facebook app manager and installer",
+      "breaks": "Facebook app installation and updates"
+    },
+    {
+      "package": "com.facebook.services",
+      "why": "Facebook background services",
+      "breaks": "Facebook app background features"
+    },
+    {
+      "package": "com.amazon.appmanager.mdip",
+      "why": "Amazon app manager preload",
+      "breaks": "Amazon app installation and updates"
+    },
+    {
+      "package": "com.handmark.expressweather",
+      "why": "ExpressWeather preinstall",
+      "breaks": "Weather widget and weather app"
+    },
+    {
+      "package": "com.inmobi.weather",
+      "why": "InMobi weather widget",
+      "breaks": "Weather widget"
+    },
+    {
+      "package": "com.glance.lockscreenM",
+      "why": "Glance lockscreen content",
+      "breaks": "Lockscreen feed and recommendations"
+    },
+    {
+      "package": "com.motorola.brapps",
+      "why": "Motorola preloaded app catalog",
+      "breaks": "Preloaded app suggestions"
+    },
+    {
+      "package": "com.motorola.bug2go",
+      "why": "Motorola bug reporter",
+      "breaks": "Motorola bug reporting"
+    },
+    {
+      "package": "com.motorola.demo",
+      "why": "Retail demo mode",
+      "breaks": "Retail demo mode"
+    },
+    {
+      "package": "com.motorola.motocare",
+      "why": "MotoCare support app",
+      "breaks": "MotoCare support and device help"
+    },
+    {
+      "package": "com.motorola.help",
+      "why": "Motorola Help app",
+      "breaks": "Motorola help and support"
+    },
+    {
+      "package": "com.motorola.help.extlog",
+      "why": "Motorola help diagnostics logger",
+      "breaks": "Help diagnostics"
+    },
+    {
+      "package": "com.motorola.moto",
+      "why": "Moto app and feature hub",
+      "breaks": "Moto feature settings"
+    },
+    {
+      "package": "com.motorola.actions",
+      "why": "Moto Actions gestures",
+      "breaks": "Gesture shortcuts such as chop for flashlight"
+    },
+    {
+      "package": "com.motorola.aiservices",
+      "why": "Moto AI services",
+      "breaks": "Moto AI features"
+    },
+    {
+      "package": "com.motorola.appforecast",
+      "why": "App usage forecast",
+      "breaks": "App usage predictions"
+    },
+    {
+      "package": "com.motorola.personalize",
+      "why": "Moto personalization",
+      "breaks": "Personalization settings"
+    },
+    {
+      "package": "com.motorola.screenshoteditor",
+      "why": "Screenshot editor",
+      "breaks": "Editing screenshots after capture"
+    },
+    {
+      "package": "com.motorola.smartfeed",
+      "why": "Moto smart feed",
+      "breaks": "Smart feed and negative screen"
+    },
+    {
+      "package": "com.motorola.livewallpaper",
+      "why": "Moto live wallpapers",
+      "breaks": "Live wallpapers"
+    },
+    {
+      "package": "com.motorola.freeform",
+      "why": "Freeform desktop mode",
+      "breaks": "Freeform and desktop window mode"
+    },
+    {
+      "package": "com.motorola.mobiledesktop",
+      "why": "Motorola mobile desktop",
+      "breaks": "Desktop mode"
+    },
+    {
+      "package": "com.motorola.mobiledesktop.core",
+      "why": "Motorola mobile desktop core",
+      "breaks": "Desktop mode"
+    },
+    {
+      "package": "com.motorola.motcameradesktop",
+      "why": "Moto camera desktop integration",
+      "breaks": "Camera desktop mode"
+    },
+    {
+      "package": "com.motorola.mykey",
+      "why": "My Key customizable button",
+      "breaks": "Customizable hardware key"
+    },
+    {
+      "package": "com.motorola.gamemode",
+      "why": "Moto Game Mode",
+      "breaks": "Game mode and game toolbar"
+    },
+    {
+      "package": "com.motorola.dolby.dolbyui",
+      "why": "Dolby audio settings UI",
+      "breaks": "Dolby audio settings"
+    },
+    {
+      "package": "com.motorola.lifetimedata",
+      "why": "Lifetime device diagnostics",
+      "breaks": "Device diagnostics"
+    },
+    {
+      "package": "com.motorola.wifi.motowifimetrics",
+      "why": "Motorola Wi-Fi metrics",
+      "breaks": "Wi-Fi diagnostics"
+    },
+    {
+      "package": "com.motorola.hiddenmenuapp",
+      "why": "Hidden diagnostics menu",
+      "breaks": "Hidden diagnostic menu"
+    },
+    {
+      "package": "com.google.android.apps.wallpaper",
+      "why": "Google Wallpapers app",
+      "breaks": "Wallpaper picker"
+    },
+    {
+      "package": "com.claroColombia.contenedor",
+      "why": "Claro preloaded app container",
+      "breaks": "Claro preloaded apps"
+    },
+    {
+      "package": "com.dti.amx",
+      "why": "DTI AMX regional preload",
+      "breaks": "Regional preloaded apps"
+    },
+    {
+      "package": "com.dti.motorola",
+      "why": "DTI Motorola regional preload",
+      "breaks": "Regional preloaded apps"
+    },
+    {
+      "package": "com.ironsource.appcloud.oobe.hutchison",
+      "why": "Ironsource out-of-box app suggestions",
+      "breaks": "Preloaded app suggestions"
+    },
+    {
+      "package": "com.aura.oobe.motorola",
+      "why": "Aura out-of-box setup",
+      "breaks": "Out-of-box setup suggestions"
+    },
+    {
+      "package": "com.orange.aura.oobe",
+      "why": "Orange out-of-box setup",
+      "breaks": "Orange setup suggestions"
+    },
+    {
+      "package": "com.orange.update",
+      "why": "Orange software update helper",
+      "breaks": "Orange update prompts"
+    },
+    {
+      "package": "com.telcel.contenedor",
+      "why": "Telcel preloaded app container",
+      "breaks": "Telcel preloaded apps"
+    }
+  ],
+  "never": [
+    {
+      "package": "com.android.phone",
+      "why": "Telephony and emergency calls"
+    },
+    {
+      "package": "com.google.android.dialer",
+      "why": "Current dialer role holder"
+    },
+    {
+      "package": "com.google.android.apps.messaging",
+      "why": "Current SMS role holder"
+    },
+    {
+      "package": "com.motorola.launcher3",
+      "why": "Current Home role holder"
+    },
+    {
+      "package": "com.google.android.inputmethod.latin",
+      "why": "Current keyboard role holder"
+    },
+    {
+      "package": "com.motorola.camera3",
+      "why": "Camera app"
+    },
+    {
+      "package": "com.motorola.ccc.ota",
+      "why": "System update client"
+    },
+    {
+      "package": "com.motorola.msimsettings",
+      "why": "Dual SIM settings"
+    },
+    {
+      "package": "com.google.android.euicc",
+      "why": "eSIM support"
+    },
+    {
+      "package": "com.oem.euiccpartnerapp",
+      "why": "eSIM partner app"
+    },
+    {
+      "package": "com.payjoy.access",
+      "why": "Device financing; disabling can lock the phone"
+    },
+    {
+      "package": "com.qualcomm.location",
+      "why": "Location services"
+    },
+    {
+      "package": "com.motorola.faceunlock",
+      "why": "Face unlock"
+    },
+    {
+      "package": "com.motorola.motosecurecore",
+      "why": "Security core"
+    },
+    {
+      "package": "com.motorola.setup",
+      "why": "Setup wizard"
+    },
+    {
+      "package": "com.android.systemui",
+      "why": "System UI"
+    },
+    {
+      "package": "com.android.settings",
+      "why": "System settings"
+    },
+    {
+      "package": "com.google.android.gms",
+      "why": "Google Play services"
+    },
+    {
+      "package": "com.android.vending",
+      "why": "Google Play Store"
+    },
+    {
+      "package": "com.google.android.gsf",
+      "why": "Google services framework"
+    }
+  ],
+  "notes": "Documented from an Android 16 `paros` dump (developer build W1UQ36M-W1-ST28 / VUQ35HV-W1-ST28) because a dump of the RETBR W1UQS36H.73-38-5 build was not available when this profile was created. The Moto G75 5G ships as XT2437-1/2/3 and regional or carrier packages differ. This profile never auto-applies and asks before every package. Review every row; an OTA may have changed package names. Not tested on a physical phone."
+}

@@ -1,6 +1,6 @@
 # Profile catalog
 
-CleanYourPhone ships **156 profiles** across six brands. A `device` profile was
+CleanYourPhone ships **157 profiles** across 7 brands. A `device` profile was
 tested on a real phone and can auto-apply only on the build listed in `tested`. A
 `documented` profile comes from a primary firmware dump, never auto-applies and only asks.
 
@@ -12,6 +12,7 @@ tested on a real phone and can auto-apply only on the build listed in `tested`. 
 | **Redmi** | 56 | 0 | 1 |
 | **POCO** | 16 | 0 | 0 |
 | **OnePlus** | 8 | 1 | 0 |
+| **Motorola** | 1 | 0 | 0 |
 | **Generic** | 1 | 0 | 0 |
 
 ## Full catalog
@@ -173,4 +174,5 @@ tested on a real phone and can auto-apply only on the build listed in `tested`. 
 | `poco-x6-pro-5g` | POCO X6 Pro 5G (2311DRK48G) | 16 | documented | From the `duchamp` firmware dump; ask only, no auto-apply. |
 | `poco-x7-pro` | POCO X7 Pro (2412DPC0AG) | 16 | documented | From the `rodin` firmware dump; ask only, no auto-apply. |
 | `poco-x8-pro` | POCO X8 Pro (2511FPC34G) | 16 | documented | From the `klee` firmware dump; ask only, no auto-apply. |
+| `motorola-moto-g75-5g` | Moto G75 5G | 16 | documented | From the `paros` firmware dump; ask only, no auto-apply. |
 | `generic-android` | Any Android 8+ | 8–16 | reference | Reference only; no auto-apply. |

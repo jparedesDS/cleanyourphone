@@ -22,7 +22,7 @@
   <img src="https://img.shields.io/badge/license-MIT-a78bfa?labelColor=121316" alt="MIT">
   <img src="https://img.shields.io/badge/python-3.10%2B-a78bfa?labelColor=121316" alt="Python 3.10+">
   <img src="https://img.shields.io/badge/telemetry-none-a78bfa?labelColor=121316" alt="沒有遙測">
-  <img src="https://img.shields.io/badge/profiles-156-a78bfa?labelColor=121316" alt="156 個設定檔">
+  <img src="https://img.shields.io/badge/profiles-157-a78bfa?labelColor=121316" alt="157 個設定檔">
   <a href="https://github.com/jparedesDS/cleanyourphone/releases"><img src="https://img.shields.io/github/v/release/jparedesDS/cleanyourphone?color=a78bfa&labelColor=121316" alt="release"></a>
   <a href="https://github.com/jparedesDS/cleanyourphone-app/releases"><img src="https://img.shields.io/github/v/release/jparedesDS/cleanyourphone-app?color=a78bfa&label=app&labelColor=121316" alt="app release"></a>
 </p>
@@ -43,7 +43,7 @@ CLI 的 GUI。skill 仍是主要產品，也是沒有設定檔的手機該走的
 它是 [cleanyour.tv](https://cleanyour.tv) 的手機版，做法相同：一個提示詞、一個指令、可逆、
 開源，而且主控權始終在使用者手上。
 
-[SKILL.md](SKILL.md) · [PROMPT.md](PROMPT.md) · [應用程式](https://github.com/jparedesDS/cleanyourphone-app) · [安全性](docs/SAFETY.md) · [156 個設定檔](docs/PROFILES.md) · [意見回饋](docs/FEEDBACK.md) · [變更記錄](CHANGELOG.md)
+[SKILL.md](SKILL.md) · [PROMPT.md](PROMPT.md) · [應用程式](https://github.com/jparedesDS/cleanyourphone-app) · [安全性](docs/SAFETY.md) · [157 個設定檔](docs/PROFILES.md) · [意見回饋](docs/FEEDBACK.md) · [變更記錄](CHANGELOG.md)
 
 ## 從這裡開始
 
@@ -53,7 +53,7 @@ CLI 的 GUI。skill 仍是主要產品，也是沒有設定檔的手機該走的
 | 偏好按鈕而非提示詞 | [下載 Windows 應用程式](https://github.com/jparedesDS/cleanyourphone-app/releases/latest)（Early MVP）。 |
 | 想先看看 | [網站](https://cleanyourphone.org/)。 |
 | 需要安全規則 | [docs/SAFETY.md](docs/SAFETY.md)。 |
-| 需要機型設定檔 | [瀏覽 156 個設定檔](profiles/README.md)。 |
+| 需要機型設定檔 | [瀏覽 157 個設定檔](profiles/README.md)。 |
 | 手機不在清單上 | 手動使用 skill，或送出一份[設定檔請求](docs/FEEDBACK.md)。 |
 | 偏好終端機 | [安裝 CLI](docs/CLI.md)。 |
 
@@ -323,6 +323,7 @@ Windows 應用程式遵循相同規則：`device` 設定檔可使用已測試流
 | **Redmi** | 56 | 0 | 1 |
 | **POCO** | 16 | 0 | 0 |
 | **OnePlus** | 8 | 1 | 0 |
+| **Motorola** | 1 | 0 | 0 |
 | **通用** | 1 | 0 | 0 |
 
 想加入你的機型？請讀 [profiles/README.md](profiles/README.md)。`device` 設定檔需要實機

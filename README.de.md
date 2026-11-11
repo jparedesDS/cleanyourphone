@@ -22,7 +22,7 @@
   <img src="https://img.shields.io/badge/license-MIT-a78bfa?labelColor=121316" alt="MIT">
   <img src="https://img.shields.io/badge/python-3.10%2B-a78bfa?labelColor=121316" alt="Python 3.10+">
   <img src="https://img.shields.io/badge/telemetry-none-a78bfa?labelColor=121316" alt="Keine Telemetrie">
-  <img src="https://img.shields.io/badge/profiles-156-a78bfa?labelColor=121316" alt="156 Profile">
+  <img src="https://img.shields.io/badge/profiles-157-a78bfa?labelColor=121316" alt="157 Profile">
   <a href="https://github.com/jparedesDS/cleanyourphone/releases"><img src="https://img.shields.io/github/v/release/jparedesDS/cleanyourphone?color=a78bfa&labelColor=121316" alt="release"></a>
   <a href="https://github.com/jparedesDS/cleanyourphone-app/releases"><img src="https://img.shields.io/github/v/release/jparedesDS/cleanyourphone-app?color=a78bfa&label=app&labelColor=121316" alt="app release"></a>
 </p>
@@ -45,7 +45,7 @@ ohne Profil.
 CleanYourPhone ist die Smartphone-Version von [cleanyour.tv](https://cleanyour.tv), nach demselben
 Prinzip gebaut: ein Prompt, ein Befehl, reversibel, Open Source, und die Person behält die Kontrolle.
 
-[SKILL.md](SKILL.md) · [PROMPT.md](PROMPT.md) · [App](https://github.com/jparedesDS/cleanyourphone-app) · [Sicherheit](docs/SAFETY.md) · [156 Profile](docs/PROFILES.md) · [Feedback](docs/FEEDBACK.md) · [Changelog](CHANGELOG.md)
+[SKILL.md](SKILL.md) · [PROMPT.md](PROMPT.md) · [App](https://github.com/jparedesDS/cleanyourphone-app) · [Sicherheit](docs/SAFETY.md) · [157 Profile](docs/PROFILES.md) · [Feedback](docs/FEEDBACK.md) · [Changelog](CHANGELOG.md)
 
 ## Hier starten
 
@@ -55,7 +55,7 @@ Prinzip gebaut: ein Prompt, ein Befehl, reversibel, Open Source, und die Person 
 | Lieber Schaltflächen als Prompts | [Lade die Windows-App herunter](https://github.com/jparedesDS/cleanyourphone-app/releases/latest) (frühe MVP-Version). |
 | Willst du es erst sehen | [Die Website](https://cleanyourphone.org/). |
 | Brauchst du die Sicherheitsregeln | [docs/SAFETY.md](docs/SAFETY.md). |
-| Brauchst du ein Modellprofil | [Durchsuche die 156 Profile](profiles/README.md). |
+| Brauchst du ein Modellprofil | [Durchsuche die 157 Profile](profiles/README.md). |
 | Dein Smartphone ist nicht dabei | Nutze die Skill manuell oder schicke eine [Profilanfrage](docs/FEEDBACK.md). |
 | Bevorzugst du ein Terminal | [Installiere die CLI](docs/CLI.md). |
 
@@ -351,6 +351,7 @@ Der vollständige Katalog, Modell für Modell, steht in [docs/PROFILES.md](docs/
 | **Redmi** | 56 | 0 | 1 |
 | **POCO** | 16 | 0 | 0 |
 | **OnePlus** | 8 | 1 | 0 |
+| **Motorola** | 1 | 0 | 0 |
 | **Generisch** | 1 | 0 | 0 |
 
 Willst du deins hinzufügen? Lies [profiles/README.md](profiles/README.md). Ein `device`-Profil

@@ -22,7 +22,7 @@
   <img src="https://img.shields.io/badge/license-MIT-a78bfa?labelColor=121316" alt="MIT">
   <img src="https://img.shields.io/badge/python-3.10%2B-a78bfa?labelColor=121316" alt="Python 3.10+">
   <img src="https://img.shields.io/badge/telemetry-none-a78bfa?labelColor=121316" alt="텔레메트리 없음">
-  <img src="https://img.shields.io/badge/profiles-156-a78bfa?labelColor=121316" alt="프로필 156개">
+  <img src="https://img.shields.io/badge/profiles-157-a78bfa?labelColor=121316" alt="프로필 157개">
   <a href="https://github.com/jparedesDS/cleanyourphone/releases"><img src="https://img.shields.io/github/v/release/jparedesDS/cleanyourphone?color=a78bfa&labelColor=121316" alt="릴리스"></a>
   <a href="https://github.com/jparedesDS/cleanyourphone-app/releases"><img src="https://img.shields.io/github/v/release/jparedesDS/cleanyourphone-app?color=a78bfa&label=app&labelColor=121316" alt="앱 릴리스"></a>
 </p>
@@ -44,7 +44,7 @@ CLI를 감싼 GUI입니다. 스킬은 여전히 주요 제품이며, 프로필�
 [cleanyour.tv](https://cleanyour.tv)의 폰 버전이며, 같은 방식으로 만들었습니다. 프롬프트 하나,
 명령 하나, 되돌릴 수 있고, 오픈소스이며, 결정권은 언제나 사용자에게 있습니다.
 
-[SKILL.md](SKILL.md) · [PROMPT.md](PROMPT.md) · [앱](https://github.com/jparedesDS/cleanyourphone-app) · [안전](docs/SAFETY.md) · [프로필 156개](docs/PROFILES.md) · [피드백](docs/FEEDBACK.md) · [변경 내역](CHANGELOG.md)
+[SKILL.md](SKILL.md) · [PROMPT.md](PROMPT.md) · [앱](https://github.com/jparedesDS/cleanyourphone-app) · [안전](docs/SAFETY.md) · [프로필 157개](docs/PROFILES.md) · [피드백](docs/FEEDBACK.md) · [변경 내역](CHANGELOG.md)
 
 ## 여기서 시작하세요
 
@@ -54,7 +54,7 @@ CLI를 감싼 GUI입니다. 스킬은 여전히 주요 제품이며, 프로필�
 | 프롬프트보다 버튼이 좋다 | [Windows 앱 다운로드](https://github.com/jparedesDS/cleanyourphone-app/releases/latest) (Early MVP). |
 | 먼저 보고 싶다 | [웹사이트](https://cleanyourphone.org/). |
 | 안전 규칙이 필요하다 | [docs/SAFETY.md](docs/SAFETY.md). |
-| 모델 프로필이 필요하다 | [프로필 156개 둘러보기](profiles/README.md). |
+| 모델 프로필이 필요하다 | [프로필 157개 둘러보기](profiles/README.md). |
 | 내 폰이 목록에 없다 | 스킬을 직접 사용하거나 [프로필 요청](docs/FEEDBACK.md)을 보내세요. |
 | 터미널이 좋다 | [CLI 설치](docs/CLI.md). |
 
@@ -335,6 +335,7 @@ Windows 앱도 같은 규칙을 따릅니다: `device` 프로필은 테스트된
 | **Redmi** | 56 | 0 | 1 |
 | **POCO** | 16 | 0 | 0 |
 | **OnePlus** | 8 | 1 | 0 |
+| **Motorola** | 1 | 0 | 0 |
 | **일반** | 1 | 0 | 0 |
 
 내 폰을 추가하고 싶나요? [profiles/README.md](profiles/README.md)를 읽어 보세요. `device`

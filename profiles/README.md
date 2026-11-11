@@ -168,6 +168,7 @@ profiles/
 ├── poco/poco-x6-pro-5g.json
 ├── poco/poco-x7-pro.json
 ├── poco/poco-x8-pro.json
+├── motorola/motorola-moto-g75-5g.json
 └── generic/android.json
 ```
 
@@ -468,4 +469,5 @@ list. It does not replace a real test.
 | `poco-x6-pro-5g` | POCO X6 Pro 5G (2311DRK48G) | 16 | documented | From the `duchamp` firmware dump; ask only, no auto-apply. |
 | `poco-x7-pro` | POCO X7 Pro (2412DPC0AG) | 16 | documented | From the `rodin` firmware dump; ask only, no auto-apply. |
 | `poco-x8-pro` | POCO X8 Pro (2511FPC34G) | 16 | documented | From the `klee` firmware dump; ask only, no auto-apply. |
+| `motorola-moto-g75-5g` | Moto G75 5G | 16 | documented | From the `paros` firmware dump; ask only, no auto-apply. |
 | `generic-android` | Any Android 8+ | 8–16 | reference | Reference only; no auto-apply. |

@@ -22,7 +22,7 @@
   <img src="https://img.shields.io/badge/license-MIT-a78bfa?labelColor=121316" alt="MIT">
   <img src="https://img.shields.io/badge/python-3.10%2B-a78bfa?labelColor=121316" alt="Python 3.10+">
   <img src="https://img.shields.io/badge/telemetry-none-a78bfa?labelColor=121316" alt="テレメトリーなし">
-  <img src="https://img.shields.io/badge/profiles-156-a78bfa?labelColor=121316" alt="156 プロファイル">
+  <img src="https://img.shields.io/badge/profiles-157-a78bfa?labelColor=121316" alt="157 プロファイル">
   <a href="https://github.com/jparedesDS/cleanyourphone/releases"><img src="https://img.shields.io/github/v/release/jparedesDS/cleanyourphone?color=a78bfa&labelColor=121316" alt="release"></a>
   <a href="https://github.com/jparedesDS/cleanyourphone-app/releases"><img src="https://img.shields.io/github/v/release/jparedesDS/cleanyourphone-app?color=a78bfa&label=app&labelColor=121316" alt="app release"></a>
 </p>
@@ -37,7 +37,7 @@
 
 [cleanyour.tv](https://cleanyour.tv) のスマホ版で、作りも同じです。プロンプト 1 つ、コマンド 1 つ、元に戻せて、オープンソース。そして、常に本人が主導権を握ります。
 
-[SKILL.md](SKILL.md) · [PROMPT.md](PROMPT.md) · [アプリ](https://github.com/jparedesDS/cleanyourphone-app) · [安全性](docs/SAFETY.md) · [156 プロファイル](docs/PROFILES.md) · [フィードバック](docs/FEEDBACK.md) · [変更履歴](CHANGELOG.md)
+[SKILL.md](SKILL.md) · [PROMPT.md](PROMPT.md) · [アプリ](https://github.com/jparedesDS/cleanyourphone-app) · [安全性](docs/SAFETY.md) · [157 プロファイル](docs/PROFILES.md) · [フィードバック](docs/FEEDBACK.md) · [変更履歴](CHANGELOG.md)
 
 ## ここから始める
 
@@ -47,7 +47,7 @@
 | プロンプトよりボタンがいい | [Windows アプリをダウンロード](https://github.com/jparedesDS/cleanyourphone-app/releases/latest)（Early MVP）。 |
 | まず動きを見たい | [ウェブサイト](https://cleanyourphone.org/)。 |
 | 安全ルールが必要 | [docs/SAFETY.md](docs/SAFETY.md)。 |
-| モデル用のプロファイルが必要 | [156 個のプロファイルを見る](profiles/README.md)。 |
+| モデル用のプロファイルが必要 | [157 個のプロファイルを見る](profiles/README.md)。 |
 | 自分のスマホが一覧にない | skill を手動で使うか、[プロファイルのリクエスト](docs/FEEDBACK.md)を送ってください。 |
 | ターミナルがいい | [CLI をインストール](docs/CLI.md)。 |
 
@@ -271,6 +271,7 @@ Windows アプリも同じルールに従います。`device` プロファイル
 | **Redmi** | 56 | 0 | 1 |
 | **POCO** | 16 | 0 | 0 |
 | **OnePlus** | 8 | 1 | 0 |
+| **Motorola** | 1 | 0 | 0 |
 | **汎用** | 1 | 0 | 0 |
 
 自分のモデルを追加したいですか？[profiles/README.md](profiles/README.md) を読んでください。`device` プロファイルには実機テストが必要です。`documented` プロファイルには一次ファームウェアダンプ、または所有者が収集した端末インベントリと、少なくとも 1 つのソース URL が必要です。

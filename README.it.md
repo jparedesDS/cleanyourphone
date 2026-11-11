@@ -22,7 +22,7 @@
   <img src="https://img.shields.io/badge/license-MIT-a78bfa?labelColor=121316" alt="MIT">
   <img src="https://img.shields.io/badge/python-3.10%2B-a78bfa?labelColor=121316" alt="Python 3.10+">
   <img src="https://img.shields.io/badge/telemetry-none-a78bfa?labelColor=121316" alt="Nessuna telemetria">
-  <img src="https://img.shields.io/badge/profiles-156-a78bfa?labelColor=121316" alt="156 profili">
+  <img src="https://img.shields.io/badge/profiles-157-a78bfa?labelColor=121316" alt="157 profili">
   <a href="https://github.com/jparedesDS/cleanyourphone/releases"><img src="https://img.shields.io/github/v/release/jparedesDS/cleanyourphone?color=a78bfa&labelColor=121316" alt="release"></a>
   <a href="https://github.com/jparedesDS/cleanyourphone-app/releases"><img src="https://img.shields.io/github/v/release/jparedesDS/cleanyourphone-app?color=a78bfa&label=app&labelColor=121316" alt="app release"></a>
 </p>
@@ -45,7 +45,7 @@ profilo.
 È la versione per telefono di [cleanyour.tv](https://cleanyour.tv), costruita allo stesso modo: un
 prompt, un comando, reversibile, open source e la persona resta al comando.
 
-[SKILL.md](SKILL.md) · [PROMPT.md](PROMPT.md) · [App](https://github.com/jparedesDS/cleanyourphone-app) · [Sicurezza](docs/SAFETY.md) · [156 profili](docs/PROFILES.md) · [Feedback](docs/FEEDBACK.md) · [Changelog](CHANGELOG.md)
+[SKILL.md](SKILL.md) · [PROMPT.md](PROMPT.md) · [App](https://github.com/jparedesDS/cleanyourphone-app) · [Sicurezza](docs/SAFETY.md) · [157 profili](docs/PROFILES.md) · [Feedback](docs/FEEDBACK.md) · [Changelog](CHANGELOG.md)
 
 ## Inizia da qui
 
@@ -55,7 +55,7 @@ prompt, un comando, reversibile, open source e la persona resta al comando.
 | Preferisci i pulsanti ai prompt | [Scarica l'app per Windows](https://github.com/jparedesDS/cleanyourphone-app/releases/latest) (Early MVP). |
 | Vuoi vederlo prima | [Il sito](https://cleanyourphone.org/). |
 | Ti servono le regole di sicurezza | [docs/SAFETY.md](docs/SAFETY.md). |
-| Ti serve un profilo per il tuo modello | [Sfoglia i 156 profili](profiles/README.md). |
+| Ti serve un profilo per il tuo modello | [Sfoglia i 157 profili](profiles/README.md). |
 | Il tuo telefono non è in elenco | Usa la skill manualmente o invia una [richiesta di profilo](docs/FEEDBACK.md). |
 | Preferisci il terminale | [Installa la CLI](docs/CLI.md). |
 
@@ -345,6 +345,7 @@ Il catalogo completo, modello per modello, è in [docs/PROFILES.md](docs/PROFILE
 | **Redmi** | 56 | 0 | 1 |
 | **POCO** | 16 | 0 | 0 |
 | **OnePlus** | 8 | 1 | 0 |
+| **Motorola** | 1 | 0 | 0 |
 | **Generico** | 1 | 0 | 0 |
 
 Vuoi aggiungere il tuo? Leggi [profiles/README.md](profiles/README.md). Un profilo `device` richiede

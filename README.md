@@ -22,7 +22,7 @@
   <img src="https://img.shields.io/badge/license-MIT-a78bfa?labelColor=121316" alt="MIT">
   <img src="https://img.shields.io/badge/python-3.10%2B-a78bfa?labelColor=121316" alt="Python 3.10+">
   <img src="https://img.shields.io/badge/telemetry-none-a78bfa?labelColor=121316" alt="No telemetry">
-  <img src="https://img.shields.io/badge/profiles-156-a78bfa?labelColor=121316" alt="156 profiles">
+  <img src="https://img.shields.io/badge/profiles-157-a78bfa?labelColor=121316" alt="157 profiles">
   <a href="https://github.com/jparedesDS/cleanyourphone/releases"><img src="https://img.shields.io/github/v/release/jparedesDS/cleanyourphone?color=a78bfa&labelColor=121316" alt="release"></a>
   <a href="https://github.com/jparedesDS/cleanyourphone-app/releases"><img src="https://img.shields.io/github/v/release/jparedesDS/cleanyourphone-app?color=a78bfa&label=app&labelColor=121316" alt="app release"></a>
 </p>
@@ -43,7 +43,7 @@ GUI over the same CLI. The skill remains the main product and the path for phone
 It is the phone version of [cleanyour.tv](https://cleanyour.tv), built the same way: one prompt, one
 command, reversible, open source, and the person stays in control.
 
-[SKILL.md](SKILL.md) · [PROMPT.md](PROMPT.md) · [App](https://github.com/jparedesDS/cleanyourphone-app) · [Safety](docs/SAFETY.md) · [156 profiles](docs/PROFILES.md) · [Feedback](docs/FEEDBACK.md) · [Changelog](CHANGELOG.md)
+[SKILL.md](SKILL.md) · [PROMPT.md](PROMPT.md) · [App](https://github.com/jparedesDS/cleanyourphone-app) · [Safety](docs/SAFETY.md) · [157 profiles](docs/PROFILES.md) · [Feedback](docs/FEEDBACK.md) · [Changelog](CHANGELOG.md)
 
 ## Start here
 
@@ -53,7 +53,7 @@ command, reversible, open source, and the person stays in control.
 | Prefer buttons over prompts | [Download the Windows app](https://github.com/jparedesDS/cleanyourphone-app/releases/latest) (Early MVP). |
 | Want to see it first | [The website](https://cleanyourphone.org/). |
 | Need the safety rules | [docs/SAFETY.md](docs/SAFETY.md). |
-| Need a model profile | [Browse the 156 profiles](profiles/README.md). |
+| Need a model profile | [Browse the 157 profiles](profiles/README.md). |
 | Your phone is not listed | Use the skill manually, or send a [profile request](docs/FEEDBACK.md). |
 | Prefer a terminal | [Install the CLI](docs/CLI.md). |
 
@@ -330,6 +330,7 @@ The full, model-by-model catalog is in [docs/PROFILES.md](docs/PROFILES.md).
 | **Redmi** | 56 | 0 | 1 |
 | **POCO** | 16 | 0 | 0 |
 | **OnePlus** | 8 | 1 | 0 |
+| **Motorola** | 1 | 0 | 0 |
 | **Generic** | 1 | 0 | 0 |
 
 Want to add yours? Read [profiles/README.md](profiles/README.md). A `device` profile needs a real

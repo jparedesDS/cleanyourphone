@@ -22,7 +22,7 @@
   <img src="https://img.shields.io/badge/license-MIT-a78bfa?labelColor=121316" alt="MIT">
   <img src="https://img.shields.io/badge/python-3.10%2B-a78bfa?labelColor=121316" alt="Python 3.10+">
   <img src="https://img.shields.io/badge/telemetry-none-a78bfa?labelColor=121316" alt="无遥测">
-  <img src="https://img.shields.io/badge/profiles-156-a78bfa?labelColor=121316" alt="156 个机型配置">
+  <img src="https://img.shields.io/badge/profiles-157-a78bfa?labelColor=121316" alt="157 个机型配置">
   <a href="https://github.com/jparedesDS/cleanyourphone/releases"><img src="https://img.shields.io/github/v/release/jparedesDS/cleanyourphone?color=a78bfa&labelColor=121316" alt="release"></a>
   <a href="https://github.com/jparedesDS/cleanyourphone-app/releases"><img src="https://img.shields.io/github/v/release/jparedesDS/cleanyourphone-app?color=a78bfa&label=app&labelColor=121316" alt="app release"></a>
 </p>
@@ -37,7 +37,7 @@
 
 它是 [cleanyour.tv](https://cleanyour.tv) 的手机版，构建方式相同：一个提示词、一条命令、可逆、开源，而且始终由使用者掌控。
 
-[SKILL.md](SKILL.md) · [PROMPT.md](PROMPT.md) · [应用](https://github.com/jparedesDS/cleanyourphone-app) · [安全](docs/SAFETY.md) · [156 个机型配置](docs/PROFILES.md) · [反馈](docs/FEEDBACK.md) · [更新日志](CHANGELOG.md)
+[SKILL.md](SKILL.md) · [PROMPT.md](PROMPT.md) · [应用](https://github.com/jparedesDS/cleanyourphone-app) · [安全](docs/SAFETY.md) · [157 个机型配置](docs/PROFILES.md) · [反馈](docs/FEEDBACK.md) · [更新日志](CHANGELOG.md)
 
 ## 从这里开始
 
@@ -47,7 +47,7 @@
 | 更喜欢按钮而不是提示词 | [下载 Windows 应用](https://github.com/jparedesDS/cleanyourphone-app/releases/latest)（早期 MVP）。 |
 | 想先看看效果 | [官网](https://cleanyourphone.org/)。 |
 | 需要安全规则 | [docs/SAFETY.md](docs/SAFETY.md)。 |
-| 需要机型配置 | [浏览 156 个机型配置](profiles/README.md)。 |
+| 需要机型配置 | [浏览 157 个机型配置](profiles/README.md)。 |
 | 你的手机不在列表中 | 手动使用 Skill，或发送[机型配置请求](docs/FEEDBACK.md)。 |
 | 更喜欢终端 | [安装 CLI](docs/CLI.md)。 |
 
@@ -271,6 +271,7 @@ Windows 应用遵循同样的规则：`device` 机型配置可以使用经过测
 | **Redmi** | 56 | 0 | 1 |
 | **POCO** | 16 | 0 | 0 |
 | **OnePlus** | 8 | 1 | 0 |
+| **Motorola** | 1 | 0 | 0 |
 | **通用** | 1 | 0 | 0 |
 
 想添加自己的机型？请阅读 [profiles/README.md](profiles/README.md)。`device` 机型配置需要真实测试；`documented` 机型配置需要原始固件转储或机主自行收集的设备清单，并至少提供一个来源 URL。

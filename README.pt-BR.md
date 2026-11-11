@@ -22,7 +22,7 @@
   <img src="https://img.shields.io/badge/license-MIT-a78bfa?labelColor=121316" alt="MIT">
   <img src="https://img.shields.io/badge/python-3.10%2B-a78bfa?labelColor=121316" alt="Python 3.10+">
   <img src="https://img.shields.io/badge/telemetry-none-a78bfa?labelColor=121316" alt="Sem telemetria">
-  <img src="https://img.shields.io/badge/profiles-156-a78bfa?labelColor=121316" alt="156 perfis">
+  <img src="https://img.shields.io/badge/profiles-157-a78bfa?labelColor=121316" alt="157 perfis">
   <a href="https://github.com/jparedesDS/cleanyourphone/releases"><img src="https://img.shields.io/github/v/release/jparedesDS/cleanyourphone?color=a78bfa&labelColor=121316" alt="release"></a>
   <a href="https://github.com/jparedesDS/cleanyourphone-app/releases"><img src="https://img.shields.io/github/v/release/jparedesDS/cleanyourphone-app?color=a78bfa&label=app&labelColor=121316" alt="app release"></a>
 </p>
@@ -43,7 +43,7 @@ sobre a mesma CLI. A skill continua sendo o produto principal e o caminho para c
 É a versão para celular do [cleanyour.tv](https://cleanyour.tv), construída do mesmo jeito: um prompt,
 um comando, reversível, código aberto e a pessoa no controle.
 
-[SKILL.md](SKILL.md) · [PROMPT.md](PROMPT.md) · [App](https://github.com/jparedesDS/cleanyourphone-app) · [Segurança](docs/SAFETY.md) · [156 perfis](docs/PROFILES.md) · [Feedback](docs/FEEDBACK.md) · [Changelog](CHANGELOG.md)
+[SKILL.md](SKILL.md) · [PROMPT.md](PROMPT.md) · [App](https://github.com/jparedesDS/cleanyourphone-app) · [Segurança](docs/SAFETY.md) · [157 perfis](docs/PROFILES.md) · [Feedback](docs/FEEDBACK.md) · [Changelog](CHANGELOG.md)
 
 ## Comece aqui
 
@@ -53,7 +53,7 @@ um comando, reversível, código aberto e a pessoa no controle.
 | Prefere botões a prompts | [Baixe o app para Windows](https://github.com/jparedesDS/cleanyourphone-app/releases/latest) (Early MVP). |
 | Quer ver primeiro | [O site](https://cleanyourphone.org/). |
 | Precisa das regras de segurança | [docs/SAFETY.md](docs/SAFETY.md). |
-| Precisa de um perfil para seu modelo | [Veja os 156 perfis](profiles/README.md). |
+| Precisa de um perfil para seu modelo | [Veja os 157 perfis](profiles/README.md). |
 | Seu celular não está na lista | Use a skill manualmente ou envie um [pedido de perfil](docs/FEEDBACK.md). |
 | Prefere o terminal | [Instale a CLI](docs/CLI.md). |
 
@@ -336,6 +336,7 @@ O catálogo completo, modelo a modelo, está em [docs/PROFILES.md](docs/PROFILES
 | **Redmi** | 56 | 0 | 1 |
 | **POCO** | 16 | 0 | 0 |
 | **OnePlus** | 8 | 1 | 0 |
+| **Motorola** | 1 | 0 | 0 |
 | **Genérica** | 1 | 0 | 0 |
 
 Quer adicionar o seu? Leia [profiles/README.md](profiles/README.md). Um perfil `device` precisa de um

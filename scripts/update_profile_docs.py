@@ -10,9 +10,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PROFILES = ROOT / "profiles"
-ORDER = {"google": 0, "samsung": 1, "oneplus": 2, "xiaomi": 3, "redmi": 4, "poco": 5, "generic": 6}
+ORDER = {"google": 0, "samsung": 1, "oneplus": 2, "xiaomi": 3, "redmi": 4, "poco": 5, "motorola": 6, "generic": 7}
 VERIFY_RANK = {"device": 0, "documented": 1, "reference": 2}
-BRANDS = ["Google", "Samsung", "Xiaomi", "Redmi", "POCO", "OnePlus"]
+BRANDS = ["Google", "Samsung", "Xiaomi", "Redmi", "POCO", "OnePlus", "Motorola"]
 
 
 def load():
@@ -87,8 +87,14 @@ def row_catalog(rel, profile):
     elif level == "reference":
         notes = "Reference only; no auto-apply."
     else:
-        notes = (f"From the `{profile.get('codename','')}` firmware dump; "
-                 "ask only, no auto-apply.")
+        codename = str(profile.get("codename", "")).strip()
+        if not codename:
+            match = re.search(r"`([^`]+)`", str(profile.get("notes", "")))
+            codename = match.group(1) if match else ""
+        if codename:
+            notes = f"From the `{codename}` firmware dump; ask only, no auto-apply."
+        else:
+            notes = "From the firmware dump; ask only, no auto-apply."
     if profile.get("form_factor") == "tablet":
         notes = "Tablet; " + notes
     return (f"| `{profile['id']}` | {display(profile)} | {android_text(profile)} | "
@@ -191,8 +197,13 @@ def main():
 
     docs = ROOT / "docs"
     docs.mkdir(exist_ok=True)
+    brand_count = len({
+        profile.get("brand", "")
+        for _, _, profile in rows
+        if not profile.get("generic")
+    })
     doc = ["# Profile catalog", "",
-           f"CleanYourPhone ships **{len(rows)} profiles** across six brands. A `device` profile was",
+           f"CleanYourPhone ships **{len(rows)} profiles** across {brand_count} brands. A `device` profile was",
            "tested on a real phone and can auto-apply only on the build listed in `tested`. A",
            "`documented` profile comes from a primary firmware dump, never auto-applies and only asks.",
            "", "| Brand | Profiles | Device-tested | Tablets |", "|---|---|---|---|"]
