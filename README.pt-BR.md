@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://jparedesds.github.io/cleanyourphone-web/">
+  <a href="https://cleanyourphone.org/">
     <img src="assets/banner.png" alt="CleanYourPhone — seu celular, sem o que sobra" width="100%">
   </a>
 </p>
@@ -34,7 +34,7 @@ feita para agentes de código. Desativa apps e serviços pré-instalados via ADB
 customizada, nada desinstalado e um comando para restaurar as mudanças que a CLI registrou.
 
 Leia a história e o modelo de segurança em
-**[jparedesds.github.io/cleanyourphone-web](https://jparedesds.github.io/cleanyourphone-web/)**.
+**[cleanyourphone.org](https://cleanyourphone.org/)**.
 
 Também existe um **app opcional para Windows** para quem prefere botões a prompts:
 **[baixe o Early MVP](https://github.com/jparedesDS/cleanyourphone-app/releases/latest)**. É uma GUI
@@ -51,7 +51,7 @@ um comando, reversível, código aberto e a pessoa no controle.
 |---|---|
 | Um celular e um agente de código | O início rápido abaixo. |
 | Prefere botões a prompts | [Baixe o app para Windows](https://github.com/jparedesDS/cleanyourphone-app/releases/latest) (Early MVP). |
-| Quer ver primeiro | [O site](https://jparedesds.github.io/cleanyourphone-web/). |
+| Quer ver primeiro | [O site](https://cleanyourphone.org/). |
 | Precisa das regras de segurança | [docs/SAFETY.md](docs/SAFETY.md). |
 | Precisa de um perfil para seu modelo | [Veja os 156 perfis](profiles/README.md). |
 | Seu celular não está na lista | Use a skill manualmente ou envie um [pedido de perfil](docs/FEEDBACK.md). |
@@ -62,7 +62,7 @@ um comando, reversível, código aberto e a pessoa no controle.
 | **Skill** | Produto principal, neste repositório. |
 | **CLI** | `0.3.2`, publicada no PyPI como `cleanyourphone` / `cyp`. |
 | **App para Windows** | `0.2.0` Early MVP, opcional, sem assinatura. |
-| **Site** | 10 idiomas em [jparedesds.github.io/cleanyourphone-web](https://jparedesds.github.io/cleanyourphone-web/). |
+| **Site** | 10 idiomas em [cleanyourphone.org](https://cleanyourphone.org/). |
 | **Feedback** | Formulário opcional no site/app/skill para o Discord; sem telemetria automática. |
 
 ---
@@ -247,7 +247,7 @@ Depois peça: **"Limpe meu celular"** ou **"Use o cleanyourphone no meu Pixel"**
 Se um celular não está coberto, a pessoa pode pedir um perfil ou reportar um bug sem compartilhar
 número de série, endereço IP, IMEI ou endereço MAC:
 
-- **Site:** [formulário de feedback do cleanyourphone](https://jparedesds.github.io/cleanyourphone-web/#feedback).
+- **Site:** [formulário de feedback do cleanyourphone](https://cleanyourphone.org/#feedback).
 - **App:** **Feedback** no cabeçalho; o checklist vem preenchido e editável.
 - **Skill:** `python scripts/feedback.py --kind profile --checklist-file feedback.txt` mostra o payload;
   adicione `--yes` só depois que a pessoa aprovar.
@@ -395,7 +395,7 @@ Sim, um app opcional para Windows em [cleanyourphone-app](https://github.com/jpa
 sendo o caminho para qualquer outro celular.
 
 **Como reporto um celular ou envio feedback?**
-Use o [formulário web](https://jparedesds.github.io/cleanyourphone-web/#feedback), o **Feedback** no
+Use o [formulário web](https://cleanyourphone.org/#feedback), o **Feedback** no
 app ou `scripts/feedback.py` da skill. É opt-in, mostra o payload antes e exclui número de série, IP,
 IMEI e endereços MAC. Veja [docs/FEEDBACK.md](docs/FEEDBACK.md).
 
@@ -407,7 +407,7 @@ IMEI e endereços MAC. Veja [docs/FEEDBACK.md](docs/FEEDBACK.md).
   `disable` vazio.
 - Um guard, parser ou correção de CLI: adicione um teste em `tests/`.
 - Uma mudança em regra de segurança: abra uma issue primeiro. Essas regras são o produto.
-- Um celular que você não consegue testar: envie um [pedido de perfil](https://jparedesds.github.io/cleanyourphone-web/#feedback)
+- Um celular que você não consegue testar: envie um [pedido de perfil](https://cleanyourphone.org/#feedback)
   com modelo, Android, build e fingerprint. Sem número de série nem IP.
 - Mudanças de marca ou logo: leia [docs/BRAND.md](docs/BRAND.md) antes de mexer nos assets.
 - Leia [AGENTS.md](AGENTS.md) antes de mudar o repositório.

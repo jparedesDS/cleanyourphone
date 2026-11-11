@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://jparedesds.github.io/cleanyourphone-web/">
+  <a href="https://cleanyourphone.org/">
     <img src="assets/banner.png" alt="CleanYourPhone — あなたのスマホを、余計なものなしで" width="100%">
   </a>
 </p>
@@ -31,7 +31,7 @@
 
 **あなたのスマホを、余計なものなしで。** コーディングエージェントのために作られた、オープンソースで元に戻せる Android 向けデブロート skill です。ADB 経由でプリインストールアプリとサービスを無効化します。root もカスタム ROM も不要、アンインストールも一切なく、CLI が記録した変更は 1 コマンドで復元できます。
 
-ストーリーと安全モデルは **[jparedesds.github.io/cleanyourphone-web](https://jparedesds.github.io/cleanyourphone-web/)** で読めます。
+ストーリーと安全モデルは **[cleanyourphone.org](https://cleanyourphone.org/)** で読めます。
 
 ボタン操作を好む人向けに、**オプションの Windows アプリ**も用意しています: **[Early MVP をダウンロード](https://github.com/jparedesDS/cleanyourphone-app/releases/latest)**。同じ CLI の GUI です。skill が主力プロダクトであり、プロファイルのないスマホのための道でもあります。
 
@@ -45,7 +45,7 @@
 |---|---|
 | スマホとコーディングエージェントがある | 下のクイックスタート。 |
 | プロンプトよりボタンがいい | [Windows アプリをダウンロード](https://github.com/jparedesDS/cleanyourphone-app/releases/latest)（Early MVP）。 |
-| まず動きを見たい | [ウェブサイト](https://jparedesds.github.io/cleanyourphone-web/)。 |
+| まず動きを見たい | [ウェブサイト](https://cleanyourphone.org/)。 |
 | 安全ルールが必要 | [docs/SAFETY.md](docs/SAFETY.md)。 |
 | モデル用のプロファイルが必要 | [156 個のプロファイルを見る](profiles/README.md)。 |
 | 自分のスマホが一覧にない | skill を手動で使うか、[プロファイルのリクエスト](docs/FEEDBACK.md)を送ってください。 |
@@ -56,7 +56,7 @@
 | **Skill** | 主力プロダクト。このリポジトリにあります。 |
 | **CLI** | `0.3.2`、PyPI で `cleanyourphone` / `cyp` として公開。 |
 | **Windows アプリ** | `0.2.0` Early MVP、オプション、未署名。 |
-| **ウェブサイト** | 10言語対応: [jparedesds.github.io/cleanyourphone-web](https://jparedesds.github.io/cleanyourphone-web/)。 |
+| **ウェブサイト** | 10言語対応: [cleanyourphone.org](https://cleanyourphone.org/)。 |
 | **フィードバック** | オプションの web/アプリ/skill フォームから Discord へ。自動テレメトリーはありません。 |
 
 ---
@@ -203,7 +203,7 @@ cp SKILL.md ~/.claude/skills/cleanyourphone/SKILL.md
 
 対象外のスマホがある場合、シリアル番号、IP アドレス、IMEI、MAC アドレスを共有せずに、プロファイルを依頼したりバグを報告したりできます:
 
-- **Web:** [cleanyourphone フィードバックフォーム](https://jparedesds.github.io/cleanyourphone-web/#feedback)。
+- **Web:** [cleanyourphone フィードバックフォーム](https://cleanyourphone.org/#feedback)。
 - **アプリ:** ヘッダーの **Feedback**。チェックリストは入力済みで編集できます。
 - **Skill:** `python scripts/feedback.py --kind profile --checklist-file feedback.txt` で送信内容をプレビューします。`--yes` は本人が承認したあとだけ付けてください。
 
@@ -302,7 +302,7 @@ Windows アプリも同じルールに従います。`device` プロファイル
 
 **GUI はありますか？**はい、[cleanyourphone-app](https://github.com/jparedesDS/cleanyourphone-app) にオプションの Windows アプリがあります。Early MVP でコード署名はなく、既知のプロファイルでのみ続行します。それ以外のスマホでは skill が道です。
 
-**スマホの情報提供やフィードバックはどう送りますか？** [ウェブフォーム](https://jparedesds.github.io/cleanyourphone-web/#feedback)、アプリの **Feedback**、または skill の `scripts/feedback.py` を使ってください。オプトインで、送信内容をプレビューし、シリアル、IP、IMEI、MAC アドレスを除外します。詳細は [docs/FEEDBACK.md](docs/FEEDBACK.md)。
+**スマホの情報提供やフィードバックはどう送りますか？** [ウェブフォーム](https://cleanyourphone.org/#feedback)、アプリの **Feedback**、または skill の `scripts/feedback.py` を使ってください。オプトインで、送信内容をプレビューし、シリアル、IP、IMEI、MAC アドレスを除外します。詳細は [docs/FEEDBACK.md](docs/FEEDBACK.md)。
 
 ## コントリビュート
 
@@ -310,7 +310,7 @@ Windows アプリも同じルールに従います。`device` プロファイル
 - `documented` プロファイル: `scripts/dump_inventory.py` を使い、`sources` に一次ダンプを引用し、`disable` は空のままにします。
 - ガード、パーサー、CLI の修正: `tests/` にテストを追加します。
 - 安全ルールの変更: まず issue を開いてください。そのルールこそが製品です。
-- 自分ではテストできないスマホ: モデル、Android、ビルド、フィンガープリントを添えて [プロファイルのリクエスト](https://jparedesds.github.io/cleanyourphone-web/#feedback)を送ってください。シリアルも IP も不要です。
+- 自分ではテストできないスマホ: モデル、Android、ビルド、フィンガープリントを添えて [プロファイルのリクエスト](https://cleanyourphone.org/#feedback)を送ってください。シリアルも IP も不要です。
 - ブランドやロゴの変更: アセットを変更する前に [docs/BRAND.md](docs/BRAND.md) を読んでください。
 - リポジトリを変更する前に [AGENTS.md](AGENTS.md) を読んでください。
 

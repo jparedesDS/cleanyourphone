@@ -469,7 +469,7 @@ python scripts/feedback.py --yes --kind profile --checklist-file feedback.txt
 
 Without `--yes`, the script prints the payload and sends nothing. It redacts common identifiers before
 the preview. The web form is at
-<https://jparedesds.github.io/cleanyourphone-web/#feedback>. The feedback helper is separate from
+<https://cleanyourphone.org/#feedback>. The feedback helper is separate from
 `tools/phone.py`, which stays local and network-free. See [docs/FEEDBACK.md](docs/FEEDBACK.md).
 
 ## Stop conditions

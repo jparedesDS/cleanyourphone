@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://jparedesds.github.io/cleanyourphone-web/es.html">
+  <a href="https://cleanyourphone.org/es.html">
     <img src="assets/banner.png" alt="CleanYourPhone — tu móvil, sin lo que sobra" width="100%">
   </a>
 </p>
@@ -34,7 +34,7 @@ pensada para agentes. Desactiva apps y servicios preinstalados por ADB: sin root
 sin desinstalar nada y con un comando para restaurar los cambios que registró la CLI.
 
 La historia y el modelo de seguridad, en
-**[jparedesds.github.io/cleanyourphone-web/es.html](https://jparedesds.github.io/cleanyourphone-web/es.html)**.
+**[cleanyourphone.org/es.html](https://cleanyourphone.org/es.html)**.
 
 También hay una **app opcional para Windows** para quien prefiere botones:
 **[descarga la Early MVP](https://github.com/jparedesDS/cleanyourphone-app/releases/latest)**. Es una
@@ -52,7 +52,7 @@ reversible, open source y la persona siempre al mando.
 |---|---|
 | Un móvil y un agente de código | El inicio rápido de abajo. |
 | Prefieres botones a prompts | [Descarga la app de Windows](https://github.com/jparedesDS/cleanyourphone-app/releases/latest) (Early MVP). |
-| Ganas de verlo primero | [La web](https://jparedesds.github.io/cleanyourphone-web/es.html). |
+| Ganas de verlo primero | [La web](https://cleanyourphone.org/es.html). |
 | Dudas de seguridad | [docs/SAFETY.md](docs/SAFETY.md). |
 | Un modelo concreto | [Los 156 perfiles](docs/PROFILES.md). |
 | Tu móvil no está en la lista | Usa la skill manualmente o envía una [petición de perfil](docs/FEEDBACK.md). |
@@ -63,7 +63,7 @@ reversible, open source y la persona siempre al mando.
 | **Skill** | Producto principal, en este repositorio. |
 | **CLI** | `0.3.2`, en PyPI como `cleanyourphone` / `cyp`. |
 | **App Windows** | `0.2.0` Early MVP, opcional, sin firmar. |
-| **Web** | 10 idiomas en [jparedesds.github.io/cleanyourphone-web](https://jparedesds.github.io/cleanyourphone-web/es.html). |
+| **Web** | 10 idiomas en [cleanyourphone.org](https://cleanyourphone.org/es.html). |
 | **Feedback** | Formulario opcional app/web/skill a Discord; sin telemetría automática. |
 
 ---
@@ -241,7 +241,7 @@ Luego pide: **"Limpia mi móvil"** o **"Usa cleanyourphone en mi Pixel"**.
 Si tu móvil no está cubierto, puedes pedir un perfil o reportar un bug sin compartir número de serie,
 IP, IMEI ni MAC:
 
-- **Web:** [formulario de feedback](https://jparedesds.github.io/cleanyourphone-web/es.html#feedback).
+- **Web:** [formulario de feedback](https://cleanyourphone.org/es.html#feedback).
 - **App:** **Feedback** en la cabecera; el checklist viene relleno y se puede editar.
 - **Skill:** `python scripts/feedback.py --kind profile --checklist-file feedback.txt` enseña el
   payload; añade `--yes` solo después de que la persona lo apruebe.
@@ -389,7 +389,7 @@ Es una Early MVP, no está firmada y solo continúa con un perfil conocido. La s
 camino para cualquier otro móvil.
 
 **¿Cómo pido un perfil o mando feedback?**
-Usa el [formulario web](https://jparedesds.github.io/cleanyourphone-web/es.html#feedback), **Feedback**
+Usa el [formulario web](https://cleanyourphone.org/es.html#feedback), **Feedback**
 en la app, o `scripts/feedback.py` desde la skill. Es opt-in, enseña el payload y excluye serie, IP,
 IMEI y MAC. Ver [docs/FEEDBACK.md](docs/FEEDBACK.md).
 
@@ -401,7 +401,7 @@ IMEI y MAC. Ver [docs/FEEDBACK.md](docs/FEEDBACK.md).
   `disable` vacío.
 - Un guard, parser o arreglo del CLI: añade un test en `tests/`.
 - Un cambio de regla de seguridad: abre un issue primero. Esas reglas son el producto.
-- Un móvil que no puedes probar: envía una [petición de perfil](https://jparedesds.github.io/cleanyourphone-web/es.html#feedback)
+- Un móvil que no puedes probar: envía una [petición de perfil](https://cleanyourphone.org/es.html#feedback)
   con modelo, Android, build y fingerprint. Sin número de serie ni IP.
 - Cambios de marca o logotipo: lee [docs/BRAND.md](docs/BRAND.md) antes de tocar los assets.
 - Lee [AGENTS.md](AGENTS.md) antes de cambiar el repo.

@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://jparedesds.github.io/cleanyourphone-web/">
+  <a href="https://cleanyourphone.org/">
     <img src="assets/banner.png" alt="CleanYourPhone — 불필요한 것을 뺀, 당신의 폰" width="100%">
   </a>
 </p>
@@ -34,7 +34,7 @@ ADB로 사전 설치된 앱과 서비스를 비활성화합니다. root도, 커�
 기록한 변경을 명령 하나로 되돌릴 수 있습니다.
 
 프로젝트 이야기와 안전 모델은
-**[jparedesds.github.io/cleanyourphone-web](https://jparedesds.github.io/cleanyourphone-web/)**에서
+**[cleanyourphone.org](https://cleanyourphone.org/)**에서
 볼 수 있습니다.
 
 프롬프트보다 버튼이 편한 사람을 위한 **선택 사항인 Windows 앱**도 있습니다:
@@ -52,7 +52,7 @@ CLI를 감싼 GUI입니다. 스킬은 여전히 주요 제품이며, 프로필�
 |---|---|
 | 폰과 코딩 에이전트가 있다 | 아래 빠른 시작을 따르세요. |
 | 프롬프트보다 버튼이 좋다 | [Windows 앱 다운로드](https://github.com/jparedesDS/cleanyourphone-app/releases/latest) (Early MVP). |
-| 먼저 보고 싶다 | [웹사이트](https://jparedesds.github.io/cleanyourphone-web/). |
+| 먼저 보고 싶다 | [웹사이트](https://cleanyourphone.org/). |
 | 안전 규칙이 필요하다 | [docs/SAFETY.md](docs/SAFETY.md). |
 | 모델 프로필이 필요하다 | [프로필 156개 둘러보기](profiles/README.md). |
 | 내 폰이 목록에 없다 | 스킬을 직접 사용하거나 [프로필 요청](docs/FEEDBACK.md)을 보내세요. |
@@ -63,7 +63,7 @@ CLI를 감싼 GUI입니다. 스킬은 여전히 주요 제품이며, 프로필�
 | **스킬** | 주요 제품, 이 저장소에 있습니다. |
 | **CLI** | `0.3.2`, PyPI에 `cleanyourphone` / `cyp`로 배포됩니다. |
 | **Windows 앱** | `0.2.0` Early MVP, 선택 사항, 서명되지 않음. |
-| **웹사이트** | [jparedesds.github.io/cleanyourphone-web](https://jparedesds.github.io/cleanyourphone-web/)에서 10개 언어로 제공. |
+| **웹사이트** | [cleanyourphone.org](https://cleanyourphone.org/)에서 10개 언어로 제공. |
 | **피드백** | 웹/앱/스킬에서 Discord로 보내는 선택형 양식, 자동 텔레메트리 없음. |
 
 ---
@@ -246,7 +246,7 @@ cp SKILL.md ~/.claude/skills/cleanyourphone/SKILL.md
 폰이 지원되지 않는다면 시리얼 번호, IP 주소, IMEI, MAC 주소를 공유하지 않고도 프로필을
 요청하거나 버그를 보고할 수 있습니다:
 
-- **웹:** [cleanyourphone 피드백 양식](https://jparedesds.github.io/cleanyourphone-web/#feedback).
+- **웹:** [cleanyourphone 피드백 양식](https://cleanyourphone.org/#feedback).
 - **앱:** 헤더의 **피드백**; 체크리스트가 미리 채워져 있고 편집할 수 있습니다.
 - **스킬:** `python scripts/feedback.py --kind profile --checklist-file feedback.txt`로
   페이로드를 미리 봅니다. 사용자가 승인한 뒤에만 `--yes`를 추가하세요.
@@ -395,7 +395,7 @@ Google 서비스가 없는 Huawei/Honor에서는 많은 `com.google.*` 패키지
 폰에서는 스킬이 여전히 경로입니다.
 
 **폰 모델을 알리거나 피드백을 보내려면 어떻게 하나요?**
-[웹 양식](https://jparedesds.github.io/cleanyourphone-web/#feedback), 앱의 **피드백**, 또는 스킬의
+[웹 양식](https://cleanyourphone.org/#feedback), 앱의 **피드백**, 또는 스킬의
 `scripts/feedback.py`를 사용하세요. 옵트인 방식이며 페이로드를 미리 보여 주고 시리얼, IP, IMEI,
 MAC 주소를 제외합니다. [docs/FEEDBACK.md](docs/FEEDBACK.md)를 참고하세요.
 
@@ -408,7 +408,7 @@ MAC 주소를 제외합니다. [docs/FEEDBACK.md](docs/FEEDBACK.md)를 참고하
 - 가드, 파서, CLI 수정: `tests/`에 테스트를 추가하세요.
 - 안전 규칙 변경: 먼저 이슈를 여세요. 그 규칙들이 곧 제품입니다.
 - 직접 테스트할 수 없는 폰: 모델, Android, 빌드, fingerprint와 함께
-  [프로필 요청](https://jparedesds.github.io/cleanyourphone-web/#feedback)을 보내세요. 시리얼과
+  [프로필 요청](https://cleanyourphone.org/#feedback)을 보내세요. 시리얼과
   IP는 보내지 마세요.
 - 브랜드나 로고 변경: 에셋을 바꾸기 전에 [docs/BRAND.md](docs/BRAND.md)를 읽으세요.
 - 저장소를 변경하기 전에 [AGENTS.md](AGENTS.md)를 읽으세요.

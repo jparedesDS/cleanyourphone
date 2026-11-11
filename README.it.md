@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://jparedesds.github.io/cleanyourphone-web/">
+  <a href="https://cleanyourphone.org/">
     <img src="assets/banner.png" alt="CleanYourPhone — il tuo telefono, senza il superfluo" width="100%">
   </a>
 </p>
@@ -35,7 +35,7 @@ niente root, niente ROM personalizzate, senza disinstallare nulla e un solo coma
 le modifiche registrate dalla CLI.
 
 La storia e il modello di sicurezza sono su
-**[jparedesds.github.io/cleanyourphone-web](https://jparedesds.github.io/cleanyourphone-web/)**.
+**[cleanyourphone.org](https://cleanyourphone.org/)**.
 
 C'è anche un'**app opzionale per Windows** per chi preferisce i pulsanti ai prompt:
 **[scarica la Early MVP](https://github.com/jparedesDS/cleanyourphone-app/releases/latest)**. È una
@@ -53,7 +53,7 @@ prompt, un comando, reversibile, open source e la persona resta al comando.
 |---|---|
 | Un telefono e un agente di programmazione | L'avvio rapido qui sotto. |
 | Preferisci i pulsanti ai prompt | [Scarica l'app per Windows](https://github.com/jparedesDS/cleanyourphone-app/releases/latest) (Early MVP). |
-| Vuoi vederlo prima | [Il sito](https://jparedesds.github.io/cleanyourphone-web/). |
+| Vuoi vederlo prima | [Il sito](https://cleanyourphone.org/). |
 | Ti servono le regole di sicurezza | [docs/SAFETY.md](docs/SAFETY.md). |
 | Ti serve un profilo per il tuo modello | [Sfoglia i 156 profili](profiles/README.md). |
 | Il tuo telefono non è in elenco | Usa la skill manualmente o invia una [richiesta di profilo](docs/FEEDBACK.md). |
@@ -64,7 +64,7 @@ prompt, un comando, reversibile, open source e la persona resta al comando.
 | **Skill** | Prodotto principale, in questo repository. |
 | **CLI** | `0.3.2`, pubblicata su PyPI come `cleanyourphone` / `cyp`. |
 | **App per Windows** | `0.2.0` Early MVP, opzionale, non firmata. |
-| **Sito web** | Disponibile in 10 lingue su [jparedesds.github.io/cleanyourphone-web](https://jparedesds.github.io/cleanyourphone-web/). |
+| **Sito web** | Disponibile in 10 lingue su [cleanyourphone.org](https://cleanyourphone.org/). |
 | **Feedback** | Modulo opzionale web/app/skill verso Discord; nessuna telemetria automatica. |
 
 ---
@@ -255,7 +255,7 @@ Poi chiedi: **"Pulisci il mio telefono"** o **"Usa cleanyourphone sul mio Pixel"
 Se un telefono non è coperto, la persona può chiedere un profilo o segnalare un bug senza condividere
 numero di serie, indirizzo IP, IMEI o indirizzo MAC:
 
-- **Web:** [modulo di feedback di cleanyourphone](https://jparedesds.github.io/cleanyourphone-web/#feedback).
+- **Web:** [modulo di feedback di cleanyourphone](https://cleanyourphone.org/#feedback).
 - **App:** **Feedback** nell'intestazione; la checklist è precompilata e modificabile.
 - **Skill:** `python scripts/feedback.py --kind profile --checklist-file feedback.txt` mostra
   l'anteprima del payload; aggiungi `--yes` solo dopo che la persona ha approvato.
@@ -407,7 +407,7 @@ Sì, un'app opzionale per Windows in
 firmata e continua solo con un profilo conosciuto. La skill resta il percorso per ogni altro telefono.
 
 **Come segnalo un telefono o invio feedback?**
-Usa il [modulo web](https://jparedesds.github.io/cleanyourphone-web/#feedback), **Feedback** nell'app,
+Usa il [modulo web](https://cleanyourphone.org/#feedback), **Feedback** nell'app,
 o `scripts/feedback.py` dalla skill. È opt-in, mostra l'anteprima del payload ed esclude numero di
 serie, IP, IMEI e indirizzi MAC. Vedi [docs/FEEDBACK.md](docs/FEEDBACK.md).
 
@@ -420,7 +420,7 @@ serie, IP, IMEI e indirizzi MAC. Vedi [docs/FEEDBACK.md](docs/FEEDBACK.md).
 - Una correzione a un guard, a un parser o alla CLI: aggiungi un test in `tests/`.
 - Una modifica alle regole di sicurezza: apri prima una issue. Quelle regole sono il prodotto.
 - Un telefono che non puoi testare di persona: invia una
-  [richiesta di profilo](https://jparedesds.github.io/cleanyourphone-web/#feedback) con modello,
+  [richiesta di profilo](https://cleanyourphone.org/#feedback) con modello,
   Android, build e fingerprint. Nessun numero di serie o IP.
 - Modifiche al marchio o al logo: leggi [docs/BRAND.md](docs/BRAND.md) prima di modificare gli asset.
 - Leggi [AGENTS.md](AGENTS.md) prima di modificare il repository.

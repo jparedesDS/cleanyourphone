@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://jparedesds.github.io/cleanyourphone-web/">
+  <a href="https://cleanyourphone.org/">
     <img src="assets/banner.png" alt="CleanYourPhone — 你的手機，減去多餘" width="100%">
   </a>
 </p>
@@ -34,7 +34,7 @@ ADB 停用預裝應用程式與服務：免 root、免刷機、不解除安裝�
 復原 CLI 記錄的變更。
 
 故事與安全模型請見
-**[jparedesds.github.io/cleanyourphone-web](https://jparedesds.github.io/cleanyourphone-web/)**。
+**[cleanyourphone.org](https://cleanyourphone.org/)**。
 
 另外還有選用的 **Windows 應用程式**，給偏好按鈕而非提示詞的人：
 **[下載 Early MVP](https://github.com/jparedesDS/cleanyourphone-app/releases/latest)**。它是同一套
@@ -51,7 +51,7 @@ CLI 的 GUI。skill 仍是主要產品，也是沒有設定檔的手機該走的
 |---|---|
 | 有一支手機和一個程式碼代理 | 下方的快速開始。 |
 | 偏好按鈕而非提示詞 | [下載 Windows 應用程式](https://github.com/jparedesDS/cleanyourphone-app/releases/latest)（Early MVP）。 |
-| 想先看看 | [網站](https://jparedesds.github.io/cleanyourphone-web/)。 |
+| 想先看看 | [網站](https://cleanyourphone.org/)。 |
 | 需要安全規則 | [docs/SAFETY.md](docs/SAFETY.md)。 |
 | 需要機型設定檔 | [瀏覽 156 個設定檔](profiles/README.md)。 |
 | 手機不在清單上 | 手動使用 skill，或送出一份[設定檔請求](docs/FEEDBACK.md)。 |
@@ -62,7 +62,7 @@ CLI 的 GUI。skill 仍是主要產品，也是沒有設定檔的手機該走的
 | **Skill** | 主要產品，位於這個儲存庫。 |
 | **CLI** | `0.3.2`，以 `cleanyourphone` / `cyp` 之名發佈於 PyPI。 |
 | **Windows 應用程式** | `0.2.0` Early MVP，選用，未簽署。 |
-| **網站** | 10 種語言，位於 [jparedesds.github.io/cleanyourphone-web](https://jparedesds.github.io/cleanyourphone-web/)。 |
+| **網站** | 10 種語言，位於 [cleanyourphone.org](https://cleanyourphone.org/)。 |
 | **意見回饋** | 選用的網頁／應用程式／skill 表單，送到 Discord；沒有自動遙測。 |
 
 ---
@@ -239,7 +239,7 @@ cp SKILL.md ~/.claude/skills/cleanyourphone/SKILL.md
 如果某支手機尚未涵蓋，使用者可以請求設定檔或回報錯誤，而不必提供序號、IP 位址、IMEI 或
 MAC 位址：
 
-- **網頁：** [CleanYourPhone 意見回饋表單](https://jparedesds.github.io/cleanyourphone-web/#feedback)。
+- **網頁：** [CleanYourPhone 意見回饋表單](https://cleanyourphone.org/#feedback)。
 - **應用程式：** 標題列的 **Feedback**；檢查清單已預先填入且可編輯。
 - **Skill：** `python scripts/feedback.py --kind profile --checklist-file feedback.txt` 會預覽
   內容；只有在使用者同意後才加上 `--yes`。
@@ -378,7 +378,7 @@ GrapheneOS。
 為主要途徑。
 
 **如何回報手機或送出意見回饋？**
-使用[網頁表單](https://jparedesds.github.io/cleanyourphone-web/#feedback)、應用程式中的
+使用[網頁表單](https://cleanyourphone.org/#feedback)、應用程式中的
 **Feedback**，或 skill 中的 `scripts/feedback.py`。它是選擇性的、會預覽內容，並排除序號、
 IP、IMEI 與 MAC 位址。請見 [docs/FEEDBACK.md](docs/FEEDBACK.md)。
 
@@ -390,7 +390,7 @@ IP、IMEI 與 MAC 位址。請見 [docs/FEEDBACK.md](docs/FEEDBACK.md)。
   `disable` 保持空白。
 - 防護、解析器或 CLI 修正：在 `tests/` 新增測試。
 - 安全規則變更：先開一個 issue。這些規則就是產品本身。
-- 你無法自行測試的手機：送出[設定檔請求](https://jparedesds.github.io/cleanyourphone-web/#feedback)，
+- 你無法自行測試的手機：送出[設定檔請求](https://cleanyourphone.org/#feedback)，
   附上機型、Android、build 與指紋。不要附序號或 IP。
 - 品牌或標誌變更：變更素材前請先讀 [docs/BRAND.md](docs/BRAND.md)。
 - 變更儲存庫前請先讀 [AGENTS.md](AGENTS.md)。

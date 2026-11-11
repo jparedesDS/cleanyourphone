@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://jparedesds.github.io/cleanyourphone-web/">
+  <a href="https://cleanyourphone.org/">
     <img src="assets/banner.png" alt="CleanYourPhone — dein Smartphone, ohne Ballast" width="100%">
   </a>
 </p>
@@ -35,7 +35,7 @@ Apps und Dienste über ADB: kein Root, keine Custom-ROM, nichts wird deinstallie
 macht die von der CLI protokollierten Änderungen rückgängig.
 
 Die Geschichte und das Sicherheitsmodell findest du unter
-**[jparedesds.github.io/cleanyourphone-web](https://jparedesds.github.io/cleanyourphone-web/)**.
+**[cleanyourphone.org](https://cleanyourphone.org/)**.
 
 Außerdem gibt es eine optionale **Windows-App** für alle, die lieber Schaltflächen als Prompts mögen:
 **[Lade die frühe MVP-Version herunter](https://github.com/jparedesDS/cleanyourphone-app/releases/latest)**.
@@ -53,7 +53,7 @@ Prinzip gebaut: ein Prompt, ein Befehl, reversibel, Open Source, und die Person 
 |---|---|
 | Ein Smartphone und einen Coding-Agenten | Der Schnellstart unten. |
 | Lieber Schaltflächen als Prompts | [Lade die Windows-App herunter](https://github.com/jparedesDS/cleanyourphone-app/releases/latest) (frühe MVP-Version). |
-| Willst du es erst sehen | [Die Website](https://jparedesds.github.io/cleanyourphone-web/). |
+| Willst du es erst sehen | [Die Website](https://cleanyourphone.org/). |
 | Brauchst du die Sicherheitsregeln | [docs/SAFETY.md](docs/SAFETY.md). |
 | Brauchst du ein Modellprofil | [Durchsuche die 156 Profile](profiles/README.md). |
 | Dein Smartphone ist nicht dabei | Nutze die Skill manuell oder schicke eine [Profilanfrage](docs/FEEDBACK.md). |
@@ -64,7 +64,7 @@ Prinzip gebaut: ein Prompt, ein Befehl, reversibel, Open Source, und die Person 
 | **Skill** | Hauptprodukt, in diesem Repository. |
 | **CLI** | `0.3.2`, auf PyPI als `cleanyourphone` / `cyp`. |
 | **Windows-App** | `0.2.0` frühe MVP-Version, optional, nicht signiert. |
-| **Website** | In 10 Sprachen unter [jparedesds.github.io/cleanyourphone-web](https://jparedesds.github.io/cleanyourphone-web/). |
+| **Website** | In 10 Sprachen unter [cleanyourphone.org](https://cleanyourphone.org/). |
 | **Feedback** | Optionales Web-/App-/Skill-Formular an Discord; keine automatische Telemetrie. |
 
 ---
@@ -259,7 +259,7 @@ Dann frage: **„Räum mein Smartphone auf“** oder **„Nutze cleanyourphone a
 Wenn ein Smartphone nicht abgedeckt ist, kann die Person ein Profil anfragen oder einen Fehler
 melden, ohne Seriennummer, IP-Adresse, IMEI oder MAC-Adresse zu teilen:
 
-- **Web:** [Feedback-Formular von CleanYourPhone](https://jparedesds.github.io/cleanyourphone-web/#feedback).
+- **Web:** [Feedback-Formular von CleanYourPhone](https://cleanyourphone.org/#feedback).
 - **App:** **Feedback** in der Kopfzeile; die Checkliste ist vorausgefüllt und bearbeitbar.
 - **Skill:** `python scripts/feedback.py --kind profile --checklist-file feedback.txt` zeigt die
   Payload als Vorschau; füge `--yes` erst hinzu, nachdem die Person zugestimmt hat.
@@ -416,7 +416,7 @@ MVP-Version, nicht code-signiert und läuft nur bei einem bekannten Profil weite
 Weg für jedes andere Smartphone.
 
 **Wie melde ich ein Smartphone oder schicke Feedback?**
-Nutze das [Webformular](https://jparedesds.github.io/cleanyourphone-web/#feedback), **Feedback** in
+Nutze das [Webformular](https://cleanyourphone.org/#feedback), **Feedback** in
 der App oder `scripts/feedback.py` aus der Skill. Es ist Opt-in, zeigt die Payload als Vorschau und
 schließt Seriennummer, IP, IMEI und MAC-Adressen aus. Siehe [docs/FEEDBACK.md](docs/FEEDBACK.md).
 
@@ -429,7 +429,7 @@ schließt Seriennummer, IP, IMEI und MAC-Adressen aus. Siehe [docs/FEEDBACK.md](
 - Ein Fix an Guard, Parser oder CLI: Füge einen Test in `tests/` hinzu.
 - Eine Änderung an einer Sicherheitsregel: Öffne zuerst ein Issue. Diese Regeln sind das Produkt.
 - Ein Smartphone, das du nicht selbst testen kannst: Schicke eine
-  [Profilanfrage](https://jparedesds.github.io/cleanyourphone-web/#feedback) mit Modell, Android,
+  [Profilanfrage](https://cleanyourphone.org/#feedback) mit Modell, Android,
   Build und Fingerprint. Keine Seriennummer und keine IP.
 - Änderungen an Marke oder Logo: Lies [docs/BRAND.md](docs/BRAND.md), bevor du Assets änderst.
 - Lies [AGENTS.md](AGENTS.md), bevor du das Repository änderst.

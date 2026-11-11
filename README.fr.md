@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://jparedesds.github.io/cleanyourphone-web/">
+  <a href="https://cleanyourphone.org/">
     <img src="assets/banner.png" alt="CleanYourPhone — votre téléphone, sans le superflu" width="100%">
   </a>
 </p>
@@ -35,7 +35,7 @@ root, sans ROM personnalisée, rien de désinstallé, et une commande pour resta
 enregistrés par le CLI.
 
 L’histoire et le modèle de sécurité sont sur
-**[jparedesds.github.io/cleanyourphone-web](https://jparedesds.github.io/cleanyourphone-web/)**.
+**[cleanyourphone.org](https://cleanyourphone.org/)**.
 
 Il existe aussi une **app Windows facultative** pour ceux qui préfèrent les boutons aux prompts :
 **[télécharger l’Early MVP](https://github.com/jparedesDS/cleanyourphone-app/releases/latest)**. C’est
@@ -53,7 +53,7 @@ prompt, une commande, réversible, open source, et la personne garde le contrôl
 |---|---|
 | Un téléphone et un agent de code | Le démarrage rapide ci-dessous. |
 | Une préférence pour les boutons | [Téléchargez l’app Windows](https://github.com/jparedesDS/cleanyourphone-app/releases/latest) (Early MVP). |
-| Envie de voir d’abord | [Le site](https://jparedesds.github.io/cleanyourphone-web/). |
+| Envie de voir d’abord | [Le site](https://cleanyourphone.org/). |
 | Besoin des règles de sécurité | [docs/SAFETY.md](docs/SAFETY.md). |
 | Besoin d’un profil pour votre modèle | [Parcourir les 156 profils](profiles/README.md). |
 | Un téléphone non listé | Utilisez la skill manuellement ou envoyez une [demande de profil](docs/FEEDBACK.md). |
@@ -64,7 +64,7 @@ prompt, une commande, réversible, open source, et la personne garde le contrôl
 | **Skill** | Produit principal, dans ce dépôt. |
 | **CLI** | `0.3.2`, publié sur PyPI sous `cleanyourphone` / `cyp`. |
 | **App Windows** | `0.2.0` Early MVP, facultative, non signée. |
-| **Site** | Disponible en 10 langues sur [jparedesds.github.io/cleanyourphone-web](https://jparedesds.github.io/cleanyourphone-web/). |
+| **Site** | Disponible en 10 langues sur [cleanyourphone.org](https://cleanyourphone.org/). |
 | **Retours** | Formulaire facultatif web/app/skill vers Discord ; aucune télémétrie automatique. |
 
 ---
@@ -261,7 +261,7 @@ Demandez ensuite : **« Nettoie mon téléphone »** ou **« Utilise cleanyourph
 Si un téléphone n’est pas couvert, la personne peut demander un profil ou signaler un bug sans
 partager de numéro de série, d’adresse IP, d’IMEI ni d’adresse MAC :
 
-- **Web :** [formulaire de retour CleanYourPhone](https://jparedesds.github.io/cleanyourphone-web/#feedback).
+- **Web :** [formulaire de retour CleanYourPhone](https://cleanyourphone.org/#feedback).
 - **App :** **Feedback** dans l’en-tête ; la liste de vérification est préremplie et modifiable.
 - **Skill :** `python scripts/feedback.py --kind profile --checklist-file feedback.txt` prévisualise
   le payload ; ajoutez `--yes` seulement après approbation de la personne.
@@ -423,7 +423,7 @@ signé, qui ne continue qu’avec un profil connu. La skill reste la voie pour t
 téléphones.
 
 **Comment signaler un téléphone ou envoyer un retour ?**
-Utilisez le [formulaire web](https://jparedesds.github.io/cleanyourphone-web/#feedback), **Feedback**
+Utilisez le [formulaire web](https://cleanyourphone.org/#feedback), **Feedback**
 dans l’app, ou `scripts/feedback.py` depuis la skill. L’envoi est volontaire, le payload est
 prévisualisé et le numéro de série, l’IP, l’IMEI et les adresses MAC sont exclus. Voir
 [docs/FEEDBACK.md](docs/FEEDBACK.md).
@@ -437,7 +437,7 @@ prévisualisé et le numéro de série, l’IP, l’IMEI et les adresses MAC son
 - Un correctif de garde-fou, de parser ou du CLI : ajoutez un test dans `tests/`.
 - Un changement de règle de sécurité : ouvrez d’abord une issue. Ces règles sont le produit.
 - Un téléphone que vous ne pouvez pas tester vous-même : envoyez une
-  [demande de profil](https://jparedesds.github.io/cleanyourphone-web/#feedback) avec modèle, Android,
+  [demande de profil](https://cleanyourphone.org/#feedback) avec modèle, Android,
   build et empreinte. Sans numéro de série ni IP.
 - Changements de marque ou de logo : lisez [docs/BRAND.md](docs/BRAND.md) avant de modifier les
   assets.

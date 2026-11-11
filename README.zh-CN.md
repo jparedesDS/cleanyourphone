@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://jparedesds.github.io/cleanyourphone-web/">
+  <a href="https://cleanyourphone.org/">
     <img src="assets/banner.png" alt="CleanYourPhone — 你的手机，减去多余" width="100%">
   </a>
 </p>
@@ -31,7 +31,7 @@
 
 **你的手机，减去多余。** 一个开源、可逆的 Android 精简 Skill，专为编程智能体打造。它通过 ADB 停用预装应用和服务：无需 root、无需自定义 ROM、不卸载任何东西，一条命令即可恢复 CLI 记录的所有更改。
 
-故事与安全模型见 **[jparedesds.github.io/cleanyourphone-web](https://jparedesds.github.io/cleanyourphone-web/)**。
+故事与安全模型见 **[cleanyourphone.org](https://cleanyourphone.org/)**。
 
 另外还有一个可选的 **Windows 应用**，适合更喜欢点按钮而不是输入提示词的人：**[下载早期 MVP](https://github.com/jparedesDS/cleanyourphone-app/releases/latest)**。它是同一套 CLI 之上的图形界面。Skill 仍是主要产品，也是没有机型配置的手机所走的路径。
 
@@ -45,7 +45,7 @@
 |---|---|
 | 有一部手机和一个编程智能体 | 下面的快速开始。 |
 | 更喜欢按钮而不是提示词 | [下载 Windows 应用](https://github.com/jparedesDS/cleanyourphone-app/releases/latest)（早期 MVP）。 |
-| 想先看看效果 | [官网](https://jparedesds.github.io/cleanyourphone-web/)。 |
+| 想先看看效果 | [官网](https://cleanyourphone.org/)。 |
 | 需要安全规则 | [docs/SAFETY.md](docs/SAFETY.md)。 |
 | 需要机型配置 | [浏览 156 个机型配置](profiles/README.md)。 |
 | 你的手机不在列表中 | 手动使用 Skill，或发送[机型配置请求](docs/FEEDBACK.md)。 |
@@ -56,7 +56,7 @@
 | **Skill** | 主要产品，位于本仓库。 |
 | **CLI** | `0.3.2`，以 `cleanyourphone` / `cyp` 发布在 PyPI。 |
 | **Windows 应用** | `0.2.0` 早期 MVP，可选，未签名。 |
-| **网站** | 10 种语言，见 [jparedesds.github.io/cleanyourphone-web](https://jparedesds.github.io/cleanyourphone-web/)。 |
+| **网站** | 10 种语言，见 [cleanyourphone.org](https://cleanyourphone.org/)。 |
 | **反馈** | 可选的 Web/应用/Skill 表单，发送到 Discord；没有自动遥测。 |
 
 ---
@@ -203,7 +203,7 @@ cp SKILL.md ~/.claude/skills/cleanyourphone/SKILL.md
 
 如果某款手机尚未覆盖，使用者可以请求机型配置或报告 bug，而无需提供序列号、IP 地址、IMEI 或 MAC 地址：
 
-- **Web：** [cleanyourphone 反馈表单](https://jparedesds.github.io/cleanyourphone-web/#feedback)。
+- **Web：** [cleanyourphone 反馈表单](https://cleanyourphone.org/#feedback)。
 - **应用：** 顶栏中的 **反馈**；清单已预填且可编辑。
 - **Skill：** `python scripts/feedback.py --kind profile --checklist-file feedback.txt` 会预览 payload；只有在使用者同意后才添加 `--yes`。
 
@@ -310,7 +310,7 @@ Windows 应用遵循同样的规则：`device` 机型配置可以使用经过测
 有，[cleanyourphone-app](https://github.com/jparedesDS/cleanyourphone-app) 中有一个可选的 Windows 应用。它是早期 MVP，未进行代码签名，只会在已知机型配置上继续。其他所有手机仍然走 Skill。
 
 **如何报告新机型或发送反馈？**
-使用[网页表单](https://jparedesds.github.io/cleanyourphone-web/#feedback)、应用中的 **反馈**，或 Skill 里的 `scripts/feedback.py`。它是自愿加入的，会预览 payload，并排除序列号、IP、IMEI 和 MAC 地址。见 [docs/FEEDBACK.md](docs/FEEDBACK.md)。
+使用[网页表单](https://cleanyourphone.org/#feedback)、应用中的 **反馈**，或 Skill 里的 `scripts/feedback.py`。它是自愿加入的，会预览 payload，并排除序列号、IP、IMEI 和 MAC 地址。见 [docs/FEEDBACK.md](docs/FEEDBACK.md)。
 
 ## 参与贡献
 
@@ -318,7 +318,7 @@ Windows 应用遵循同样的规则：`device` 机型配置可以使用经过测
 - `documented` 机型配置：使用 `scripts/dump_inventory.py`，在 `sources` 中引用原始转储，并让 `disable` 保持为空。
 - 防护逻辑、解析器或 CLI 修复：在 `tests/` 中添加测试。
 - 安全规则变更：先开 issue。这些规则就是产品。
-- 你无法亲自测试的手机：发送[机型配置请求](https://jparedesds.github.io/cleanyourphone-web/#feedback)，附上型号、Android 版本、构建和构建指纹。不要提供序列号或 IP。
+- 你无法亲自测试的手机：发送[机型配置请求](https://cleanyourphone.org/#feedback)，附上型号、Android 版本、构建和构建指纹。不要提供序列号或 IP。
 - 品牌或标志变更：修改资源前请阅读 [docs/BRAND.md](docs/BRAND.md)。
 - 修改仓库前请阅读 [AGENTS.md](AGENTS.md)。
 
