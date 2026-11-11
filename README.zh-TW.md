@@ -61,7 +61,7 @@ CLI 的 GUI。skill 仍是主要產品，也是沒有設定檔的手機該走的
 |---|---|
 | **Skill** | 主要產品，位於這個儲存庫。 |
 | **CLI** | `0.3.4`，以 `cleanyourphone` / `cyp` 之名發佈於 PyPI。 |
-| **Windows 應用程式** | `0.2.2` Early MVP，選用，未簽署。 |
+| **Windows 應用程式** | `0.2.3` Early MVP，選用，未簽署。 |
 | **網站** | 10 種語言，位於 [cleanyourphone.org](https://cleanyourphone.org/)。 |
 | **意見回饋** | 選用的網頁／應用程式／skill 表單，送到 Discord；沒有自動遙測。 |
 
@@ -145,7 +145,7 @@ ASK      com.google.android.apps.turbo
 - **選用意見回饋：** 經同意後，可將可編輯的檢查清單送給維護者。沒有自動遙測。
 - **免 root、不解除安裝、手機上不裝應用程式。** 安裝程式未簽署；執行前請先驗證 SHA-256。
 
-[下載 `v0.2.2`](https://github.com/jparedesDS/cleanyourphone-app/releases/latest) ·
+[下載 `v0.2.3`](https://github.com/jparedesDS/cleanyourphone-app/releases/latest) ·
 [原始碼](https://github.com/jparedesDS/cleanyourphone-app) ·
 [連線指南](docs/CONNECT.md)。
 

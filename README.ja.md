@@ -55,7 +55,7 @@
 |---|---|
 | **Skill** | 主力プロダクト。このリポジトリにあります。 |
 | **CLI** | `0.3.4`、PyPI で `cleanyourphone` / `cyp` として公開。 |
-| **Windows アプリ** | `0.2.2` Early MVP、オプション、未署名。 |
+| **Windows アプリ** | `0.2.3` Early MVP、オプション、未署名。 |
 | **ウェブサイト** | 10言語対応: [cleanyourphone.org](https://cleanyourphone.org/)。 |
 | **フィードバック** | オプションの web/アプリ/skill フォームから Discord へ。自動テレメトリーはありません。 |
 
@@ -128,7 +128,7 @@ ASK      com.google.android.apps.turbo
 - **オプションのフィードバック:** 編集可能なチェックリストを、同意後にメンテナーへ送れます。自動テレメトリーはありません。
 - **root なし、アンインストールなし、スマホにアプリを入れない。** インストーラーは未署名なので、実行前に SHA-256 を確認してください。
 
-[`v0.2.2` をダウンロード](https://github.com/jparedesDS/cleanyourphone-app/releases/latest) · [ソース](https://github.com/jparedesDS/cleanyourphone-app) · [接続ガイド](docs/CONNECT.md).
+[`v0.2.3` をダウンロード](https://github.com/jparedesDS/cleanyourphone-app/releases/latest) · [ソース](https://github.com/jparedesDS/cleanyourphone-app) · [接続ガイド](docs/CONNECT.md).
 
 ## クイックスタート
 

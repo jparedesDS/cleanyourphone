@@ -61,7 +61,7 @@ um comando, reversível, código aberto e a pessoa no controle.
 |---|---|
 | **Skill** | Produto principal, neste repositório. |
 | **CLI** | `0.3.4`, publicada no PyPI como `cleanyourphone` / `cyp`. |
-| **App para Windows** | `0.2.2` Early MVP, opcional, sem assinatura. |
+| **App para Windows** | `0.2.3` Early MVP, opcional, sem assinatura. |
 | **Site** | 10 idiomas em [cleanyourphone.org](https://cleanyourphone.org/). |
 | **Feedback** | Formulário opcional no site/app/skill para o Discord; sem telemetria automática. |
 
@@ -150,7 +150,7 @@ fazer backup, revisar, aplicar, verificar e desfazer.
 - **Sem root, sem desinstalar, sem app instalado no celular.** O instalador não é assinado; confira o
   SHA-256 antes de executá-lo.
 
-[Baixar `v0.2.2`](https://github.com/jparedesDS/cleanyourphone-app/releases/latest) ·
+[Baixar `v0.2.3`](https://github.com/jparedesDS/cleanyourphone-app/releases/latest) ·
 [Código-fonte](https://github.com/jparedesDS/cleanyourphone-app) ·
 [Guia de conexão](docs/CONNECT.md).
 
